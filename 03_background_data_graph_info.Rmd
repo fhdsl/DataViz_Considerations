@@ -1,0 +1,28 @@
+# What are the parts of a data visualization?
+
+A data visualization is made up of data and ...
+
+```{r, include = FALSE}
+ottrpal::set_knitr_image_path()
+```
+
+## Learning Objectives
+
+This chapter will cover:
+
+- {LO1}
+- {LO2}
+
+## Data types
+
+## Graph types
+
+## Data encodings
+
+### Shape
+
+### Color
+
+### Area, Line, point, ...
+
+### Labels

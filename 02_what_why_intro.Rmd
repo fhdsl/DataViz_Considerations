@@ -1,0 +1,20 @@
+# What is Data Visualization and why is it important?
+
+```{r, include = FALSE}
+ottrpal::set_knitr_image_path()
+```
+
+## Learning Objectives
+
+This chapter will cover:
+
+- {LO1}
+- {LO2}
+
+## What is Data Visualization?
+
+### Exploratory Data Analysis (EDA)
+
+### Visualizations for sharing in publications or talks
+
+## Why is data visualization so important? 
