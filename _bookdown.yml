@@ -1,9 +1,12 @@
-book_filename: "Course_Name"
+book_filename: "Considerations for Bioinformatic Data Visualization"
 chapter_name: "Chapter "
-repo: https://github.com/jhudsl/OTTR_Template/
+repo: https://github.com/fhdsl/DataViz_Considerations/
 rmd_files: ["index.Rmd",
             "01-intro.Rmd",
-            "02-chapter_of_course.Rmd",
+            "02_what_why_intro.Rmd",
+            "03_background_data_graph_info.Rmd",
+            "04_how_to_improve_viz.Rmd",
+            "05_wrapping_up.Rmd",
             "About.Rmd",
             "References.Rmd"]
 new_session: yes
