@@ -1,6 +1,8 @@
-# What are the parts of a data visualization?
+# Which visualization should I use?
 
 A data visualization is made up of data and ...
+
+Deciding which data visualization to use ...
 
 ```{r, include = FALSE}
 ottrpal::set_knitr_image_path()

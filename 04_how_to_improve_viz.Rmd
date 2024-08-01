@@ -1,4 +1,4 @@
-# Best practices for high quality and inclusive data visualizations
+# High quality and inclusive data visualizations
 
 ```{r, include = FALSE}
 ottrpal::set_knitr_image_path()
@@ -22,5 +22,7 @@ This chapter will cover:
 ### Captions and alternative text descriptions
 
 ## Ethical Considerations
+
+### Data Distortions
 
 ## Annotations and other points of reference
