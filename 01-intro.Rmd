@@ -5,18 +5,25 @@ ottrpal::set_knitr_image_path()
 
 # Introduction
 
+This course is meant to discuss best practices when constructing data visualizations for biology research.
+
+## Target audience  
+
+The course is intended for cancer researchers with experience using basic informatics tools and who have an interest in data visualization.
 
 ## Motivation
 
+Due to the frequent use of automated algorithms to collect and process data as well as the large size of datasets, it is critical to look at collected data and produce effective summaries. Data visualization is useful for exploration, exposition, and validation of research, aiding in the understanding of underlying biology in data sets, debugging errors in informatics workflows, and identifying/avoiding sources of bias. This course is designed to introduce the key concepts of data visualization. 
 
-## Target Audience  
+## Curriculum
 
-The course is intended for ...
+The course covers why data visualizations are important for communication within the biomedical and bioinformatics fields as well as best practices and design principles that researchers should consider when constructing data visualizations for their work.
 
-## Curriculum  
+```{r out.width = "100%", echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1cbxc79tKxbH7PZJC18IQcfOfZALNwwVs7WtiiPxD6gU/edit#slide=id.g3015fd53a67_4_171")
+```
 
-The course covers...
-
+## How to use this course
 
 ```{r}
 devtools::session_info()
