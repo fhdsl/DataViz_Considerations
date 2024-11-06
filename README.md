@@ -1,14 +1,14 @@
-# {Course Name}
+# Considerations for Bioinformatic Data Visualization
 
 This course was created from [this GitHub template](https://github.com/jhudsl/OTTR_Template).
 
-You can see the rendered course material here: {Link to rendered bookdown and/or to the Leanpub.}
+You can see the rendered course material here: https://hutchdatascience.org/DataViz_Considerations/
 
 If you would like to contribute to this course material, take a look at the [OTTR documentation](https://www.ottrproject.org/).
 
 ## About this course
 
-This course introduces {info on what this course introduces}
+This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible.
 
 ## Learning Objectives
 
