@@ -13,7 +13,7 @@ The course is intended for cancer researchers with experience using basic inform
 
 ## Motivation
 
-Due to the frequent use of automated algorithms to collect and process data as well as the large size of datasets, it is critical to look at collected data and produce effective summaries. Data visualization is useful for exploration, exposition, and validation of research, aiding in the understanding of underlying biology in data sets, debugging errors in informatics workflows, and identifying/avoiding sources of bias. This course is designed to introduce the key concepts of data visualization. 
+Due to the frequent use of automated algorithms to collect and process data as well as the large size of datasets, it is critical to look at collected data and produce effective summaries. Data visualization is useful for exploration, exposition, and validation of research, aiding in the understanding of underlying biology in data sets, debugging errors in informatics workflows, and identifying/avoiding sources of bias. This course is designed to introduce the key concepts of data visualization.
 
 ## Curriculum
 
@@ -22,8 +22,6 @@ The course covers why data visualizations are important for communication within
 ```{r out.width = "100%", echo = FALSE}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1cbxc79tKxbH7PZJC18IQcfOfZALNwwVs7WtiiPxD6gU/edit#slide=id.g3015fd53a67_4_171")
 ```
-
-## How to use this course
 
 ```{r}
 devtools::session_info()
