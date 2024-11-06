@@ -1,5 +1,5 @@
 ---
-title: "Informatics Technology for Cancer Research (ITCR): Considerations for Bioinformatic Data Visualization "
+title: "Considerations for Bioinformatic Data Visualization "
 date: "`r format(Sys.time(), '%B, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -32,7 +32,7 @@ Considerations for Bioinformatic Data Visualization is the first in a series of 
 
  The second course in the series will focus on building data visualizations, pointing to resources across R and Python, while integrating the best practice considerations discussed in this course.
 
- # Available Course Formats {-}
+# Available Course Formats {-}
 
  - The material for this course can be viewed without login requirement on this [Bookdown website](https://hutchdatascience.org/DataViz_Considerations/). This format might be most appropriate for you if you rely on screen-reader technology.
  - Our courses are open source, you can find the [source material for this course on GitHub](https://github.com/fhdsl/DataViz_Considerations/).   
