@@ -30,6 +30,6 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 ## Objectives
 
-```{r learning_objectives, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This course will demonstrate how to explain the importance of data visualization, contrast exploratory and expository visualizations, choose appropriate graph types based on your data set and question, list steps to simplify or improve a visualization to enhance clarity, identify ways to improve the accessibility of a visualization, and how to discuss ethical considerations when making data visualizations"}
+```{r learning_objectives, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This course will demonstrate how to explain the importance of data visualization, contrast exploratory and expository visualizations, choose appropriate graph types based on your dataset and question, list steps to simplify or improve a visualization to enhance clarity, identify ways to improve the accessibility of a visualization, and how to discuss ethical considerations when making data visualizations"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3015fd53a67_4_171#slide=id.g3015fd53a67_4_171")
 ```
