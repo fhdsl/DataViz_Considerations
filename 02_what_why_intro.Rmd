@@ -37,6 +37,6 @@ Because expository visualizations will be shared widely, you will not always be 
 
 </details>  
 
-Creating a good expository visualization will take time. Data visualization is often an iterative process both as you prepare the plot and as you seek and incorporate feedback from your team. Be sure to carefully inspect and validate your visualization before sharing it widely. A common phrase within home maintenance and improvement communities is "Measure twice, cut once". As you prepare your expository visualization, you want to check it twice in order to share once.  
+Creating a good expository visualization will take time. Data visualization is often an iterative process both as you prepare the plot and as you seek and incorporate feedback from your team. Be sure to carefully inspect and validate your visualization before sharing it widely. A common phrase within home maintenance and improvement communities is "Measure twice, cut once". As you prepare your expository visualization, you want to check it twice before you share it the first time.  
 
 ## Why is data visualization so important?
