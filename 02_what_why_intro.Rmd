@@ -1,4 +1,4 @@
-# What is Data Visualization?
+# What is data visualization?
 
 ```{r, include = FALSE}
 ottrpal::set_knitr_image_path()
@@ -6,10 +6,9 @@ ottrpal::set_knitr_image_path()
 
 ## Learning Objectives
 
-This chapter will cover:
-
-- {LO1}
-- {LO2}
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Chapter specific LOs go here"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3015fd53a67_4_176#slide=id.g3015fd53a67_4_176")
+```
 
 ## What is Data Visualization?
 
