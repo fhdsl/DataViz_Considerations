@@ -16,7 +16,7 @@ This course will teach learners to:
 
 * Explain the importance of data visualization
 * Contrast exploratory & expository visualizations
-* Choose appropriate graph types for data sets & questions
+* Choose appropriate graph types for datasets & questions
 * List steps to simplify or improve a visualization
 * Identify ways to improve the accessibility of a visualization
 * Discuss ethical considerations when making visualizations
