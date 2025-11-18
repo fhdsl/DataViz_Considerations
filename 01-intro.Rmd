@@ -9,7 +9,7 @@ This course is meant to discuss best practices when constructing data visualizat
 
 ## Motivation
 
-Due to the frequent use of automated algorithms to collect and process data as well as the large size of datasets, it is critical to look at collected data and produce effective summaries. Data visualization is useful for exploration, validation, and presentation of research, aiding in the understanding of underlying biology in data sets, debugging errors in informatics workflows, and identifying/avoiding sources of bias. This course is designed to introduce the key concepts of data visualization as well as point to additional resources.
+Data is now used more than ever to evaluate and understand questions across many fields including pubic health, bioinformatics, and clinical research.  It is critical to produce effective visual summaries of our data. Data visualization is useful for exploration, validation, and presentation of research, aiding in the understanding of underlying biology in datasets, debugging errors in informatics workflows, and identifying/avoiding sources of bias. This course is designed to introduce key concepts of data visualization, in particular for visualizing complex data and accessibility. In addition we will point to additional resources.
 
 
 ## Target audience  
