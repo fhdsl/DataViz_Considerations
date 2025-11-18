@@ -5,24 +5,31 @@ ottrpal::set_knitr_image_path()
 
 # Introduction
 
-This course is meant to discuss best practices when constructing data visualizations for biology research.
-
-## Target audience  
-
-The course is intended for cancer researchers with experience using basic informatics tools and who have an interest in data visualization.
+This course is meant to discuss best practices when constructing data visualizations with a special focus on graphs within biology research.
 
 ## Motivation
 
-Due to the frequent use of automated algorithms to collect and process data as well as the large size of datasets, it is critical to look at collected data and produce effective summaries. Data visualization is useful for exploration, validation, and presentation of research, aiding in the understanding of underlying biology in data sets, debugging errors in informatics workflows, and identifying/avoiding sources of bias. This course is designed to introduce the key concepts of data visualization.
+Due to the frequent use of automated algorithms to collect and process data as well as the large size of datasets, it is critical to look at collected data and produce effective summaries. Data visualization is useful for exploration, validation, and presentation of research, aiding in the understanding of underlying biology in data sets, debugging errors in informatics workflows, and identifying/avoiding sources of bias. This course is designed to introduce the key concepts of data visualization as well as point to additional resources.
+
+
+## Target audience  
+
+The course is intended for anyone who has an interest in data visualization, but contains sections of specific interest for cancer researchers with experience using basic informatics tools.
+
+```{r for_individuals_who, fig.align='center', out.width="100%", echo = FALSE, fig.alt= "for individuals who: work with data and want to create data visualizations as a way to share their results with others, are interested in making their visualizations more accessible, and want to explore ways to enhance the clarity of their visualizations"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3015fd53a67_4_147#slide=id.g3015fd53a67_4_147")
+```
 
 ## Curriculum
 
 The course covers why data visualizations are important for communication within the biomedical and bioinformatics fields as well as best practices and design principles that researchers should consider when constructing data visualizations for their work.
 
-```{r out.width = "100%", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1cbxc79tKxbH7PZJC18IQcfOfZALNwwVs7WtiiPxD6gU/edit#slide=id.g3015fd53a67_4_171")
+```{r topics_covered, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "the topics covered in this course include defining the types of data and visualizations, discussing axis limits and labels, tips to minimize complexity, tips for making ethical and accessible visualizations, enhancing clear communication, and field standard or typical data visualizations"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3015fd53a67_4_164#slide=id.g3015fd53a67_4_164")
 ```
 
-```{r}
-devtools::session_info()
+## Objectives
+
+```{r learning_objectives, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This course will demonstrate how to explain the importance of data visualization, contrast exploratory and expository visualizations, choose appropriate graph types based on your data set and question, list steps to simplify or improve a visualization to enhance clarity, identify ways to improve the accessibility of a visualization, and how to discuss ethical considerations when making data visualizations"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3015fd53a67_4_171#slide=id.g3015fd53a67_4_171")
 ```

@@ -1,4 +1,4 @@
-# Considerations for Bioinformatic Data Visualization
+# Considerations for Data Visualization
 
 This course was created from [this GitHub template](https://github.com/jhudsl/OTTR_Template).
 
@@ -14,8 +14,12 @@ This ITN course introduces considerations for best practices in data visualizati
 
 This course will teach learners to:  
 
-- {You can use https://www.bobpikegroup.com/trainer-blog/5-steps-to-writing-clear-and-measurable-learning-objectives to define some learning objectives here}
-- {More learning objectives}
+* Explain the importance of data visualization
+* Contrast exploratory & expository visualizations
+* Choose appropriate graph types for data sets & questions
+* List steps to simplify or improve a visualization
+* Identify ways to improve the accessibility of a visualization
+* Discuss ethical considerations when making visualizations
 
 ## Encountering problems?
 
