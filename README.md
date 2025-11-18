@@ -1,21 +1,25 @@
-# {Course Name}
+# Considerations for Data Visualization
 
 This course was created from [this GitHub template](https://github.com/jhudsl/OTTR_Template).
 
-You can see the rendered course material here: {Link to rendered bookdown and/or to the Leanpub.}
+You can see the rendered course material here: https://hutchdatascience.org/DataViz_Considerations/
 
 If you would like to contribute to this course material, take a look at the [OTTR documentation](https://www.ottrproject.org/).
 
 ## About this course
 
-This course introduces {info on what this course introduces}
+This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible.
 
 ## Learning Objectives
 
 This course will teach learners to:  
 
-- {You can use https://www.bobpikegroup.com/trainer-blog/5-steps-to-writing-clear-and-measurable-learning-objectives to define some learning objectives here}
-- {More learning objectives}
+* Explain the importance of data visualization
+* Contrast exploratory & expository visualizations
+* Choose appropriate graph types for datasets & questions
+* List steps to simplify or improve a visualization
+* Identify ways to improve the accessibility of a visualization
+* Discuss ethical considerations when making visualizations
 
 ## Encountering problems?
 
