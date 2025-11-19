@@ -12,7 +12,11 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 ## What is Data Visualization?
 
-Definition box: Data visualization is the process of making visual representations such as plots or other figures to to show different representations of data, to both explore the data or communicate aspects about the data including trends, patterns, relationship or steps in a process. 
+<div class = "dictionary">
+**Data visualization** is the process (verb) or end product (noun) of making graphical representations such as plots or other figures to show different representations of information, to both explore or communicate aspects such as trends, patterns, relationships, or steps in a process.
+</div>
+
+A data visualization may show every data point within a dataset (raw data), or it may show transformations, subsets, statistical summaries, confidence intervals, or estimates of relationships between variables within the dataset. It may represent data using points, lines, bars, area/size, color, or some combination of these. Visualizations can also be used to provide an overview of a process, rather than displaying specific data. By whatever means the information is displayed, a complete or polished data visualization will also include design elements beyond graphics: informative text such as titles, axis labels, annotations or direct labeling, and captions. These are the building blocks of graphical representation of data. They may be combined in specific ways to form standard plot formats such as scatter plots, pie charts, bar plots, histograms, and more (with even more specialized formats used in certain industries and research fields - e.g., Sankey Diagrams, Forest Plots, Kaplan-Meier Curves, etc.).
 
 There are two main types of data visualizations: Exploratory and Expository visualizations.
 
@@ -28,7 +32,7 @@ Exploratory Data Analysis (EDA)
 
 Expository visualizations are polished visualizations prepared for the purpose of sharing. You may share an expository visualization within a preprint, a peer-reviewed publication, on a poster, or as part of a presentation.
 
-Because expository visualizations will be shared widely, you will not always be there to present or explain the visualization to others. Therefore, you want to design your data visualization to **stand alone**. 
+Because expository visualizations will be shared widely, you will not always be there to present or explain the visualization to others. Therefore, you want to design your data visualization to **stand alone**.
 
 With this goal in mind, an important part of creating an expository visualization also includes writing the narrative to go along with it. This narrative may involve an informative title, well-labeled axes, a thorough caption, and alternative text. Note that not all formats require each of these elements to appear alongside the visualization. You won't put a caption on your presentation slide, however you may want to include the caption within the speaker notes.
 
@@ -44,3 +48,7 @@ Additionally, because an expository visualization will be shared widely, the aud
 Creating a good expository visualization will take time. Data visualization is often an iterative process both as you prepare the plot and as you seek and incorporate feedback from your team. Be sure to carefully inspect and validate your visualization before sharing it widely. A common phrase within home maintenance and improvement communities is "Measure twice, cut once". As you prepare your expository visualization, you want to check it twice before you share it the first time.  
 
 ## Why is data visualization so important?
+
+Datasets are becoming increasingly large and complex. Well-made data visualizations efficiently summarize and display data, providing a more approachable view of the complex information. Rather than writing many paragraphs of text to explain the dataset and analyses performed, creating data visualizations can streamline the necessary accompanying narrative by showing the data and relationships contained within. Visualizations are very useful in displaying outliers, trends, patterns, relationships, steps in a process, or changes over time. Each of these could be explained with words, but they will be more compelling and more easily comprehensible to an audience when they see them with their own eyes; the old marketing phrase "A picture is worth a thousand words" succinctly conveys how audiences benefit from visuals. However, remember that an expository data visualization that is meant to be shared widely should have words with it: the declarative title, informative axis labels, or context on where the data came from and how it was handled.
+
+Visualizations play a strong role in helping audiences interact with and understand the data being presented. People have limited time to interact with others' work and analyses, especially for topics outside of their interest or expertise. They may skim an abstract or part of an article, but their eyes will likely be drawn to images.  Visualizations that are frustrating, misleading, not accessible, or not easily understood will cause more harm than good, but making compelling visualizations that can be effectively understood at a glance helps you to communicate your research to others. 
