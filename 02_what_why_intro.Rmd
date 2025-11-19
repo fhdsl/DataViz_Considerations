@@ -28,7 +28,9 @@ Exploratory Data Analysis (EDA)
 
 Expository visualizations are polished visualizations prepared for the purpose of sharing. You may share an expository visualization within a preprint, a peer-reviewed publication, on a poster, or as part of a presentation.
 
-Because expository visualizations will be shared widely, you will not always be there to present or explain the visualization to others. Therefore, you want to design your data visualization to stand alone. With this goal in mind, an important part of creating an expository visualization includes writing the narrative to go along with it. This narrative may involve an informative title, well-labeled axes, a thorough caption, and alternative text. Note that not all formats require each of these elements to appear alongside the visualization. You won't put a caption on your presentation slide, however you may want to include the caption within the speaker notes.
+Because expository visualizations will be shared widely, you will not always be there to present or explain the visualization to others. Therefore, you want to design your data visualization to **stand alone**. 
+
+With this goal in mind, an important part of creating an expository visualization also includes writing the narrative to go along with it. This narrative may involve an informative title, well-labeled axes, a thorough caption, and alternative text. Note that not all formats require each of these elements to appear alongside the visualization. You won't put a caption on your presentation slide, however you may want to include the caption within the speaker notes.
 
 <details><summary>Specific tips for a high quality narrative</summary>
 
