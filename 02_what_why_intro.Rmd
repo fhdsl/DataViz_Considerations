@@ -36,28 +36,28 @@ Exploratory visualizations are made during Exploratory Data Analysis (EDA). Thes
 
 <u> **Exploring a dataset** steps to consider </u>
 
-1. Look at the beginning of the dataset:
+* Look at the beginning of the dataset:
   * For tabular data, are the header names present/correct?
   * Is the data separated correctly?
   * Does the data appear encoded how you would expect? (e.g., DNA sequences, numbers, pixels, etc.)
-1. Look at the end of the dataset:
+* Look at the end of the dataset:
   * Is there unintended information included at the end?
   * Does the file end where you would expect or is data potentially missing/wasn't transferred?
-1. What's the size of the dataset?
+* What's the size of the dataset?
   * For tabular data, is the number of rows and columns what you would expect?
   * Is the file size correct or was data lost in any transfer steps?
-1. Look for missing data
+* Look for missing data
   * What variables have missing data?
   * Is the data missing at random or is there some pattern?
   * Are some variables missing data together? Or inversely (e.g., one variable has data when the other doesn't)?
-1. Look at the variables you have
+* Look at the variables you have
   * Are there any variables that should be there that aren't such as possible confounders or covariates? If so, can you use data that is there to define that information?
   * Do you know units or other important information like what 0/1 would mean if that's the data within a column?
-1. For numerical variables ...
+* For numerical variables ...
   * What are the minimum and maximum values? Do these match your expectations?
   * What do the distributions look like? Identity, skew, modality, etc. ... do these match your expectations?
   * Are there outlier values? Are these biologically real or could they be data entry errors?
-1. Look for trends or correlations
+* Look for trends or correlations
 
 Visualizations that will be useful for the steps above include any plot showing distributions (violin, boxplot, stem and leaf, etc.), tables, heatmaps, line plots, and scatter plots.
 
@@ -67,8 +67,8 @@ Any missing data, variables that you need to create using other (present) variab
 
 <u> **Quality Control or Transformation** steps to consider </u>
 
-1. Perform a PCA (make a variance explained elbow plot, embeddings scatter plot, loadings heatmap, etc.)
-1. Do any variables need rounded down, rounded up, log transformed (to spread close values)? How do distributions change after you've done that?
+* Perform a PCA (make a variance explained elbow plot, embeddings scatter plot, loadings heatmap, etc.)
+* Do any variables need rounded down, rounded up, log transformed (to spread close values)? How do distributions change after you've done that?
 
 <u> **Validate that you have the necessary data to answer your question** </u>
 
