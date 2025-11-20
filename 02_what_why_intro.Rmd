@@ -94,7 +94,7 @@ With this goal in mind, an important part of creating an expository visualizatio
 
 * Ensure the title states the plot's main conclusion
 * Avoid using field specific jargon or obscure acronyms within a title or an axis label unless defined (perhaps within the caption).
-
+* Include sufficient detail in your axis for people to understand what your plot is trying to show
 </details>  
 
 
