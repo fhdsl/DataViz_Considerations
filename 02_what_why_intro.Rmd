@@ -32,7 +32,13 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 ### Exploratory Visualizations
 
-Exploratory visualizations are made during Exploratory Data Analysis (EDA). These visualizations are made quickly and will not be shared widely outside of your team. EDA and exploratory visualizations are useful for exploring a dataset, data wrangling, sketching any necessary quality control or transformation steps, and validating that you have the necessary data to answer your question.
+Exploratory visualizations are made during Exploratory Data Analysis (EDA). These visualizations are made quickly and will not be shared widely outside of your team. EDA and exploratory visualizations are useful for:
+
+-  Exploring a dataset
+-  Determining how to reorganize or clean a dataset (checking for missing data, data miscodings etc.)
+- Checking that your reorganizing or cleaning of a dataset worked correctly
+-  Sketching any necessary quality control or transformation steps
+- Validating that you have the necessary data to answer your question
 
 <u> **Exploring a dataset** steps to consider </u>
 
