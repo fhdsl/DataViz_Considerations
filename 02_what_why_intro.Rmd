@@ -58,7 +58,7 @@ Exploratory visualizations are made during Exploratory Data Analysis (EDA). Thes
   * Are some variables missing data together? Or inversely (e.g., one variable has data when the other doesn't)?
 * Look at the variables you have
   * Are there any variables that should be there that aren't such as possible confounders or covariates? If so, can you use data that is there to define that information?
-  * Do you know units or other important information like what 0/1 would mean if that's the data within a column?
+  * Do you know units or other important information (e.g  what does 0/1 stand for in a categorical column) ?
 * For numerical variables ...
   * What are the minimum and maximum values? Do these match your expectations?
   * What do the distributions look like? Identity, skew, modality, etc. ... do these match your expectations?
