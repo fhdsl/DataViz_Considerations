@@ -18,7 +18,11 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 A data visualization may show every data point within a dataset (raw data), or it may show transformations, subsets, statistical summaries, confidence intervals, or estimates of relationships between variables within the dataset. It may represent data using graphics such as points, lines, bars, area/size, color, shape, or some combination of these. Visualizations can also be used to provide an overview of a process, rather than displaying specific data. By whatever means the information is displayed, a complete or polished data visualization will also include design elements beyond graphics: informative text such as titles, axis labels, annotations or direct labeling, and captions. These are the building blocks of graphical representation of data. They may be combined in specific ways to form standard plot formats such as scatter plots, pie charts, bar plots, histograms, and more (with even more specialized formats used in certain industries and research fields - e.g., Sankey Diagrams, Forest Plots, Kaplan-Meier Curves, etc.).
 
-Tables are another fundamental form of data visualization even though they don't have the same visual appeal of a plot or figure. Tables summarize data in a structured manner, displaying specific information and enabling detailed comparisons. They may include graphics such as icons or color, but primarily utilize text within a grid-like format. A table may be stand alone or accompany a plot to provide a more complete picture. 
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_56#slide=id.g3a4b3643292_0_56")
+```
+
+Tables are another fundamental form of data visualization even though they don't have the same visual appeal of a plot or figure. Tables summarize data in a structured manner, displaying specific information and enabling detailed comparisons. They may include graphics such as icons or color, but primarily utilize text within a grid-like format. A table may be stand alone or accompany a plot to provide a more complete picture.
 
 There are two main types of data visualizations: Exploratory and Expository visualizations.
 
@@ -45,7 +49,12 @@ With this goal in mind, an important part of creating an expository visualizatio
 
 </details>  
 
+
 Additionally, because an expository visualization will be shared widely, the audience will be broad and have varied interests and expertise. If you are giving a semi-frequent presentation within your department or lab group or presenting within a session at a specialized conference, you can expect the audience to be somewhat familiar with the topic. However, no one will know your research like you do. Many others may see the visualization outside of your department or institution -- perhaps even patients or their family members! Therefore, you want to prepare your expository visualizations in a way that they will be accessible to a larger audience.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_72#slide=id.g3a4b3643292_0_72")
+```
 
 Creating a good expository visualization will take time. Data visualization is often an iterative process both as you prepare the plot and as you seek and incorporate feedback from your team. Be sure to carefully inspect and validate your visualization before sharing it widely. A common phrase within home maintenance and improvement communities is "Measure twice, cut once". As you prepare your expository visualization, you want to check it twice before you share it the first time.  
 
