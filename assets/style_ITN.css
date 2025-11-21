@@ -58,11 +58,11 @@ h1, h2, h3, h4 {
 }
 
 
-.book .book-body .page-wrapper .page-inner section.normal h1, 
-.book .book-body .page-wrapper .page-inner section.normal h2, 
-.book .book-body .page-wrapper .page-inner section.normal h3, 
-.book .book-body .page-wrapper .page-inner section.normal h4, 
-.book .book-body .page-wrapper .page-inner section.normal h5, 
+.book .book-body .page-wrapper .page-inner section.normal h1,
+.book .book-body .page-wrapper .page-inner section.normal h2,
+.book .book-body .page-wrapper .page-inner section.normal h3,
+.book .book-body .page-wrapper .page-inner section.normal h4,
+.book .book-body .page-wrapper .page-inner section.normal h5,
 .book .book-body .page-wrapper .page-inner section.normal h6 {
     margin-top: 2.275em;
     margin-bottom: 1em;
@@ -80,7 +80,7 @@ h1, h2, h3, h4 {
   font-family: 'Lora';
   color: #0b8d96;
 }
-  
+
 
 /*----------DROP CAPS--------------*/
 
@@ -146,7 +146,7 @@ color: #193a5c
 }
 
 /* all TOC list items, basically */
-.book .book-summary ul.summary li a, 
+.book .book-summary ul.summary li a,
 .book .book-summary ul.summary li span {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -157,26 +157,26 @@ color: #193a5c
 
 .summary a:hover {
   color: #e0471c !important;
-} 
+}
 
 .book .book-summary ul.summary li.active>a { /*active TOC links*/
   color: #e0471c !important;
   border-left: solid 4px;
   border-color: #e0471c;
   padding-left: 11px !important;
-} 
+}
 
 .trapezoid {
   width: 130px;
   text-align: center;
-  height: 15; 
+  height: 15;
   position: relative;
   border-right: 50px solid transparent;
   border-bottom: 50px solid #dbdbdb;
   border-left: 50px solid transparent;
   box-sizing: content-box;
 }
-.trapezoid span { 
+.trapezoid span {
   position: absolute;
   top: 5px;
   bottom: 5px;
@@ -227,7 +227,7 @@ li.appendix span, li.part span { /* for TOC part names */
 }
 
 .summary > li:first-child {
-  height: auto !important; 
+  height: auto !important;
 }
 
 /* --------------Two columns--------------- */
@@ -267,6 +267,14 @@ li.appendix span, li.part span { /* for TOC part names */
   width: 50%;
 }
 
+
+.emphasis_block {
+    padding: 1em;
+    padding-top: .5em;
+    border: 1px grey;
+    background: #E8E8E8;
+    color: black;
+}
 
 /* Sidebar formating --------------------------------------------*/
 /* from r-pkgs.org*/
@@ -441,12 +449,12 @@ div.note {
   margin-bottom: 0;
 }
 
-iframe { 
-   -moz-transform-origin: top left; 
-   -webkit-transform-origin: top left; 
-   -o-transform-origin: top left; 
-   -ms-transform-origin: top left; 
-   transform-origin: top left; 
+iframe {
+   -moz-transform-origin: top left;
+   -webkit-transform-origin: top left;
+   -o-transform-origin: top left;
+   -ms-transform-origin: top left;
+   transform-origin: top left;
 }
 
 .iframe-container {
@@ -513,14 +521,14 @@ a.anchor {
 }
 
 
-.hasAnchor:hover a.anchor, 
+.hasAnchor:hover a.anchor,
 a.anchor:hover {
   /*visibility: visible;*/
   opacity: 0.6;
 }
 
 /* disable anchors for headers with "no-anchor" class */
-.no-anchor .hasAnchor:hover a.anchor, 
+.no-anchor .hasAnchor:hover a.anchor,
 .no-anchor a.anchor:hover {
   opacity: 0 !important;
 }
