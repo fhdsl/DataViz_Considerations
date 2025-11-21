@@ -34,13 +34,17 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 Exploratory visualizations are made during Exploratory Data Analysis (EDA). These visualizations are made quickly and will not be shared widely outside of your team. EDA and exploratory visualizations are useful for:
 
--  Exploring a dataset
--  Data wrangling: Determining how to reorganize or clean a dataset (checking for missing data, data miscodings etc.)
+- Exploring a dataset
+- Data wrangling: Determining how to reorganize or clean a dataset (checking for missing data, data miscodings etc.)
 - Checking that your reorganizing or cleaning of a dataset worked correctly
--  Sketching any necessary quality control or transformation steps
+- Sketching any necessary quality control or transformation steps
 - Validating that you have the necessary data to answer your question
 
-<u> **Exploring a dataset** steps to consider </u>
+<u> **Exploring a dataset** </u>
+
+Exploring a dataset involves looking at the data. Sometimes this is just visually inspecting the data and other times its creating plots to look at aspects of a variable or how variables relate to each other. You'll primarily be looking to see what data is there, if anything is missing, how the data is encoded/how it appears, if you have all the variables/features you need, and how variables relate to each other. Visualizations that will be useful for exploring a dataset include any plot showing distributions (violin, boxplot, stem and leaf, etc.), tables, heatmaps, line plots, and scatter plots.
+
+<details><summary>Steps to consider for exploring a dataset</summary>
 
 * Look at the beginning of the dataset:
   * For tabular data, are the header names present/correct?
@@ -67,16 +71,18 @@ Exploratory visualizations are made during Exploratory Data Analysis (EDA). Thes
   * Are there outlier values? Are these biologically real or could they be data entry errors?
 * Look for trends or correlations
 
-Visualizations that will be useful for the steps above include any plot showing distributions (violin, boxplot, stem and leaf, etc.), tables, heatmaps, line plots, and scatter plots.
+</details>
 
-<u> **Data wrangling** steps to consider </u>
+<u> **Data wrangling** </u>
 
 Any missing data, variables that you need to create using other (present) variable(s), recodings, or possible data entry errors that you found while exploring the dataset are going to be pertinent for data wrangling. Additionally, it'll be useful to create tables or bar charts that count entries for certain variables, especially for any free text or manual entry data. Consider a text variable that represents attending physician: "Abraham Simpson". Entries may include "AJS" (initials), "Simpson", "Abe Simpson", "Abraham Simpon" (misspelling). All of these represent the same physician and would need their values synchronized/corrected.
 
-<u> **Quality Control or Transformation** steps to consider </u>
+<u> **Quality Control or Transformation** </u>
 
-* Perform a principal component analysis (PCA) and make related plots (a variance explained elbow plot, embeddings scatter plot, loadings heatmap, etc.).
-* Do any variables need rounded down, rounded up, log transformed (to spread close values)? How do distributions change after you've done that?
+Possible quality control or transformation steps include
+
+  * Perform a principal component analysis (PCA) and make related plots (a variance explained elbow plot, embeddings scatter plot, loadings heatmap, etc.).
+  * Do any variables need rounded down, rounded up, log transformed (to spread close values)? How do distributions change after you've done that?
 
 <u> **Validate that you have the necessary data to answer your question** </u>
 
@@ -120,7 +126,7 @@ Creating a good expository visualization will take time. Data visualization is o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a791a15863_73_10#slide=id.g3a791a15863_73_10")
 ```
 
-## Why is data visualization so important?
+## Why is Data Visualization so Important?
 
 ::: {.emphasis_block}
 
