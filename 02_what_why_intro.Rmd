@@ -6,7 +6,7 @@ ottrpal::set_knitr_image_path()
 
 ## Learning Objectives
 
-```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This chapter will demonstrate how to define data visualization, differentiate between exploratory and expository visualizations, name best practices that can be used to polish a data visualization, and recognize the need for data visualizations."}
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This chapter will demonstrate how to define data visualization, differentiate between exploratory and expository visualizations, describe steps that could be a part of an exploratory data analysis, and recognize the need for data visualizations."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3015fd53a67_4_176#slide=id.g3015fd53a67_4_176")
 ```
 
