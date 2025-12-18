@@ -1,33 +1,93 @@
 # Which visualization should I use?
 
-A data visualization is made up of data and ...
+A data visualization is made up of the represented data as well as means by which it is represented: textual and graphical design elements.
 
-Deciding which data visualization to use ...
+Both the type(s) of data that you're visualizing as well as the question you are trying to answer or message you want to communite greatly impacts the types of plots that you will use in your visualization.
 
-```{r, include = FALSE}
-ottrpal::set_knitr_image_path()
-```
+Deciding which data visualization to use needs to consider
 
 ## Learning Objectives
 
-```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Chapter specific LOs go here"}
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This chapter will demonstrate how to describe the type or types of data within your dataset, explain how data is encoded within data visualizations, analyze which plot works with your data types and the question you want to answer, evaluate strengths and weaknesses of various standard plots, and identify resources that can help youchoose which plot works for you."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_31#slide=id.g3a4b3643292_0_31")
 ```
 
 ## Data types
 
-## Graph types
+There are two types of data: numerical and categorical data. A dataset will likely have a mixture of these data types and new variables may be generated using the original data through transformations. Transformations can be used by performing mathemtical operations or converting between data types. Converting numerical data into categorical data is accomplished through binning or by employing a cutoff value. Alternatively, categorical data may need to be encoded as numerals so the data is in a form that a computer or algorithm can process (e.g., machine readable).  
+
+### Numerical data
+
+Numerical data is data that quantitatitevly represents some count or measurement. Mathematical operations such as addition, subtraction, division, multiplication, exponentiation, etc. are appropriate.
+
+There are two subtypes of numerical data: discrete and continuous. Whole numbers or integers (e.g., 103 and 25,975) are examples of discrete data while decimals (e.g., 98.6 and 32.25) are examples of continuous data.
+
+
+```{r eval = FALSE, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("")   
+```
+
+
+### Categorical data
+
+Categorical data qualitatively characterizes, categorizes, or groups objects or individuals with labels. Categorical data sometimes may look like numbers when they are group IDs or some sort of ranking or index score. However, A-B-C could be switched out for 1-2-3 making such data categorical data. While you may be able to do some arithmetic operations on these (like finding an average ranking or finding the distance between numerically encoded categories), typically arithmetic operations aren't used for categorical data.
+
+There are two subtypes of categorical data: nominal and ordinal. Nominal data is data that can't be ordered, for example "Case" and "Control". Ordinal data is data that can be ordered, for example "A", "B", "C" or "January 14, 1994", "February 8, 1995", "March 18, 1996".
+
+```{r eval = FALSE, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("")   
+```
 
 ## Data encodings
 
-### Shape
+Data encoding is the process of representing data using visual elements or graphical attributes. These include
 
-### Color
+* area
+* lines
+* points
+* position
+* labels
+* shape
+* color
+* textures
 
-### Area, Line, point, ...
+<explain Each design element>
 
-### Labels
+Different graph types utilize different encodings to represent data. Certain encodings are typically the primary means of representing data across graph types while others are usually used as secondary or additional methods (e.g., shape, color, and textures). However, color can be a primary means of data encoding for certain graphs like heatmaps or choropleths.   
 
-## Questions
+## Goals of data visualization
+
+There are many different possible goals for creating a data visualization. Among those include
+
+* looking at a <u>distribution</u>
+* showing a <u>correlation</u> or other relationship between variables
+* finding a <u>ranking</u>
+* displaying <u>change</u> over time or after an intervention
+
+## Standard graph types
+
+### Conventional graphs
+
+Conventional graph types include histograms, scatter plots, bar plots, and line charts. Each of these are used to answer a different question.
+
+|                             | Histogram | Scatter plot | Bar plot | Line chart |
+|:----------------------------|:---------:|:------------:|:--------:|:----------:|
+| Primary type of data        | Numerical | Numerical   | Numerical & Categorical | Numerical |
+| Minimum number of variables | 1         | 2            | 2        | 2
+| Primary data encoding       | Area and Position | Point and Position | Area & Labels/Position | Line and Position |
+<!--| Additional data encodings    | --        | Shape, color, or size  | Color | Point, shape, color, or size |-->
+| Goal                        | looking at a distribution | showing a correlation | finding a ranking | displaying change over time |
+
+<describe how other types of data, additional variables, or additional data encodings may be used for these graph types.>
+
+### Ranking and distribution plots
+
+### Group composition and response plots
+
+### Summarizing complex relationships plots
+
+### Field standard plots
 
 ## Galleries
+
+## Summary
