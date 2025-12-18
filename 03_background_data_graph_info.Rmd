@@ -92,8 +92,9 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 | Primary type of data        | Numerical | Numerical   | Numerical & Categorical | Numerical |
 | Minimum number of variables | 1         | 2            | 2        | 2
 | Primary data encoding       | Area and Position | Point and Position | Area & Labels/Position | Line and Position |
-<!--| Additional data encodings    | --        | Shape, color, or size  | Color | Point, shape, color, or size |-->
 | Goal                        | looking at a distribution | showing a correlation | finding a ranking | displaying change over time |
+
+<!--| Additional data encodings    | --        | Shape, color, or size  | Color | Point, shape, color, or size |-->
 
 <describe how other types of data, additional variables, or additional data encodings may be used for these graph types.>
 
@@ -127,7 +128,7 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 <u>The strengths of the plots for gorup composition and response</u>
 
-<b>Stacked bar<b> charts are good if you want to look at how subgroup composition changes at a glane over time, but it is less useful with lots of subgroups.
+<b>Stacked bar</b> charts are good if you want to look at how subgroup composition changes at a glane over time, but it is less useful with lots of subgroups.
 
 <b>Waterfall</b> plots are good if you have a baseline to compare to for (1) a single time point, (2) many samples/patients, and (3) clearly know what above ore below that baseline means.
 
