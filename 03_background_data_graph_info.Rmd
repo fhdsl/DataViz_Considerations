@@ -2,9 +2,9 @@
 
 A data visualization is made up of the represented data as well as means by which it is represented: textual and graphical design elements.
 
-Both the type(s) of data that you're visualizing as well as the question you are trying to answer or message you want to communite greatly impacts the types of plots that you will use in your visualization.
+Both the type(s) of data that you're visualizing as well as the question you are trying to answer or message you want to communicate greatly impacts the types of plots that you will use in your visualization. However, there are addittional considerations.... Within a dataset, ... variables...
 
-Deciding which data visualization to use needs to consider
+Deciding which data visualization to use ....
 
 ## Learning Objectives
 
@@ -15,6 +15,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ## Data types
 
 There are two types of data: numerical and categorical data. A dataset will likely have a mixture of these data types and new variables may be generated using the original data through transformations. Transformations can be used by performing mathemtical operations or converting between data types. Converting numerical data into categorical data is accomplished through binning or by employing a cutoff value. Alternatively, categorical data may need to be encoded as numerals so the data is in a form that a computer or algorithm can process (e.g., machine readable).  
+
 
 ### Numerical data
 
@@ -82,12 +83,52 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 ### Ranking and distribution plots
 
+#### Violin Plots
+
+#### Boxplots
+
+#### Ridgeline plots
+
+#### Raincloud plots
+
+<u>The strengths of the plots that help you compare groups</u>
+
+<b>Violin</b> plots are good if you want to look at distribution characteristics (e.g., skew or multimodality) at a glance.
+
+<b>Boxplots</b> are great if you want to see the data and general summary statistics (e.g., median).
+
+<b>Ridgeline</b> plots are great at comparing distributions of lots of groups.
+
+<b>Raincloud</b> plots are great when you want to go deep and see everything for a small number of groups (exploratory analysis)
+
 ### Group composition and response plots
 
+#### Stacked bar charts
+
+#### Waterfall plots
+
+#### Heatmaps
+
+<u>The strengths of the plots for gorup composition and response</u>
+
+<b>Stacked bar<b> charts are good if you want to look at how subgroup composition changes at a glane over time, but it is less useful with lots of subgroups.
+
+<b>Waterfall</b> plots are good if you have a baseline to compare to for (1) a single time point, (2) many samples/patients, and (3) clearly know what above ore below that baseline means.
+
+<b>Heatmaps</b> are good if you have at least 3 variables that you need to visualize and want to use color as the primary means to communicate the point of the visualization (e.g., the range of values, correlation, areas of density, patterns across groups or time)
+
 ### Summarizing complex relationships plots
+
+<u>The strengths of the plots for summarizing complex relationships</u>
+
+<b>Caterpillar</b> plots are good if you want to look at effects and variation at a glance to identify the best/worst (the extremes) or see the overall range.
+
+<b>Sankey diagrams</b> are good if you want to look at the possible trajectories of symptoms, treatments, etc. and it's important to know what combinations occur.
 
 ### Field standard plots
 
 ## Galleries
 
 ## Summary
+
+When choosing a data visualization to meet your needs, use the simplest or most mainstream plot you can! Make sure that the plot works with your data type(s), number of variables, and the goal or research question. Use design tools to develop your visualization before switching to a more complex plot. These design tools include utilizing facets or subplots, dashed lines and text labels, and varying colors, textures, or shapes. 
