@@ -1,27 +1,30 @@
 # Which visualization should I use?
 
-A data visualization is made up of the represented data as well as the means by which the data is represented: textual and graphical design elements.
-
-The type(s) and amount of data that you're visualizing as well as the question you are trying to answer or message you want to communicate greatly impact the types of plots that you will use in your visualization.
-
-Deciding which data visualization to use ....
+A data visualization represents data in a simplified way. The visualization is made up of the represented data as well as the means by which the data is represented: textual and graphical design elements. Each conventional plot type utilizes a combination of design elements in a predictable way or layout. The design elements are the building blocks for the data visualizations. Deciding which design elements and plot type to use relies on several considerations: The type(s) and amount of data that you're visualizing as well as the question you are trying to answer or message you want to communicate.
 
 ## Learning Objectives
 
-```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This chapter will demonstrate how to describe the type or types of data within your dataset, explain how data is encoded within data visualizations, analyze which plot works with your data types and the question you want to answer, evaluate strengths and weaknesses of various standard plots, and identify resources that can help youchoose which plot works for you."}
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This chapter will demonstrate how to describe the type or types of data within your dataset, explain how data is encoded within data visualizations, analyze which plot works with your data types and the question you want to answer, evaluate strengths and weaknesses of various standard plots, and identify resources that can help you choose which plot works for you."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_31#slide=id.g3a4b3643292_0_31")
 ```
 
 ## Data types
 
-There are two types of data: numerical and categorical data. A dataset will likely have a mixture of these data types and new variables may be generated using the original data through transformations. Transformations can be used by performing mathemtical operations or converting between data types. Converting numerical data into categorical data is accomplished through binning or by employing a cutoff value. Alternatively, categorical data may need to be encoded as numerals so the data is in a form that a computer or algorithm can process (e.g., machine readable). <ADD REF>  
+A dataset is a collection of records or observations. This course assumes that the dataset you are going to visualize has been processed and wrangled such that it is a "structured dataset." In structured datasets, typically each row (or "record") contains observations for a single sample or patient. Each column is a different observation or variable for that sample or patient. Every variable will be unique either because different things are being measured or documented or because the same thing is being measured at different time points. When thinking about the amount of data that will be displayed in a visualization, there are two different considerations: the number of observations (the number of rows) and the number of variables (which and how many columns).
 
+<details><summary>Wide vs Long datasets</summary>
+
+Some datasets may utilize a "long" approach to stack similar variables on top of each other with a new column helping to distinguish them and repeating record IDs across multiple rows; but this "long" approach is typically used as input to visualization software.
+
+</details>
+
+There are two main types of data within a dataset: **numerical** and **categorical** data. A dataset will likely have a mixture of these data types and new variables may be generated using the original data through transformations. Transformations can be used by performing mathemtical operations or converting between data types. Converting numerical data into categorical data is accomplished through binning or by employing a cutoff value. Alternatively, categorical data may need to be encoded as numerals so the data is in a form that requires less storage or so that a computer or algorithm can process it (e.g., machine readable). <ADD REF> There may be more specialized data types depending on your research question, such as relational or spatial data, but these tend to be just more complex and more defined format versions of numerical and categorical data.
 
 ### Numerical data
 
-Numerical data is data that quantitatitevly represents some count or measurement. Mathematical operations such as addition, subtraction, division, multiplication, exponentiation, etc. are appropriate.
+Numerical data is data that **quantitatitevly** represents some count or measurement. Mathematical operations such as addition, subtraction, division, multiplication, exponentiation, etc. are appropriate.
 
-There are two subtypes of numerical data: discrete and continuous. Whole numbers or integers (e.g., 103 and 25,975) are examples of discrete data while decimals (e.g., 98.6 and 32.25) are examples of continuous data.
+There are two subtypes of numerical data: *discrete* and *continuous*. Whole numbers or integers (e.g., 103 and 25,975) are examples of discrete data while decimals (e.g., 98.6 and 32.25) are examples of continuous data.
 
 ```{r eval = FALSE, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
 ottrpal::include_slide("")   
@@ -37,11 +40,13 @@ Examples of numerical data within the biomedical field include
 
 ### Categorical data
 
-Categorical data qualitatively characterizes, categorizes, or groups objects or individuals with labels. Categorical data sometimes may look like numbers when they are group IDs or some sort of ranking or index score. However, A-B-C could be switched out for 1-2-3 making such data categorical data. While you may be able to do some arithmetic operations on these (like finding an average ranking or finding the distance between numerically encoded categories), typically arithmetic operations aren't used for categorical data.
+Categorical data **qualitatively** characterizes, categorizes, or groups objects or individuals with labels. Categorical data sometimes may look like numbers when they are group IDs or some sort of ranking or index score. However, A-B-C could be switched out for 1-2-3 making such data categorical data.
 
-There are two subtypes of categorical data: nominal and ordinal. Nominal data is data that can't be ordered, for example "Case" and "Control". Ordinal data is data that can be ordered, for example "A", "B", "C" or "January 14, 1994", "February 8, 1995", "March 18, 1996".
+Survey data frequently has categorical data that appears as numbers because responses are typically "coded". This is especially true for biomedical data from platforms like REDCap.
 
-Index scores particularly should be treated like categorical data given that they represent categories. However, they often have order to them (are oridinal) and therefore, because the index or score is fundamentally a number, it's made up of other numbers and can be tracked over time.
+There are two subtypes of categorical data: *nominal* and *ordinal*. Nominal data is data that can't be ordered, for example "Case" and "Control". Ordinal data is data that can be ordered, for example "A", "B", "C" or "January 14, 1994", "February 8, 1995", "March 18, 1996".
+
+While you may be able to do some arithmetic operations with ordinal data specifically (like finding an average ranking or finding the distance between numerically encoded categories), typically arithmetic operations aren't appropriate for categorical data and shouldn't be used because the numbers don't have mathematical meaning. Index scores particularly should be treated like categorical data given that they represent categories. However, they often have order to them (are oridinal) and therefore, because the index or score is fundamentally a number, it's made up of other numbers and can be tracked over time, etc.
 
 ```{r eval = FALSE, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
 ottrpal::include_slide("")   
@@ -49,6 +54,7 @@ ottrpal::include_slide("")
 
 Examples of categorical data within the biomeidcal field include
 
+* patient or sample IDs
 * treatment group
 * patient sex
 * tumor location
@@ -57,20 +63,60 @@ Examples of categorical data within the biomeidcal field include
 
 ## Data encodings
 
-Data encoding is the process of representing data using visual elements or graphical attributes. These include
+Data encoding is the process of representing data using visual elements or graphical attributes. These include geometric marks and visual channels which are the building blocks of data visualization. Different graph types utilize different encodings to represent data: geometric marks are typically the primary means of representing data across graph types while the visual channels are usually used as secondary or additional methods (e.g., shape, color, and textures). However, color can be a primary means of data encoding for certain graphs like heatmaps or choropleths <ADD REF>.   
 
-* area
-* lines
+### Geometric marks
+
+These building blocks are also referred to as "geometric marks" and they include
+
 * points
+* lines
+* bars
+* area
+* angle
+
+**Points**: An example of a conventional plot type that uses points is a scatter plot. Points typically are circles but can be other shapes (like triangles or squares), and typically represent one person or sample.
+
+**Lines**: An example of a convetional plot type that uses points is a line plot. Lines connect different data points. Slope may be a value of interest when working with lines, but it's often difficult for audiences to compare slope values visually without labels. Lines may also be trendlines that aren't connecting explicit data points and rather are added to a plot to show a general relationship or trend. Lines are often used to add anootations for summary statistics such as averages as well as medians or quartiles (in boxplots).
+
+**Bars**: Bars use height (vertical bars) or length (horizontal bars) to communicate information about a set of samples. Within bar charts, width typically isn't used to communicate information about data, but for plot types like flow diagrams or histograms, bar width does convey a meaningful value.
+
+**Area**:
+
+**Angles**:
+
+### Visual channels
+
+These visual building blocks are also referred to as "visual channels" and they control the way that the geometric building blocks will appear. You can change the shape, color, or size of a point, but it's still a point. Visual channels include
+
 * position
-* labels
 * shape
 * color
 * textures
+* size
+* transparency
+* tilt
 
-<explain Each design element>
+**Position**: often reflects numerical value with marks that are near each other have more similar values than marks that are further away.
 
-Different graph types utilize different encodings to represent data. Certain encodings are typically the primary means of representing data across graph types while others are usually used as secondary or additional methods (e.g., shape, color, and textures). However, color can be a primary means of data encoding for certain graphs like heatmaps or choropleths <ADD REF>.   
+**Shape**: may reflect categorization or group membership
+
+**Colors**: may reflect categorization or group membership
+
+**Textures**: Sometimes used in place of or as a supplement to color
+
+**Size**:
+
+**Transparency**:
+
+**Tilt**:
+
+### Additional design tools
+
+* labels
+* facets or subplots
+* line types or width
+
 
 ## Goals of data visualization
 
