@@ -66,7 +66,7 @@ Examples of categorical data within the biomeidcal field include
 
 Data encoding is the process of representing data using visual elements or graphical attributes. These include geometric marks and visual channels which are the building blocks of data visualization. Different graph types utilize different encodings to represent data: geometric marks are typically the primary means of representing data across graph types while the visual channels are usually used as secondary or additional methods (e.g., shape, color, and textures). However, color can be a primary means of data encoding for certain graphs like heatmaps or choropleths <ADD REF>.   
 
-### Geometric marks {.tabset}
+### Geometric marks {.tabset .unnumbered}
 
 These building blocks are also referred to as "geometric marks" and they include
 
@@ -96,7 +96,7 @@ An example of a convetional plot type that uses **lines** is a line plot. Lines 
 
 **Angles** are most commonly used to represent numerical values such as proportions but can also be used to represent direction rather than just magnitude/size (through use of arrows or slope). Angles are the primary geometric mark used in pie charts.
 
-### Visual channels {.tabset}
+### Visual channels {.tabset .unnumbered}
 
 These visual building blocks are also referred to as "visual channels" and they control the way that the geometric building blocks will appear. You can change the shape, color, or size of a point, but it's still a point. Visual channels include
 
@@ -136,7 +136,7 @@ These visual building blocks are also referred to as "visual channels" and they 
 
 **Tilt** is another word for angles and can be used as a visual channel, not just a geometric mark. Tilt is used to represent proportions or trends (such as slope). While helpful for comparisons, audiences often find it difficult to compare tilt precisely and designers should not rely on tilt to communicate main messages.
 
-### Additional design tools {.tabset}
+### Additional design tools {.tabset .unnumbered}
 
 These additional design tools may or may not encode data, but do separate out data to enhance clarity and interpretability. The actual group membership will affect what is labeled or separated out, but often other visual design channels (like color) may be used to communicate group membership in a redundant way. These design tools are especially effective at improving the clarity of a visualization without having to change plot types. So if you're building a data visualization and it's a little too cluttered or difficult to interpet, try utilizing one of these design tools before switching plot types to a more complex plot type.
 
@@ -182,7 +182,7 @@ There are many different possible goals for creating a data visualization. Among
 
 ## Standard graph types
 
-### Conventional graphs {.tabset}
+### Conventional graphs
 
 Conventional graph types include histograms, scatter plots, bar plots, and line charts. Each of these are used to answer a different question.
 
@@ -197,7 +197,7 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 <describe how other types of data, additional variables, or additional data encodings may be used for these graph types.>
 
-### Ranking and distribution plots
+### Ranking and distribution plots {.tabset .unnumbered}
 
 #### Violin Plots
 
@@ -290,7 +290,7 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 <b>Raincloud</b> plots are great when you want to go deep and see everything for a small number of groups (exploratory analysis)
 
-### Group composition and response plots {.tabset}
+### Group composition and response plots {.tabset .unnumbered}
 
 #### Stacked bar charts
 
@@ -344,7 +344,7 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 <b>Heatmaps</b> are good if you have at least 3 variables that you need to visualize and want to use color as the primary means to communicate the point of the visualization (e.g., the range of values, correlation, areas of density, patterns across groups or time)
 
-### Summarizing complex relationships plots {.tabset}
+### Summarizing complex relationships plots {.tabset .unnumbered}
 
 #### Caterpillar plots
 
