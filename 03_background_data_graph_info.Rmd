@@ -66,7 +66,7 @@ Examples of categorical data within the biomeidcal field include
 
 Data encoding is the process of representing data using visual elements or graphical attributes. These include geometric marks and visual channels which are the building blocks of data visualization. Different graph types utilize different encodings to represent data: geometric marks are typically the primary means of representing data across graph types while the visual channels are usually used as secondary or additional methods (e.g., shape, color, and textures). However, color can be a primary means of data encoding for certain graphs like heatmaps or choropleths <ADD REF>.   
 
-### Geometric marks {.tabset .unnumbered}
+### Geometric marks {.tabset}
 
 These building blocks are also referred to as "geometric marks" and they include
 
@@ -76,27 +76,29 @@ These building blocks are also referred to as "geometric marks" and they include
 * area
 * angle
 
-#### Points
+#### Points {-}
 
 An example of a conventional plot type that uses **points** is a scatter plot. Points typically are circles but can be other shapes (like triangles or squares), and typically represent one person or sample.
 
-#### Lines
+#### Lines {-}
 
 An example of a convetional plot type that uses **lines** is a line plot. Lines connect different data points. Slope may be a value of interest when working with lines, but it's often difficult for audiences to compare slope values visually without labels. Lines may also be trendlines that aren't connecting explicit data points and rather are added to a plot to show a general relationship or trend. Lines are often used to add anootations for summary statistics such as averages as well as medians or quartiles (in boxplots).
 
-#### Bars
+#### Bars {-}
 
 **Bars** use height (vertical bars) or length (horizontal bars) to communicate information about a set of samples. Within bar charts, width typically isn't used to communicate information about data, but for plot types like flow diagrams or histograms, bar width does convey a meaningful value.
 
-#### Area
+#### Area {-}
 
 **Area** is often proportional to the amount of data its representing rather than the raw data values itself. Larger areas correspond to larger data values. Area is commonly used in density plots
 
-#### Angles
+#### Angles {-}
 
 **Angles** are most commonly used to represent numerical values such as proportions but can also be used to represent direction rather than just magnitude/size (through use of arrows or slope). Angles are the primary geometric mark used in pie charts.
 
-### Visual channels {.tabset .unnumbered}
+### {-}
+
+### Visual channels {.tabset}
 
 These visual building blocks are also referred to as "visual channels" and they control the way that the geometric building blocks will appear. You can change the shape, color, or size of a point, but it's still a point. Visual channels include
 
@@ -108,35 +110,37 @@ These visual building blocks are also referred to as "visual channels" and they 
 * size
 * tilt
 
-#### Position
+#### Position {-}
 
 **Position** often reflects numerical value with marks that are near each other having more similar values than marks that are further away
 
-#### Shape
+#### Shape {-}
 
 **Shape** may reflect categorization or group membership
 
-#### Line type
+#### Line type {-}
 
 **Line types** can be used much like shape to communicate categorization or group membership
 
-#### Color
+#### Color {-}
 
 **Color** may reflect categorization or group membership
 
-#### Pattern
+#### Pattern {-}
 
 **Pattern** is sometimes used in place of or as a supplement to color to reflect categorization or group membership. For the recurring pattern to be recognized, it ofen needs to be used with geometric marks that have enough area for the pattern to be distinguishable.
 
-#### Size
+#### Size {-}
 
 **Size** is used to encode quantitative data by altering physical attributes of the geometric marks: thickness of a line, radius of a point, etc. Changes in size are often proportional to the quantiative data with larger sizes corresponding to larger values.
 
-#### Tilt
+#### Tilt {-}
 
 **Tilt** is another word for angles and can be used as a visual channel, not just a geometric mark. Tilt is used to represent proportions or trends (such as slope). While helpful for comparisons, audiences often find it difficult to compare tilt precisely and designers should not rely on tilt to communicate main messages.
 
-### Additional design tools {.tabset .unnumbered}
+### {-}
+
+### Additional design tools {.tabset}
 
 These additional design tools may or may not encode data, but do separate out data to enhance clarity and interpretability. The actual group membership will affect what is labeled or separated out, but often other visual design channels (like color) may be used to communicate group membership in a redundant way. These design tools are especially effective at improving the clarity of a visualization without having to change plot types. So if you're building a data visualization and it's a little too cluttered or difficult to interpet, try utilizing one of these design tools before switching plot types to a more complex plot type.
 
@@ -144,17 +148,19 @@ These additional design tools may or may not encode data, but do separate out da
 * facets or subplots
 * transparency
 
-#### Labels
+#### Labels {-}
 
 **Labels** include axis labels, titles, and direct annotations within the plot perhaps specifying a specific summary statistic/number or pointing out the name/value of a specific data point or line. They may be combined with dashed lines, colors, or other visual channels to add further clarity.
 
-#### Subplots
+#### Subplots {-}
 
 **Subplots**, also known as faceting, subplots separates out the data into different panels based on group membership. The same plot type will be utilized in each panel. Panels may or may not use the same scaling and axis limits.
 
-#### Transparency
+#### Transparency {-}
 
 **Transparency** controls the opacity of the geometric marks. If an area appears less transparent, there is a greater density of data there than areas that appear more transparent. This visual channel is especially helpful to distinguish groups that overlap.
+
+### {-}
 
 ## Coordinate system
 
@@ -197,9 +203,9 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 <describe how other types of data, additional variables, or additional data encodings may be used for these graph types.>
 
-### Ranking and distribution plots {.tabset .unnumbered}
+### Ranking and distribution plots {.tabset}
 
-#### Violin Plots
+#### Violin Plots {-}
 
 **Description**: Displays the density of data where narrow sections correspond to lower density and wider sections correspond to higher density. The plots generally resemble the outline of a violin.
 
@@ -230,7 +236,7 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 **Example plot**
 
-#### Boxplots
+#### Boxplots {-}
 
 **Description**:
 
@@ -244,7 +250,7 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 **Example plot**
 
-#### Ridgeline plots
+#### Ridgeline plots {-}
 
 **Description**: Shows the distribution of multiple categories of numerical data, using densitites (half a violin). Looks like stacked, but slightly offset mountain ridges.
 
@@ -264,7 +270,7 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 **Example plot**
 
-#### Raincloud plots
+#### Raincloud plots {-}
 
 **Description**:
 
@@ -278,7 +284,7 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 **Example plot**
 
-###
+### {-}
 
 <u>The strengths of the plots that help you compare groups</u>
 
@@ -290,23 +296,9 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 <b>Raincloud</b> plots are great when you want to go deep and see everything for a small number of groups (exploratory analysis)
 
-### Group composition and response plots {.tabset .unnumbered}
+### Group composition and response plots {.tabset}
 
-#### Stacked bar charts
-
-**Description**:
-
-**When to use**:
-
-**Strengths**:
-
-**Weaknesses**:
-
-**Alternatives**:
-
-**Example plot**
-
-#### Waterfall plots
+#### Stacked bar charts {-}
 
 **Description**:
 
@@ -320,7 +312,7 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 **Example plot**
 
-#### Heatmaps
+#### Waterfall plots {-}
 
 **Description**:
 
@@ -334,7 +326,21 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 **Example plot**
 
-###
+#### Heatmaps {-}
+
+**Description**:
+
+**When to use**:
+
+**Strengths**:
+
+**Weaknesses**:
+
+**Alternatives**:
+
+**Example plot**
+
+### {-}
 
 <u>The strengths of the plots for gorup composition and response</u>
 
@@ -344,23 +350,9 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 <b>Heatmaps</b> are good if you have at least 3 variables that you need to visualize and want to use color as the primary means to communicate the point of the visualization (e.g., the range of values, correlation, areas of density, patterns across groups or time)
 
-### Summarizing complex relationships plots {.tabset .unnumbered}
+### Summarizing complex relationships plots {.tabset}
 
-#### Caterpillar plots
-
-**Description**:
-
-**When to use**:
-
-**Strengths**:
-
-**Weaknesses**:
-
-**Alternatives**:
-
-**Example plot**
-
-#### Sankey diagrams
+#### Caterpillar plots {-}
 
 **Description**:
 
@@ -374,7 +366,21 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 
 **Example plot**
 
-###
+#### Sankey diagrams {-}
+
+**Description**:
+
+**When to use**:
+
+**Strengths**:
+
+**Weaknesses**:
+
+**Alternatives**:
+
+**Example plot**
+
+### {-}
 
 <u>The strengths of the plots for summarizing complex relationships</u>
 
