@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Which visualization should I use? | Considerations for Data Visualization</title>
+  <meta name="description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Which visualization should I use? | Considerations for Data Visualization" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Which visualization should I use? | Considerations for Data Visualization" />
+  
+  <meta name="twitter:description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/ITN_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="what-is-data-visualization.html"/>
+<link rel="next" href="high-quality-and-inclusive-data-visualizations.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<base target="_blank">
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="assets/style_ITN.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.itcrtraining.org/"><img src="assets/ITN_logo.png" style="padding-left: 15px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#available-course-formats"><i class="fa fa-check"></i><b>0.1</b> Available Course Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#motivation"><i class="fa fa-check"></i><b>1.1</b> Motivation</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#target-audience"><i class="fa fa-check"></i><b>1.2</b> Target audience</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#curriculum"><i class="fa fa-check"></i><b>1.3</b> Curriculum</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#objectives"><i class="fa fa-check"></i><b>1.4</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html"><i class="fa fa-check"></i><b>2</b> What is Data Visualization?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html#learning-objectives"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html#what-is-data-visualization-1"><i class="fa fa-check"></i><b>2.2</b> What is Data Visualization?</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html#exploratory-data-analysis-eda"><i class="fa fa-check"></i><b>2.2.1</b> Exploratory Data Analysis (EDA)</a></li>
+<li class="chapter" data-level="2.2.2" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html#polished-visualizations-for-sharing"><i class="fa fa-check"></i><b>2.2.2</b> Polished Visualizations for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html#why-is-data-visualization-so-important"><i class="fa fa-check"></i><b>2.3</b> Why is data visualization so important?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html"><i class="fa fa-check"></i><b>3</b> Which visualization should I use?</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#learning-objectives-1"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#data-types"><i class="fa fa-check"></i><b>3.2</b> Data types</a></li>
+<li class="chapter" data-level="3.3" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#graph-types"><i class="fa fa-check"></i><b>3.3</b> Graph types</a></li>
+<li class="chapter" data-level="3.4" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#data-encodings"><i class="fa fa-check"></i><b>3.4</b> Data encodings</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#shape"><i class="fa fa-check"></i><b>3.4.1</b> Shape</a></li>
+<li class="chapter" data-level="3.4.2" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#color"><i class="fa fa-check"></i><b>3.4.2</b> Color</a></li>
+<li class="chapter" data-level="3.4.3" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#area-line-point"><i class="fa fa-check"></i><b>3.4.3</b> Area, Line, point, …</a></li>
+<li class="chapter" data-level="3.4.4" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#labels"><i class="fa fa-check"></i><b>3.4.4</b> Labels</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html"><i class="fa fa-check"></i><b>4</b> High quality and inclusive data visualizations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#learning-objectives-2"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#visual-design-principles"><i class="fa fa-check"></i><b>4.2</b> Visual Design Principles</a></li>
+<li class="chapter" data-level="4.3" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#accessibility-considerations"><i class="fa fa-check"></i><b>4.3</b> Accessibility Considerations</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#color-palettes"><i class="fa fa-check"></i><b>4.3.1</b> Color palettes</a></li>
+<li class="chapter" data-level="4.3.2" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#labels-1"><i class="fa fa-check"></i><b>4.3.2</b> Labels</a></li>
+<li class="chapter" data-level="4.3.3" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#captions-and-alternative-text-descriptions"><i class="fa fa-check"></i><b>4.3.3</b> Captions and alternative text descriptions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#ethical-considerations"><i class="fa fa-check"></i><b>4.4</b> Ethical Considerations</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#data-distortions"><i class="fa fa-check"></i><b>4.4.1</b> Data Distortions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#annotations-and-other-points-of-reference"><i class="fa fa-check"></i><b>4.5</b> Annotations and other points of reference</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="wrapping-up.html"><a href="wrapping-up.html"><i class="fa fa-check"></i><b>5</b> Wrapping up</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="wrapping-up.html"><a href="wrapping-up.html#learning-objectives-3"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="wrapping-up.html"><a href="wrapping-up.html#in-summary"><i class="fa fa-check"></i><b>5.2</b> In summary</a></li>
+<li class="chapter" data-level="5.3" data-path="wrapping-up.html"><a href="wrapping-up.html#additional-considerations"><i class="fa fa-check"></i><b>5.3</b> Additional Considerations</a></li>
+<li class="chapter" data-level="5.4" data-path="wrapping-up.html"><a href="wrapping-up.html#see-next"><i class="fa fa-check"></i><b>5.4</b> See next</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://www.ottrproject.org/" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown using</a> </p>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template"> The OTTR Template by:</a></p>
+<p style="text-align:center;"> <a href="http://jhudatascience.org/"> The Johns Hopkins Data Science Lab </a></p>
+<a href="http://jhudatascience.org/"><img src="https://jhudatascience.org/images/dasl.png" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/hc8Xt3Y2Znjb6M4Y7"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Considerations for Data Visualization</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_ITN.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/itcr_main_image.png">
+</div>
+<div id="which-visualization-should-i-use" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Which visualization should I use?<a href="which-visualization-should-i-use.html#which-visualization-should-i-use" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A data visualization is made up of data and …</p>
+<p>Deciding which data visualization to use …</p>
+<div id="learning-objectives-1" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Learning Objectives<a href="which-visualization-should-i-use.html#learning-objectives-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This chapter will cover:</p>
+<ul>
+<li>{LO1}</li>
+<li>{LO2}</li>
+</ul>
+</div>
+<div id="data-types" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Data types<a href="which-visualization-should-i-use.html#data-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="graph-types" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Graph types<a href="which-visualization-should-i-use.html#graph-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="data-encodings" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Data encodings<a href="which-visualization-should-i-use.html#data-encodings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="shape" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Shape<a href="which-visualization-should-i-use.html#shape" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="color" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Color<a href="which-visualization-should-i-use.html#color" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="area-line-point" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Area, Line, point, …<a href="which-visualization-should-i-use.html#area-line-point" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="labels" class="section level3 hasAnchor" number="3.4.4">
+<h3><span class="header-section-number">3.4.4</span> Labels<a href="which-visualization-should-i-use.html#labels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+</div>
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="what-is-data-visualization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="high-quality-and-inclusive-data-visualizations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
