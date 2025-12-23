@@ -1,3 +1,7 @@
+---
+output: html_document
+---
+
 # Which visualization should I use?
 
 A data visualization represents data in a simplified way. The visualization is made up of the represented data as well as the means by which the data is represented: textual and graphical design elements. Each conventional plot type utilizes a combination of design elements in a predictable way or layout. The design elements are the building blocks for the data visualizations. Deciding which design elements and plot type to use relies on several considerations: The type(s) and amount of data that you're visualizing as well as the question you are trying to answer or message you want to communicate.
