@@ -1,8 +1,0 @@
-1-Introduction.md
-2-What-is-Data-Visualization.md
-3-Which-visualization-should-I-use.md
-4-High-quality-and-inclusive-data-visualizations.md
-5-Wrapping-up.md
-6-References.md
-About-this-Course.md
-About-the-Authors.md
