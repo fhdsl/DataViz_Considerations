@@ -16,7 +16,7 @@ General tips to reduce complexity when you can:
 * Use your visualization to answer **only** one question at a time
 * Add annotations or labels (lines, names, colors, etc.)
 * Minimize white space, but don't over clutter
-* Use clear and accurate labelling and axis names
+* Use clear and accurate labeling and axis names
   * Readable (large text)
   * Understandable (e..g, avoid jargon and define uncommon acronyms)
 * Separate plot elements or overlapping data
