@@ -46,7 +46,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
   * Numerical data & categorical data
   * Several variables are required
   * Primary data encodings are points and lines
-  * Used to find a ranking or for meta-anlayses or comparing models or odds ratios
+  * Used to find a ranking or for meta-analyses or comparing models or odds ratios
 
 **Strengths**:
 
@@ -87,7 +87,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 **Weaknesses**:
 
   * The snapshot compares two time points but not a range of time
-  * For tumor response, there's an accepted notion of waht above or below the baseline means but this might not be true for other applications
+  * For tumor response, there's an accepted notion of what above or below the baseline means but this might not be true for other applications
 
 **Alternatives**:
 

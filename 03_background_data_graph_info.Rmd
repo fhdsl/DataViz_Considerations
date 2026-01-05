@@ -22,11 +22,11 @@ Some datasets may utilize a "long" approach to stack similar variables on top of
 
 </details>
 
-There are two main types of data within a dataset: **numerical** and **categorical** data. A dataset will likely have a mixture of these data types and new variables may be generated using the original data through transformations. Transformations can be used by performing mathemtical operations or converting between data types. Converting numerical data into categorical data is accomplished through binning or by employing a cutoff value. Alternatively, categorical data may need to be encoded as numerals so the data is in a form that requires less storage or so that a computer or algorithm can process it (e.g., machine readable). <ADD REF> There may be more specialized data types depending on your research question, such as relational or spatial data, but these tend to be just more complex and more defined format versions of numerical and categorical data.
+There are two main types of data within a dataset: **numerical** and **categorical** data. A dataset will likely have a mixture of these data types and new variables may be generated using the original data through transformations. Transformations can be used by performing mathematical operations or converting between data types. Converting numerical data into categorical data is accomplished through binning or by employing a cutoff value. Alternatively, categorical data may need to be encoded as numerals so the data is in a form that requires less storage or so that a computer or algorithm can process it (e.g., machine readable). <ADD REF> There may be more specialized data types depending on your research question, such as relational or spatial data, but these tend to be just more complex and more defined format versions of numerical and categorical data.
 
 ### Numerical data
 
-Numerical data is data that **quantitatitevly** represents some count or measurement. Mathematical operations such as addition, subtraction, division, multiplication, exponentiation, etc. are appropriate.
+Numerical data is data that **quantitatively** represents some count or measurement. Mathematical operations such as addition, subtraction, division, multiplication, exponentiation, etc. are appropriate.
 
 There are two subtypes of numerical data: *discrete* and *continuous*. Whole numbers or integers (e.g., 103 and 25,975) are examples of discrete data while decimals (e.g., 98.6 and 32.25) are examples of continuous data.
 
@@ -50,13 +50,13 @@ Survey data frequently has categorical data that appears as numbers because resp
 
 There are two subtypes of categorical data: *nominal* and *ordinal*. Nominal data is data that can't be ordered, for example "Case" and "Control". Ordinal data is data that can be ordered, for example "A", "B", "C" or "January 14, 1994", "February 8, 1995", "March 18, 1996".
 
-While you may be able to do some arithmetic operations with ordinal data specifically (like finding an average ranking or finding the distance between numerically encoded categories), typically arithmetic operations aren't appropriate for categorical data and shouldn't be used because the numbers don't have mathematical meaning. Index scores particularly should be treated like categorical data given that they represent categories. However, they often have order to them (are oridinal) and therefore, because the index or score is fundamentally a number, it's made up of other numbers and can be tracked over time, etc.
+While you may be able to do some arithmetic operations with ordinal data specifically (like finding an average ranking or finding the distance between numerically encoded categories), typically arithmetic operations aren't appropriate for categorical data and shouldn't be used because the numbers don't have mathematical meaning. Index scores particularly should be treated like categorical data given that they represent categories. However, they often have order to them (are ordinal) and therefore, because the index or score is fundamentally a number, it's made up of other numbers and can be tracked over time, etc.
 
 ```{r eval = FALSE, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
 ottrpal::include_slide("")   
 ```
 
-Examples of categorical data within the biomeidcal field include
+Examples of categorical data within the biomedical field include
 
 * patient or sample IDs
 * treatment group
@@ -86,7 +86,7 @@ An example of a conventional plot type that uses **points** is a scatter plot. P
 
 #### Lines {-}
 
-An example of a convetional plot type that uses **lines** is a line plot. Lines connect different data points. Slope may be a value of interest when working with lines, but it's often difficult for audiences to compare slope values visually without labels. Lines may also be trendlines that aren't connecting explicit data points and rather are added to a plot to show a general relationship or trend. Lines are often used to add anootations for summary statistics such as averages as well as medians or quartiles (in boxplots).
+An example of a conventional plot type that uses **lines** is a line plot. Lines connect different data points. Slope may be a value of interest when working with lines, but it's often difficult for audiences to compare slope values visually without labels. Lines may also be trendlines that aren't connecting explicit data points and rather are added to a plot to show a general relationship or trend. Lines are often used to add annotations for summary statistics such as averages as well as medians or quartiles (in boxplots).
 
 #### Bars {-}
 
@@ -132,11 +132,11 @@ These visual building blocks are also referred to as "visual channels" and they 
 
 #### Pattern {-}
 
-**Pattern** is sometimes used in place of or as a supplement to color to reflect categorization or group membership. For the recurring pattern to be recognized, it ofen needs to be used with geometric marks that have enough area for the pattern to be distinguishable.
+**Pattern** is sometimes used in place of or as a supplement to color to reflect categorization or group membership. For the recurring pattern to be recognized, it often needs to be used with geometric marks that have enough area for the pattern to be distinguishable.
 
 #### Size {-}
 
-**Size** is used to encode quantitative data by altering physical attributes of the geometric marks: thickness of a line, radius of a point, etc. Changes in size are often proportional to the quantiative data with larger sizes corresponding to larger values.
+**Size** is used to encode quantitative data by altering physical attributes of the geometric marks: thickness of a line, radius of a point, etc. Changes in size are often proportional to the quantitative data with larger sizes corresponding to larger values.
 
 #### Tilt {-}
 
@@ -146,7 +146,7 @@ These visual building blocks are also referred to as "visual channels" and they 
 
 ### Additional design tools {.tabset}
 
-These additional design tools may or may not encode data, but do separate out data to enhance clarity and interpretability. The actual group membership will affect what is labeled or separated out, but often other visual design channels (like color) may be used to communicate group membership in a redundant way. These design tools are especially effective at improving the clarity of a visualization without having to change plot types. So if you're building a data visualization and it's a little too cluttered or difficult to interpet, try utilizing one of these design tools before switching plot types to a more complex plot type.
+These additional design tools may or may not encode data, but do separate out data to enhance clarity and interpretability. The actual group membership will affect what is labeled or separated out, but often other visual design channels (like color) may be used to communicate group membership in a redundant way. These design tools are especially effective at improving the clarity of a visualization without having to change plot types. So if you're building a data visualization and it's a little too cluttered or difficult to interpret, try utilizing one of these design tools before switching plot types to a more complex plot type.
 
 * labels
 * facets or subplots
@@ -168,11 +168,11 @@ These additional design tools may or may not encode data, but do separate out da
 
 ## Coordinate system
 
-Most data visualizations will utilize a two dimensional XY coordinate system (or Cartesian plane) with a horizontal (x-) axis and a vertical (y-) axis that are perpendicular and intersect where x = 0 and y = 0. Each variable will be assigned to one of the axes. If working with regression or where you have a dependent varaible (outcome or event being measured or observed) and an independent variable (the variable being controlled or changed/purposefully manipulated), the independent variable is assigned to the x-axis and the dependent variable is assigned to the y-axis. When working with numerical data, this XY coordinate system allows for the positioning of the numerical data along these axes. When working with a categorical data, the categories can still be positioned along of the numerical axes, however the corresponding numerical positions will not have the same meaning they would otherwise have. The two axes can utilize different units (e..g, micrograms per milliliter, percentage, grams, log fold change, etc.) and scales, however, if the same units are used for the two axes, then the scaling should be equal for both axes to avoid distortion.
+Most data visualizations will utilize a two dimensional XY coordinate system (or Cartesian plane) with a horizontal (x-) axis and a vertical (y-) axis that are perpendicular and intersect where x = 0 and y = 0. Each variable will be assigned to one of the axes. If working with regression or where you have a dependent variable (outcome or event being measured or observed) and an independent variable (the variable being controlled or changed/purposefully manipulated), the independent variable is assigned to the x-axis and the dependent variable is assigned to the y-axis. When working with numerical data, this XY coordinate system allows for the positioning of the numerical data along these axes. When working with a categorical data, the categories can still be positioned along of the numerical axes, however the corresponding numerical positions will not have the same meaning they would otherwise have. The two axes can utilize different units (e..g, micrograms per milliliter, percentage, grams, log fold change, etc.) and scales, however, if the same units are used for the two axes, then the scaling should be equal for both axes to avoid distortion.
 
 <details><summary>Additional coordinate systems</summary>
 
-Additional coordinate systems are appropriate for some specific visualizations such as a three dimensional XYZ coordinate system, the polar coordinate system (e.g., pie charts and spider charts), and a geospatial coordiante system for maps such as the projected coordinate system.
+Additional coordinate systems are appropriate for some specific visualizations such as a three dimensional XYZ coordinate system, the polar coordinate system (e.g., pie charts and spider charts), and a geospatial coordinate system for maps such as the projected coordinate system.
 
   * The XYZ coordinate system adds a third axis (z-) that intersects the XY-plane perpendicularly at x = 0, y = 0, and z = 0.
   * The polar coordinate system uses angles to position groups and radii length to represent magnitude or group size.
@@ -238,7 +238,7 @@ These plots are primarily
 **Strengths**:
 
   * Better at comparing multiple distributions than histograms (the conventional plot type)
-  * Displays distribution shape such as skey and modes better than boxplots do
+  * Displays distribution shape such as skew and modes better than boxplots do
 
 **Weaknesses**:
 
@@ -297,7 +297,7 @@ Additions of jitter typically use randomness to space the points over the box so
 
 #### Ridgeline plots {-}
 
-**Description**: Shows the distribution of multiple categories of numerical data, using densitites (half a violin). Looks like stacked, but slightly offset mountain ridges.
+**Description**: Shows the distribution of multiple categories of numerical data, using densities (half a violin). Looks like stacked, but slightly offset mountain ridges.
 
 **When to use**:
 
@@ -347,7 +347,7 @@ Additions of jitter typically use randomness to space the points over the box so
 **Weaknesses**:
 
   * A lot is going on
-  * Harder to interpet and cluttered or squished if there are more than a few groups
+  * Harder to interpret and cluttered or squished if there are more than a few groups
 
 **Alternatives**:
 
@@ -373,7 +373,7 @@ Additions of jitter typically use randomness to space the points over the box so
 
 #### Stacked bar charts {-}
 
-**Description**: Displays multiple categories within a single bar, stacked on top (veritcal) or next to (horizontal) each other. Each overall bar represents a group. Within bars, each stack is a sub-category or subgroup.
+**Description**: Displays multiple categories within a single bar, stacked on top (vertical) or next to (horizontal) each other. Each overall bar represents a group. Within bars, each stack is a sub-category or subgroup.
 
 **When to use**:
 
@@ -415,7 +415,7 @@ Additions of jitter typically use randomness to space the points over the box so
   * Categorical or numerical data or a mixture
   * Minimum of 3 variables
   * Primary data encodings are color and position
-  * Used to look at a distribution across samples or change over time/after an intervetion
+  * Used to look at a distribution across samples or change over time/after an intervention
   * May also show pairwise correlation for many groups
   * Not recommended if you need to know or display actual values
   * Often used together with hierarchical clustering or reordering sample location to show trends or areas of similarity
@@ -457,8 +457,8 @@ Additions of jitter typically use randomness to space the points over the box so
   * Requires several variables
   * Primary data encodings are lines, area, and color
   * Used to show change over time
-  * Best with datsets with some sort of longitudinal data or time points with categories at each time point
-  * Examples uses include tracking patient response or syptom trajectories as well as patient cohort stratification
+  * Best with datasets with some sort of longitudinal data or time points with categories at each time point
+  * Examples uses include tracking patient response or symptom trajectories as well as patient cohort stratification
 
 **Strengths**:
 
@@ -467,7 +467,7 @@ Additions of jitter typically use randomness to space the points over the box so
 
 **Weaknesses**:
 
-  * Difficult or complex to interpet
+  * Difficult or complex to interpret
   * Flows that cross or overlap or flows with similar widths can be difficult to compare though interactivity can alleviate this
   * Diagrams don't always clearly and explicitly show sample dropout (discontinue treatment, etc.)
   * Often require specialized tools to create visualization
@@ -486,7 +486,7 @@ Additions of jitter typically use randomness to space the points over the box so
 
 <u>The strengths of the plots for group composition, complex relationships, and response</u>
 
-<b>Stacked bar</b> charts are good if you want to look at how subgroup composition changes at a glane over time, but it is less useful with lots of subgroups.
+<b>Stacked bar</b> charts are good if you want to look at how subgroup composition changes at a glance over time, but it is less useful with lots of subgroups.
 
 <b>Heatmaps</b> are good if you have at least 3 variables that you need to visualize and want to use color as the primary means to communicate the point of the visualization (e.g., the range of values, correlation, areas of density, patterns across groups or time)
 
