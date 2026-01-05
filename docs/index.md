@@ -1,6 +1,6 @@
 ---
 title: "Considerations for Data Visualization "
-date: "November, 2025"
+date: "January, 2026"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
