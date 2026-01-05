@@ -68,7 +68,7 @@ Examples of categorical data within the biomedical field include
 
 ## Data encodings
 
-Data encoding is the process of representing data using visual elements or graphical attributes. These include geometric marks and visual channels which are the building blocks of data visualization. Different graph types utilize different encodings to represent data: geometric marks are typically the primary means of representing data across graph types while the visual channels are usually used as secondary or additional methods (e.g., shape, color, and textures). However, color can be a primary means of data encoding for certain graphs like heatmaps or choropleths <ADD REF>.   
+Data encoding is the process of representing data using visual elements or graphical attributes. These include geometric marks and visual channels which are the building blocks of data visualization. Different graph types utilize different encodings to represent data: geometric marks are typically the primary means of representing data across graph types while the visual channels are usually used as secondary or supplementary methods (e.g., shape, color, and textures). However, color can be a primary means of data encoding for certain graphs like heatmaps or choropleths <ADD REF>.   
 
 ### Geometric marks {.tabset}
 
@@ -86,7 +86,7 @@ An example of a conventional plot type that uses **points** is a scatter plot. P
 
 #### Lines {-}
 
-An example of a conventional plot type that uses **lines** is a line plot. Lines connect different data points. Slope may be a value of interest when working with lines, but it's often difficult for audiences to compare slope values visually without labels. Lines may also be trendlines that aren't connecting explicit data points and rather are added to a plot to show a general relationship or trend. Lines are often used to add annotations for summary statistics such as averages as well as medians or quartiles (in boxplots).
+An example of a conventional plot type that uses **lines** is a line plot. Lines connect different data points. Slope may be a value of interest when working with lines, but it's often difficult for audiences to compare slope values visually without labels. Lines may also be trendlines that aren't connecting explicit data points and rather are included in a plot to showcase a general relationship or trend. Lines are often used to indicate summary statistics such as averages as well as medians or quartiles (in boxplots).
 
 #### Bars {-}
 
@@ -154,7 +154,7 @@ These additional design tools may or may not encode data, but do separate out da
 
 #### Labels {-}
 
-**Labels** include axis labels, titles, and direct annotations within the plot perhaps specifying a specific summary statistic/number or pointing out the name/value of a specific data point or line. They may be combined with dashed lines, colors, or other visual channels to add further clarity.
+**Labels** include axis labels, titles, and direct annotations within the plot perhaps specifying a specific summary statistic/number or pointing out the name/value of a specific data point or line. They may be combined with dashed lines, colors, or other visual channels to provide further clarity.
 
 #### Subplots {-}
 
@@ -174,7 +174,7 @@ Most data visualizations will utilize a two dimensional XY coordinate system (or
 
 Additional coordinate systems are appropriate for some specific visualizations such as a three dimensional XYZ coordinate system, the polar coordinate system (e.g., pie charts and spider charts), and a geospatial coordinate system for maps such as the projected coordinate system.
 
-  * The XYZ coordinate system adds a third axis (z-) that intersects the XY-plane perpendicularly at x = 0, y = 0, and z = 0.
+  * The XYZ coordinate system utilizes a third axis (z-) that intersects the XY-plane perpendicularly at x = 0, y = 0, and z = 0.
   * The polar coordinate system uses angles to position groups and radii length to represent magnitude or group size.
   * A projected coordinate system is a two dimensional map.
 
@@ -212,7 +212,7 @@ A *histogram* may visualize more than one distribution within the same visualiza
 
 A *scatter plot* may have categorical data that can be encoded with shape or color. Any additional numerical variables beyond the minimum of 2 (one for the x-axis and one for the y-axis) could be encoded with size or color (using a sequential color palette).
 
-A *bar plot* tends to have categories and counts for those categories (two variables, one categorical and one numerical), though a dataset may have just the categories which would need to be counted (which some visualization software can do this for the researcher). Additional data could include some grouping or categorization of the categorical data (another categorical variable) in which case color may be used to encode that additional variable.
+A *bar plot* tends to have categories and counts for those categories (two variables, one categorical and one numerical), though a dataset may have just the categories which would need to be counted (which some visualization software can do this for the researcher). Additional data could represent some grouping or categorization of the categorical data (another categorical variable) in which case color may be used to encode that additional variable.
 
 A *line chart* may or may not use points in addition to lines. It is good practice for the researcher to display the data points and not just the lines connecting them. If the dataset contains additional variables beyond the minimum of 2 (one for the x-axis and one for the y-axis), categorical data could be encoded with shape or color while numerical data could be encoded with size or color (using a sequential color palette).
 
@@ -256,11 +256,11 @@ These plots are primarily
 
 #### Boxplots (with jitter) {-}
 
-**Description**: Boxplots use a box to delineate the median and quartiles of the data with whiskers to display the range and potentially points for outliers. A "jitter" can be utilized to add additional points for each data point.
+**Description**: Boxplots use a box to delineate the median and quartiles of the data with whiskers to display the range and potentially points for outliers. A "jitter" can be utilized to include points for each data point.
 
 <details><summary>Jitter and Randomness</details>
 
-Additions of jitter typically use randomness to space the points over the box so you may need to set a random seed in your analysis to ensure the visualization appears exactly one way consistently. However, it's not a major problem if the jitter points move on a plot as they'll have the same numerical axis location, only moving within the categorical axis.
+Inclusion of jitter typically uses randomness to space the points over the box so you may need to set a random seed in your analysis to ensure the visualization appears exactly one way consistently. However, it's not a major problem if the jitter points move on a plot as they'll have the same numerical axis location, only moving within the categorical axis.
 
 </summary>
 
@@ -383,7 +383,7 @@ Additions of jitter typically use randomness to space the points over the box so
   * Used to find a ranking or change over time
   * Compare sub-categories within a bar or consider how sub-category contribution to the total bar composition changes over time/across bars
   * Avoid if you have a lot of sub-categories or want to compare individual sub-categories to each other
-  * If using more than a couple of categories, consider using proportions (that add up to 100%) on the numerical axis
+  * If using more than a couple of categories, consider using proportions (that sum to 100%) on the numerical axis
 
 **Strengths**:
 
@@ -416,9 +416,9 @@ Additions of jitter typically use randomness to space the points over the box so
   * Minimum of 3 variables
   * Primary data encodings are color and position
   * Used to look at a distribution across samples or change over time/after an intervention
-  * May also show pairwise correlation for many groups
+  * May also exhibit pairwise correlation for many groups
   * Not recommended if you need to know or display actual values
-  * Often used together with hierarchical clustering or reordering sample location to show trends or areas of similarity
+  * Often used together with hierarchical clustering or reordering sample location to highlight trends or areas of similarity
 
 **Strengths**:
 
@@ -443,7 +443,7 @@ Additions of jitter typically use randomness to space the points over the box so
 
   <details><summary>Pairwise correlation: Full matrix vs lower triangle</summary>
 
-  When using a heatmap to display pairwise correlation, the heatmap is symmetrical and displays redundant information (each correlation is displayed twice) because the correlation of A to B is the same as the correlation of B to A. The diagonal will always have perfect correlation because it's comparing a sample or variable to itself. If looking at just the lower triangle, it shows the pairwise correlation only once and removes the redundant information.
+  When using a heatmap to display pairwise correlation, the heatmap is symmetrical and presents redundant information (each correlation is displayed twice) because the correlation of A to B is the same as the correlation of B to A. The diagonal will always have perfect correlation because it's comparing a sample or variable to itself. If looking at just the lower triangle, it presents the pairwise correlation only once and removes the redundant information.
 
   <details>
 
@@ -458,7 +458,7 @@ Additions of jitter typically use randomness to space the points over the box so
   * Primary data encodings are lines, area, and color
   * Used to show change over time
   * Best with datasets with some sort of longitudinal data or time points with categories at each time point
-  * Examples uses include tracking patient response or symptom trajectories as well as patient cohort stratification
+  * Example uses include tracking patient response or symptom trajectories as well as patient cohort stratification
 
 **Strengths**:
 
@@ -469,7 +469,7 @@ Additions of jitter typically use randomness to space the points over the box so
 
   * Difficult or complex to interpret
   * Flows that cross or overlap or flows with similar widths can be difficult to compare though interactivity can alleviate this
-  * Diagrams don't always clearly and explicitly show sample dropout (discontinue treatment, etc.)
+  * Diagrams don't always clearly and explicitly display sample dropout (discontinue treatment, etc.)
   * Often require specialized tools to create visualization
 
 **Alternatives**:
@@ -495,7 +495,7 @@ Additions of jitter typically use randomness to space the points over the box so
 
 ### Field standard plots
 
-There are additional common plots that are "field standard" or customarily used within the biomedical field. These plots (including Waterfall plots, Caterpillar plots, Kaplan-Meier curves, Volcano plots, MA diagrams, etc.) plots will be discussed in the final chapter. When deciding what plot is best for you and your research question, a field standard plot may be the answer given that the audience will be more familiar with such plots.
+There are several common plots that are "field standard" or customarily used within the biomedical field. These plots (including Waterfall plots, Caterpillar plots, Kaplan-Meier curves, Volcano plots, MA diagrams, etc.) plots will be discussed in the final chapter. When deciding what plot is best for you and your research question, a field standard plot may be the answer given that the audience will be more familiar with such plots.
 
 ## Galleries
 
