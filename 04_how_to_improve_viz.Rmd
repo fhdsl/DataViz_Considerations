@@ -1,27 +1,61 @@
-# High quality and inclusive data visualizations
+# High quality and accessible data visualizations
 
-```{r, include = FALSE}
-ottrpal::set_knitr_image_path()
-```
+Creating a high quality data visualization requires more than picking the right plot for your data and your research question. Certainly following visual design principles and utilizing design tools is a part of creating high quality visualization. However, further best practices are needed to ethically present complex data with clarity in a way that is accessible to audiences. This chapter will discuss ways to enhance the clarity and accessibility of data visualizations as well as important ethical considerations.
 
 ## Learning Objectives
 
 ```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Chapter specific LOs go here"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_41#slide=id.g3a4b3643292_0_41")
 ```
+## Presenting complex data with clarity
 
-## Visual Design Principles
+An overly complex plot can be misleading for a number of reasons. These reasons include obscuring something because the plot focuses the viewer's attention on another aspect, not separating high density areas or overlapping plot elements, including too much information, or not specifying specialized language such as acronyms or field specific/technical vocabulary.
 
-## Accessibility Considerations
+General tips to reduce complexity when you can:
+
+* Use your visualization to answer **only** one question at a time
+* Add annotations or labels (lines, names, colors, etc.)
+* Minimize white space, but don't over clutter
+* Use clear and accurate labelling and axis names
+  * Readable (large text)
+  * Understandable (e..g, avoid jargon and define uncommon acronyms)
+* Separate plot elements or overlapping data
+  * Use facets or subplots to separate different categories of data
+  * Increase opacity/transparency
+  * Decrease point size or change the shape
+  * Consider a log transformation
+  * Use a zoomed inset
+
+Reducing complexity enhances clarity and accessibility by helping the viewer know where to focus and providing them with reference points or information they need to know (such as acronym meanings).
+
+## Best practices for accessible visualizations
+
+Reducing complexity is a very important first step in designing accessible visualizations. Beyond reducing complexity, additional considerations are necessary to further enhance accessibility for visualization audiences. Audiences may have visual impairments such as low vision or blindness or color vision deficiency, motor impairments (relevant for interactive visualizations), or dyslexia. Additionally, audiences likely will be unfamiliar with your research and may be distracted when interacting with your research.
+
+This course will mostly focus on making visualizations accessible for those with visual impairments and those unfamiliar with your research.
 
 ### Color palettes
 
-### Labels
+### Contrast
 
-### Captions and alternative text descriptions
+### Text
 
-## Ethical Considerations
+#### Axis labels
 
-### Data Distortions
+#### Annotations
 
-## Annotations and other points of reference
+#### Titles
+
+#### Captions  
+
+### Alternative text descriptions
+
+## Ethical data visualization
+
+Ethical visualization improve viewers' understanding rather than confuse or mislead.
+
+### Accuracy
+
+### Data distortions
+
+### Plagiarism and inspiration
