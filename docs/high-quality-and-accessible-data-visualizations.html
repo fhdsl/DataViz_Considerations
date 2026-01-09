@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 High quality and accessible data visualizations | Considerations for Data Visualization</title>
+  <meta name="description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 High quality and accessible data visualizations | Considerations for Data Visualization" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 High quality and accessible data visualizations | Considerations for Data Visualization" />
+  
+  <meta name="twitter:description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/ITN_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="which-visualization-should-i-use.html"/>
+<link rel="next" href="standard-plots-used-within-the-biomedical-field.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="assets/style_ITN.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.itcrtraining.org/"><img src="assets/ITN_logo.png" style="padding-left: 15px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#available-course-formats"><i class="fa fa-check"></i><b>0.1</b> Available Course Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#motivation"><i class="fa fa-check"></i><b>1.1</b> Motivation</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#target-audience"><i class="fa fa-check"></i><b>1.2</b> Target audience</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#curriculum"><i class="fa fa-check"></i><b>1.3</b> Curriculum</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#objectives"><i class="fa fa-check"></i><b>1.4</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html"><i class="fa fa-check"></i><b>2</b> What is data visualization?</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html#learning-objectives"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html#what-is-data-visualization-1"><i class="fa fa-check"></i><b>2.2</b> What is Data Visualization?</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html#exploratory-visualizations"><i class="fa fa-check"></i><b>2.2.1</b> Exploratory Visualizations</a></li>
+<li class="chapter" data-level="2.2.2" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html#expository-visualizations"><i class="fa fa-check"></i><b>2.2.2</b> Expository Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="what-is-data-visualization.html"><a href="what-is-data-visualization.html#why-is-data-visualization-so-important"><i class="fa fa-check"></i><b>2.3</b> Why is Data Visualization so Important?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html"><i class="fa fa-check"></i><b>3</b> Which visualization should I use?</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#learning-objectives-1"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#data-types"><i class="fa fa-check"></i><b>3.2</b> Data types</a></li>
+<li class="chapter" data-level="3.3" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#graph-types"><i class="fa fa-check"></i><b>3.3</b> Graph types</a></li>
+<li class="chapter" data-level="3.4" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#data-encodings"><i class="fa fa-check"></i><b>3.4</b> Data encodings</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#shape"><i class="fa fa-check"></i><b>3.4.1</b> Shape</a></li>
+<li class="chapter" data-level="3.4.2" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#color"><i class="fa fa-check"></i><b>3.4.2</b> Color</a></li>
+<li class="chapter" data-level="3.4.3" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#area-line-point"><i class="fa fa-check"></i><b>3.4.3</b> Area, Line, point, …</a></li>
+<li class="chapter" data-level="3.4.4" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#labels"><i class="fa fa-check"></i><b>3.4.4</b> Labels</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#questions"><i class="fa fa-check"></i><b>3.5</b> Questions</a></li>
+<li class="chapter" data-level="3.6" data-path="which-visualization-should-i-use.html"><a href="which-visualization-should-i-use.html#galleries"><i class="fa fa-check"></i><b>3.6</b> Galleries</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html"><i class="fa fa-check"></i><b>4</b> High quality and accessible data visualizations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#learning-objectives-2"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#best-practices-for-accessible-visualizations"><i class="fa fa-check"></i><b>4.2</b> Best practices for accessible visualizations</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#color-palettes"><i class="fa fa-check"></i><b>4.2.1</b> Color palettes</a></li>
+<li class="chapter" data-level="4.2.2" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#contrast"><i class="fa fa-check"></i><b>4.2.2</b> Contrast</a></li>
+<li class="chapter" data-level="4.2.3" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#text"><i class="fa fa-check"></i><b>4.2.3</b> Text</a></li>
+<li class="chapter" data-level="4.2.4" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#alternative-text-descriptions"><i class="fa fa-check"></i><b>4.2.4</b> Alternative text descriptions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#ethical-data-visualization"><i class="fa fa-check"></i><b>4.3</b> Ethical data visualization</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#data-inclusion-safety-and-transparency"><i class="fa fa-check"></i><b>4.3.1</b> Data inclusion safety and transparency</a></li>
+<li class="chapter" data-level="4.3.2" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#accuracy-checks"><i class="fa fa-check"></i><b>4.3.2</b> Accuracy checks</a></li>
+<li class="chapter" data-level="4.3.3" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#avoiding-data-distortion"><i class="fa fa-check"></i><b>4.3.3</b> Avoiding data distortion</a></li>
+<li class="chapter" data-level="4.3.4" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#plagiarism-and-inspiration"><i class="fa fa-check"></i><b>4.3.4</b> Plagiarism and inspiration</a></li>
+<li class="chapter" data-level="4.3.5" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#empathy"><i class="fa fa-check"></i><b>4.3.5</b> Empathy</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#improving-visualizations"><i class="fa fa-check"></i><b>4.4</b> Improving visualizations</a></li>
+<li class="chapter" data-level="4.5" data-path="high-quality-and-accessible-data-visualizations.html"><a href="high-quality-and-accessible-data-visualizations.html#summary"><i class="fa fa-check"></i><b>4.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="standard-plots-used-within-the-biomedical-field.html"><a href="standard-plots-used-within-the-biomedical-field.html"><i class="fa fa-check"></i><b>5</b> Standard plots used within the biomedical field</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="standard-plots-used-within-the-biomedical-field.html"><a href="standard-plots-used-within-the-biomedical-field.html#learning-objectives-3"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="standard-plots-used-within-the-biomedical-field.html"><a href="standard-plots-used-within-the-biomedical-field.html#distribution-and-ranking-plots"><i class="fa fa-check"></i><b>5.2</b> Distribution and Ranking Plots</a></li>
+<li class="chapter" data-level="5.3" data-path="standard-plots-used-within-the-biomedical-field.html"><a href="standard-plots-used-within-the-biomedical-field.html#grouping-2"><i class="fa fa-check"></i><b>5.3</b> Grouping 2</a></li>
+<li class="chapter" data-level="5.4" data-path="standard-plots-used-within-the-biomedical-field.html"><a href="standard-plots-used-within-the-biomedical-field.html#grouping-3"><i class="fa fa-check"></i><b>5.4</b> Grouping 3</a></li>
+<li class="chapter" data-level="5.5" data-path="standard-plots-used-within-the-biomedical-field.html"><a href="standard-plots-used-within-the-biomedical-field.html#various-others"><i class="fa fa-check"></i><b>5.5</b> Various others</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="standard-plots-used-within-the-biomedical-field.html"><a href="standard-plots-used-within-the-biomedical-field.html#volcano-plot"><i class="fa fa-check"></i><b>5.5.1</b> Volcano Plot</a></li>
+<li class="chapter" data-level="5.5.2" data-path="standard-plots-used-within-the-biomedical-field.html"><a href="standard-plots-used-within-the-biomedical-field.html#ma-plot"><i class="fa fa-check"></i><b>5.5.2</b> MA Plot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="wrapping-up.html"><a href="wrapping-up.html"><i class="fa fa-check"></i><b>6</b> Wrapping up</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="wrapping-up.html"><a href="wrapping-up.html#learning-objectives-4"><i class="fa fa-check"></i><b>6.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="6.2" data-path="wrapping-up.html"><a href="wrapping-up.html#in-summary"><i class="fa fa-check"></i><b>6.2</b> In Summary</a></li>
+<li class="chapter" data-level="6.3" data-path="wrapping-up.html"><a href="wrapping-up.html#checklist"><i class="fa fa-check"></i><b>6.3</b> Checklist</a></li>
+<li class="chapter" data-level="6.4" data-path="wrapping-up.html"><a href="wrapping-up.html#additional-considerations"><i class="fa fa-check"></i><b>6.4</b> Additional Considerations</a></li>
+<li class="chapter" data-level="6.5" data-path="wrapping-up.html"><a href="wrapping-up.html#see-next"><i class="fa fa-check"></i><b>6.5</b> See next</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://www.ottrproject.org/" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown using</a> </p>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template"> The OTTR Template by:</a></p>
+<p style="text-align:center;"> <a href="http://jhudatascience.org/"> The Johns Hopkins Data Science Lab </a></p>
+<a href="http://jhudatascience.org/"><img src="https://jhudatascience.org/images/dasl.png" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/hc8Xt3Y2Znjb6M4Y7"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Considerations for Data Visualization</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_ITN.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/itcr_main_image.png">
+</div>
+<div id="high-quality-and-accessible-data-visualizations" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> High quality and accessible data visualizations<a href="high-quality-and-accessible-data-visualizations.html#high-quality-and-accessible-data-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Creating a high quality data visualization requires more than picking the right plot for your data and your research question. Certainly following visual design principles and utilizing design tools is a part of creating high quality visualization. However, further best practices are needed to ethically present complex data with clarity in a way that is accessible to audiences. This chapter will discuss ways to enhance the clarity and accessibility of data visualizations as well as important ethical considerations.</p>
+<div id="learning-objectives-2" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Learning Objectives<a href="high-quality-and-accessible-data-visualizations.html#learning-objectives-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="04_how_to_improve_viz_files/figure-html/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3a4b3643292_0_41.png" alt="This chapter will demonstrate how to apply visual design principles to minimize complexity and improve the clarity of a data visualization, identify steps to enhance the clarity, accessibility, and understandability of a data visualization, employ ethical practices in constructing and sharing data visualizations, and how to evaluate whether a data visualization can be improved to enhance its clarity, accessibility, or accuracy." width="100%" style="display: block; margin: auto;" />
+## Presenting complex data with clarity</p>
+<p>An overly complex plot can be misleading for a number of reasons. These reasons include obscuring something because the plot focuses the viewer’s attention on another aspect, not separating high density areas or overlapping plot elements, including too much information, or not specifying specialized language such as acronyms or field specific/technical vocabulary.</p>
+<p>General tips to reduce complexity when you can:</p>
+<ul>
+<li>Use your visualization to answer <strong>only</strong> one question at a time</li>
+<li>Add annotations or labels (lines, names, colors, etc.)</li>
+<li>Minimize white space, but don’t over clutter</li>
+<li>Use clear and accurate labeling and axis names
+<ul>
+<li>Readable (large text)</li>
+<li>Understandable (e..g, avoid jargon and define uncommon acronyms)</li>
+</ul></li>
+<li>Separate plot elements or overlapping data
+<ul>
+<li>Use facets or subplots to separate different categories of data</li>
+<li>Increase opacity/transparency</li>
+<li>Decrease point size or change the shape</li>
+<li>Consider a log transformation</li>
+<li>Use a zoomed inset</li>
+</ul></li>
+<li>Consider typical reading order
+<ul>
+<li>top to bottom</li>
+<li>left to right</li>
+</ul></li>
+</ul>
+<p>Reducing complexity enhances clarity and accessibility by helping the viewer know where to focus and providing them with reference points or information they need to know (such as acronym meanings).</p>
+</div>
+<div id="best-practices-for-accessible-visualizations" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Best practices for accessible visualizations<a href="high-quality-and-accessible-data-visualizations.html#best-practices-for-accessible-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Reducing complexity is a very important first step in designing accessible visualizations. Beyond reducing complexity, additional considerations are necessary to further enhance accessibility for visualization audiences. Audiences may have visual impairments such as low vision or blindness or color vision deficiency, motor impairments (relevant for interactive visualizations), or dyslexia. Additionally, audiences likely will be unfamiliar with your research and may be distracted when interacting with your research.</p>
+<p>This course will mostly focus on making visualizations accessible for those with visual impairments and those unfamiliar with your research.</p>
+<div id="color-palettes" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Color palettes<a href="high-quality-and-accessible-data-visualizations.html#color-palettes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="contrast" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Contrast<a href="high-quality-and-accessible-data-visualizations.html#contrast" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="text" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Text<a href="high-quality-and-accessible-data-visualizations.html#text" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="axis-labels" class="section level4 hasAnchor" number="4.2.3.1">
+<h4><span class="header-section-number">4.2.3.1</span> Axis labels<a href="high-quality-and-accessible-data-visualizations.html#axis-labels" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="annotations" class="section level4 hasAnchor" number="4.2.3.2">
+<h4><span class="header-section-number">4.2.3.2</span> Annotations<a href="high-quality-and-accessible-data-visualizations.html#annotations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="titles" class="section level4 hasAnchor" number="4.2.3.3">
+<h4><span class="header-section-number">4.2.3.3</span> Titles<a href="high-quality-and-accessible-data-visualizations.html#titles" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="captions" class="section level4 hasAnchor" number="4.2.3.4">
+<h4><span class="header-section-number">4.2.3.4</span> Captions<a href="high-quality-and-accessible-data-visualizations.html#captions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+<div id="alternative-text-descriptions" class="section level3 hasAnchor" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Alternative text descriptions<a href="high-quality-and-accessible-data-visualizations.html#alternative-text-descriptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="ethical-data-visualization" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Ethical data visualization<a href="high-quality-and-accessible-data-visualizations.html#ethical-data-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ethical visualizations improve viewers’ understanding rather than confuse or mislead. Misleading messages are not always intentional on the part of the researcher putting together a data visualization, and mistakes happen (e.g., bugs in software, errors in data entry, etc.). It’s the responsibility of the researcher to carefully evaluate all data visualizations before sharing them to make sure that the visualizations clearly and accurately present the data and communicate the overall goal.</p>
+<p>Several of the topics we’ll provide within this section about ethical considerations are related to tips to reduce complexity and enhance accessibility. This is not surprising given that clear communication is a necessity for both ethical and accessible visualizations.</p>
+<div id="data-inclusion-safety-and-transparency" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Data inclusion safety and transparency<a href="high-quality-and-accessible-data-visualizations.html#data-inclusion-safety-and-transparency" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The rules within this section are aimed to safeguard patient privacy and provide transparency.</p>
+<p><strong>Rule 1: Don’t include identifiable data</strong></p>
+<p>ADD thoughts here</p>
+<p><strong>Rule 2: Include all relevant data or subgroups</strong></p>
+<p>ADD thoughts here</p>
+<p><strong>Rule 3: Describe removed samples or dropouts</strong></p>
+<p>ADD thoughts here</p>
+</div>
+<div id="accuracy-checks" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Accuracy checks<a href="high-quality-and-accessible-data-visualizations.html#accuracy-checks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The rules within this section are aimed to encourage careful verification of visualizations.</p>
+<p><strong>Rule 1: Verify that visualizations accurately represent the data</strong></p>
+<p>ADD thoughts about data that may be missing, or sizes/area that don’t align with data. Repeat the idea of checking twice before sharing the visualization</p>
+<p><strong>Rule 2: Use clear and accurate axis labels</strong></p>
+<p>ADD thoughts especially related to axis labels. Often having simplified axis labels help audiences. Doing this ethically such that the simplified label is what is being plotted is really important. If the label doesn’t match the data, why not plot the data for the simplified label?</p>
+</div>
+<div id="avoiding-data-distortion" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Avoiding data distortion<a href="high-quality-and-accessible-data-visualizations.html#avoiding-data-distortion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The aims for rules within this section include to avoid misleading messages and to compare groups fairly.</p>
+<p><strong>Rule 1: Use fair axis limits rather than truncating axes</strong></p>
+<p>ADD about starting axis limits at 0 because otherwise differences will look starker than they are</p>
+<p>ADD about axis limits when you have facets and how audiences may expect those subplots to use the same axis limits</p>
+<p><strong>Rule 2: Order axes in a logical way that corresponds to the plot’s message</strong></p>
+<p>ADD info about the overall message. If a line is going up over time, but the message is related to decrease, why is the line going up? This can be misleading.</p>
+<p><strong>Rule 3: Separate plot elements</strong></p>
+<p>ADD info about how true info can be obscured if plot elements aren’t separated.</p>
+</div>
+<div id="plagiarism-and-inspiration" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Plagiarism and inspiration<a href="high-quality-and-accessible-data-visualizations.html#plagiarism-and-inspiration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ADD info about plagiarism and what that means for data visualization</p>
+<p>ADD info about inspiration</p>
+<p><strong>Rule 1: If in doubt, attribute</strong></p>
+<p>ADD info about attribution if you’re concerned.</p>
+</div>
+<div id="empathy" class="section level3 hasAnchor" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> Empathy<a href="high-quality-and-accessible-data-visualizations.html#empathy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute. These are more tips and not rules because they are more subjective.</p>
+<p><em>Visualize each data point</em></p>
+<p><em>Avoid stereotypical colors</em></p>
+<p><em>Use person-first language when appropriate and avoid insensitive language</em></p>
+<p><em>Expand an “Other” category</em></p>
+</div>
+</div>
+<div id="improving-visualizations" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Improving visualizations<a href="high-quality-and-accessible-data-visualizations.html#improving-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="summary" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Summary<a href="high-quality-and-accessible-data-visualizations.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="which-visualization-should-i-use.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="standard-plots-used-within-the-biomedical-field.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
