@@ -4,12 +4,13 @@ motivation
 target-audience
 curriculum
 objectives
-what-is-data-visualization
+defining-data-visualization
 learning-objectives
-what-is-data-visualization-1
+what-is-data-visualization
 exploratory-visualizations
 expository-visualizations
 why-is-data-visualization-so-important
+summary
 which-visualization-should-i-use
 learning-objectives-1
 data-types
