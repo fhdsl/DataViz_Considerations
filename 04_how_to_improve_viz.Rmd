@@ -4,7 +4,7 @@ Creating a high quality data visualization requires more than picking the right 
 
 ## Learning Objectives
 
-```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Chapter specific LOs go here"}
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This chapter will demonstrate how to apply visual design principles to minimize complexity and improve the clarity of a data visualization, identify steps to enhance the clarity, accessibility, and understandability of a data visualization, employ ethical practices in constructing and sharing data visualizations, and how to evaluate whether a data visualization can be improved to enhance its clarity, accessibility, or accuracy."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_41#slide=id.g3a4b3643292_0_41")
 ```
 ## Presenting complex data with clarity
@@ -55,7 +55,7 @@ This course will mostly focus on making visualizations accessible for those with
 
 ## Ethical data visualization
 
-Ethical visualization improve viewers' understanding rather than confuse or mislead. Misleading messages are not always intentional on the part of the researcher putting together a data visualization, and mistakes happen (e.g., bugs in software, errors in data entry, etc.). It's the responsibility of the researcher to carefully evaluate all data visualizations before sharing them to make sure that the visualizations clearly and accurately present the data and communicate the overall goal.
+Ethical visualizations improve viewers' understanding rather than confuse or mislead. Misleading messages are not always intentional on the part of the researcher putting together a data visualization, and mistakes happen (e.g., bugs in software, errors in data entry, etc.). It's the responsibility of the researcher to carefully evaluate all data visualizations before sharing them to make sure that the visualizations clearly and accurately present the data and communicate the overall goal.
 
 Several of the topics we'll provide within this section about ethical considerations are related to tips to reduce complexity and enhance accessibility. This is not surprising given that clear communication is a necessity for both ethical and accessible visualizations.
 
@@ -114,3 +114,19 @@ ADD info about inspiration
 **Rule 1: If in doubt, attribute**
 
 ADD info about attribution if you're concerned.
+
+### Empathy
+
+Tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute. These are more tips and not rules because they are more subjective.
+
+*Visualize each data point*
+
+*Avoid stereotypical colors*
+
+*Use person-first language when appropriate and avoid insensitive language*
+
+*Expand an "Other" category*
+
+## Improving visualizations
+
+## Summary
