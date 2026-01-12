@@ -354,20 +354,16 @@ There are several common plots that are "field standard" or customarily used wit
 
 Galleries can be useful to browse standard plots and learn information about them.
 
-An example of a gallery that provides visual examples and explanations for necessary data types is the [from Data to Viz gallery](https://www.data-to-viz.com/#explore)
-
-For galleries that provide visual examples and templates on creating standard plots with programming languages, consider the [R Graph Gallery](https://r-graph-gallery.com/) or the [Python Graph Gallery](https://python-graph-gallery.com/).
-
-For more specialized galleries related to biomedical applications, consider the [Substitutable Medical Apps, Reusable Technology (SMART) App Gallery](https://apps.smarthealthit.org/apps/category/data-visualization?sort=name-asc) which provides free and open source apps for healthcare providers and researchers to work with and visualize health data. The integrated apps describe specific data types and goals and can provide dashboards and visualizations specifically for those data types/goals.
-
-Another more specialized gallery is the [Genomics Data Visualization course website](https://jef.works/genomic-data-visualization-2024/index.html) from the Johns Hopkins University Fan lab which provides featured visualizations meant for working with large-scale single-cell and spatially-resolved omics datasets using R.
-
-Finally, publications provide a myriad of example visualizations working with field specific data. Reading publications, studying their figures, and critically evaluating the design choices is a wonderful way to improve your own data visualization skills. In the near future, as you read journal articles and look at the figures, ask yourself the following questions:
-
-* What was the goal or overarching message this visualization was meant to communicate?
-* What was difficult for me to understand about this figure and what design choices could have made this figure easier for me to follow along?
-* What did I like best about this visualization?
-* Are these visualizations standard/common plot types or were there any new (at least to me) visualizations? What was unique about them?
+* **from Data to Viz Gallery**: An example of a gallery that provides visual examples and explanations for necessary data types is the [from Data to Viz gallery](https://www.data-to-viz.com/#explore)
+* **R Graph Gallery**: The [R Graph Gallery](https://r-graph-gallery.com/) provides visual examples and templates for creating standard plots with the R programming language.
+* **Python Graph Gallery**: The [Python Graph Gallery](https://python-graph-gallery.com/) provides visual examples and templates for creating standard plots with the Python programming language.
+* **SMART App Gallery**: For more specialized galleries related to biomedical applications, consider the [Substitutable Medical Apps, Reusable Technology (SMART) App Gallery](https://apps.smarthealthit.org/apps/category/data-visualization?sort=name-asc) which provides free and open source apps for healthcare providers and researchers to work with and visualize health data. The integrated apps describe specific data types and goals and can provide dashboards and visualizations specifically for those data types/goals.
+* **Genomics Data Visualization course website**: The [Genomics Data Visualization course website](https://jef.works/genomic-data-visualization-2024/index.html) is another more specialized gallery from the Johns Hopkins University Fan lab which provides featured visualizations meant for working with large-scale single-cell and spatially-resolved omics datasets using R.
+* **Publications**: Journal publications provide a myriad of exampe visualizations working with field specific data. Reading publications, studying their figures, and critically evaluating the design choices is a wonderful way to improve your own data visualization skills. In the near future, as you read journal articles and look at the figures, ask yourself the following questions:
+  * What was the goal or overarching message this visualization was meant to communicate?
+  * What was difficult for me to understand about this figure and what design choices could have made this figure easier for me to follow along?
+  * What did I like best about this visualization?
+  * Are these visualizations standard/common plot types or were there any new (at least to me) visualizations? What was unique about them?
 
 ## Summary
 
