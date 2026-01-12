@@ -128,7 +128,7 @@ Creating a good expository visualization will take time. Data visualization is o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a791a15863_73_10#slide=id.g3a791a15863_73_10")
 ```
 
-## Why is Data Visualization so Important?
+## Need for Data Visualization
 
 ::: {.emphasis_block}
 
