@@ -112,7 +112,7 @@ Creating a good expository visualization will take time. Data visualization is o
 
 <img src="02_what_why_intro_files/figure-html//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3a791a15863_73_10.png" alt="Carefully inspect expository visualization before sharing them. The same way you'd measure twice before cutting lumber, validate a visualization twice before sharing." width="100%" style="display: block; margin: auto;" />
 
-## Why is Data Visualization so Important?
+## Need for Data Visualization
 
 ::: {.emphasis_block}
 
