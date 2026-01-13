@@ -7,7 +7,7 @@ rmd_files: ["index.Rmd",
             "03_data.Rmd",
             "04_graph_info.Rmd",
             "04_how_to_improve_viz.Rmd",
-            "05_field_standard.Rmd",
+            "06_field_standard.Rmd",
             "06_wrapping_up.Rmd",
             "About.Rmd",
             "References.Rmd"]

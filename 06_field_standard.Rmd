@@ -1,4 +1,4 @@
-# Standard plots used within the biomedical field
+# Field Specific Visualizations
 
 ## Learning Objectives
 
