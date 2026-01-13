@@ -1,4 +1,4 @@
-# What is data visualization?
+# Defining Data Visualization
 
 ```{r, include = FALSE}
 ottrpal::set_knitr_image_path()
@@ -128,14 +128,20 @@ Creating a good expository visualization will take time. Data visualization is o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a791a15863_73_10#slide=id.g3a791a15863_73_10")
 ```
 
-## Why is Data Visualization so Important?
+## Need for Data Visualization
 
 ::: {.emphasis_block}
 
 Datasets are becoming increasingly large and complex. Well-made data visualizations efficiently summarize and display data, providing a more approachable view of the complex information. Rather than writing many paragraphs of text to explain the dataset and analyses performed, creating data visualizations can streamline the necessary accompanying narrative by showing the data and relationships contained within. Visualizations are very useful in displaying outliers, trends, patterns, relationships, steps in a process, or changes over time. Each of these could be explained with words, but they will be more compelling and more easily comprehensible to an audience when they see them with their own eyes; the old marketing phrase "A picture is worth a thousand words" succinctly conveys how audiences benefit from visuals. However, remember that an expository data visualization that is meant to be shared widely should have words with it: the declarative title, informative axis labels, or context on where the data came from and how it was handled.
 
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Pictures are worth one thousand words but expository visualization still need words, specifically readable and informative text such as a declarative title that states the conclusion, informative axes labels, a legend or some sort of color labeling, and a descriptive caption that includes context on the data source and handling"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b15b578b21_13_5#slide=id.g3b15b578b21_13_5")
+```
+
 Visualizations play a strong role in helping audiences interact with and understand the data being presented. People have limited time to interact with others' work and analyses, especially for topics outside of their interest or expertise. They may skim an abstract or part of an article, but their eyes will likely be drawn to images.  Visualizations that are frustrating, misleading, not accessible, or not easily understood will cause more harm than good, but making compelling visualizations that can be effectively understood at a glance helps you to communicate your research to others.
 
 :::
 
-<ADD VISUALIZATION>
+## Summary
+
+Data visualizations efficiently summarize and display data. Exploratory data visualizations are used by a researcher to explore and better understand their data, but are internal visualizations that are made quickly and are not polished. In contrast, expository data visualizations communicate a researcher's point in a polished and more approachable way than just a descriptive paragraph would. Making a high quality expository data visualization to share widely often requires several design and refinement iterations. Expository visualizations should stand alone, using accompanying descriptive and informative text to communicate the point without live narration or explanation from the researcher. Finally, researchers should double check their expository visualizations for accuracy, effectiveness, and accessibility before sharing widely.      
