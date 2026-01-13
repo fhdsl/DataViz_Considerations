@@ -144,6 +144,15 @@ These visual building blocks are also referred to as "visual channels" and they 
 
 ### {-}
 
+### Preattentive Attributes
+
+Several of the visual channels are considered "Preattentive attributes" which means that they are visual features that the human brain tends to process quickly and unconsciously such that a viewer is instinctively guided to focus their attention on that feature. This is often due to contrast or differences in the feature compared to everything else. Examples include:
+
+  * Bars that are obviously taller than the rest
+  * Mostly one dominant color, but a few data points are a different, more vibrant or contrasting color
+  * Only one data point is outlined
+  * One line is wider than the rest
+
 ### Additional Design Tools {.tabset}
 
 These additional design tools may or may not encode data, but do separate out data to enhance clarity and interpretability. The actual group membership will affect what is labeled or separated out, but often other visual design channels (like color) may be used to communicate group membership in a redundant way. These design tools are especially effective at improving the clarity of a visualization without having to change plot types. So if you're building a data visualization and it's a little too cluttered or difficult to interpret, try utilizing one of these design tools before switching plot types to a more complex plot type.
