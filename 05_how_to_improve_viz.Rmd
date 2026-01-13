@@ -1,4 +1,4 @@
-# High quality and accessible data visualizations
+# Ethical Data Visualization
 
 Creating a high quality data visualization requires more than picking the right plot for your data and your research question. Certainly following visual design principles and utilizing design tools is a part of creating high quality visualization. However, further best practices are needed to ethically present complex data with clarity in a way that is accessible to audiences. This chapter will discuss ways to enhance the clarity and accessibility of data visualizations as well as important ethical considerations.
 
@@ -7,7 +7,7 @@ Creating a high quality data visualization requires more than picking the right 
 ```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This chapter will demonstrate how to apply visual design principles to minimize complexity and improve the clarity of a data visualization, identify steps to enhance the clarity, accessibility, and understandability of a data visualization, employ ethical practices in constructing and sharing data visualizations, and how to evaluate whether a data visualization can be improved to enhance its clarity, accessibility, or accuracy."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_41#slide=id.g3a4b3643292_0_41")
 ```
-## Presenting complex data with clarity
+## Clearly presenting complex data
 
 An overly complex plot can be misleading for a number of reasons. These reasons include obscuring something because the plot focuses the viewer's attention on another aspect, not separating high density areas or overlapping plot elements, including too much information, or not specifying specialized language such as acronyms or field specific/technical vocabulary.
 
@@ -31,7 +31,7 @@ General tips to reduce complexity when you can:
 
 Reducing complexity enhances clarity and accessibility by helping the viewer know where to focus and providing them with reference points or information they need to know (such as acronym meanings).
 
-## Best practices for accessible visualizations
+## Best practices for accessibility
 
 Reducing complexity is a very important first step in designing accessible visualizations. Beyond reducing complexity, additional considerations are necessary to further enhance accessibility for visualization audiences. Audiences may have visual impairments such as low vision or blindness or color vision deficiency, motor impairments (relevant for interactive visualizations), or dyslexia. Additionally, audiences likely will be unfamiliar with your research and may be distracted when interacting with your research.
 
@@ -59,7 +59,7 @@ Ethical visualizations improve viewers' understanding rather than confuse or mis
 
 Several of the topics we'll provide within this section about ethical considerations are related to tips to reduce complexity and enhance accessibility. This is not surprising given that clear communication is a necessity for both ethical and accessible visualizations.
 
-### Data inclusion safety and transparency
+### Data inclusion: safety & transparency
 
 The rules within this section are aimed to safeguard patient privacy and provide transparency.
 
@@ -75,7 +75,7 @@ ADD thoughts here
 
 ADD thoughts here
 
-### Accuracy checks
+### Accuracy
 
 The rules within this section are aimed to encourage careful verification of visualizations.
 
@@ -105,7 +105,7 @@ ADD info about the overall message. If a line is going up over time, but the mes
 
 ADD info about how true info can be obscured if plot elements aren't separated.
 
-### Plagiarism and inspiration
+### Plagiarism & inspiration
 
 ADD info about plagiarism and what that means for data visualization
 
