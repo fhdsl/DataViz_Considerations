@@ -4,9 +4,10 @@ repo: https://github.com/fhdsl/DataViz_Considerations/
 rmd_files: ["index.Rmd",
             "01-intro.Rmd",
             "02_what_why_intro.Rmd",
-            "03_background_data_graph_info.Rmd",
+            "03_data.Rmd",
+            "04_graph_info.Rmd",
             "04_how_to_improve_viz.Rmd",
-            "05_field_standard.Rmd",
+            "06_field_standard.Rmd",
             "06_wrapping_up.Rmd",
             "About.Rmd",
             "References.Rmd"]

@@ -19,7 +19,7 @@ The previous chapter discussed the types of data and how those are encoded or ap
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b78517deb9_0_29#slide=id.g3b78517deb9_0_29")
 ```
 
-## Goals of data visualization
+## Goals of Data Visualization
 
 There are many different possible goals for creating a data visualization. Among those include
 
@@ -29,11 +29,11 @@ There are many different possible goals for creating a data visualization. Among
 * displaying <u>change</u> over time or after an intervention
 * indicating <u>location</u> and <u>spatial</u> relationships or distributions
 
-## Standard graph types
+## Standard Graph Types
 
 Standard graph types include conventional graphs like histograms, scatter plots, bar plots, and line charts as well as other graphs used to look at distributions or find rankings or used to consider group composition, complex relationships, and response. For the conventional plots, this section will describe the appropriate kinds and amount of data needed to use that plot type as well as questions that plot type can be used to answer. For the graphs beyond those four, additional information will be provided such as a description, strengths, weaknesses, and alternative plots.
 
-### Conventional graphs
+### Conventional Graphs
 
 Conventional graph types include histograms, scatter plots, bar plots, and line charts. Each of these are used to answer a different question.
 
@@ -58,7 +58,7 @@ A *line chart* may or may not use points in addition to lines. It is good practi
 </details>
 
 
-### Ranking and distribution plots {.tabset}
+### Ranking and Distribution Plots {.tabset}
 
 Of the conventional plots described above, bar plots and histograms both fit within this category. Bar plots are typically used to find a ranking while histograms display a distribution. Ranking and distribution plots are often, but not exclusively, used for exploratory data analysis and internal visualizations. If presented as an expository visualization, these plots will usually supplement or support a more complex figure, perhaps as a subpanel within that larger figure. Even if ranking and distribution plots are rarely the focal point, they are a powerful tool in the researcher's data visualization toolbox to profile data characteristics and compare groups.
 
@@ -140,7 +140,7 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 **Example plot**
 
-#### Ridgeline plots {-}
+#### Ridgeline Plots {-}
 
 **Description**: Shows the distribution of multiple categories of numerical data, using densities (half a violin). Looks like stacked, but slightly offset mountain ridges.
 
@@ -172,7 +172,7 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 **Example plot**
 
-#### Raincloud plots {-}
+#### Raincloud Plots {-}
 
 **Description**: Combines 3 plots: density, boxplot, individual data points. Generally looks like a raining cloud.
 
@@ -214,11 +214,11 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 <b>Raincloud</b> plots are great when you want to go deep and see everything for a small number of groups (exploratory analysis).
 
-### Group composition, complex relationships, and response plots {.tabset}
+### Group Composition, Complex Relationships, and Response Plots {.tabset}
 
-Of the conventional plots described above, scatter plots and line charts both fit within this category. Scatter plots are usually used to display a response as well as complex relationships while line charts may show a response or change over time. Plots within this category are more frequently expository data visualizations than exploratory data visualizations. These plots are often less intuitive for an audience to interpret without guidance. Therfore the polishing and refinement steps as well as including informative titles, captions, and labels are especially important when designing and building visualizations within this category.   
+Of the conventional plots described above, scatter plots and line charts both fit within this category. Scatter plots are usually used to display a response as well as complex relationships while line charts may show a response or change over time. Plots within this category are more frequently expository data visualizations than exploratory data visualizations. These plots are often less intuitive for an audience to interpret without guidance. Therefore the polishing and refinement steps as well as including informative titles, captions, and labels are especially important when designing and building visualizations within this category.   
 
-#### Stacked bar charts {-}
+#### Stacked Bar Charts {-}
 
 **Description**: Displays multiple categories within a single bar, stacked on top (vertical) or next to (horizontal) each other. Each overall bar represents a group. Within bars, each stack is a sub-category or subgroup.
 
@@ -300,7 +300,7 @@ https://www.mdpi.com/2079-9721/13/2/37
 
   <details>
 
-#### Sankey diagrams {-}
+#### Sankey Diagrams {-}
 
 **Description**: Represents the "flow" or movement of quantities (e.g., patients or samples) among different categories through different steps (e.g., demographics or steps of an analysis or trial)
 
@@ -346,7 +346,7 @@ https://www.mdpi.com/2079-9721/13/2/37
 <b>Sankey diagrams</b> are good if you want to look at the possible trajectories of symptoms, treatments, etc. and it's important to know what combinations occur.
 
 
-### Field standard plots
+### Field Standard Plots
 
 There are several common plots that are "field standard" or customarily used within the biomedical field. These plots (including Waterfall plots, Caterpillar plots, Kaplan-Meier curves, Volcano plots, MA diagrams, etc.) plots will be discussed in the final chapter. They often align with the category of group composition, complex relationships, and response plots. When deciding what plot is best for you and your research question, a field standard plot may be the answer given that the audience will be more familiar with such plots.
 
@@ -359,7 +359,7 @@ Galleries can be useful to browse standard plots and learn information about the
 * **Python Graph Gallery**: The [Python Graph Gallery](https://python-graph-gallery.com/) provides visual examples and templates for creating standard plots with the Python programming language.
 * **SMART App Gallery**: For more specialized galleries related to biomedical applications, consider the [Substitutable Medical Apps, Reusable Technology (SMART) App Gallery](https://apps.smarthealthit.org/apps/category/data-visualization?sort=name-asc) which provides free and open source apps for healthcare providers and researchers to work with and visualize health data. The integrated apps describe specific data types and goals and can provide dashboards and visualizations specifically for those data types/goals.
 * **Genomics Data Visualization course website**: The [Genomics Data Visualization course website](https://jef.works/genomic-data-visualization-2024/index.html) is another more specialized gallery from the Johns Hopkins University Fan lab which provides featured visualizations meant for working with large-scale single-cell and spatially-resolved omics datasets using R.
-* **Publications**: Journal publications provide a myriad of exampe visualizations working with field specific data. Reading publications, studying their figures, and critically evaluating the design choices is a wonderful way to improve your own data visualization skills. In the near future, as you read journal articles and look at the figures, ask yourself the following questions:
+* **Publications**: Journal publications provide a myriad of example visualizations working with field specific data. Reading publications, studying their figures, and critically evaluating the design choices is a wonderful way to improve your own data visualization skills. In the near future, as you read journal articles and look at the figures, ask yourself the following questions:
   * What was the goal or overarching message this visualization was meant to communicate?
   * What was difficult for me to understand about this figure and what design choices could have made this figure easier for me to follow along?
   * What did I like best about this visualization?

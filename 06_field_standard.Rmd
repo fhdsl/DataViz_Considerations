@@ -1,0 +1,331 @@
+# Field Specific Visualizations
+
+## Learning Objectives
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Chapter specific LOs go here"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_36#slide=id.g3a4b3643292_0_36")
+```
+
+### Repeated Measures Plot (maybe?)
+
+**Description**: Filler description
+
+**When to use**:
+
+  * Type of data
+  * Number of variables
+  * Primary data encodings
+  * Used for ....
+
+**Strengths**:
+
+  * Strength 1
+  * Strength 2
+
+**Weaknesses**:
+
+  * Weakness 1
+  * Weakness 2
+  * Weakness 3
+
+**Alternatives**:
+
+  * Alternative (if applicable)
+  * Alternative 2 (if applicable)
+
+**Example plot**
+
+**Interpretation**
+
+### Caterpillar Plot
+
+**Description**: Displays numerical point estimates (such as odds ratios or coefficient effect estimates) as the caterpillar body and their variation or the confidence level as caterpillar legs. Caterpillar plots are practically the same as Forest plots except for one major difference: the categories are ordered by magnitude of the point estimates.
+
+**When to use**:
+
+  * Numerical data & categorical data
+  * Several variables are required
+  * Primary data encodings are points and lines
+  * Used to find a ranking or for meta-analyses or comparing models or odds ratios
+
+**Strengths**:
+
+  * Provides comparison to a reference line (e.g., baseline or null effect)
+  * Efficient readability since values are ordered by magnitude
+  * Displays variation both intra- and inter-study
+
+**Weaknesses**:
+
+  * Cluttered and difficult to read if lots of studies or models are included
+  * A lot of context and information are in the axis labels
+  * Plot is just showing the effect estimates and uncertainty but no further context such as bias
+
+**Alternatives**:
+
+  * Funnel plot
+  * Heatmap
+
+**Example plot**
+
+**Interpretation**
+
+### Waterfall Plot
+
+**Description**: Bar charts which show treatment effect. The numerical axis is compared to a baseline. The bars are arranged or ordered according to magnitude and each bar typically corresponds to a different patient or sample.  
+
+**When to use**:
+
+  * Numerical data (may have categorical data for color)
+  * Minimum of 1 variable if the difference between patient/sample and baseline is already computed, but a minimum of 2 variables otherwise
+  * Primary data encodings are bars and position
+  * Typically used to show patient response to a treatment but the design can be used for other use cases around this theme
+
+**Strengths**:
+
+  * Displays patient or sample response heterogeneity within one snapshot
+
+**Weaknesses**:
+
+  * The snapshot compares two time points but not a range of time
+  * For tumor response, there's an accepted notion of what above or below the baseline means but this might not be true for other applications
+
+**Alternatives**:
+
+  * [Spider plot](https://doi-org.fhcrc.idm.oclc.org/10.1093/jnci/djw031) incorporates time
+  * [Swimmer plot](https://doi-org.fhcrc.idm.oclc.org/10.1093/jnci/djw031) incorporates time but loses the comparison to baseline
+  * [Forest](https://doi-org.fhcrc.idm.oclc.org/10.1093/jnci/djw031) or [Caterpillar](https://www.jclinepi.com/article/S0895-4356(20)30016-0/pdf) plots can be use for treatment effect
+  * [Kaplan-Meier curves](https://doi-org.fhcrc.idm.oclc.org/10.1093/jnci/djw031) can be used for outcome
+  * [Heatmaps](https://www.data-to-viz.com/graph/heatmap.html) can be used to incorporate time
+
+  <details><summary>How could a heatmap be an alternative plot?</summary>
+
+  Each row would be a patient (y-axis) and the columns could be time. Use color to communicate the change from baseline. Perhaps consider faceting or arranging samples according to response category.
+
+  </details>
+
+**Example plot**
+
+**Interpretation**
+
+### Kaplan-Meier (KM) Curve (definitely)
+
+**Description**: Filler description
+
+**When to use**:
+
+  * Type of data
+  * Number of variables
+  * Primary data encodings
+  * Used for ....
+
+**Strengths**:
+
+  * Strength 1
+  * Strength 2
+
+**Weaknesses**:
+
+  * Weakness 1
+  * Weakness 2
+  * Weakness 3
+
+**Alternatives**:
+
+  * Alternative (if applicable)
+  * Alternative 2 (if applicable)
+
+**Example plot**
+
+**Interpretation**
+
+### Volcano Plot (definitely)
+
+**Description**: Filler description
+
+**When to use**:
+
+  * Type of data
+  * Number of variables
+  * Primary data encodings
+  * Used for ....
+
+**Strengths**:
+
+  * Strength 1
+  * Strength 2
+
+**Weaknesses**:
+
+  * Weakness 1
+  * Weakness 2
+  * Weakness 3
+
+**Alternatives**:
+
+  * Alternative (if applicable)
+  * Alternative 2 (if applicable)
+
+**Example plot**
+
+**Interpretation**
+
+### Enrichment Plot (maybe)
+
+**Description**: Filler description
+
+**When to use**:
+
+  * Type of data
+  * Number of variables
+  * Primary data encodings
+  * Used for ....
+
+**Strengths**:
+
+  * Strength 1
+  * Strength 2
+
+**Weaknesses**:
+
+  * Weakness 1
+  * Weakness 2
+  * Weakness 3
+
+**Alternatives**:
+
+  * Alternative (if applicable)
+  * Alternative 2 (if applicable)
+
+**Example plot**
+
+**Interpretation**
+
+### MA Diagram (definitely)
+
+**Description**: Filler description
+
+**When to use**:
+
+  * Type of data
+  * Number of variables
+  * Primary data encodings
+  * Used for ....
+
+**Strengths**:
+
+  * Strength 1
+  * Strength 2
+
+**Weaknesses**:
+
+  * Weakness 1
+  * Weakness 2
+  * Weakness 3
+
+**Alternatives**:
+
+  * Alternative (if applicable)
+  * Alternative 2 (if applicable)
+
+**Example plot**
+
+**Interpretation**
+
+### Principal Components Analysis (PCA) Plot (probably)
+
+**Description**: Filler description
+
+**When to use**:
+
+  * Type of data
+  * Number of variables
+  * Primary data encodings
+  * Used for ....
+
+**Strengths**:
+
+  * Strength 1
+  * Strength 2
+
+**Weaknesses**:
+
+  * Weakness 1
+  * Weakness 2
+  * Weakness 3
+
+**Alternatives**:
+
+  * Alternative (if applicable)
+  * Alternative 2 (if applicable)
+
+**Example plot**
+
+**Interpretation**
+
+### Circos Plot (maybe)
+
+**Description**: Filler description
+
+**When to use**:
+
+  * Type of data
+  * Number of variables
+  * Primary data encodings
+  * Used for ....
+
+**Strengths**:
+
+  * Strength 1
+  * Strength 2
+
+**Weaknesses**:
+
+  * Weakness 1
+  * Weakness 2
+  * Weakness 3
+
+**Alternatives**:
+
+  * Alternative (if applicable)
+  * Alternative 2 (if applicable)
+
+**Example plot**
+
+**Interpretation**
+
+### Biomedical Knowledge Graph (KG) (probably)
+
+**Description**: Filler description
+
+**When to use**:
+
+  * Type of data
+  * Number of variables
+  * Primary data encodings
+  * Used for ....
+
+**Strengths**:
+
+  * Strength 1
+  * Strength 2
+
+**Weaknesses**:
+
+  * Weakness 1
+  * Weakness 2
+  * Weakness 3
+
+**Alternatives**:
+
+  * Alternative (if applicable)
+  * Alternative 2 (if applicable)
+
+**Example plot**
+
+**Interpretation**
+
+## Summary of Strengths
+
+<b>Caterpillar</b> plots are good if you want to look at effects and variation at a glance to identify the best/worst (the extremes) or see the overall range.
+
+<b>Waterfall</b> plots are good if you have a baseline to compare to for (1) a single time point, (2) many samples/patients, and (3) clearly know what above or below that baseline means.
