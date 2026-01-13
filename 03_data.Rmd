@@ -12,7 +12,7 @@ A data visualization represents data in a simplified way. The visualization is m
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_31#slide=id.g3a4b3643292_0_31")
 ```
 
-## Data types
+## Data Types
 
 A dataset is a collection of records or observations. This course assumes that the dataset you are going to visualize has been processed and wrangled such that it is a "structured dataset." In structured datasets, typically each row (or "record") contains observations for a single sample or patient. Each column is a different observation or variable for that sample or patient. Every variable will be unique either because different things are being measured or documented or because the same thing is being measured at different time points. When thinking about the amount of data that will be displayed in a visualization, there are two different considerations: the number of observations (the number of rows) and the number of variables (which and how many columns).
 
@@ -24,7 +24,7 @@ Some datasets may utilize a "long" approach to stack similar variables on top of
 
 There are two main types of data within a dataset: **numerical** and **categorical** data. A dataset will likely have a mixture of these data types and new variables may be generated using the original data through transformations. Transformations can be used by performing mathematical operations or converting between data types. Converting numerical data into categorical data is accomplished through binning or by employing a cutoff value. Alternatively, categorical data may need to be encoded as numerals so the data is in a form that requires less storage or so that a computer or algorithm can process it (e.g., machine readable). <ADD REF> There may be more specialized data types depending on your research question, such as relational or spatial data, but these tend to be just more complex and more defined format versions of numerical and categorical data.
 
-### Numerical data
+### Numerical Data
 
 Numerical data is data that **quantitatively** represents some count or measurement. Mathematical operations such as addition, subtraction, division, multiplication, exponentiation, etc. are appropriate.
 
@@ -42,7 +42,7 @@ Examples of numerical data within the biomedical field include
 * the length of stay for a patient at the hospital
 * a survival probability
 
-### Categorical data
+### Categorical Data
 
 Categorical data **qualitatively** characterizes, categorizes, or groups objects or individuals with labels. Categorical data sometimes may look like numbers when they are group IDs or some sort of ranking or index score. However, A-B-C could be switched out for 1-2-3 making such data categorical data.
 
@@ -66,11 +66,11 @@ Examples of categorical data within the biomedical field include
 * Charlson-Deyo Comorbidity Index <ADD REF>
 
 
-## Data encodings
+## Data Encodings
 
 Data encoding is the process of representing data using visual elements or graphical attributes. These include geometric marks and visual channels which are the building blocks of data visualization. Different graph types utilize different encodings to represent data. Geometric marks are typically the primary means of representing data across graph types while the visual channels are usually used as secondary or supplementary methods (e.g., shape, color, and textures). However, color can be a primary means of data encoding for certain graphs like heatmaps or choropleths <ADD REF>.   
 
-### Geometric marks {.tabset}
+### Geometric Marks {.tabset}
 
 These building blocks are also referred to as "geometric marks" and they include
 
@@ -102,7 +102,7 @@ An example of a conventional plot type that uses **lines** is a line plot. Lines
 
 ### {-}
 
-### Visual channels {.tabset}
+### Visual Channels {.tabset}
 
 These visual building blocks are also referred to as "visual channels" and they control the way that the geometric building blocks will appear. You can change the shape, color, or size of a point, but it's still a point. Visual channels include:
 
@@ -126,7 +126,7 @@ These visual building blocks are also referred to as "visual channels" and they 
 
 **Shape** may reflect categorization or group membership and controls the way that points appear. Shape is sometimes used in place of or as a supplement to color.
 
-#### Line type {-}
+#### Line Type {-}
 
 **Line types** can be used much like shape to communicate categorization or group membership. Line type controls the appearance of lines.
 
@@ -144,7 +144,7 @@ These visual building blocks are also referred to as "visual channels" and they 
 
 ### {-}
 
-### Additional design tools {.tabset}
+### Additional Design Tools {.tabset}
 
 These additional design tools may or may not encode data, but do separate out data to enhance clarity and interpretability. The actual group membership will affect what is labeled or separated out, but often other visual design channels (like color) may be used to communicate group membership in a redundant way. These design tools are especially effective at improving the clarity of a visualization without having to change plot types. So if you're building a data visualization and it's a little too cluttered or difficult to interpret, try utilizing one of these design tools before switching plot types to a more complex plot type.
 
@@ -166,7 +166,7 @@ These additional design tools may or may not encode data, but do separate out da
 
 ### {-}
 
-## Coordinate system
+## Coordinate System
 
 Most data visualizations will utilize a two dimensional XY coordinate system (or Cartesian plane) with a horizontal (x-) axis and a vertical (y-) axis that are perpendicular and intersect where x = 0 and y = 0. Each variable will be assigned to one of the axes. If working with regression or where you have a dependent variable (outcome or event being measured or observed) and an independent variable (the variable being controlled or changed/purposefully manipulated), the independent variable is assigned to the x-axis and the dependent variable is assigned to the y-axis. When working with numerical data, this XY coordinate system allows for the positioning of the numerical data along these axes. When working with a categorical data, the categories can still be positioned along of the numerical axes, however the corresponding numerical positions will not have the same meaning they would otherwise have. The two axes can utilize different units (e..g, micrograms per milliliter, percentage, grams, log fold change, etc.) and scales, however, if the same units are used for the two axes, then the scaling should be equal for both axes to avoid distortion.
 
