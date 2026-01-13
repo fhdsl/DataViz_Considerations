@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Wrapping up | Considerations for Data Visualization</title>
+  <title>Chapter 6 Field Specific Visualizations | Considerations for Data Visualization</title>
   <meta name="description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Wrapping up | Considerations for Data Visualization" />
+  <meta property="og:title" content="Chapter 6 Field Specific Visualizations | Considerations for Data Visualization" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Wrapping up | Considerations for Data Visualization" />
+  <meta name="twitter:title" content="Chapter 6 Field Specific Visualizations | Considerations for Data Visualization" />
   
   <meta name="twitter:description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/ITN_favicon.ico" type="image/x-icon" />
-<link rel="prev" href="field-specific-visualizations.html"/>
-<link rel="next" href="about-the-authors.html"/>
+<link rel="prev" href="high-quality-and-inclusive-data-visualizations.html"/>
+<link rel="next" href="wrapping-up.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -212,29 +212,314 @@
 <div class="hero-image-container"> 
   <img class= "hero-image" src="assets/itcr_main_image.png">
 </div>
-<div id="wrapping-up" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Chapter 7</span> Wrapping up<a href="wrapping-up.html#wrapping-up" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="learning-objectives-5" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Learning Objectives<a href="wrapping-up.html#learning-objectives-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This chapter will cover:</p>
+<div id="field-specific-visualizations" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Field Specific Visualizations<a href="field-specific-visualizations.html#field-specific-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="learning-objectives-4" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Learning Objectives<a href="field-specific-visualizations.html#learning-objectives-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="06_field_standard_files/figure-html/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3a4b3643292_0_36.png" alt="Chapter specific LOs go here" width="100%" style="display: block; margin: auto;" /></p>
+<div id="repeated-measures-plot-maybe" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Repeated Measures Plot (maybe?)<a href="field-specific-visualizations.html#repeated-measures-plot-maybe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Description</strong>: Filler description</p>
+<p><strong>When to use</strong>:</p>
 <ul>
-<li>{LO1}</li>
-<li>{LO2}</li>
+<li>Type of data</li>
+<li>Number of variables</li>
+<li>Primary data encodings</li>
+<li>Used for ….</li>
 </ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Strength 1</li>
+<li>Strength 2</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Weakness 1</li>
+<li>Weakness 2</li>
+<li>Weakness 3</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>Alternative (if applicable)</li>
+<li>Alternative 2 (if applicable)</li>
+</ul>
+<p><strong>Example plot</strong></p>
+<p><strong>Interpretation</strong></p>
 </div>
-<div id="in-summary" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> In Summary<a href="wrapping-up.html#in-summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Aim for understanding and readability over complexity.</p>
+<div id="caterpillar-plot" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Caterpillar Plot<a href="field-specific-visualizations.html#caterpillar-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Description</strong>: Displays numerical point estimates (such as odds ratios or coefficient effect estimates) as the caterpillar body and their variation or the confidence level as caterpillar legs. Caterpillar plots are practically the same as Forest plots except for one major difference: the categories are ordered by magnitude of the point estimates.</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Numerical data &amp; categorical data</li>
+<li>Several variables are required</li>
+<li>Primary data encodings are points and lines</li>
+<li>Used to find a ranking or for meta-analyses or comparing models or odds ratios</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Provides comparison to a reference line (e.g., baseline or null effect)</li>
+<li>Efficient readability since values are ordered by magnitude</li>
+<li>Displays variation both intra- and inter-study</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Cluttered and difficult to read if lots of studies or models are included</li>
+<li>A lot of context and information are in the axis labels</li>
+<li>Plot is just showing the effect estimates and uncertainty but no further context such as bias</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>Funnel plot</li>
+<li>Heatmap</li>
+</ul>
+<p><strong>Example plot</strong></p>
+<p><strong>Interpretation</strong></p>
 </div>
-<div id="checklist" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Checklist<a href="wrapping-up.html#checklist" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize its complexity, enhance its clarity and accessibility, and assess its accuracy.</p>
+<div id="waterfall-plot" class="section level3 hasAnchor" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Waterfall Plot<a href="field-specific-visualizations.html#waterfall-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Description</strong>: Bar charts which show treatment effect. The numerical axis is compared to a baseline. The bars are arranged or ordered according to magnitude and each bar typically corresponds to a different patient or sample.</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Numerical data (may have categorical data for color)</li>
+<li>Minimum of 1 variable if the difference between patient/sample and baseline is already computed, but a minimum of 2 variables otherwise</li>
+<li>Primary data encodings are bars and position</li>
+<li>Typically used to show patient response to a treatment but the design can be used for other use cases around this theme</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Displays patient or sample response heterogeneity within one snapshot</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>The snapshot compares two time points but not a range of time</li>
+<li>For tumor response, there’s an accepted notion of what above or below the baseline means but this might not be true for other applications</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li><a href="https://doi-org.fhcrc.idm.oclc.org/10.1093/jnci/djw031">Spider plot</a> incorporates time</li>
+<li><a href="https://doi-org.fhcrc.idm.oclc.org/10.1093/jnci/djw031">Swimmer plot</a> incorporates time but loses the comparison to baseline</li>
+<li><a href="https://doi-org.fhcrc.idm.oclc.org/10.1093/jnci/djw031">Forest</a> or <a href="https://www.jclinepi.com/article/S0895-4356(20)30016-0/pdf">Caterpillar</a> plots can be use for treatment effect</li>
+<li><a href="https://doi-org.fhcrc.idm.oclc.org/10.1093/jnci/djw031">Kaplan-Meier curves</a> can be used for outcome</li>
+<li><a href="https://www.data-to-viz.com/graph/heatmap.html">Heatmaps</a> can be used to incorporate time</li>
+</ul>
+<details>
+<summary>
+How could a heatmap be an alternative plot?
+</summary>
+<p>Each row would be a patient (y-axis) and the columns could be time. Use color to communicate the change from baseline. Perhaps consider faceting or arranging samples according to response category.</p>
+</details>
+<p><strong>Example plot</strong></p>
+<p><strong>Interpretation</strong></p>
 </div>
-<div id="additional-considerations" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Additional Considerations<a href="wrapping-up.html#additional-considerations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="kaplan-meier-km-curve-definitely" class="section level3 hasAnchor" number="6.1.4">
+<h3><span class="header-section-number">6.1.4</span> Kaplan-Meier (KM) Curve (definitely)<a href="field-specific-visualizations.html#kaplan-meier-km-curve-definitely" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Description</strong>: Filler description</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Type of data</li>
+<li>Number of variables</li>
+<li>Primary data encodings</li>
+<li>Used for ….</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Strength 1</li>
+<li>Strength 2</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Weakness 1</li>
+<li>Weakness 2</li>
+<li>Weakness 3</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>Alternative (if applicable)</li>
+<li>Alternative 2 (if applicable)</li>
+</ul>
+<p><strong>Example plot</strong></p>
+<p><strong>Interpretation</strong></p>
 </div>
-<div id="see-next" class="section level2 hasAnchor" number="7.5">
-<h2><span class="header-section-number">7.5</span> See next<a href="wrapping-up.html#see-next" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="volcano-plot-definitely" class="section level3 hasAnchor" number="6.1.5">
+<h3><span class="header-section-number">6.1.5</span> Volcano Plot (definitely)<a href="field-specific-visualizations.html#volcano-plot-definitely" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Description</strong>: Filler description</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Type of data</li>
+<li>Number of variables</li>
+<li>Primary data encodings</li>
+<li>Used for ….</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Strength 1</li>
+<li>Strength 2</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Weakness 1</li>
+<li>Weakness 2</li>
+<li>Weakness 3</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>Alternative (if applicable)</li>
+<li>Alternative 2 (if applicable)</li>
+</ul>
+<p><strong>Example plot</strong></p>
+<p><strong>Interpretation</strong></p>
+</div>
+<div id="enrichment-plot-maybe" class="section level3 hasAnchor" number="6.1.6">
+<h3><span class="header-section-number">6.1.6</span> Enrichment Plot (maybe)<a href="field-specific-visualizations.html#enrichment-plot-maybe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Description</strong>: Filler description</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Type of data</li>
+<li>Number of variables</li>
+<li>Primary data encodings</li>
+<li>Used for ….</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Strength 1</li>
+<li>Strength 2</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Weakness 1</li>
+<li>Weakness 2</li>
+<li>Weakness 3</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>Alternative (if applicable)</li>
+<li>Alternative 2 (if applicable)</li>
+</ul>
+<p><strong>Example plot</strong></p>
+<p><strong>Interpretation</strong></p>
+</div>
+<div id="ma-diagram-definitely" class="section level3 hasAnchor" number="6.1.7">
+<h3><span class="header-section-number">6.1.7</span> MA Diagram (definitely)<a href="field-specific-visualizations.html#ma-diagram-definitely" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Description</strong>: Filler description</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Type of data</li>
+<li>Number of variables</li>
+<li>Primary data encodings</li>
+<li>Used for ….</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Strength 1</li>
+<li>Strength 2</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Weakness 1</li>
+<li>Weakness 2</li>
+<li>Weakness 3</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>Alternative (if applicable)</li>
+<li>Alternative 2 (if applicable)</li>
+</ul>
+<p><strong>Example plot</strong></p>
+<p><strong>Interpretation</strong></p>
+</div>
+<div id="principal-components-analysis-pca-plot-probably" class="section level3 hasAnchor" number="6.1.8">
+<h3><span class="header-section-number">6.1.8</span> Principal Components Analysis (PCA) Plot (probably)<a href="field-specific-visualizations.html#principal-components-analysis-pca-plot-probably" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Description</strong>: Filler description</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Type of data</li>
+<li>Number of variables</li>
+<li>Primary data encodings</li>
+<li>Used for ….</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Strength 1</li>
+<li>Strength 2</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Weakness 1</li>
+<li>Weakness 2</li>
+<li>Weakness 3</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>Alternative (if applicable)</li>
+<li>Alternative 2 (if applicable)</li>
+</ul>
+<p><strong>Example plot</strong></p>
+<p><strong>Interpretation</strong></p>
+</div>
+<div id="circos-plot-maybe" class="section level3 hasAnchor" number="6.1.9">
+<h3><span class="header-section-number">6.1.9</span> Circos Plot (maybe)<a href="field-specific-visualizations.html#circos-plot-maybe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Description</strong>: Filler description</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Type of data</li>
+<li>Number of variables</li>
+<li>Primary data encodings</li>
+<li>Used for ….</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Strength 1</li>
+<li>Strength 2</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Weakness 1</li>
+<li>Weakness 2</li>
+<li>Weakness 3</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>Alternative (if applicable)</li>
+<li>Alternative 2 (if applicable)</li>
+</ul>
+<p><strong>Example plot</strong></p>
+<p><strong>Interpretation</strong></p>
+</div>
+<div id="biomedical-knowledge-graph-kg-probably" class="section level3 hasAnchor" number="6.1.10">
+<h3><span class="header-section-number">6.1.10</span> Biomedical Knowledge Graph (KG) (probably)<a href="field-specific-visualizations.html#biomedical-knowledge-graph-kg-probably" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Description</strong>: Filler description</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Type of data</li>
+<li>Number of variables</li>
+<li>Primary data encodings</li>
+<li>Used for ….</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Strength 1</li>
+<li>Strength 2</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Weakness 1</li>
+<li>Weakness 2</li>
+<li>Weakness 3</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>Alternative (if applicable)</li>
+<li>Alternative 2 (if applicable)</li>
+</ul>
+<p><strong>Example plot</strong></p>
+<p><strong>Interpretation</strong></p>
+</div>
+</div>
+<div id="summary-of-strengths" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Summary of Strengths<a href="field-specific-visualizations.html#summary-of-strengths" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><b>Caterpillar</b> plots are good if you want to look at effects and variation at a glance to identify the best/worst (the extremes) or see the overall range.</p>
+<p><b>Waterfall</b> plots are good if you have a baseline to compare to for (1) a single time point, (2) many samples/patients, and (3) clearly know what above or below that baseline means.</p>
 
 </div>
 </div>
@@ -251,8 +536,8 @@
           </div>
         </div>
       </div>
-<a href="field-specific-visualizations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="about-the-authors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="high-quality-and-inclusive-data-visualizations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wrapping-up.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
