@@ -8,7 +8,7 @@ Creating a high quality data visualization requires more than picking the right 
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_41#slide=id.g3a4b3643292_0_41")
 ```
 
-## Clearly presenting complex data
+## Clearly Presenting Complex Data
 
 An overly complex plot can be misleading for a number of reasons. These reasons include obscuring something because the plot focuses the viewer's attention on another aspect, not separating high density areas or overlapping plot elements, including too much information, or not specifying specialized language such as acronyms or field specific/technical vocabulary.
 
@@ -32,19 +32,19 @@ General tips to reduce complexity when you can:
 
 Reducing complexity enhances clarity and accessibility by helping the viewer know where to focus and providing them with reference points or information they need to know (such as acronym meanings).
 
-## Best practices for accessibility
+## Best Practices for Accessibility
 
 Reducing complexity is a very important first step in designing accessible visualizations. Beyond reducing complexity, additional considerations are necessary to further enhance accessibility for visualization audiences. Audiences may have visual impairments such as low vision or blindness or color vision deficiency, motor impairments (relevant for interactive visualizations), or dyslexia. Additionally, audiences likely will be unfamiliar with your research and may be distracted when interacting with your research.
 
 This course will mostly focus on making visualizations accessible for those with visual impairments and those unfamiliar with your research.
 
-### Color palettes
+### Color Palettes
 
 ### Contrast
 
 ### Text
 
-#### Axis labels
+#### Axis Labels
 
 #### Annotations
 
@@ -52,15 +52,15 @@ This course will mostly focus on making visualizations accessible for those with
 
 #### Captions  
 
-### Alternative text descriptions
+### Alternative Text Descriptions
 
-## Ethical data visualization
+## Ethical Data Visualization
 
 Ethical visualizations improve viewers' understanding rather than confuse or mislead. Misleading messages are not always intentional on the part of the researcher putting together a data visualization, and mistakes happen (e.g., bugs in software, errors in data entry, etc.). It's the responsibility of the researcher to carefully evaluate all data visualizations before sharing them to make sure that the visualizations clearly and accurately present the data and communicate the overall goal.
 
 Several of the topics we'll provide within this section about ethical considerations are related to tips to reduce complexity and enhance accessibility. This is not surprising given that clear communication is a necessity for both ethical and accessible visualizations.
 
-### Data inclusion: safety & transparency
+### Data Inclusion: Safety & Transparency
 
 The rules within this section are aimed to safeguard patient privacy and provide transparency.
 
@@ -88,7 +88,7 @@ ADD thoughts about data that may be missing, or sizes/area that don't align with
 
 ADD thoughts especially related to axis labels. Often having simplified axis labels help audiences. Doing this ethically such that the simplified label is what is being plotted is really important. If the label doesn't match the data, why not plot the data for the simplified label?
 
-### Avoiding data distortion
+### Avoiding Data Distortion
 
 The aims for rules within this section include to avoid misleading messages and to compare groups fairly.
 
@@ -106,7 +106,7 @@ ADD info about the overall message. If a line is going up over time, but the mes
 
 ADD info about how true info can be obscured if plot elements aren't separated.
 
-### Plagiarism & inspiration
+### Plagiarism & Inspiration
 
 ADD info about plagiarism and what that means for data visualization
 
@@ -128,6 +128,6 @@ Tips for showing empathy while constructing data visualizations based on suggest
 
 *Expand an "Other" category*
 
-## Improving visualizations
+## Improving Visualizations
 
 ## Summary
