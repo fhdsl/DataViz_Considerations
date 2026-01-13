@@ -124,7 +124,7 @@ These visual building blocks are also referred to as "visual channels" and they 
 
 #### Shape {-}
 
-**Shape** may reflect categorization or group membership and controls the way that points appear. Shape is somtimes used in place of or as a supplement to color.
+**Shape** may reflect categorization or group membership and controls the way that points appear. Shape is sometimes used in place of or as a supplement to color.
 
 #### Line type {-}
 
@@ -182,4 +182,4 @@ Additional coordinate systems are appropriate for some specific visualizations s
 
 ## Summary
 
-Data has two main subdivisions: numeric and categorical data. Each type of data has certain geometric marks and visual channels that best represent that type of data. Categorical data communicates qualitative information such as groups, categorizations, or rankings and is best represented by color and shape as well as line type or patterns. Position may also be used for categorical data though position is typically associated with numerical data. Numerical data communicates quantitative information such as a measurement, count, or other numerical value perhaps the result of a mathematical operation. 
+Data has two main subdivisions: numeric and categorical data. Each type of data has certain geometric marks and visual channels that best represent that type of data. Categorical data communicates qualitative information such as groups, categorizations, or rankings and is best represented by color and shape as well as line type or patterns. Position may also be used for categorical data though position is typically associated with numerical data. Numerical data communicates quantitative information such as a measurement, count, or other numerical value perhaps the result of a mathematical operation.

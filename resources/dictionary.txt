@@ -26,6 +26,7 @@ dropdown
 EDA
 embeddings
 enforceability
+eQTL
 faq
 favicon
 FirstName
@@ -86,6 +87,7 @@ Savonen
 Simpon
 sexualized
 socio
+subpanel
 Substitutable
 subtypes
 synched
