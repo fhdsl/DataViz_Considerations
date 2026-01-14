@@ -1,0 +1,462 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Considerations for Data Visualization",
+    "section": "",
+    "text": "About this Course\nThis course is part of a series of courses for the Informatics Technology for Cancer Research (ITCR). This material was created by the ITCR Training Network (ITN) which is a collaborative effort of researchers around the United States to support cancer informatics and data science training through resources, technology, and events. This initiative is funded by the following grant: National Cancer Institute (NCI) UE5 CA254170. Our courses feature tools developed by ITCR Investigators and make it easier for principal investigators, scientists, and analysts to integrate cancer informatics into their workflows. Please see our website at www.itcrtraining.org for more information.\nConsiderations for Bioinformatic Data Visualization is the first in a series of two courses on data visualization. This course focuses on considerations for best practices in data visualization discussing topics such as",
+    "crumbs": [
+      "About this Course"
+    ]
+  },
+  {
+    "objectID": "index.html#available-course-formats",
+    "href": "index.html#available-course-formats",
+    "title": "Considerations for Data Visualization",
+    "section": "Available Course Formats",
+    "text": "Available Course Formats\n\nThe material for this course can be viewed without login requirement on this Bookdown website. This format might be most appropriate for you if you rely on screen-reader technology.\nOur courses are open source, you can find the source material for this course on GitHub.\nThe second course in the series will focus on building data visualizations, pointing to resources across R and Python, while integrating the best practice considerations discussed in this course.",
+    "crumbs": [
+      "About this Course"
+    ]
+  },
+  {
+    "objectID": "01-intro.html",
+    "href": "01-intro.html",
+    "title": "\n1  Introduction\n",
+    "section": "",
+    "text": "1.1 Motivation\nThis course is meant to discuss best practices when constructing data visualizations with a special focus on graphs within biology research.\nData is now used more than ever to evaluate and understand questions across many fields including pubic health, bioinformatics, and clinical research. It is critical to produce effective visual summaries of our data. Data visualization is useful for exploration, validation, and presentation of research, aiding in the understanding of underlying biology in datasets, debugging errors in informatics workflows, and identifying/avoiding sources of bias. This course is designed to introduce key concepts of data visualization, in particular for visualizing complex data and accessibility. In addition we will point to additional resources.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#target-audience",
+    "href": "01-intro.html#target-audience",
+    "title": "\n1  Introduction\n",
+    "section": "\n1.2 Target audience",
+    "text": "1.2 Target audience\nThe course is intended for anyone who has an interest in data visualization, but contains sections of specific interest for cancer researchers with experience using basic informatics tools.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#curriculum",
+    "href": "01-intro.html#curriculum",
+    "title": "\n1  Introduction\n",
+    "section": "\n1.3 Curriculum",
+    "text": "1.3 Curriculum\nThe course covers why data visualizations are important for communication within the biomedical and bioinformatics fields as well as best practices and design principles that researchers should consider when constructing data visualizations for their work.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#objectives",
+    "href": "01-intro.html#objectives",
+    "title": "\n1  Introduction\n",
+    "section": "\n1.4 Objectives",
+    "text": "1.4 Objectives",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "02_what_why_intro.html",
+    "href": "02_what_why_intro.html",
+    "title": "\n2  Defining Data Visualization\n",
+    "section": "",
+    "text": "2.1 Learning Objectives",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Defining Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "02_what_why_intro.html#what-is-data-visualization",
+    "href": "02_what_why_intro.html#what-is-data-visualization",
+    "title": "\n2  Defining Data Visualization\n",
+    "section": "\n2.2 What is Data Visualization?",
+    "text": "2.2 What is Data Visualization?\n\nData visualization is the process (verb) or end product (noun) of making graphical representations such as plots or other figures to show different representations of information, to both explore or communicate aspects such as trends, patterns, relationships, or steps in a process.\n\nA data visualization may show every data point within a dataset (raw data), or it may show transformations, subsets, statistical summaries, confidence intervals, or estimates of relationships between variables within the dataset. It may represent data using graphics such as points, lines, bars, area/size, color, shape, or some combination of these. Visualizations can also be used to provide an overview of a process, rather than displaying specific data. By whatever means the information is displayed, a complete or polished data visualization will also include design elements beyond graphics: informative text such as titles, axis labels, annotations or direct labeling, and captions. These are the building blocks of graphical representation of data. They may be combined in specific ways to form standard plot formats such as scatter plots, pie charts, bar plots, histograms, and more (with even more specialized formats used in certain industries and research fields - e.g., Sankey Diagrams, Forest Plots, Kaplan-Meier Curves, etc.).\n\n\n\n\n\n\n\n\nTables are another fundamental form of data visualization even though they don’t have the same visual appeal of a plot or figure. Tables summarize data in a structured manner, displaying specific information and enabling detailed comparisons. They may include graphics such as icons or color, but primarily utilize text within a grid-like format. A table may be stand alone or accompany a plot to provide a more complete picture.\nThere are two main types of data visualizations: Exploratory and Expository visualizations. This course will focus on best practices in preparing expository visualizations.\n\n\n\n\n\n\n\n\n\n2.2.1 Exploratory Visualizations\nExploratory visualizations are made during Exploratory Data Analysis (EDA). These visualizations are made quickly and will not be shared widely outside of your team. EDA and exploratory visualizations are useful for:\n\nExploring a dataset\nData wrangling: Determining how to reorganize or clean a dataset (checking for missing data, data miscodings etc.)\nChecking that your reorganizing or cleaning of a dataset worked correctly\nSketching any necessary quality control or transformation steps\nValidating that you have the necessary data to answer your question\n\n Exploring a dataset \nExploring a dataset involves looking at the data. Sometimes this is just visually inspecting the data and other times its creating plots to look at aspects of a variable or how variables relate to each other. You’ll primarily be looking to see what data is there, if anything is missing, how the data is encoded/how it appears, if you have all the variables/features you need, and how variables relate to each other. Visualizations that will be useful for exploring a dataset include any plot showing distributions (violin, boxplot, stem and leaf, etc.), tables, heatmaps, line plots, and scatter plots.\n\nSteps to consider for exploring a dataset\n\nLook at the beginning of the dataset:\n\nFor tabular data, are the header names present/correct?\nIs the data separated correctly?\nDoes the data appear how or contain what you would expect? (e.g., DNA sequences, numbers, pixels, etc.)\n\n\nLook at the end of the dataset:\n\nIs there unintended information included at the end?\nDoes the file end where you would expect or is data potentially missing/wasn’t transferred?\n\n\nWhat’s the size of the dataset?\n\nFor tabular data, is the number of rows and columns what you would expect?\nIs the file size correct or was data lost in any transfer steps?\n\n\nLook for missing data\n\nHow is missing data encoded (e.g., how it appears or what it looks like)? “NA”, “NULL”, “999”, “-1”, blank, etc.?\nWhat variables have missing data?\nIs the data missing at random or is there some pattern?\nAre some variables missing data together? Or inversely (e.g., one variable has data when the other doesn’t)?\nWill you drop missing data or impute it? How does your action change the dataset?\n\n\nLook at the variables you have\n\nAre there any variables that should be there that aren’t such as possible confounders or covariates? If so, can you use data that is there to define that information?\nDo you know units or other important information (e.g what does 0/1 stand for in a categorical column) ?\n\n\nFor numerical variables …\n\nWhat are the minimum and maximum values? Do these match your expectations?\nWhat do the distributions look like? Identity, skew, modality, etc. … do these match your expectations?\nAre there outlier values? Are these biologically real or could they be data entry errors?\n\n\nLook for trends or correlations\n Data wrangling \nAny missing data, variables that you need to create using other (present) variable(s), recodings, or possible data entry errors that you found while exploring the dataset are going to be pertinent for data wrangling. Additionally, it’ll be useful to create tables or bar charts that count entries for certain variables, especially for any free text or manual entry data. Consider a text variable that represents attending physician: “Abraham Simpson”. Entries may include “AJS” (initials), “Simpson”, “Abe Simpson”, “Abraham Simpon” (misspelling). All of these represent the same physician and would need their values synchronized/corrected.\n Quality Control or Transformation \nPossible quality control or transformation steps include\n\nPerform a principal component analysis (PCA)  and make related plots (a variance explained elbow plot, embeddings scatter plot, loadings heatmap, etc.).\n\nDo any variables need rounded down, rounded up, log transformed (to spread close values)? How do distributions change after you’ve done that?\n\n\n Validate that you have the necessary data to answer your question \nPerform a preliminary analysis aiming to answer your question. Do you have enough data (or the right data) to answer the question? Are the results what you expected? Do they appear how you expected? Does a preliminary quick plot of the results seem like something that can communicate the results to others (once you’ve polished it and made some aesthetic changes)?\n\n\n\n\n\n\n\n\nExploratory visualizations and EDA allow for researchers to explore their data and validate that it is the correct data to answer the research question. You should spend very little time making each exploratory plot. The large amount of time EDA takes, instead, is the result of making a lot of visualizations and thoroughly exploring the dataset. The time you take at the beginning of an analysis to explore the dataset and truly understand and wrangle what is there, saves a lot of time in the end because you can request more data or make any necessary corrections before you perform the data analysis and build up your expository visualizations.\n\n\n\n\n\n\n\n\n\n2.2.2 Expository Visualizations\nExpository visualizations are polished visualizations prepared for the purpose of sharing. You may share an expository visualization within a preprint, a peer-reviewed publication, on a poster, or as part of a presentation.\nBecause expository visualizations will be shared widely, you will not always be there to present or explain the visualization to others. Therefore, you want to design your data visualization to stand alone.\nWith this goal in mind, an important part of creating an expository visualization also includes writing the narrative to go along with it. This narrative may involve an informative title, well-labeled axes, a thorough caption, and alternative text. Note that not all formats require each of these elements to appear alongside the visualization. You won’t put a caption on your presentation slide, however you may want to include the caption within the speaker notes.\n\nSpecific tips for a high quality narrative\n\nEnsure the title states the plot’s main conclusion\nAvoid using field specific jargon or obscure acronyms within a title or an axis label unless defined (perhaps within the caption).\nInclude sufficient detail in your axis for people to understand what your plot is trying to show\nAdditionally, because an expository visualization will be shared widely, the audience will be broad and have varied interests and expertise. If you are giving a semi-frequent presentation within your department or lab group or presenting within a session at a specialized conference, you can expect the audience to be somewhat familiar with the topic. However, no one will know your research like you do. Many others may see the visualization outside of your lab, department, or institution – perhaps even patients and their family members, or other members of the public! Therefore, you want to prepare your expository visualizations in a way that they will be accessible to a larger audience.\n\n\n\n\n\n\n\n\nCreating a good expository visualization will take time. Data visualization is often an iterative process both as you prepare the plot and as you seek and incorporate feedback from your team. Be sure to carefully inspect and validate your visualization before sharing it widely. A common phrase within home maintenance and improvement communities is “Measure twice, cut once”. As you prepare your expository visualization, you want to check it twice before you share it the first time.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Defining Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "02_what_why_intro.html#need-for-data-visualization",
+    "href": "02_what_why_intro.html#need-for-data-visualization",
+    "title": "\n2  Defining Data Visualization\n",
+    "section": "\n2.3 Need for Data Visualization",
+    "text": "2.3 Need for Data Visualization\n\nDatasets are becoming increasingly large and complex. Well-made data visualizations efficiently summarize and display data, providing a more approachable view of the complex information. Rather than writing many paragraphs of text to explain the dataset and analyses performed, creating data visualizations can streamline the necessary accompanying narrative by showing the data and relationships contained within. Visualizations are very useful in displaying outliers, trends, patterns, relationships, steps in a process, or changes over time. Each of these could be explained with words, but they will be more compelling and more easily comprehensible to an audience when they see them with their own eyes; the old marketing phrase “A picture is worth a thousand words” succinctly conveys how audiences benefit from visuals. However, remember that an expository data visualization that is meant to be shared widely should have words with it: the declarative title, informative axis labels, or context on where the data came from and how it was handled.\n\n\n\n\n\n\n\n\nVisualizations play a strong role in helping audiences interact with and understand the data being presented. People have limited time to interact with others’ work and analyses, especially for topics outside of their interest or expertise. They may skim an abstract or part of an article, but their eyes will likely be drawn to images. Visualizations that are frustrating, misleading, not accessible, or not easily understood will cause more harm than good, but making compelling visualizations that can be effectively understood at a glance helps you to communicate your research to others.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Defining Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "02_what_why_intro.html#summary",
+    "href": "02_what_why_intro.html#summary",
+    "title": "\n2  Defining Data Visualization\n",
+    "section": "\n2.4 Summary",
+    "text": "2.4 Summary\nData visualizations efficiently summarize and display data. Exploratory data visualizations are used by a researcher to explore and better understand their data, but are internal visualizations that are made quickly and are not polished. In contrast, expository data visualizations communicate a researcher’s point in a polished and more approachable way than just a descriptive paragraph would. Making a high quality expository data visualization to share widely often requires several design and refinement iterations. Expository visualizations should stand alone, using accompanying descriptive and informative text to communicate the point without live narration or explanation from the researcher. Finally, researchers should double check their expository visualizations for accuracy, effectiveness, and accessibility before sharing widely.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Defining Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "03_data.html",
+    "href": "03_data.html",
+    "title": "\n3  Elements of Data Visualization\n",
+    "section": "",
+    "text": "3.1 Learning Objectives\nA data visualization represents data in a simplified way. The visualization is made up of the represented data as well as the means by which the data is represented: textual and graphical design elements. Each conventional plot type utilizes a combination of design elements in a predictable way or layout. Because the design elements are the building blocks for the data visualizations, an important step in choosing an appropriate plot for your data is considering what your data is and how it can be encoded or represented.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Elements of Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "03_data.html#data-types",
+    "href": "03_data.html#data-types",
+    "title": "\n3  Elements of Data Visualization\n",
+    "section": "\n3.2 Data Types",
+    "text": "3.2 Data Types\nA dataset is a collection of records or observations. This course assumes that the dataset you are going to visualize has been processed and wrangled such that it is a “structured dataset.” In structured datasets, typically each row (or “record”) contains observations for a single sample or patient. Each column is a different observation or variable for that sample or patient. Every variable will be unique either because different things are being measured or documented or because the same thing is being measured at different time points. When thinking about the amount of data that will be displayed in a visualization, there are two different considerations: the number of observations (the number of rows) and the number of variables (which and how many columns).\n\nWide vs Long datasets\nSome datasets may utilize a “long” approach to stack similar variables on top of each other with a new column helping to distinguish them and repeating record IDs across multiple rows; but this “long” approach is typically used as input to visualization software.\nThere are two main types of data within a dataset: numerical and categorical data. A dataset will likely have a mixture of these data types and new variables may be generated using the original data through transformations. Transformations can be used by performing mathematical operations or converting between data types. Converting numerical data into categorical data is accomplished through binning or by employing a cutoff value. Alternatively, categorical data may need to be encoded as numerals so the data is in a form that requires less storage or so that a computer or algorithm can process it (e.g., machine readable).  There may be more specialized data types depending on your research question, such as relational or spatial data, but these tend to be just more complex and more defined format versions of numerical and categorical data.\n\n3.2.1 Numerical Data\nNumerical data is data that quantitatively represents some count or measurement. Mathematical operations such as addition, subtraction, division, multiplication, exponentiation, etc. are appropriate.\nThere are two subtypes of numerical data: discrete and continuous. Whole numbers or integers (e.g., 103 and 25,975) are examples of discrete data while decimals (e.g., 98.6 and 32.25) are examples of continuous data.\nExamples of numerical data within the biomedical field include\n\na blood test result value or concentration\na patient’s age\nthe thickness of a tumor\nthe length of stay for a patient at the hospital\na survival probability\n\n3.2.2 Categorical Data\nCategorical data qualitatively characterizes, categorizes, or groups objects or individuals with labels. Categorical data sometimes may look like numbers when they are group IDs or some sort of ranking or index score. However, A-B-C could be switched out for 1-2-3 making such data categorical data.\nSurvey data frequently has categorical data that appears as numbers because responses are typically “coded”. This is especially true for biomedical data from platforms like REDCap.\nThere are two subtypes of categorical data: nominal and ordinal. Nominal data is data that can’t be ordered, for example “Case” and “Control”. Ordinal data is data that can be ordered, for example “A”, “B”, “C” or “January 14, 1994”, “February 8, 1995”, “March 18, 1996”.\nWhile you may be able to do some arithmetic operations with ordinal data specifically (like finding an average ranking or finding the distance between numerically encoded categories), typically arithmetic operations aren’t appropriate for categorical data and shouldn’t be used because the numbers don’t have mathematical meaning. Index scores particularly should be treated like categorical data given that they represent categories. However, they often have order to them (are ordinal) and therefore, because the index or score is fundamentally a number, it’s made up of other numbers and can be tracked over time, etc.\nExamples of categorical data within the biomedical field include\n\npatient or sample IDs\ntreatment group\npatient sex\ntumor location\nPatient Health Questionnaire-9 (PHQ-9) Score / depression severity level \n\nCharlson-Deyo Comorbidity Index",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Elements of Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "03_data.html#data-encodings",
+    "href": "03_data.html#data-encodings",
+    "title": "\n3  Elements of Data Visualization\n",
+    "section": "\n3.3 Data Encodings",
+    "text": "3.3 Data Encodings\nData encoding is the process of representing data using visual elements or graphical attributes. These include geometric marks and visual channels which are the building blocks of data visualization. Different graph types utilize different encodings to represent data. Geometric marks are typically the primary means of representing data across graph types while the visual channels are usually used as secondary or supplementary methods (e.g., shape, color, and textures). However, color can be a primary means of data encoding for certain graphs like heatmaps or choropleths .\n\n3.3.1 Geometric Marks\nThese building blocks are also referred to as “geometric marks” and they include\n\npoints\nlines\nbars\narea\nangle\n\n\n\nPoints\nLines\nBars\nArea\nAngles\n\n\n\nAn example of a conventional plot type that uses points is a scatter plot. Points typically are circles but can be other shapes (like triangles or squares), and typically represent one person or sample.\n\n\nAn example of a conventional plot type that uses lines is a line plot. Lines connect different data points. Slope may be a value of interest when working with lines, but it’s often difficult for audiences to compare slope values visually without labels. Lines may also be trendlines that aren’t connecting explicit data points and rather are included in a plot to showcase a general relationship or trend. Lines are often used to indicate summary statistics such as averages as well as medians or quartiles (in boxplots).\n\n\nBars use height (vertical bars) or length (horizontal bars) to communicate information about a set of samples. Within bar charts, width typically isn’t used to communicate information about data, but for plot types like flow diagrams or histograms, bar width does convey a meaningful value.\n\n\nArea is often proportional to the amount of data its representing rather than the raw data values itself. Larger areas correspond to larger data values. Area is commonly used in density plots.\n\n\nAngles are most commonly used to represent numerical values such as proportions but can also be used to represent direction rather than just magnitude/size (through use of arrows or slope). Angles are the primary geometric mark used in pie charts.\n\n\n\n\n3.3.2 Visual Channels\nThese visual building blocks are also referred to as “visual channels” and they control the way that the geometric building blocks will appear. You can change the shape, color, or size of a point, but it’s still a point. Visual channels include:\n\nposition\ncolor\nshape\nline type\npatterns\nsize\ntilt\n\n\n\nPosition\nColor\nShape\nLine Type\nPattern\nSize\nTilt\n\n\n\nPosition often reflects numerical value with marks that are near each other having more similar values than marks that are further away. Position may also be used to separate different categories where the general order or position may reflect similar categories, the same parent category, or a numerical variable that is being compared across variables.\n\n\nColor may reflect categorization or group membership. Color may control the appearance of any of the geometric marks.\n\n\nShape may reflect categorization or group membership and controls the way that points appear. Shape is sometimes used in place of or as a supplement to color.\n\n\nLine types can be used much like shape to communicate categorization or group membership. Line type controls the appearance of lines.\n\n\nPattern is sometimes used in place of or as a supplement to color to reflect categorization or group membership. For the recurring pattern to be recognized, it often needs to be used with geometric marks that have enough area for the pattern to be distinguishable (such as bars).\n\n\nSize is used to encode quantitative data by altering physical attributes of the geometric marks: thickness of a line, radius of a point, etc. Changes in size are often proportional to the quantitative data with larger sizes corresponding to larger values.\n\n\nTilt is another word for angles and can be used as a visual channel, not just a geometric mark. Tilt is used to represent proportions or trends (such as slope). While helpful for comparisons, audiences often find it difficult to compare tilt precisely and designers should not rely on tilt to communicate main messages.\n\n\n\n\n3.3.3 Preattentive Attributes\nSeveral of the visual channels are considered “Preattentive attributes” which means that they are visual features that the human brain tends to process quickly and unconsciously such that a viewer is instinctively guided to focus their attention on that feature. This is often due to contrast or differences in the feature compared to everything else. Examples include:\n\nBars that are obviously taller than the rest\nMostly one dominant color, but a few data points are a different, more vibrant or contrasting color\nOnly one data point is outlined\nOne line is wider than the rest\n\n3.3.4 Additional Design Tools\nThese additional design tools may or may not encode data, but do separate out data to enhance clarity and interpretability. The actual group membership will affect what is labeled or separated out, but often other visual design channels (like color) may be used to communicate group membership in a redundant way. These design tools are especially effective at improving the clarity of a visualization without having to change plot types. So if you’re building a data visualization and it’s a little too cluttered or difficult to interpret, try utilizing one of these design tools before switching plot types to a more complex plot type.\n\nlabels\nfacets or subplots\ntransparency\n\n\n\nLabels\nSubplots\nTransparency\n\n\n\nLabels include axis labels, titles, and direct annotations within the plot perhaps specifying a specific summary statistic/number or pointing out the name/value of a specific data point or line. They may be combined with dashed lines, colors, or other visual channels to provide further clarity.\n\n\nSubplots, also known as faceting, subplots separates out the data into different panels based on group membership. The same plot type will be utilized in each panel. Panels may or may not use the same scaling and axis limits.\n\n\nTransparency controls the opacity of the geometric marks. If an area appears less transparent, there is a greater density of data there than areas that appear more transparent. This visual channel is especially helpful to distinguish groups that overlap.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Elements of Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "03_data.html#coordinate-system",
+    "href": "03_data.html#coordinate-system",
+    "title": "\n3  Elements of Data Visualization\n",
+    "section": "\n3.4 Coordinate System",
+    "text": "3.4 Coordinate System\nMost data visualizations will utilize a two dimensional XY coordinate system (or Cartesian plane) with a horizontal (x-) axis and a vertical (y-) axis that are perpendicular and intersect where x = 0 and y = 0. Each variable will be assigned to one of the axes. If working with regression or where you have a dependent variable (outcome or event being measured or observed) and an independent variable (the variable being controlled or changed/purposefully manipulated), the independent variable is assigned to the x-axis and the dependent variable is assigned to the y-axis. When working with numerical data, this XY coordinate system allows for the positioning of the numerical data along these axes. When working with a categorical data, the categories can still be positioned along of the numerical axes, however the corresponding numerical positions will not have the same meaning they would otherwise have. The two axes can utilize different units (e..g, micrograms per milliliter, percentage, grams, log fold change, etc.) and scales, however, if the same units are used for the two axes, then the scaling should be equal for both axes to avoid distortion.\n\nAdditional coordinate systems\nAdditional coordinate systems are appropriate for some specific visualizations such as a three dimensional XYZ coordinate system, the polar coordinate system (e.g., pie charts and spider charts), and a geospatial coordinate system for maps such as the projected coordinate system.\n\nThe XYZ coordinate system utilizes a third axis (z-) that intersects the XY-plane perpendicularly at x = 0, y = 0, and z = 0.\nThe polar coordinate system uses angles to position groups and radii length to represent magnitude or group size.\nA projected coordinate system is a two dimensional map.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Elements of Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "03_data.html#summary",
+    "href": "03_data.html#summary",
+    "title": "\n3  Elements of Data Visualization\n",
+    "section": "\n3.5 Summary",
+    "text": "3.5 Summary\nData has two main subdivisions: numeric and categorical data. Each type of data has certain geometric marks and visual channels that best represent that type of data. Categorical data communicates qualitative information such as groups, categorizations, or rankings and is best represented by color and shape as well as line type or patterns. Position may also be used for categorical data though position is typically associated with numerical data. Numerical data communicates quantitative information such as a measurement, count, or other numerical value perhaps the result of a mathematical operation.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Elements of Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "04_graph_info.html",
+    "href": "04_graph_info.html",
+    "title": "\n4  Choosing the Right Plot\n",
+    "section": "",
+    "text": "4.1 Learning Objectives\nA data visualization represents data in a simplified way by encoding that data with textual and graphical design elements which are then combined in a specific layout. Each plot type has a certain combination of the design elements and an associated typical configuration. The design elements act as building blocks for the overall data visualizations.\nTherefore, deciding which design elements and plot type to use depends on:\nThe previous chapter discussed the types of data and how those are encoded or appropriate visual design elements to represent certain types of data. This chapter discusses the questions typical visualizations can answer and puts together all of the considerations in describing standard plot types.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Choosing the Right Plot</span>"
+    ]
+  },
+  {
+    "objectID": "04_graph_info.html#goals-of-data-visualization",
+    "href": "04_graph_info.html#goals-of-data-visualization",
+    "title": "\n4  Choosing the Right Plot\n",
+    "section": "\n4.2 Goals of Data Visualization",
+    "text": "4.2 Goals of Data Visualization\nThere are many different possible goals for creating a data visualization. Among those include\n\nlooking at a distribution\n\nshowing a correlation or other relationship between variables\nfinding a ranking\n\ndisplaying change over time or after an intervention\nindicating location and spatial relationships or distributions",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Choosing the Right Plot</span>"
+    ]
+  },
+  {
+    "objectID": "04_graph_info.html#standard-graph-types",
+    "href": "04_graph_info.html#standard-graph-types",
+    "title": "\n4  Choosing the Right Plot\n",
+    "section": "\n4.3 Standard Graph Types",
+    "text": "4.3 Standard Graph Types\nStandard graph types include conventional graphs like histograms, scatter plots, bar plots, and line charts as well as other graphs used to look at distributions or find rankings or used to consider group composition, complex relationships, and response. For the conventional plots, this section will describe the appropriate kinds and amount of data needed to use that plot type as well as questions that plot type can be used to answer. For the graphs beyond those four, additional information will be provided such as a description, strengths, weaknesses, and alternative plots.\nConventional graph types include histograms, scatter plots, bar plots, and line charts. Each of these are used to answer a different question.\n\n\n\n\n\n\n\n\n\n\nHistogram\nScatter plot\nBar plot\nLine chart\n\n\n\nPrimary type of data\nNumerical\nNumerical\nNumerical & Categorical\nNumerical\n\n\nMinimum number of variables\n1\n2\n2\n2\n\n\nPrimary data encoding\nArea and Position\nPoint and Position\nArea & Labels/Position\nLine and Position\n\n\nGoal\nlooking at a distribution\nshowing a correlation\nfinding a ranking\ndisplaying change over time\n\n\n\n\nAdditional data and data encodings for conventional graph types\nA histogram may visualize more than one distribution within the same visualization. In that case, the dataset will have categorical data and more than one variable. Such a visualization would likely incorporate color or patterns and should increase opacity/transparency.\nA scatter plot may have categorical data that can be encoded with shape or color. Any additional numerical variables beyond the minimum of 2 (one for the x-axis and one for the y-axis) could be encoded with size or color (using a sequential color palette).\nA bar plot tends to have categories and counts for those categories (two variables, one categorical and one numerical), though a dataset may have just the categories which would need to be counted (which some visualization software can do this for the researcher). Additional data could represent some grouping or categorization of the categorical data (another categorical variable) in which case color may be used to encode that additional variable.\nA line chart may or may not use points in addition to lines. It is good practice for the researcher to display the data points and not just the lines connecting them. If the dataset contains additional variables beyond the minimum of 2 (one for the x-axis and one for the y-axis), categorical data could be encoded with shape or color while numerical data could be encoded with size or color (using a sequential color palette).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Choosing the Right Plot</span>"
+    ]
+  },
+  {
+    "objectID": "04_graph_info.html#ranking-and-distribution-plots",
+    "href": "04_graph_info.html#ranking-and-distribution-plots",
+    "title": "\n4  Choosing the Right Plot\n",
+    "section": "\n4.4 Ranking and Distribution Plots",
+    "text": "4.4 Ranking and Distribution Plots\nOf the conventional plots described above, bar plots and histograms both fit within this category. Bar plots are typically used to find a ranking while histograms display a distribution. Ranking and distribution plots are often, but not exclusively, used for exploratory data analysis and internal visualizations. If presented as an expository visualization, these plots will usually supplement or support a more complex figure, perhaps as a subpanel within that larger figure. Even if ranking and distribution plots are rarely the focal point, they are a powerful tool in the researcher’s data visualization toolbox to profile data characteristics and compare groups.\n\n4.4.1 Violin Plots\nDescription: Displays the density of data where narrow sections correspond to lower density and wider sections correspond to higher density. The plots generally resemble the outline of a violin.\n\n\nWhen to use\nStrengths\nWeaknesses\nAlternatives\nExample\n\n\n\nWhen to use Violin plots:\n\nNumerical data (may have categorical data if looking at multiple distributions)\nMinimum of 1 variable\nBest with minimal number of categories\nPrimary data encodings are area and position\nUsed to show distributions and rank groups\n\n\n\nStrengths of Violin plots include:\n\nBetter at comparing multiple distributions than histograms (the conventional plot type)\nDisplays distribution shape such as skew and modes better than boxplots do\n\n\n\nWeaknesses of Violin plots include:\n\nDoesn’t show individual data points\nLimited usefulness when there’s little amounts of data (e.g., few records/patients/samples)\nThe method for creating the density visualization is a bit arbitrary\n\n\n\nAlternatives for Violin plots include:\n\n\nBoxplot (especially with jitter to show individual data points)\nRidgeline plot\nRaincloud plot\n\n\n\nAn example of the Violin plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c in this paper showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2.\n\n\n\n\n4.4.2 Boxplots (with jitter)\nDescription: Boxplots use a box to delineate the median and quartiles of the data with whiskers to display the range and potentially points for outliers. A “jitter” can be utilized to include points for each data point.\n\nJitter and Randomness\nInclusion of jitter typically uses randomness to space the points over the box so you may need to set a random seed in your analysis to ensure the visualization appears exactly one way consistently. However, it’s not a major problem if the jitter points move on a plot as they’ll have the same numerical axis location, only moving within the categorical axis.\n\n\nWhen to use\nStrengths\nWeaknesses\nAlternatives\nExample\n\n\n\nWhen to use Boxplots:\n\nNumerical data (may have categorical data if looking at multiple distributions)\nMinimum of 1 variable\nBest if used with intermediate to large sample sizes\nPrimary data encodings are lines and points\nUsed to show distributions and rank groups\n\n\n\n\nShows the data as well as helpful summary statistics and overall variation\nCan quickly spot outliers\nCan compare groups efficiently\n\n\n\n\nDoesn’t show multiple modes as well as violin plots\nQuartiles may not be familiar concepts for general audiences\nOutliers need further investigation\n\n\n\n\nViolin plot\nHistogram\nRidgeline plot\n\nStrip plot (shows the individual data points only)\nRaincloud plot\nSwarm plot\n\n\n\nInclude an example plot\n\n\n\n\n4.4.3 Ridgeline Plots\nDescription: Shows the distribution of multiple categories of numerical data, using densities (half a violin). Looks like stacked, but slightly offset mountain ridges.\n\n\nWhen to use\nStrengths\nWeaknesses\nAlternatives\nExample\n\n\n\nWhen to use Ridgeline plots:\n\nNumerical data (with categorical data for groups)\nMinimum of 2 variables\nBest with a higher number of categories\nPrimary data encodings are area and position\nUsed to show distributions and rank groups\n\n\n\n\nEfficiently displays distributions for many groups or categories\nShows distribution shape (e.g., skew and modes)\n\n\n\n\nCan be cluttered if there is too much overlap between groups or not a clear ordering of the categories\nGood for general comparison among groups, but not for finding precise quantitative differences\nThe method for creating the density visualizations is a bit arbitrary\n\n\n\n\n\nBoxplot (especially with jitter to show individual data points)\nStrip plot\nIn some cases, a sorted heatmap\n\nA table may be better if you need to make quantitative comparisons\n\n\n\nInclude an example plot\n\n\n\n\n4.4.4 Raincloud Plots\nDescription: Combines 3 plots: density, boxplot, individual data points. Generally looks like a raining cloud.\n\n\nWhen to use\nStrengths\nWeaknesses\nAlternatives\nExample\n\n\n\nWhen to use Raincloud plots:\n\nNumerical data (with categorical data for groups)\nMinimum of 1 variable\nBest with minimal number of categories\nPrimary data encodings are area, lines, and points\nUsed to show distributions and rank groups\n\n\n\n\nShow density/distribution shape as well as individual data points and common summary statistics – so much information\nWorks well with small datasets\n\n\n\n\nA lot is going on\nHarder to interpret and cluttered or squished if there are more than a few groups\n\n\n\n\nViolin plot\n\nBoxplot (especially with jitter to show individual data points)\nSwarm plot\n\n\n\nInclude an example plot\n\n\n\n\n4.4.5 Strengths Overview\nThe strengths of the plots that help you visualize distributions and compare groups\nViolin plots are good if you want to look at distribution characteristics (e.g., skew or multimodality) at a glance.\nBoxplots are great if you want to see the data and general summary statistics (e.g., median).\nRidgeline plots are great at comparing distributions of lots of groups.\nRaincloud plots are great when you want to go deep and see everything for a small number of groups (exploratory analysis).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Choosing the Right Plot</span>"
+    ]
+  },
+  {
+    "objectID": "04_graph_info.html#group-composition-complex-relationships-and-response-plots",
+    "href": "04_graph_info.html#group-composition-complex-relationships-and-response-plots",
+    "title": "\n4  Choosing the Right Plot\n",
+    "section": "\n4.5 Group Composition, Complex Relationships, and Response Plots",
+    "text": "4.5 Group Composition, Complex Relationships, and Response Plots\nOf the conventional plots described above, scatter plots and line charts both fit within this category. Scatter plots are usually used to display a response as well as complex relationships while line charts may show a response or change over time. Plots within this category are more frequently expository data visualizations than exploratory data visualizations. These plots are often less intuitive for an audience to interpret without guidance. Therefore the polishing and refinement steps as well as including informative titles, captions, and labels are especially important when designing and building visualizations within this category.\n\n4.5.1 Stacked Bar Charts\nDescription: Displays multiple categories within a single bar, stacked on top (vertical) or next to (horizontal) each other. Each overall bar represents a group. Within bars, each stack is a sub-category or subgroup.\n\n\nWhen to Use\nStrengths\nWeaknesses\nAlternatives\nExample\n\n\n\nWhen to use Stacked Bar charts:\n\nNumerical data with categorical data for groups\nMinimum of 2 variables\nPrimary data encodings are bars, position, and color or pattern\nUsed to find a ranking or change over time\nCompare sub-categories within a bar or consider how sub-category contribution to the total bar composition changes over time/across bars\nAvoid if you have a lot of sub-categories or want to compare individual sub-categories to each other\nIf using more than a couple of categories, consider using proportions (that sum to 100%) on the numerical axis\n\n\n\n\nSummarizes complex group composition in a compact way\nCan compare composition over time or across groups\n\n\n\n\nDifficulty comparing subgroups that aren’t aligned or in the middle of the overall bar\nIf one subgroup contributes too much, it can dwarf other subgroups; similarly, if the groups have uneven sizes, it can dwarf other groups\nIf the numerical axis uses proportions, raw numbers aren’t visualized\n\n\n\n\nGrouped bar chart\nLollipop plot\nLine chart\nA table\nA waterfall plot for the most important sub-category\n\n\n\n\nExample of the plot in the biomedical, bioinformatics, or cancer informatics literature\nhttps://www.mdpi.com/2079-9721/13/2/37\n\n\n\n\n\n4.5.2 Heatmaps\nDescription: A visualization (typically two dimensional – with rows and columns – of a table or matrix) using color. Always uses colors to display numbers or categories; the two dimensional matrix while typical is not a requirement, because the two dimensions could be a map projection or tissue sample.\n\n\nWhen to use\nStrengths\nWeaknesses\nAlternatives\nExample\n\n\n\nWhen to use Heatmaps:\n\nCategorical or numerical data or a mixture\nMinimum of 3 variables\nPrimary data encodings are color and position\nUsed to look at a distribution across samples or change over time/after an intervention\nMay also exhibit pairwise correlation for many groups\nNot recommended if you need to know or display actual values\nOften used together with hierarchical clustering or reordering sample location to highlight trends or areas of similarity\n\n\n\n\nProvides a broad overview to identify trends, areas of density, sparsity, or outliers\nEfficiently and compactly simplifies complex data into one visualization\n\n\n\n\nThe “matrix” aspect can be difficult for viewers to grasp\nRearranging data can be helpful but also misleading if not described\nActual values and summary stats are rare/difficult to display if there are many rows and columns\n\n\n\n\nA table\n\n\nScatter plot\nLine plot\n\nBubble charts if another dimension is needed\nParallel plot\n\n\n\n\nPairwise correlation: Full matrix vs lower triangle\nWhen using a heatmap to display pairwise correlation, the heatmap is symmetrical and presents redundant information (each correlation is displayed twice) because the correlation of A to B is the same as the correlation of B to A. The diagonal will always have perfect correlation because it’s comparing a sample or variable to itself. If looking at just the lower triangle, it presents the pairwise correlation only once and removes the redundant information.\n\n\n\n\n\n4.5.3 Sankey Diagrams\nDescription: Represents the “flow” or movement of quantities (e.g., patients or samples) among different categories through different steps (e.g., demographics or steps of an analysis or trial)\n\n\nWhen to use\nStrengths\nWeaknesses\nAlternatives\nExample\n\n\n\nWhen to use Sankey diagrams:\n\nCategorical data and sometimes numerical data/counts\nRequires several variables\nPrimary data encodings are lines, area, and color\nUsed to show change over time\nBest with datasets with some sort of longitudinal data or time points with categories at each time point\nExample uses include tracking patient response or symptom trajectories as well as patient cohort stratification\n\n\n\n\nProvides a lot of information about the study population and shows all possible paths\nProvides a visual or graphical representation of data that would otherwise be in a table or just described in text\n\n\n\n\nDifficult or complex to interpret\nFlows that cross or overlap or flows with similar widths can be difficult to compare though interactivity can alleviate this\nDiagrams don’t always clearly and explicitly display sample dropout (discontinue treatment, etc.)\nOften require specialized tools to create visualization\n\n\n\n\nA table\nStacked bar charts, but these lose the connection/possible path aspect\nFlowcharts\nTreemaps\nOther graphical visualizations or some custom made visualization\n\n\n\nInclude an example of the plot\n\n\n\n\n4.5.4 Strengths Overview\nThe strengths of the plots for group composition, complex relationships, and response\nStacked bar charts are good if you want to look at how subgroup composition changes at a glance over time, but it is less useful with lots of subgroups.\nHeatmaps are good if you have at least 3 variables that you need to visualize and want to use color as the primary means to communicate the point of the visualization (e.g., the range of values, correlation, areas of density, patterns across groups or time)\nSankey diagrams are good if you want to look at the possible trajectories of symptoms, treatments, etc. and it’s important to know what combinations occur.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Choosing the Right Plot</span>"
+    ]
+  },
+  {
+    "objectID": "04_graph_info.html#field-standard-plots",
+    "href": "04_graph_info.html#field-standard-plots",
+    "title": "\n4  Choosing the Right Plot\n",
+    "section": "\n4.6 Field Standard Plots",
+    "text": "4.6 Field Standard Plots\nThere are several common plots that are “field standard” or customarily used within the biomedical field. These plots (including Waterfall plots, Caterpillar plots, Kaplan-Meier curves, Volcano plots, MA diagrams, etc.) plots will be discussed in the final chapter. They often align with the category of group composition, complex relationships, and response plots. When deciding what plot is best for you and your research question, a field standard plot may be the answer given that the audience will be more familiar with such plots.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Choosing the Right Plot</span>"
+    ]
+  },
+  {
+    "objectID": "04_graph_info.html#galleries",
+    "href": "04_graph_info.html#galleries",
+    "title": "\n4  Choosing the Right Plot\n",
+    "section": "\n4.7 Galleries",
+    "text": "4.7 Galleries\nGalleries can be useful to browse standard plots and learn information about them.\n\n\nfrom Data to Viz Gallery: An example of a gallery that provides visual examples and explanations for necessary data types is the from Data to Viz gallery\n\n\nR Graph Gallery: The R Graph Gallery provides visual examples and templates for creating standard plots with the R programming language.\n\nPython Graph Gallery: The Python Graph Gallery provides visual examples and templates for creating standard plots with the Python programming language.\n\nSMART App Gallery: For more specialized galleries related to biomedical applications, consider the Substitutable Medical Apps, Reusable Technology (SMART) App Gallery which provides free and open source apps for healthcare providers and researchers to work with and visualize health data. The integrated apps describe specific data types and goals and can provide dashboards and visualizations specifically for those data types/goals.\n\nGenomics Data Visualization course website: The Genomics Data Visualization course website is another more specialized gallery from the Johns Hopkins University Fan lab which provides featured visualizations meant for working with large-scale single-cell and spatially-resolved omics datasets using R.\n\nPublications: Journal publications provide a myriad of example visualizations working with field specific data. Reading publications, studying their figures, and critically evaluating the design choices is a wonderful way to improve your own data visualization skills. In the near future, as you read journal articles and look at the figures, ask yourself the following questions:\n\nWhat was the goal or overarching message this visualization was meant to communicate?\nWhat was difficult for me to understand about this figure and what design choices could have made this figure easier for me to follow along?\nWhat did I like best about this visualization?\nAre these visualizations standard/common plot types or were there any new (at least to me) visualizations? What was unique about them?",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Choosing the Right Plot</span>"
+    ]
+  },
+  {
+    "objectID": "04_graph_info.html#summary",
+    "href": "04_graph_info.html#summary",
+    "title": "\n4  Choosing the Right Plot\n",
+    "section": "\n4.8 Summary",
+    "text": "4.8 Summary\nThere are strengths and weaknesses to every kind of plot. Some plots are better for exploratory analysis than for sharing with wide audiences. If exact quantitative values need to be considered, don’t underestimate the power of a good table. When preparing an expository visualization, focus on one message.\nChoosing which plot to use may be field, context, and data dependent. Use the simplest or most mainstream plot you can! Make sure that the plot works with your data type(s), number of variables, number of observations (e.g., patients or samples), and the overall goal or research question. Use design tools to develop your visualization before switching to a more complex plot. These design tools include utilizing facets or subplots, dashed lines and text labels, and varying colors, textures, or shapes. Finally, consider browsing a visualization gallery for inspiration!",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Choosing the Right Plot</span>"
+    ]
+  },
+  {
+    "objectID": "04_how_to_improve_viz.html",
+    "href": "04_how_to_improve_viz.html",
+    "title": "\n5  High quality and inclusive data visualizations\n",
+    "section": "",
+    "text": "5.1 Learning Objectives",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>High quality and inclusive data visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "04_how_to_improve_viz.html#visual-design-principles",
+    "href": "04_how_to_improve_viz.html#visual-design-principles",
+    "title": "\n5  High quality and inclusive data visualizations\n",
+    "section": "\n5.2 Visual Design Principles",
+    "text": "5.2 Visual Design Principles",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>High quality and inclusive data visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "04_how_to_improve_viz.html#accessibility-considerations",
+    "href": "04_how_to_improve_viz.html#accessibility-considerations",
+    "title": "\n5  High quality and inclusive data visualizations\n",
+    "section": "\n5.3 Accessibility Considerations",
+    "text": "5.3 Accessibility Considerations\n\n5.3.1 Color palettes\n\n5.3.2 Labels\n\n5.3.3 Captions and alternative text descriptions",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>High quality and inclusive data visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "04_how_to_improve_viz.html#ethical-considerations",
+    "href": "04_how_to_improve_viz.html#ethical-considerations",
+    "title": "\n5  High quality and inclusive data visualizations\n",
+    "section": "\n5.4 Ethical Considerations",
+    "text": "5.4 Ethical Considerations\n\n5.4.1 Data Distortions",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>High quality and inclusive data visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "04_how_to_improve_viz.html#annotations-and-other-points-of-reference",
+    "href": "04_how_to_improve_viz.html#annotations-and-other-points-of-reference",
+    "title": "\n5  High quality and inclusive data visualizations\n",
+    "section": "\n5.5 Annotations and other points of reference",
+    "text": "5.5 Annotations and other points of reference",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>High quality and inclusive data visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html",
+    "href": "06_field_standard.html",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "",
+    "text": "6.1 Learning Objectives",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html#repeated-measures-plot-maybe",
+    "href": "06_field_standard.html#repeated-measures-plot-maybe",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "\n6.2 Repeated Measures Plot (maybe?)",
+    "text": "6.2 Repeated Measures Plot (maybe?)\nDescription: Filler description\n\n\nWhen to Use\nStrengths\nWeaknesses\nAlternatives\nExample & Interpretation\n\n\n\nWhen to use Repeated Measures plots:\n\nType of data\nNumber of variables\nPrimary data encodings\nUsed for ….\n\n\n\n\nStrength 1\nStrength 2\n\n\n\n\nWeakness 1\nWeakness 2\nWeakness 3\n\n\n\n\nAlternative (if applicable)\nAlternative 2 (if applicable)\n\n\n\nInclude an example plot and how to interpret",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html#caterpillar-plot",
+    "href": "06_field_standard.html#caterpillar-plot",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "\n6.3 Caterpillar Plot",
+    "text": "6.3 Caterpillar Plot\nDescription: Displays numerical point estimates (such as odds ratios or coefficient effect estimates) as the caterpillar body and their variation or the confidence level as caterpillar legs. Caterpillar plots are practically the same as Forest plots except for one major difference: the categories are ordered by magnitude of the point estimates.\n\n\nWhen to Use\nStrengths\nWeaknesses\nAlternatives\nExample & Interpretation\n\n\n\nWhen to use Caterpillar plots:\n\nNumerical data & categorical data\nSeveral variables are required\nPrimary data encodings are points and lines\nUsed to find a ranking or for meta-analyses or comparing models or odds ratios\n\n\n\n\nProvides comparison to a reference line (e.g., baseline or null effect)\nEfficient readability since values are ordered by magnitude\nDisplays variation both intra- and inter-study\n\n\n\n\nCluttered and difficult to read if lots of studies or models are included\nA lot of context and information are in the axis labels\nPlot is just showing the effect estimates and uncertainty but no further context such as bias\n\n\n\n\nFunnel plot\nHeatmap\n\n\n\nInclude an example plot and how to interpret",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html#waterfall-plot",
+    "href": "06_field_standard.html#waterfall-plot",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "\n6.4 Waterfall Plot",
+    "text": "6.4 Waterfall Plot\nDescription: Bar charts which show treatment effect. The numerical axis is compared to a baseline. The bars are arranged or ordered according to magnitude and each bar typically corresponds to a different patient or sample.\n\n\nWhen to Use\nStrengths\nWeaknesses\nAlternatives\nExample & Interpretation\n\n\n\nWhen to use Waterfall plots:\n\nNumerical data (may have categorical data for color)\nMinimum of 1 variable if the difference between patient/sample and baseline is already computed, but a minimum of 2 variables otherwise\nPrimary data encodings are bars and position\nTypically used to show patient response to a treatment but the design can be used for other use cases around this theme\n\n\n\n\nDisplays patient or sample response heterogeneity within one snapshot\n\n\n\n\nThe snapshot compares two time points but not a range of time\nFor tumor response, there’s an accepted notion of what above or below the baseline means but this might not be true for other applications\n\n\n\n\n\nSpider plot incorporates time\n\nSwimmer plot incorporates time but loses the comparison to baseline\n\nForest or Caterpillar plots can be use for treatment effect\n\nKaplan-Meier curves can be used for outcome\n\nHeatmaps can be used to incorporate time\n\n\nHow could a heatmap be an alternative plot?\nEach row would be a patient (y-axis) and the columns could be time. Use color to communicate the change from baseline. Perhaps consider faceting or arranging samples according to response category.\n\n\n\nInclude an example plot and how to interpret",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html#kaplan-meier-km-curve-definitely",
+    "href": "06_field_standard.html#kaplan-meier-km-curve-definitely",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "\n6.5 Kaplan-Meier (KM) Curve (definitely)",
+    "text": "6.5 Kaplan-Meier (KM) Curve (definitely)\nDescription: Filler description\n\n\nWhen to Use\nStrengths\nWeaknesses\nAlternatives\nExample & Interpretation\n\n\n\nWhen to use Kaplan-Meier curves:\n\nType of data\nNumber of variables\nPrimary data encodings\nUsed for ….\n\n\n\n\nStrength 1\nStrength 2\n\n\n\n\nWeakness 1\nWeakness 2\nWeakness 3\n\n\n\n\nAlternative (if applicable)\nAlternative 2 (if applicable)\n\n\n\nInclude an example plot and how to interpret",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html#volcano-plot-definitely",
+    "href": "06_field_standard.html#volcano-plot-definitely",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "\n6.6 Volcano Plot (definitely)",
+    "text": "6.6 Volcano Plot (definitely)\nDescription: Filler description\n\n\nWhen to Use\nStrengths\nWeaknesses\nAlternatives\nExample & Interpretation\n\n\n\nWhen to use Volcano plots:\n\nType of data\nNumber of variables\nPrimary data encodings\nUsed for ….\n\n\n\n\nStrength 1\nStrength 2\n\n\n\n\nWeakness 1\nWeakness 2\nWeakness 3\n\n\n\n\nAlternative (if applicable)\nAlternative 2 (if applicable)\n\n\n\nInclude an example plot and how to interpret",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html#enrichment-plot-maybe",
+    "href": "06_field_standard.html#enrichment-plot-maybe",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "\n6.7 Enrichment Plot (maybe)",
+    "text": "6.7 Enrichment Plot (maybe)\nDescription: Filler description\n\n\nWhen to Use\nStrengths\nWeaknesses\nAlternatives\nExample & Interpretation\n\n\n\nWhen to use Enrichment plots:\n\nType of data\nNumber of variables\nPrimary data encodings\nUsed for ….\n\n\n\n\nStrength 1\nStrength 2\n\n\n\n\nWeakness 1\nWeakness 2\nWeakness 3\n\n\n\n\nAlternative (if applicable)\nAlternative 2 (if applicable)\n\n\n\nInclude an example plot and how to interpret",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html#ma-diagram-definitely",
+    "href": "06_field_standard.html#ma-diagram-definitely",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "\n6.8 MA Diagram (definitely)",
+    "text": "6.8 MA Diagram (definitely)\nDescription: Filler description\n\n\nWhen to Use\nStrengths\nWeaknesses\nAlternatives\nExample & Interpretation\n\n\n\nWhen to use MA diagrams:\n\nType of data\nNumber of variables\nPrimary data encodings\nUsed for ….\n\n\n\n\nStrength 1\nStrength 2\n\n\n\n\nWeakness 1\nWeakness 2\nWeakness 3\n\n\n\n\nAlternative (if applicable)\nAlternative 2 (if applicable)\n\n\n\nInclude an example plot and how to interpret",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html#principal-components-analysis-pca-plot-probably",
+    "href": "06_field_standard.html#principal-components-analysis-pca-plot-probably",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "\n6.9 Principal Components Analysis (PCA) Plot (probably)",
+    "text": "6.9 Principal Components Analysis (PCA) Plot (probably)\nDescription: Filler description\n\n\nWhen to Use\nStrengths\nWeaknesses\nAlternatives\nExample & Interpretation\n\n\n\nWhen to use PCA plots:\n\nType of data\nNumber of variables\nPrimary data encodings\nUsed for ….\n\n\n\n\nStrength 1\nStrength 2\n\n\n\n\nWeakness 1\nWeakness 2\nWeakness 3\n\n\n\n\nAlternative (if applicable)\nAlternative 2 (if applicable)\n\n\n\nInclude an example plot and how to interpret",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html#circos-plot-maybe",
+    "href": "06_field_standard.html#circos-plot-maybe",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "\n6.10 Circos Plot (maybe)",
+    "text": "6.10 Circos Plot (maybe)\nDescription: Filler description\n\n\nWhen to Use\nStrengths\nWeaknesses\nAlternatives\nExample & Interpretation\n\n\n\nWhen to use Circos plots:\n\nType of data\nNumber of variables\nPrimary data encodings\nUsed for ….\n\n\n\n\nStrength 1\nStrength 2\n\n\n\n\nWeakness 1\nWeakness 2\nWeakness 3\n\n\n\n\nAlternative (if applicable)\nAlternative 2 (if applicable)\n\n\n\nInclude an example plot and how to interpret",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html#biomedical-knowledge-graph-kg-probably",
+    "href": "06_field_standard.html#biomedical-knowledge-graph-kg-probably",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "\n6.11 Biomedical Knowledge Graph (KG) (probably)",
+    "text": "6.11 Biomedical Knowledge Graph (KG) (probably)\nDescription: Filler description\n\n\nWhen to Use\nStrengths\nWeaknesses\nAlternatives\nExample & Interpretation\n\n\n\nWhen to use Biomedical Knowledge Graphs:\n\nType of data\nNumber of variables\nPrimary data encodings\nUsed for ….\n\n\n\n\nStrength 1\nStrength 2\n\n\n\n\nWeakness 1\nWeakness 2\nWeakness 3\n\n\n\n\nAlternative (if applicable)\nAlternative 2 (if applicable)\n\n\n\nInclude an example plot and how to interpret",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_field_standard.html#summary-of-strengths",
+    "href": "06_field_standard.html#summary-of-strengths",
+    "title": "\n6  Field Specific Visualizations\n",
+    "section": "\n6.12 Summary of Strengths",
+    "text": "6.12 Summary of Strengths\nRepeated Measures plots\nCaterpillar plots are good if you want to look at effects and variation at a glance to identify the best/worst (the extremes) or see the overall range.\nWaterfall plots are good if you have a baseline to compare to for (1) a single time point, (2) many samples/patients, and (3) clearly know what above or below that baseline means.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Field Specific Visualizations</span>"
+    ]
+  },
+  {
+    "objectID": "06_wrapping_up.html",
+    "href": "06_wrapping_up.html",
+    "title": "\n7  Wrapping up\n",
+    "section": "",
+    "text": "7.1 Learning Objectives\nThis chapter will cover:",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Wrapping up</span>"
+    ]
+  },
+  {
+    "objectID": "06_wrapping_up.html#learning-objectives",
+    "href": "06_wrapping_up.html#learning-objectives",
+    "title": "\n7  Wrapping up\n",
+    "section": "",
+    "text": "{LO1}\n{LO2}",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Wrapping up</span>"
+    ]
+  },
+  {
+    "objectID": "06_wrapping_up.html#in-summary",
+    "href": "06_wrapping_up.html#in-summary",
+    "title": "\n7  Wrapping up\n",
+    "section": "\n7.2 In Summary",
+    "text": "7.2 In Summary\nAim for understanding and readability over complexity.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Wrapping up</span>"
+    ]
+  },
+  {
+    "objectID": "06_wrapping_up.html#checklist",
+    "href": "06_wrapping_up.html#checklist",
+    "title": "\n7  Wrapping up\n",
+    "section": "\n7.3 Checklist",
+    "text": "7.3 Checklist\nThis checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize its complexity, enhance its clarity and accessibility, and assess its accuracy.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Wrapping up</span>"
+    ]
+  },
+  {
+    "objectID": "06_wrapping_up.html#additional-considerations",
+    "href": "06_wrapping_up.html#additional-considerations",
+    "title": "\n7  Wrapping up\n",
+    "section": "\n7.4 Additional Considerations",
+    "text": "7.4 Additional Considerations",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Wrapping up</span>"
+    ]
+  },
+  {
+    "objectID": "06_wrapping_up.html#see-next",
+    "href": "06_wrapping_up.html#see-next",
+    "title": "\n7  Wrapping up\n",
+    "section": "\n7.5 See next",
+    "text": "7.5 See next",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Wrapping up</span>"
+    ]
+  }
+]
