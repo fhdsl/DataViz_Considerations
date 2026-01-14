@@ -14,6 +14,8 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 ### When to Use
 
+**When to use Repeated Measures plots:**
+
   * Type of data
   * Number of variables
   * Primary data encodings
@@ -35,7 +37,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
   * Alternative (if applicable)
   * Alternative 2 (if applicable)
 
-### Example and Interpretation
+### Example & Interpretation
 
 Include an example plot and how to interpret
 
@@ -48,6 +50,8 @@ Include an example plot and how to interpret
 ::: {.panel-tabset}
 
 ### When to Use
+
+**When to use Caterpillar plots:**
 
   * Numerical data & categorical data
   * Several variables are required
@@ -71,7 +75,7 @@ Include an example plot and how to interpret
   * Funnel plot
   * Heatmap
 
-### Example and Interpretation
+### Example & Interpretation
 
 Include an example plot and how to interpret
 
@@ -83,7 +87,9 @@ Include an example plot and how to interpret
 
 ::: {.panel-tabset}
 
-### When to use
+### When to Use
+
+**When to use Waterfall plots:**
 
   * Numerical data (may have categorical data for color)
   * Minimum of 1 variable if the difference between patient/sample and baseline is already computed, but a minimum of 2 variables otherwise
@@ -113,7 +119,7 @@ Include an example plot and how to interpret
 
   </details>
 
-### Example and Interpretation
+### Example & Interpretation
 
 Include an example plot and how to interpret
 
@@ -125,7 +131,9 @@ Include an example plot and how to interpret
 
 ::: {.panel-tabset}
 
-### When to use
+### When to Use
+
+**When to use Kaplan-Meier curves:**
 
   * Type of data
   * Number of variables
@@ -148,7 +156,7 @@ Include an example plot and how to interpret
   * Alternative (if applicable)
   * Alternative 2 (if applicable)
 
-### Example and Interpretation
+### Example & Interpretation
 
 Include an example plot and how to interpret
 
@@ -160,7 +168,9 @@ Include an example plot and how to interpret
 
 ::: {.panel-tabset}
 
-### When to use
+### When to Use
+
+**When to use Volcano plots:**
 
   * Type of data
   * Number of variables
@@ -183,7 +193,7 @@ Include an example plot and how to interpret
   * Alternative (if applicable)
   * Alternative 2 (if applicable)
 
-### Example and Interpretation
+### Example & Interpretation
 
 Include an example plot and how to interpret
 
@@ -195,7 +205,9 @@ Include an example plot and how to interpret
 
 ::: {.panel-tabset}
 
-### When to use
+### When to Use
+
+**When to use Enrichment plots:**
 
   * Type of data
   * Number of variables
@@ -218,7 +230,7 @@ Include an example plot and how to interpret
   * Alternative (if applicable)
   * Alternative 2 (if applicable)
 
-### Example and Interpretation
+### Example & Interpretation
 
 Include an example plot and how to interpret
 
@@ -230,7 +242,9 @@ Include an example plot and how to interpret
 
 ::: {.panel-tabset}
 
-### When to use
+### When to Use
+
+**When to use MA diagrams:**
 
   * Type of data
   * Number of variables
@@ -253,7 +267,7 @@ Include an example plot and how to interpret
   * Alternative (if applicable)
   * Alternative 2 (if applicable)
 
-### Example and Interpretation
+### Example & Interpretation
 
 Include an example plot and how to interpret
 
@@ -265,7 +279,9 @@ Include an example plot and how to interpret
 
 ::: {.panel-tabset}
 
-### When to use
+### When to Use
+
+**When to use PCA plots:**
 
   * Type of data
   * Number of variables
@@ -288,7 +304,7 @@ Include an example plot and how to interpret
   * Alternative (if applicable)
   * Alternative 2 (if applicable)
 
-### Example and Interpretation
+### Example & Interpretation
 
 Include an example plot and how to interpret
 
@@ -300,7 +316,9 @@ Include an example plot and how to interpret
 
 ::: {.panel-tabset}
 
-### When to use
+### When to Use
+
+**When to use Circos plots:**
 
   * Type of data
   * Number of variables
@@ -323,7 +341,7 @@ Include an example plot and how to interpret
   * Alternative (if applicable)
   * Alternative 2 (if applicable)
 
-### Example plot and Interpretation
+### Example & Interpretation
 
 Include an example plot and how to interpret
 
@@ -335,7 +353,9 @@ Include an example plot and how to interpret
 
 ::: {.panel-tabset}
 
-### When to use
+### When to Use
+
+**When to use Biomedical Knowledge Graphs:**
 
   * Type of data
   * Number of variables
@@ -358,13 +378,15 @@ Include an example plot and how to interpret
   * Alternative (if applicable)
   * Alternative 2 (if applicable)
 
-### Example and Interpretation
+### Example & Interpretation
 
 Include an example plot and how to interpret
 
 :::
 
 ## Summary of Strengths
+
+<b>Repeated Measures</b> plots
 
 <b>Caterpillar</b> plots are good if you want to look at effects and variation at a glance to identify the best/worst (the extremes) or see the overall range.
 

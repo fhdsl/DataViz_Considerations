@@ -70,6 +70,8 @@ Of the conventional plots described above, bar plots and histograms both fit wit
 
 #### When to use
 
+**When to use Violin plots:**
+
 * Numerical data (may have categorical data if looking at multiple distributions)
 * Minimum of 1 variable
 * Best with minimal number of categories
@@ -78,10 +80,14 @@ Of the conventional plots described above, bar plots and histograms both fit wit
 
 #### Strengths
 
+**Strengths of Violin plots include:**
+
 * Better at comparing multiple distributions than histograms (the conventional plot type)
 * Displays distribution shape such as skew and modes better than boxplots do
 
 #### Weaknesses
+
+**Weaknesses of Violin plots include:**
 
 * Doesn't show individual data points
 * Limited usefulness when there's little amounts of data (e.g., few records/patients/samples)
@@ -89,13 +95,15 @@ Of the conventional plots described above, bar plots and histograms both fit wit
 
 #### Alternatives
 
+**Alternatives for Violin plots include:**
+
 * [Boxplot](https://www.data-to-viz.com/caveat/boxplot.html) (especially with jitter to show individual data points)
 * Ridgeline plot
 * Raincloud plot
 
 #### Example
 
-An example of the plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c in this paper showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2.
+An example of the Violin plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c in this paper showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2.
 
 :::
 
@@ -112,6 +120,8 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 ::: {.panel-tabset}
 
 #### When to use
+
+**When to use Boxplots:**
 
 * Numerical data (may have categorical data if looking at multiple distributions)
 * Minimum of 1 variable
@@ -154,6 +164,8 @@ Include an example plot
 
 #### When to use
 
+**When to use Ridgeline plots:**
+
 * Numerical data (with categorical data for groups)
 * Minimum of 2 variables
 * Best with a higher number of categories
@@ -191,6 +203,8 @@ Include an example plot
 ::: {.panel-tabset}
 
 #### When to use
+
+**When to use Raincloud plots:**
 
 * Numerical data (with categorical data for groups)
 * Minimum of 1 variable
@@ -244,6 +258,8 @@ Of the conventional plots described above, scatter plots and line charts both fi
 
 #### When to Use
 
+**When to use Stacked Bar charts:**
+
 * Numerical data with categorical data for groups
 * Minimum of 2 variables
 * Primary data encodings are bars, position, and color or pattern
@@ -288,6 +304,8 @@ https://www.mdpi.com/2079-9721/13/2/37
 ::: {.panel-tabset}
 
 #### When to use
+
+**When to use Heatmaps:**
 
 * Categorical or numerical data or a mixture
 * Minimum of 3 variables
@@ -334,6 +352,8 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 
 #### When to use
 
+**When to use Sankey diagrams:**
+
 * Categorical data and sometimes numerical data/counts
 * Requires several variables
 * Primary data encodings are lines, area, and color
@@ -361,7 +381,7 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 * Treemaps
 * Other graphical visualizations or some custom made visualization
 
-#### Example plot
+#### Example
 
 Include an example of the plot
 
