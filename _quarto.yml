@@ -41,28 +41,28 @@ book:
       - icon: github
         href: https://github.com/
 
-  bibliography: references.bib
+bibliography: references.bib
 
-  format:
-    html:
-      grid:
-        sidebar-width: 260px
-      css: assets/style_ITN.css
-      linkcolor: "#e0471c"
-      mainfont: "Karla"
+format:
+  html:
+    grid:
+      sidebar-width: 260px
+    css: assets/style_ITN.css
+    linkcolor: "#e0471c"
+    mainfont: "Karla"
 
-      sidebar: true
-      toc: true
+    sidebar: true
+    toc: true
 
-      code-link: true
-      code-copy: true
-      code-block-bg: true
-      code-block-border-left: "#31BAE9"
+    code-link: true
+    code-copy: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
 
-      link-external-newwindow: true
+    link-external-newwindow: true
 
-      image: assets:ITN_favicon.ico
-      license: "CC BY"
-  knitr:
-    opts_chunk:
-      fig.path: "resources/images/figure/"
+    image: assets:ITN_favicon.ico
+    license: "CC BY"
+knitr:
+  opts_chunk:
+    fig.path: "resources/images/figure/"
