@@ -1,0 +1,15 @@
+{
+  "hash": "ce1aed46ada6057eb187615e71d8c8a7",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Wrapping up\n\n\n\n## Learning Objectives\n\nThis chapter will cover:\n\n- {LO1}\n- {LO2}\n\n## In Summary\n\nAim for understanding and readability over complexity.\n\n## Checklist\n\nThis checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize its complexity, enhance its clarity and accessibility, and assess its accuracy.  \n\n## Additional Considerations\n\n## See next\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

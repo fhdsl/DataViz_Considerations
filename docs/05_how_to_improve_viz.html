@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Considerations for Data Visualization</title>
+<title>5&nbsp; Ethical Data Visualization – Considerations for Data Visualization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +19,6 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -30,7 +26,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-intro.html" rel="next">
+<link href="./06_field_standard.html" rel="next">
+<link href="./04_graph_info.html" rel="prev">
 <link href="./assets/ITN_favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -42,8 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d6ecc8c200f2f0692a05003089f8bde7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-d6ecc8c200f2f0692a05003089f8bde7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -69,48 +65,35 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-
-<script type="text/javascript">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
-</script>
-
-
-<link rel="stylesheet" href="assets/style_ITN.css">
+</script><link rel="stylesheet" href="assets/style_ITN.css">
 </head>
-
 <body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Considerations for Data Visualization</h1>
+          <h1 class="quarto-secondary-nav-title">
+<span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ethical Data Visualization</span>
+</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="https://www.itcrtraining.org/" class="sidebar-logo-link">
-      <img src="./assets/ITN_logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="./assets/ITN_logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
-      </a>
+      <img src="./assets/ITN_logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="./assets/ITN_logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Considerations for Data Visualization</a> 
         <div class="sidebar-tools-main">
@@ -125,9 +108,9 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About this Course</span></a>
   </div>
 </li>
@@ -157,7 +140,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_how_to_improve_viz.html" class="sidebar-item-text sidebar-link">
+  <a href="./05_how_to_improve_viz.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ethical Data Visualization</span></span></a>
   </div>
 </li>
@@ -174,28 +157,43 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#about-this-course" id="toc-about-this-course" class="nav-link active" data-scroll-target="#about-this-course">About this Course</a>
+<li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">5.1</span> Learning Objectives</a></li>
+  <li><a href="#clearly-presenting-complex-data" id="toc-clearly-presenting-complex-data" class="nav-link" data-scroll-target="#clearly-presenting-complex-data"><span class="header-section-number">5.2</span> Clearly Presenting Complex Data</a></li>
+  <li>
+<a href="#best-practices-for-accessibility" id="toc-best-practices-for-accessibility" class="nav-link" data-scroll-target="#best-practices-for-accessibility"><span class="header-section-number">5.3</span> Best Practices for Accessibility</a>
   <ul class="collapse">
-  <li><a href="#available-course-formats" id="toc-available-course-formats" class="nav-link" data-scroll-target="#available-course-formats">Available Course Formats</a></li>
-  </ul></li>
+<li><a href="#color-palettes" id="toc-color-palettes" class="nav-link" data-scroll-target="#color-palettes"><span class="header-section-number">5.3.1</span> Color Palettes</a></li>
+  <li><a href="#contrast" id="toc-contrast" class="nav-link" data-scroll-target="#contrast"><span class="header-section-number">5.3.2</span> Contrast</a></li>
+  <li><a href="#text" id="toc-text" class="nav-link" data-scroll-target="#text"><span class="header-section-number">5.3.3</span> Text</a></li>
+  <li><a href="#alternative-text-descriptions" id="toc-alternative-text-descriptions" class="nav-link" data-scroll-target="#alternative-text-descriptions"><span class="header-section-number">5.3.4</span> Alternative Text Descriptions</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/DataViz_Considerations/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+</li>
+  <li>
+<a href="#ethical-data-visualization" id="toc-ethical-data-visualization" class="nav-link" data-scroll-target="#ethical-data-visualization"><span class="header-section-number">5.4</span> Ethical Data Visualization</a>
+  <ul class="collapse">
+<li><a href="#data-inclusion-safety-transparency" id="toc-data-inclusion-safety-transparency" class="nav-link" data-scroll-target="#data-inclusion-safety-transparency"><span class="header-section-number">5.4.1</span> Data Inclusion: Safety &amp; Transparency</a></li>
+  <li><a href="#accuracy" id="toc-accuracy" class="nav-link" data-scroll-target="#accuracy"><span class="header-section-number">5.4.2</span> Accuracy</a></li>
+  <li><a href="#avoiding-data-distortion" id="toc-avoiding-data-distortion" class="nav-link" data-scroll-target="#avoiding-data-distortion"><span class="header-section-number">5.4.3</span> Avoiding Data Distortion</a></li>
+  <li><a href="#plagiarism-inspiration" id="toc-plagiarism-inspiration" class="nav-link" data-scroll-target="#plagiarism-inspiration"><span class="header-section-number">5.4.4</span> Plagiarism &amp; Inspiration</a></li>
+  <li><a href="#empathy" id="toc-empathy" class="nav-link" data-scroll-target="#empathy"><span class="header-section-number">5.4.5</span> Empathy</a></li>
+  </ul>
+</li>
+  <li><a href="#improving-visualizations" id="toc-improving-visualizations" class="nav-link" data-scroll-target="#improving-visualizations"><span class="header-section-number">5.5</span> Improving Visualizations</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">5.6</span> Summary</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/DataViz_Considerations/edit/main/05_how_to_improve_viz.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block">Considerations for Data Visualization</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title d-none d-lg-block">
+<span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ethical Data Visualization</span>
+</h1>
 </div>
 
 
@@ -209,35 +207,118 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   
 
 
-</header>
-
-
-<section id="about-this-course" class="level1 unnumbered">
-<h1 class="unnumbered">About this Course</h1>
-<p>This course is part of a series of courses for the <a href="https://www.cancer.gov/about-nci/organization/cssi/research/itcr">Informatics Technology for Cancer Research (ITCR)</a>. This material was created by the ITCR Training Network (ITN) which is a collaborative effort of researchers around the United States to support cancer informatics and data science training through resources, technology, and events. This initiative is funded by the following grant: <a href="https://www.cancer.gov/">National Cancer Institute (NCI)</a> UE5 CA254170. Our courses feature tools developed by ITCR Investigators and make it easier for principal investigators, scientists, and analysts to integrate cancer informatics into their workflows. Please see our website at <a href="https://www.itcrtraining.org/">www.itcrtraining.org</a> for more information.</p>
-<p>Considerations for Bioinformatic Data Visualization is the first in a series of two courses on data visualization. This course focuses on considerations for best practices in data visualization discussing topics such as</p>
+</header><p>Creating a high quality data visualization requires more than picking the right plot for your data and your research question. Certainly following visual design principles and utilizing design tools is a part of creating high quality visualization. However, further best practices are needed to ethically present complex data with clarity in a way that is accessible to audiences. This chapter will discuss ways to enhance the clarity and accessibility of data visualizations as well as important ethical considerations.</p>
+<section id="learning-objectives" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="learning-objectives">
+<span class="header-section-number">5.1</span> Learning Objectives</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3a4b3643292_0_41.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="This chapter will demonstrate how to apply visual design principles to minimize complexity and improve the clarity of a data visualization, identify steps to enhance the clarity, accessibility, and understandability of a data visualization, employ ethical practices in constructing and sharing data visualizations, and how to evaluate whether a data visualization can be improved to enhance its clarity, accessibility, or accuracy."></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="clearly-presenting-complex-data" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="clearly-presenting-complex-data">
+<span class="header-section-number">5.2</span> Clearly Presenting Complex Data</h2>
+<p>An overly complex plot can be misleading for a number of reasons. These reasons include obscuring something because the plot focuses the viewer’s attention on another aspect, not separating high density areas or overlapping plot elements, including too much information, or not specifying specialized language such as acronyms or field specific/technical vocabulary.</p>
+<p>General tips to reduce complexity when you can:</p>
 <ul>
-<li>defining what data visualization is</li>
-<li>utilizing exploratory data analysis</li>
-<li>deciding which type of visualization is appropriate for your data/research question</li>
-<li>employing visual design principles in polishing visualizations for publication</li>
-<li>making visualizations accessible</li>
-<li>avoiding data distortions</li>
-</ul>
-<section id="available-course-formats" class="level2">
-<h2 class="anchored" data-anchor-id="available-course-formats">Available Course Formats</h2>
+<li>Use your visualization to answer <strong>only</strong> one question at a time</li>
+<li>Add annotations or labels (lines, names, colors, etc.)</li>
+<li>Minimize white space, but don’t over clutter</li>
+<li>Use clear and accurate labeling and axis names
 <ul>
-<li>The material for this course can be viewed without login requirement on this <a href="https://hutchdatascience.org/DataViz_Considerations/">Bookdown website</a>. This format might be most appropriate for you if you rely on screen-reader technology.</li>
-<li>Our courses are open source, you can find the <a href="https://github.com/fhdsl/DataViz_Considerations/">source material for this course on GitHub</a>.</li>
-<li>The second course in the series will focus on building data visualizations, pointing to resources across R and Python, while integrating the best practice considerations discussed in this course.</li>
+<li>Readable (large text)</li>
+<li>Understandable (e..g, avoid jargon and define uncommon acronyms)</li>
 </ul>
+</li>
+<li>Separate plot elements or overlapping data
+<ul>
+<li>Use facets or subplots to separate different categories of data</li>
+<li>Increase opacity/transparency</li>
+<li>Decrease point size or change the shape</li>
+<li>Consider a log transformation</li>
+<li>Use a zoomed inset</li>
+</ul>
+</li>
+<li>Consider typical reading order
+<ul>
+<li>top to bottom</li>
+<li>left to right</li>
+</ul>
+</li>
+</ul>
+<p>Reducing complexity enhances clarity and accessibility by helping the viewer know where to focus and providing them with reference points or information they need to know (such as acronym meanings).</p>
+</section><section id="best-practices-for-accessibility" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="best-practices-for-accessibility">
+<span class="header-section-number">5.3</span> Best Practices for Accessibility</h2>
+<p>Reducing complexity is a very important first step in designing accessible visualizations. Beyond reducing complexity, additional considerations are necessary to further enhance accessibility for visualization audiences. Audiences may have visual impairments such as low vision or blindness or color vision deficiency, motor impairments (relevant for interactive visualizations), or dyslexia. Additionally, audiences likely will be unfamiliar with your research and may be distracted when interacting with your research.</p>
+<p>This course will mostly focus on making visualizations accessible for those with visual impairments and those unfamiliar with your research.</p>
+<section id="color-palettes" class="level3" data-number="5.3.1"><h3 data-number="5.3.1" class="anchored" data-anchor-id="color-palettes">
+<span class="header-section-number">5.3.1</span> Color Palettes</h3>
+</section><section id="contrast" class="level3" data-number="5.3.2"><h3 data-number="5.3.2" class="anchored" data-anchor-id="contrast">
+<span class="header-section-number">5.3.2</span> Contrast</h3>
+</section><section id="text" class="level3" data-number="5.3.3"><h3 data-number="5.3.3" class="anchored" data-anchor-id="text">
+<span class="header-section-number">5.3.3</span> Text</h3>
+<section id="axis-labels" class="level4" data-number="5.3.3.1"><h4 data-number="5.3.3.1" class="anchored" data-anchor-id="axis-labels">
+<span class="header-section-number">5.3.3.1</span> Axis Labels</h4>
+</section><section id="annotations" class="level4" data-number="5.3.3.2"><h4 data-number="5.3.3.2" class="anchored" data-anchor-id="annotations">
+<span class="header-section-number">5.3.3.2</span> Annotations</h4>
+</section><section id="titles" class="level4" data-number="5.3.3.3"><h4 data-number="5.3.3.3" class="anchored" data-anchor-id="titles">
+<span class="header-section-number">5.3.3.3</span> Titles</h4>
+</section><section id="captions" class="level4" data-number="5.3.3.4"><h4 data-number="5.3.3.4" class="anchored" data-anchor-id="captions">
+<span class="header-section-number">5.3.3.4</span> Captions</h4>
+</section></section><section id="alternative-text-descriptions" class="level3" data-number="5.3.4"><h3 data-number="5.3.4" class="anchored" data-anchor-id="alternative-text-descriptions">
+<span class="header-section-number">5.3.4</span> Alternative Text Descriptions</h3>
+</section></section><section id="ethical-data-visualization" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="ethical-data-visualization">
+<span class="header-section-number">5.4</span> Ethical Data Visualization</h2>
+<p>Ethical visualizations improve viewers’ understanding rather than confuse or mislead. Misleading messages are not always intentional on the part of the researcher putting together a data visualization, and mistakes happen (e.g., bugs in software, errors in data entry, etc.). It’s the responsibility of the researcher to carefully evaluate all data visualizations before sharing them to make sure that the visualizations clearly and accurately present the data and communicate the overall goal.</p>
+<p>Several of the topics we’ll provide within this section about ethical considerations are related to tips to reduce complexity and enhance accessibility. This is not surprising given that clear communication is a necessity for both ethical and accessible visualizations.</p>
+<section id="data-inclusion-safety-transparency" class="level3" data-number="5.4.1"><h3 data-number="5.4.1" class="anchored" data-anchor-id="data-inclusion-safety-transparency">
+<span class="header-section-number">5.4.1</span> Data Inclusion: Safety &amp; Transparency</h3>
+<p>The rules within this section are aimed to safeguard patient privacy and provide transparency.</p>
+<p><strong>Rule 1: Don’t include identifiable data</strong></p>
+<p>ADD thoughts here</p>
+<p><strong>Rule 2: Include all relevant data or subgroups</strong></p>
+<p>ADD thoughts here</p>
+<p><strong>Rule 3: Describe removed samples or dropouts</strong></p>
+<p>ADD thoughts here</p>
+</section><section id="accuracy" class="level3" data-number="5.4.2"><h3 data-number="5.4.2" class="anchored" data-anchor-id="accuracy">
+<span class="header-section-number">5.4.2</span> Accuracy</h3>
+<p>The rules within this section are aimed to encourage careful verification of visualizations.</p>
+<p><strong>Rule 1: Verify that visualizations accurately represent the data</strong></p>
+<p>ADD thoughts about data that may be missing, or sizes/area that don’t align with data. Repeat the idea of checking twice before sharing the visualization</p>
+<p><strong>Rule 2: Use clear and accurate axis labels</strong></p>
+<p>ADD thoughts especially related to axis labels. Often having simplified axis labels help audiences. Doing this ethically such that the simplified label is what is being plotted is really important. If the label doesn’t match the data, why not plot the data for the simplified label?</p>
+</section><section id="avoiding-data-distortion" class="level3" data-number="5.4.3"><h3 data-number="5.4.3" class="anchored" data-anchor-id="avoiding-data-distortion">
+<span class="header-section-number">5.4.3</span> Avoiding Data Distortion</h3>
+<p>The aims for rules within this section include to avoid misleading messages and to compare groups fairly.</p>
+<p><strong>Rule 1: Use fair axis limits rather than truncating axes</strong></p>
+<p>ADD about starting axis limits at 0 because otherwise differences will look starker than they are</p>
+<p>ADD about axis limits when you have facets and how audiences may expect those subplots to use the same axis limits</p>
+<p><strong>Rule 2: Order axes in a logical way that corresponds to the plot’s message</strong></p>
+<p>ADD info about the overall message. If a line is going up over time, but the message is related to decrease, why is the line going up? This can be misleading.</p>
+<p><strong>Rule 3: Separate plot elements</strong></p>
+<p>ADD info about how true info can be obscured if plot elements aren’t separated.</p>
+</section><section id="plagiarism-inspiration" class="level3" data-number="5.4.4"><h3 data-number="5.4.4" class="anchored" data-anchor-id="plagiarism-inspiration">
+<span class="header-section-number">5.4.4</span> Plagiarism &amp; Inspiration</h3>
+<p>ADD info about plagiarism and what that means for data visualization</p>
+<p>ADD info about inspiration</p>
+<p><strong>Rule 1: If in doubt, attribute</strong></p>
+<p>ADD info about attribution if you’re concerned.</p>
+</section><section id="empathy" class="level3" data-number="5.4.5"><h3 data-number="5.4.5" class="anchored" data-anchor-id="empathy">
+<span class="header-section-number">5.4.5</span> Empathy</h3>
+<p>Tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute. These are more tips and not rules because they are more subjective.</p>
+<p><em>Visualize each data point</em></p>
+<p><em>Avoid stereotypical colors</em></p>
+<p><em>Use person-first language when appropriate and avoid insensitive language</em></p>
+<p><em>Expand an “Other” category</em></p>
+</section></section><section id="improving-visualizations" class="level2" data-number="5.5"><h2 data-number="5.5" class="anchored" data-anchor-id="improving-visualizations">
+<span class="header-section-number">5.5</span> Improving Visualizations</h2>
+</section><section id="summary" class="level2" data-number="5.6"><h2 data-number="5.6" class="anchored" data-anchor-id="summary">
+<span class="header-section-number">5.6</span> Summary</h2>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -641,39 +722,37 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./04_graph_info.html" class="pagination-link" aria-label="Choosing the Right Plot">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Choosing the Right Plot</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06_field_standard.html" class="pagination-link" aria-label="Field Specific Visualizations">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Field Specific Visualizations</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This book was built with <a href="https://quarto.org/" style="color: #0000FF;">Quarto</a> using <a href="https://github.com/fhdsl/OTTR_Quarto" style="color: #0000FF;">OTTR</a>.</p>
 </div>   
     <div class="nav-footer-center">
 <p>All illustrations <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;">CC-BY. </a> <br> All other materials <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;"> CC-BY </a> unless noted otherwise.</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fhdsl/DataViz_Considerations/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fhdsl/DataViz_Considerations/edit/main/05_how_to_improve_viz.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>

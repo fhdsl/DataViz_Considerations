@@ -230,53 +230,63 @@
     ]
   },
   {
-    "objectID": "04_how_to_improve_viz.html",
-    "href": "04_how_to_improve_viz.html",
-    "title": "\n5  High quality and inclusive data visualizations\n",
+    "objectID": "05_how_to_improve_viz.html",
+    "href": "05_how_to_improve_viz.html",
+    "title": "\n5  Ethical Data Visualization\n",
     "section": "",
-    "text": "5.1 Learning Objectives",
+    "text": "5.1 Learning Objectives\nCreating a high quality data visualization requires more than picking the right plot for your data and your research question. Certainly following visual design principles and utilizing design tools is a part of creating high quality visualization. However, further best practices are needed to ethically present complex data with clarity in a way that is accessible to audiences. This chapter will discuss ways to enhance the clarity and accessibility of data visualizations as well as important ethical considerations.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>High quality and inclusive data visualizations</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ethical Data Visualization</span>"
     ]
   },
   {
-    "objectID": "04_how_to_improve_viz.html#visual-design-principles",
-    "href": "04_how_to_improve_viz.html#visual-design-principles",
-    "title": "\n5  High quality and inclusive data visualizations\n",
-    "section": "\n5.2 Visual Design Principles",
-    "text": "5.2 Visual Design Principles",
+    "objectID": "05_how_to_improve_viz.html#clearly-presenting-complex-data",
+    "href": "05_how_to_improve_viz.html#clearly-presenting-complex-data",
+    "title": "\n5  Ethical Data Visualization\n",
+    "section": "\n5.2 Clearly Presenting Complex Data",
+    "text": "5.2 Clearly Presenting Complex Data\nAn overly complex plot can be misleading for a number of reasons. These reasons include obscuring something because the plot focuses the viewer’s attention on another aspect, not separating high density areas or overlapping plot elements, including too much information, or not specifying specialized language such as acronyms or field specific/technical vocabulary.\nGeneral tips to reduce complexity when you can:\n\nUse your visualization to answer only one question at a time\nAdd annotations or labels (lines, names, colors, etc.)\nMinimize white space, but don’t over clutter\nUse clear and accurate labeling and axis names\n\nReadable (large text)\nUnderstandable (e..g, avoid jargon and define uncommon acronyms)\n\n\nSeparate plot elements or overlapping data\n\nUse facets or subplots to separate different categories of data\nIncrease opacity/transparency\nDecrease point size or change the shape\nConsider a log transformation\nUse a zoomed inset\n\n\nConsider typical reading order\n\ntop to bottom\nleft to right\n\n\n\nReducing complexity enhances clarity and accessibility by helping the viewer know where to focus and providing them with reference points or information they need to know (such as acronym meanings).",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>High quality and inclusive data visualizations</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ethical Data Visualization</span>"
     ]
   },
   {
-    "objectID": "04_how_to_improve_viz.html#accessibility-considerations",
-    "href": "04_how_to_improve_viz.html#accessibility-considerations",
-    "title": "\n5  High quality and inclusive data visualizations\n",
-    "section": "\n5.3 Accessibility Considerations",
-    "text": "5.3 Accessibility Considerations\n\n5.3.1 Color palettes\n\n5.3.2 Labels\n\n5.3.3 Captions and alternative text descriptions",
+    "objectID": "05_how_to_improve_viz.html#best-practices-for-accessibility",
+    "href": "05_how_to_improve_viz.html#best-practices-for-accessibility",
+    "title": "\n5  Ethical Data Visualization\n",
+    "section": "\n5.3 Best Practices for Accessibility",
+    "text": "5.3 Best Practices for Accessibility\nReducing complexity is a very important first step in designing accessible visualizations. Beyond reducing complexity, additional considerations are necessary to further enhance accessibility for visualization audiences. Audiences may have visual impairments such as low vision or blindness or color vision deficiency, motor impairments (relevant for interactive visualizations), or dyslexia. Additionally, audiences likely will be unfamiliar with your research and may be distracted when interacting with your research.\nThis course will mostly focus on making visualizations accessible for those with visual impairments and those unfamiliar with your research.\n\n5.3.1 Color Palettes\n\n5.3.2 Contrast\n\n5.3.3 Text\n\n5.3.3.1 Axis Labels\n\n5.3.3.2 Annotations\n\n5.3.3.3 Titles\n\n5.3.3.4 Captions\n\n5.3.4 Alternative Text Descriptions",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>High quality and inclusive data visualizations</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ethical Data Visualization</span>"
     ]
   },
   {
-    "objectID": "04_how_to_improve_viz.html#ethical-considerations",
-    "href": "04_how_to_improve_viz.html#ethical-considerations",
-    "title": "\n5  High quality and inclusive data visualizations\n",
-    "section": "\n5.4 Ethical Considerations",
-    "text": "5.4 Ethical Considerations\n\n5.4.1 Data Distortions",
+    "objectID": "05_how_to_improve_viz.html#ethical-data-visualization",
+    "href": "05_how_to_improve_viz.html#ethical-data-visualization",
+    "title": "\n5  Ethical Data Visualization\n",
+    "section": "\n5.4 Ethical Data Visualization",
+    "text": "5.4 Ethical Data Visualization\nEthical visualizations improve viewers’ understanding rather than confuse or mislead. Misleading messages are not always intentional on the part of the researcher putting together a data visualization, and mistakes happen (e.g., bugs in software, errors in data entry, etc.). It’s the responsibility of the researcher to carefully evaluate all data visualizations before sharing them to make sure that the visualizations clearly and accurately present the data and communicate the overall goal.\nSeveral of the topics we’ll provide within this section about ethical considerations are related to tips to reduce complexity and enhance accessibility. This is not surprising given that clear communication is a necessity for both ethical and accessible visualizations.\n\n5.4.1 Data Inclusion: Safety & Transparency\nThe rules within this section are aimed to safeguard patient privacy and provide transparency.\nRule 1: Don’t include identifiable data\nADD thoughts here\nRule 2: Include all relevant data or subgroups\nADD thoughts here\nRule 3: Describe removed samples or dropouts\nADD thoughts here\n\n5.4.2 Accuracy\nThe rules within this section are aimed to encourage careful verification of visualizations.\nRule 1: Verify that visualizations accurately represent the data\nADD thoughts about data that may be missing, or sizes/area that don’t align with data. Repeat the idea of checking twice before sharing the visualization\nRule 2: Use clear and accurate axis labels\nADD thoughts especially related to axis labels. Often having simplified axis labels help audiences. Doing this ethically such that the simplified label is what is being plotted is really important. If the label doesn’t match the data, why not plot the data for the simplified label?\n\n5.4.3 Avoiding Data Distortion\nThe aims for rules within this section include to avoid misleading messages and to compare groups fairly.\nRule 1: Use fair axis limits rather than truncating axes\nADD about starting axis limits at 0 because otherwise differences will look starker than they are\nADD about axis limits when you have facets and how audiences may expect those subplots to use the same axis limits\nRule 2: Order axes in a logical way that corresponds to the plot’s message\nADD info about the overall message. If a line is going up over time, but the message is related to decrease, why is the line going up? This can be misleading.\nRule 3: Separate plot elements\nADD info about how true info can be obscured if plot elements aren’t separated.\n\n5.4.4 Plagiarism & Inspiration\nADD info about plagiarism and what that means for data visualization\nADD info about inspiration\nRule 1: If in doubt, attribute\nADD info about attribution if you’re concerned.\n\n5.4.5 Empathy\nTips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute. These are more tips and not rules because they are more subjective.\nVisualize each data point\nAvoid stereotypical colors\nUse person-first language when appropriate and avoid insensitive language\nExpand an “Other” category",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>High quality and inclusive data visualizations</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ethical Data Visualization</span>"
     ]
   },
   {
-    "objectID": "04_how_to_improve_viz.html#annotations-and-other-points-of-reference",
-    "href": "04_how_to_improve_viz.html#annotations-and-other-points-of-reference",
-    "title": "\n5  High quality and inclusive data visualizations\n",
-    "section": "\n5.5 Annotations and other points of reference",
-    "text": "5.5 Annotations and other points of reference",
+    "objectID": "05_how_to_improve_viz.html#improving-visualizations",
+    "href": "05_how_to_improve_viz.html#improving-visualizations",
+    "title": "\n5  Ethical Data Visualization\n",
+    "section": "\n5.5 Improving Visualizations",
+    "text": "5.5 Improving Visualizations",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>High quality and inclusive data visualizations</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ethical Data Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "05_how_to_improve_viz.html#summary",
+    "href": "05_how_to_improve_viz.html#summary",
+    "title": "\n5  Ethical Data Visualization\n",
+    "section": "\n5.6 Summary",
+    "text": "5.6 Summary",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ethical Data Visualization</span>"
     ]
   },
   {
@@ -400,8 +410,8 @@
     ]
   },
   {
-    "objectID": "06_wrapping_up.html",
-    "href": "06_wrapping_up.html",
+    "objectID": "07_wrapping_up.html",
+    "href": "07_wrapping_up.html",
     "title": "\n7  Wrapping up\n",
     "section": "",
     "text": "7.1 Learning Objectives\nThis chapter will cover:",
@@ -410,8 +420,8 @@
     ]
   },
   {
-    "objectID": "06_wrapping_up.html#learning-objectives",
-    "href": "06_wrapping_up.html#learning-objectives",
+    "objectID": "07_wrapping_up.html#learning-objectives",
+    "href": "07_wrapping_up.html#learning-objectives",
     "title": "\n7  Wrapping up\n",
     "section": "",
     "text": "{LO1}\n{LO2}",
@@ -420,8 +430,8 @@
     ]
   },
   {
-    "objectID": "06_wrapping_up.html#in-summary",
-    "href": "06_wrapping_up.html#in-summary",
+    "objectID": "07_wrapping_up.html#in-summary",
+    "href": "07_wrapping_up.html#in-summary",
     "title": "\n7  Wrapping up\n",
     "section": "\n7.2 In Summary",
     "text": "7.2 In Summary\nAim for understanding and readability over complexity.",
@@ -430,8 +440,8 @@
     ]
   },
   {
-    "objectID": "06_wrapping_up.html#checklist",
-    "href": "06_wrapping_up.html#checklist",
+    "objectID": "07_wrapping_up.html#checklist",
+    "href": "07_wrapping_up.html#checklist",
     "title": "\n7  Wrapping up\n",
     "section": "\n7.3 Checklist",
     "text": "7.3 Checklist\nThis checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize its complexity, enhance its clarity and accessibility, and assess its accuracy.",
@@ -440,8 +450,8 @@
     ]
   },
   {
-    "objectID": "06_wrapping_up.html#additional-considerations",
-    "href": "06_wrapping_up.html#additional-considerations",
+    "objectID": "07_wrapping_up.html#additional-considerations",
+    "href": "07_wrapping_up.html#additional-considerations",
     "title": "\n7  Wrapping up\n",
     "section": "\n7.4 Additional Considerations",
     "text": "7.4 Additional Considerations",
@@ -450,8 +460,8 @@
     ]
   },
   {
-    "objectID": "06_wrapping_up.html#see-next",
-    "href": "06_wrapping_up.html#see-next",
+    "objectID": "07_wrapping_up.html#see-next",
+    "href": "07_wrapping_up.html#see-next",
     "title": "\n7  Wrapping up\n",
     "section": "\n7.5 See next",
     "text": "7.5 See next",

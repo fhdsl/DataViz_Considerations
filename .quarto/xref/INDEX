@@ -1,0 +1,26 @@
+{
+  "index.qmd": {
+    "index.html": "5d07b2b3"
+  },
+  "01-intro.qmd": {
+    "01-intro.html": "c996b9d1"
+  },
+  "02_what_why_intro.qmd": {
+    "02_what_why_intro.html": "52ddd94b"
+  },
+  "03_data.qmd": {
+    "03_data.html": "cc74bf69"
+  },
+  "04_graph_info.qmd": {
+    "04_graph_info.html": "3eac05fb"
+  },
+  "05_how_to_improve_viz.qmd": {
+    "05_how_to_improve_viz.html": "6c03ff38"
+  },
+  "06_field_standard.qmd": {
+    "06_field_standard.html": "bd0bdce9"
+  },
+  "07_wrapping_up.qmd": {
+    "07_wrapping_up.html": "ca303e3b"
+  }
+}
