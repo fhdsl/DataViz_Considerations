@@ -200,9 +200,7 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 **Example plot**
 
-:::
-
-#### Strengths
+#### Strengths Overview
 
 <u>The strengths of the plots that help you visualize distributions and compare groups</u>
 
@@ -213,6 +211,8 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 <b>Ridgeline</b> plots are great at comparing distributions of lots of groups.
 
 <b>Raincloud</b> plots are great when you want to go deep and see everything for a small number of groups (exploratory analysis).
+
+:::
 
 ### Group Composition, Complex Relationships, and Response Plots
 
@@ -337,9 +337,7 @@ https://www.mdpi.com/2079-9721/13/2/37
 
 **Example plot**
 
-:::
-
-#### Strengths
+#### Strengths Overview
 
 <u>The strengths of the plots for group composition, complex relationships, and response</u>
 
@@ -349,6 +347,7 @@ https://www.mdpi.com/2079-9721/13/2/37
 
 <b>Sankey diagrams</b> are good if you want to look at the possible trajectories of symptoms, treatments, etc. and it's important to know what combinations occur.
 
+:::
 
 ### Field Standard Plots
 
