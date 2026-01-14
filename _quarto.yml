@@ -20,9 +20,9 @@ book:
     - 02_what_why_intro.qmd
     - 03_data.qmd
     - 04_graph_info.qmd
-    - 04_how_to_improve_viz.qmd
+    - 05_how_to_improve_viz.qmd
     - 06_field_standard.qmd
-    - 06_wrapping_up.qmd
+    - 07_wrapping_up.qmd
 
   sidebar:
     logo: "assets/ITN_logo.png"
