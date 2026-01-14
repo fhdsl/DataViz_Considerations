@@ -56,13 +56,13 @@ A *line chart* may or may not use points in addition to lines. It is good practi
 
 Of the conventional plots described above, bar plots and histograms both fit within this category. Bar plots are typically used to find a ranking while histograms display a distribution. Ranking and distribution plots are often, but not exclusively, used for exploratory data analysis and internal visualizations. If presented as an expository visualization, these plots will usually supplement or support a more complex figure, perhaps as a subpanel within that larger figure. Even if ranking and distribution plots are rarely the focal point, they are a powerful tool in the researcher's data visualization toolbox to profile data characteristics and compare groups.
 
-::: {.panel-tabset}
-
 ### Violin Plots
 
 **Description**: Displays the density of data where narrow sections correspond to lower density and wider sections correspond to higher density. The plots generally resemble the outline of a violin.
 
-**When to use**:
+::: {.panel-tabset}
+
+#### When to use
 
 * Numerical data (may have categorical data if looking at multiple distributions)
 * Minimum of 1 variable
@@ -70,26 +70,28 @@ Of the conventional plots described above, bar plots and histograms both fit wit
 * Primary data encodings are area and position
 * Used to show distributions and rank groups
 
-**Strengths**:
+#### Strengths
 
 * Better at comparing multiple distributions than histograms (the conventional plot type)
 * Displays distribution shape such as skew and modes better than boxplots do
 
-**Weaknesses**:
+#### Weaknesses
 
 * Doesn't show individual data points
 * Limited usefulness when there's little amounts of data (e.g., few records/patients/samples)
 * The method for creating the density visualization is a bit arbitrary
 
-**Alternatives**:
+#### Alternatives
 
 * [Boxplot](https://www.data-to-viz.com/caveat/boxplot.html) (especially with jitter to show individual data points)
 * Ridgeline plot
 * Raincloud plot
 
-**Example plot**
+#### Example
 
 An example of the plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c in this paper showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2.
+
+:::
 
 ### Boxplots (with jitter)
 
@@ -101,7 +103,9 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 </details>
 
-**When to use**:
+::: {.panel-tabset}
+
+#### When to use
 
 * Numerical data (may have categorical data if looking at multiple distributions)
 * Minimum of 1 variable
@@ -109,19 +113,19 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 * Primary data encodings are lines and points
 * Used to show distributions and rank groups
 
-**Strengths**:
+#### Strengths
 
 * Shows the data as well as helpful summary statistics and overall variation
 * Can quickly spot outliers
 * Can compare groups efficiently
 
-**Weaknesses**:
+#### Weaknesses
 
 * Doesn't show multiple modes as well as violin plots
 * Quartiles may not be familiar concepts for general audiences
 * Outliers need further investigation
 
-**Alternatives**:
+#### Alternatives
 
 * Violin plot
 * Histogram
@@ -130,13 +134,19 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 * Raincloud plot
 * Swarm plot
 
-**Example plot**
+#### Example
+
+Include an example plot
+
+:::
 
 ### Ridgeline Plots
 
 **Description**: Shows the distribution of multiple categories of numerical data, using densities (half a violin). Looks like stacked, but slightly offset mountain ridges.
 
-**When to use**:
+::: {.panel-tabset}
+
+#### When to use
 
 * Numerical data (with categorical data for groups)
 * Minimum of 2 variables
@@ -144,31 +154,37 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 * Primary data encodings are area and position
 * Used to show distributions and rank groups
 
-**Strengths**:
+#### Strengths
 
 * Efficiently displays distributions for many groups or categories
 * Shows distribution shape (e.g., skew and modes)
 
-**Weaknesses**:
+#### Weaknesses
 
 * Can be cluttered if there is too much overlap between groups or not a clear ordering of the categories
 * Good for general comparison among groups, but not for finding precise quantitative differences
 * The method for creating the density visualizations is a bit arbitrary
 
-**Alternatives**:
+##### Alternatives
 
 * [Boxplot](https://www.data-to-viz.com/caveat/boxplot.html) (especially with jitter to show individual data points)
 * [Strip plot](https://datavizproject.com/data-type/strip-plot/)
 * In some cases, a sorted [heatmap](https://www.data-to-viz.com/graph/heatmap.html)
 * A table may be better if you need to make quantitative comparisons
 
-**Example plot**
+#### Example plot
+
+Include an example plot
+
+:::
 
 ### Raincloud Plots
 
 **Description**: Combines 3 plots: density, boxplot, individual data points. Generally looks like a raining cloud.
 
-**When to use**:
+::: {.panel-tabset}
+
+#### When to use
 
 * Numerical data (with categorical data for groups)
 * Minimum of 1 variable
@@ -176,23 +192,27 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 * Primary data encodings are area, lines, and points
 * Used to show distributions and rank groups
 
-**Strengths**:
+#### Strengths
 
 * Show density/distribution shape as well as individual data points and common summary statistics -- so much information
 * Works well with small datasets
 
-**Weaknesses**:
+#### Weaknesses
 
 * A lot is going on
 * Harder to interpret and cluttered or squished if there are more than a few groups
 
-**Alternatives**:
+#### Alternatives
 
 * [Violin plot](https://www.data-to-viz.com/graph/violin.html)
 * [Boxplot](https://www.data-to-viz.com/caveat/boxplot.html) (especially with jitter to show individual data points)
 * [Swarm plot](https://r-graph-gallery.com/beeswarm.html)
 
-**Example plot**
+#### Example
+
+Include an example plot
+
+:::
 
 ### Strengths Overview
 
@@ -205,8 +225,6 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 <b>Ridgeline</b> plots are great at comparing distributions of lots of groups.
 
 <b>Raincloud</b> plots are great when you want to go deep and see everything for a small number of groups (exploratory analysis).
-
-:::
 
 ## Group Composition, Complex Relationships, and Response Plots
 
