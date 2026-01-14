@@ -1,0 +1,68 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: Considerations for Data Visualization
+  favicon: assets/ITN_favicon.ico
+  bread-crumbs: false
+
+  page-navigation: true
+  search: true
+  repo-url: https://github.com/fhdsl/DataViz_Considerations/
+  repo-actions: [edit]
+  issue-url: https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform
+  google-analytics: "G-XXXXXXXXXX"
+
+  chapters:
+    - index.qmd
+    - 01-intro.qmd
+    - 02_what_why_intro.qmd
+    - 03_data.qmd
+    - 04_graph_info.qmd
+    - 04_how_to_improve_viz.qmd
+    - 06_field_standard.qmd
+    - 06_wrapping_up.qmd
+
+  sidebar:
+    logo: "assets/ITN_logo.png"
+    logo-href: "https://www.itcrtraining.org/"
+    foreground: "#1B365D"
+
+  page-footer:
+    left: |
+      This book was built with <a href="https://quarto.org/" style="color: #0000FF;">Quarto</a> using
+      <a href="https://github.com/fhdsl/OTTR_Quarto" style="color: #0000FF;">OTTR</a>.
+    center: |
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;"> CC-BY </a> unless noted otherwise.
+    right:
+      - icon: github
+        href: https://github.com/
+
+  bibliography: references.bib
+
+  format:
+    html:
+      grid:
+        sidebar-width: 260px
+      css: assets/style_ITN.css
+      linkcolor: "#e0471c"
+      mainfont: "Karla"
+
+      sidebar: true
+      toc: true
+
+      code-link: true
+      code-copy: true
+      code-block-bg: true
+      code-block-border-left: "#31BAE9"
+
+      link-external-newwindow: true
+
+      image: assets:ITN_favicon.ico
+      license: "CC BY"
+  knitr:
+    opts_chunk:
+      fig.path: "resources/images/figure/"
