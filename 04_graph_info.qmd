@@ -58,7 +58,7 @@ A *line chart* may or may not use points in addition to lines. It is good practi
 
 Of the conventional plots described above, bar plots and histograms both fit within this category. Bar plots are typically used to find a ranking while histograms display a distribution. Ranking and distribution plots are often, but not exclusively, used for exploratory data analysis and internal visualizations. If presented as an expository visualization, these plots will usually supplement or support a more complex figure, perhaps as a subpanel within that larger figure. Even if ranking and distribution plots are rarely the focal point, they are a powerful tool in the researcher's data visualization toolbox to profile data characteristics and compare groups.
 
-::: {.panel-tabset}
+:::: {.panel-tabset}
 
 #### Violin Plots
 
@@ -200,7 +200,7 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 **Example plot**
 
-:::
+::::
 
 #### Strengths Overview
 
@@ -218,7 +218,7 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 Of the conventional plots described above, scatter plots and line charts both fit within this category. Scatter plots are usually used to display a response as well as complex relationships while line charts may show a response or change over time. Plots within this category are more frequently expository data visualizations than exploratory data visualizations. These plots are often less intuitive for an audience to interpret without guidance. Therefore the polishing and refinement steps as well as including informative titles, captions, and labels are especially important when designing and building visualizations within this category.
 
-::: {.panel-tabset}
+:::: {.panel-tabset}
 
 #### Stacked Bar Charts
 
@@ -337,7 +337,7 @@ https://www.mdpi.com/2079-9721/13/2/37
 
 **Example plot**
 
-:::
+::::
 
 #### Strengths Overview
 
