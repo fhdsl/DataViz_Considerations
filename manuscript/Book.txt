@@ -1,0 +1,7 @@
+Introduction.md
+Defining-Data-Visualization.md
+Elements-of-Data-Visualization.md
+Choosing-the-Right-Plot.md
+High-quality-and-inclusive-data-visualizations.md
+Field-Specific-Visualizations.md
+Wrapping-up.md
