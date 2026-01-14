@@ -171,14 +171,14 @@ Include an example plot
 * Good for general comparison among groups, but not for finding precise quantitative differences
 * The method for creating the density visualizations is a bit arbitrary
 
-##### Alternatives
+#### Alternatives
 
 * [Boxplot](https://www.data-to-viz.com/caveat/boxplot.html) (especially with jitter to show individual data points)
 * [Strip plot](https://datavizproject.com/data-type/strip-plot/)
 * In some cases, a sorted [heatmap](https://www.data-to-viz.com/graph/heatmap.html)
 * A table may be better if you need to make quantitative comparisons
 
-#### Example plot
+#### Example
 
 Include an example plot
 
@@ -236,13 +236,13 @@ Include an example plot
 
 Of the conventional plots described above, scatter plots and line charts both fit within this category. Scatter plots are usually used to display a response as well as complex relationships while line charts may show a response or change over time. Plots within this category are more frequently expository data visualizations than exploratory data visualizations. These plots are often less intuitive for an audience to interpret without guidance. Therefore the polishing and refinement steps as well as including informative titles, captions, and labels are especially important when designing and building visualizations within this category.
 
-::: {.panel-tabset}
-
 ### Stacked Bar Charts
 
 **Description**: Displays multiple categories within a single bar, stacked on top (vertical) or next to (horizontal) each other. Each overall bar represents a group. Within bars, each stack is a sub-category or subgroup.
 
-**When to use**:
+::: {.panel-tabset}
+
+#### When to Use
 
 * Numerical data with categorical data for groups
 * Minimum of 2 variables
@@ -252,18 +252,18 @@ Of the conventional plots described above, scatter plots and line charts both fi
 * Avoid if you have a lot of sub-categories or want to compare individual sub-categories to each other
 * If using more than a couple of categories, consider using proportions (that sum to 100%) on the numerical axis
 
-**Strengths**:
+#### Strengths
 
 * Summarizes complex group composition in a compact way
 * Can compare composition over time or across groups
 
-**Weaknesses**:
+#### Weaknesses
 
 * Difficulty comparing subgroups that aren't aligned or in the middle of the overall bar
 * If one subgroup contributes too much, it can dwarf other subgroups; similarly, if the groups have uneven sizes, it can dwarf other groups
 * If the numerical axis uses proportions, raw numbers aren't visualized
 
-**Alternatives**:
+#### Alternatives
 
 * Grouped bar chart
 * Lollipop plot
@@ -271,7 +271,7 @@ Of the conventional plots described above, scatter plots and line charts both fi
 * A table
 * A waterfall plot for the most important sub-category
 
-**Example plot**
+#### Example
 
 <details><summary>Example of the plot in the biomedical, bioinformatics, or cancer informatics literature</summary>
 
@@ -279,11 +279,15 @@ https://www.mdpi.com/2079-9721/13/2/37
 
 </details>
 
+:::
+
 ### Heatmaps
 
 **Description**: A visualization (typically two dimensional -- with rows and columns -- of a table or matrix) using color. Always uses colors to display numbers or categories; the two dimensional matrix while typical is not a requirement, because the two dimensions could be a map projection or tissue sample.
 
-**When to use**:
+::: {.panel-tabset}
+
+#### When to use
 
 * Categorical or numerical data or a mixture
 * Minimum of 3 variables
@@ -293,18 +297,18 @@ https://www.mdpi.com/2079-9721/13/2/37
 * Not recommended if you need to know or display actual values
 * Often used together with hierarchical clustering or reordering sample location to highlight trends or areas of similarity
 
-**Strengths**:
+#### Strengths
 
 * Provides a broad overview to identify trends, areas of density, sparsity, or outliers
 * Efficiently and compactly simplifies complex data into one visualization
 
-**Weaknesses**:
+#### Weaknesses
 
 * The "matrix" aspect can be difficult for viewers to grasp
 * Rearranging data can be helpful but also misleading if not described
 * Actual values and summary stats are rare/difficult to display if there are many rows and columns
 
-**Alternatives**:
+#### Alternatives
 
 * A [table](https://r-graph-gallery.com/table.html)
 * [Scatter](https://www.data-to-viz.com/graph/scatter.html) plot
@@ -312,7 +316,7 @@ https://www.mdpi.com/2079-9721/13/2/37
 * [Bubble charts](https://www.data-to-viz.com/graph/bubble.html) if another dimension is needed
 * [Parallel plot](https://www.data-to-viz.com/graph/parallel.html)
 
-**Example plot**
+#### Example
 
 <details><summary>Pairwise correlation: Full matrix vs lower triangle</summary>
 
@@ -320,11 +324,15 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 
 </details>
 
+:::
+
 ### Sankey Diagrams
 
 **Description**: Represents the "flow" or movement of quantities (e.g., patients or samples) among different categories through different steps (e.g., demographics or steps of an analysis or trial)
 
-**When to use**:
+::: {.panel-tabset}
+
+#### When to use
 
 * Categorical data and sometimes numerical data/counts
 * Requires several variables
@@ -333,19 +341,19 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 * Best with datasets with some sort of longitudinal data or time points with categories at each time point
 * Example uses include tracking patient response or symptom trajectories as well as patient cohort stratification
 
-**Strengths**:
+#### Strengths
 
 * Provides a lot of information about the study population and shows all possible paths
 * Provides a visual or graphical representation of data that would otherwise be in a table or just described in text
 
-**Weaknesses**:
+#### Weaknesses
 
 * Difficult or complex to interpret
 * Flows that cross or overlap or flows with similar widths can be difficult to compare though interactivity can alleviate this
 * Diagrams don't always clearly and explicitly display sample dropout (discontinue treatment, etc.)
 * Often require specialized tools to create visualization
 
-**Alternatives**:
+#### Alternatives
 
 * A table
 * Stacked bar charts, but these lose the connection/possible path aspect
@@ -353,7 +361,11 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 * Treemaps
 * Other graphical visualizations or some custom made visualization
 
-**Example plot**
+#### Example plot
+
+Include an example of the plot
+
+:::
 
 ### Strengths Overview
 
@@ -364,8 +376,6 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 <b>Heatmaps</b> are good if you have at least 3 variables that you need to visualize and want to use color as the primary means to communicate the point of the visualization (e.g., the range of values, correlation, areas of density, patterns across groups or time)
 
 <b>Sankey diagrams</b> are good if you want to look at the possible trajectories of symptoms, treatments, etc. and it's important to know what combinations occur.
-
-:::
 
 ## Field Standard Plots
 

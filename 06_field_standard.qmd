@@ -10,6 +10,8 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 **Description**: Filler description
 
+::: {.panel-tabset}
+
 ### When to Use
 
   * Type of data
@@ -37,9 +39,13 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 Include an example plot and how to interpret
 
+:::
+
 ## Caterpillar Plot
 
 **Description**: Displays numerical point estimates (such as odds ratios or coefficient effect estimates) as the caterpillar body and their variation or the confidence level as caterpillar legs. Caterpillar plots are practically the same as Forest plots except for one major difference: the categories are ordered by magnitude of the point estimates.
+
+::: {.panel-tabset}
 
 ### When to Use
 
@@ -69,9 +75,13 @@ Include an example plot and how to interpret
 
 Include an example plot and how to interpret
 
+:::
+
 ## Waterfall Plot
 
 **Description**: Bar charts which show treatment effect. The numerical axis is compared to a baseline. The bars are arranged or ordered according to magnitude and each bar typically corresponds to a different patient or sample.
+
+::: {.panel-tabset}
 
 ### When to use
 
@@ -107,9 +117,13 @@ Include an example plot and how to interpret
 
 Include an example plot and how to interpret
 
+:::
+
 ## Kaplan-Meier (KM) Curve (definitely)
 
 **Description**: Filler description
+
+::: {.panel-tabset}
 
 ### When to use
 
@@ -137,11 +151,15 @@ Include an example plot and how to interpret
 ### Example and Interpretation
 
 Include an example plot and how to interpret
+
+:::
 
 ## Volcano Plot (definitely)
 
 **Description**: Filler description
 
+::: {.panel-tabset}
+
 ### When to use
 
   * Type of data
@@ -168,11 +186,15 @@ Include an example plot and how to interpret
 ### Example and Interpretation
 
 Include an example plot and how to interpret
+
+:::
 
 ## Enrichment Plot (maybe)
 
 **Description**: Filler description
 
+::: {.panel-tabset}
+
 ### When to use
 
   * Type of data
@@ -199,11 +221,15 @@ Include an example plot and how to interpret
 ### Example and Interpretation
 
 Include an example plot and how to interpret
+
+:::
 
 ## MA Diagram (definitely)
 
 **Description**: Filler description
 
+::: {.panel-tabset}
+
 ### When to use
 
   * Type of data
@@ -230,11 +256,15 @@ Include an example plot and how to interpret
 ### Example and Interpretation
 
 Include an example plot and how to interpret
+
+:::
 
 ## Principal Components Analysis (PCA) Plot (probably)
 
 **Description**: Filler description
 
+::: {.panel-tabset}
+
 ### When to use
 
   * Type of data
@@ -262,9 +292,13 @@ Include an example plot and how to interpret
 
 Include an example plot and how to interpret
 
+:::
+
 ## Circos Plot (maybe)
 
 **Description**: Filler description
+
+::: {.panel-tabset}
 
 ### When to use
 
@@ -293,9 +327,13 @@ Include an example plot and how to interpret
 
 Include an example plot and how to interpret
 
+:::
+
 ## Biomedical Knowledge Graph (KG) (probably)
 
 **Description**: Filler description
+
+::: {.panel-tabset}
 
 ### When to use
 
@@ -323,6 +361,8 @@ Include an example plot and how to interpret
 ### Example and Interpretation
 
 Include an example plot and how to interpret
+
+:::
 
 ## Summary of Strengths
 
