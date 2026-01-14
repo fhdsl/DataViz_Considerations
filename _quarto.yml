@@ -41,7 +41,7 @@ book:
       - icon: github
         href: https://github.com/
 
-bibliography: references.bib
+bibliography: book.bib
 
 format:
   html:
