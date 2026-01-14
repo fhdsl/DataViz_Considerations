@@ -64,36 +64,32 @@ Of the conventional plots described above, bar plots and histograms both fit wit
 
 **When to use**:
 
-  * Numerical data (may have categorical data if looking at multiple distributions)
-  * Minimum of 1 variable
-  * Best with minimal number of categories
-  * Primary data encodings are area and position
-  * Used to show distributions and rank groups
+* Numerical data (may have categorical data if looking at multiple distributions)
+* Minimum of 1 variable
+* Best with minimal number of categories
+* Primary data encodings are area and position
+* Used to show distributions and rank groups
 
 **Strengths**:
 
-  * Better at comparing multiple distributions than histograms (the conventional plot type)
-  * Displays distribution shape such as skew and modes better than boxplots do
+* Better at comparing multiple distributions than histograms (the conventional plot type)
+* Displays distribution shape such as skew and modes better than boxplots do
 
 **Weaknesses**:
 
-  * Doesn't show individual data points
-  * Limited usefulness when there's little amounts of data (e.g., few records/patients/samples)
-  * The method for creating the density visualization is a bit arbitrary
+* Doesn't show individual data points
+* Limited usefulness when there's little amounts of data (e.g., few records/patients/samples)
+* The method for creating the density visualization is a bit arbitrary
 
 **Alternatives**:
 
-  * [Boxplot](https://www.data-to-viz.com/caveat/boxplot.html) (especially with jitter to show individual data points)
-  * Ridgeline plot
-  * Raincloud plot
+* [Boxplot](https://www.data-to-viz.com/caveat/boxplot.html) (especially with jitter to show individual data points)
+* Ridgeline plot
+* Raincloud plot
 
 **Example plot**
 
-<details><summary>Example of the plot in the biomedical, bioinformatics, or cancer informatics literature</summary>
-
-Figure 5c in this paper showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2.
-
-</details>
+An example of the plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c in this paper showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2.
 
 ### Boxplots (with jitter)
 
@@ -103,7 +99,7 @@ Figure 5c in this paper showing the expression of a tumor suppressor gene based 
 
 Inclusion of jitter typically uses randomness to space the points over the box so you may need to set a random seed in your analysis to ensure the visualization appears exactly one way consistently. However, it's not a major problem if the jitter points move on a plot as they'll have the same numerical axis location, only moving within the categorical axis.
 
-</summary>
+</details>
 
 **When to use**:
 
@@ -198,10 +194,6 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 **Example plot**
 
-:::
-
-## {.unnumbered}
-
 ### Strengths Overview
 
 <u>The strengths of the plots that help you visualize distributions and compare groups</u>
@@ -213,6 +205,8 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 <b>Ridgeline</b> plots are great at comparing distributions of lots of groups.
 
 <b>Raincloud</b> plots are great when you want to go deep and see everything for a small number of groups (exploratory analysis).
+
+:::
 
 ## Group Composition, Complex Relationships, and Response Plots
 
@@ -300,7 +294,7 @@ https://www.mdpi.com/2079-9721/13/2/37
 
 When using a heatmap to display pairwise correlation, the heatmap is symmetrical and presents redundant information (each correlation is displayed twice) because the correlation of A to B is the same as the correlation of B to A. The diagonal will always have perfect correlation because it's comparing a sample or variable to itself. If looking at just the lower triangle, it presents the pairwise correlation only once and removes the redundant information.
 
-<details>
+</details>
 
 ### Sankey Diagrams
 
@@ -337,10 +331,6 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 
 **Example plot**
 
-:::
-
-## {.unnumbered}
-
 ### Strengths Overview
 
 <u>The strengths of the plots for group composition, complex relationships, and response</u>
@@ -350,6 +340,8 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 <b>Heatmaps</b> are good if you have at least 3 variables that you need to visualize and want to use color as the primary means to communicate the point of the visualization (e.g., the range of values, correlation, areas of density, patterns across groups or time)
 
 <b>Sankey diagrams</b> are good if you want to look at the possible trajectories of symptoms, treatments, etc. and it's important to know what combinations occur.
+
+:::
 
 ## Field Standard Plots
 
