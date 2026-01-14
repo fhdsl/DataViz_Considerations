@@ -202,6 +202,8 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 :::
 
+#### Strengths
+
 <u>The strengths of the plots that help you visualize distributions and compare groups</u>
 
 <b>Violin</b> plots are good if you want to look at distribution characteristics (e.g., skew or multimodality) at a glance.
@@ -336,6 +338,8 @@ https://www.mdpi.com/2079-9721/13/2/37
 **Example plot**
 
 :::
+
+#### Strengths
 
 <u>The strengths of the plots for group composition, complex relationships, and response</u>
 
