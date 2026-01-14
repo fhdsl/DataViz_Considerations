@@ -52,12 +52,13 @@ A *line chart* may or may not use points in addition to lines. It is good practi
 </details>
 
 
-### Ranking and Distribution Plots
+## Ranking and Distribution Plots
 
 Of the conventional plots described above, bar plots and histograms both fit within this category. Bar plots are typically used to find a ranking while histograms display a distribution. Ranking and distribution plots are often, but not exclusively, used for exploratory data analysis and internal visualizations. If presented as an expository visualization, these plots will usually supplement or support a more complex figure, perhaps as a subpanel within that larger figure. Even if ranking and distribution plots are rarely the focal point, they are a powerful tool in the researcher's data visualization toolbox to profile data characteristics and compare groups.
 
 ::: {.panel-tabset}
-#### Violin Plots
+
+### Violin Plots
 
 **Description**: Displays the density of data where narrow sections correspond to lower density and wider sections correspond to higher density. The plots generally resemble the outline of a violin.
 
@@ -94,7 +95,7 @@ Figure 5c in this paper showing the expression of a tumor suppressor gene based 
 
 </details>
 
-#### Boxplots (with jitter)
+### Boxplots (with jitter)
 
 **Description**: Boxplots use a box to delineate the median and quartiles of the data with whiskers to display the range and potentially points for outliers. A "jitter" can be utilized to include points for each data point.
 
@@ -135,7 +136,7 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 **Example plot**
 
-#### Ridgeline Plots
+### Ridgeline Plots
 
 **Description**: Shows the distribution of multiple categories of numerical data, using densities (half a violin). Looks like stacked, but slightly offset mountain ridges.
 
@@ -167,7 +168,7 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 **Example plot**
 
-#### Raincloud Plots
+### Raincloud Plots
 
 **Description**: Combines 3 plots: density, boxplot, individual data points. Generally looks like a raining cloud.
 
@@ -196,7 +197,10 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 * [Swarm plot](https://r-graph-gallery.com/beeswarm.html)
 
 **Example plot**
+
 :::
+
+## {.unnumbered}
 
 ### Strengths Overview
 
@@ -210,12 +214,13 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 
 <b>Raincloud</b> plots are great when you want to go deep and see everything for a small number of groups (exploratory analysis).
 
-### Group Composition, Complex Relationships, and Response Plots
+## Group Composition, Complex Relationships, and Response Plots
 
 Of the conventional plots described above, scatter plots and line charts both fit within this category. Scatter plots are usually used to display a response as well as complex relationships while line charts may show a response or change over time. Plots within this category are more frequently expository data visualizations than exploratory data visualizations. These plots are often less intuitive for an audience to interpret without guidance. Therefore the polishing and refinement steps as well as including informative titles, captions, and labels are especially important when designing and building visualizations within this category.
 
 ::: {.panel-tabset}
-#### Stacked Bar Charts
+
+### Stacked Bar Charts
 
 **Description**: Displays multiple categories within a single bar, stacked on top (vertical) or next to (horizontal) each other. Each overall bar represents a group. Within bars, each stack is a sub-category or subgroup.
 
@@ -256,7 +261,7 @@ https://www.mdpi.com/2079-9721/13/2/37
 
 </details>
 
-#### Heatmaps
+### Heatmaps
 
 **Description**: A visualization (typically two dimensional -- with rows and columns -- of a table or matrix) using color. Always uses colors to display numbers or categories; the two dimensional matrix while typical is not a requirement, because the two dimensions could be a map projection or tissue sample.
 
@@ -297,7 +302,7 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 
 <details>
 
-#### Sankey Diagrams
+### Sankey Diagrams
 
 **Description**: Represents the "flow" or movement of quantities (e.g., patients or samples) among different categories through different steps (e.g., demographics or steps of an analysis or trial)
 
@@ -331,7 +336,10 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 * Other graphical visualizations or some custom made visualization
 
 **Example plot**
+
 :::
+
+## {.unnumbered}
 
 ### Strengths Overview
 
@@ -343,7 +351,7 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 
 <b>Sankey diagrams</b> are good if you want to look at the possible trajectories of symptoms, treatments, etc. and it's important to know what combinations occur.
 
-### Field Standard Plots
+## Field Standard Plots
 
 There are several common plots that are "field standard" or customarily used within the biomedical field. These plots (including Waterfall plots, Caterpillar plots, Kaplan-Meier curves, Volcano plots, MA diagrams, etc.) plots will be discussed in the final chapter. They often align with the category of group composition, complex relationships, and response plots. When deciding what plot is best for you and your research question, a field standard plot may be the answer given that the audience will be more familiar with such plots.
 
