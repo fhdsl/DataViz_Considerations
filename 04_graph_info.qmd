@@ -95,7 +95,7 @@ An example of the plot in the biomedical, bioinformatics, or cancer informatics 
 
 **Description**: Boxplots use a box to delineate the median and quartiles of the data with whiskers to display the range and potentially points for outliers. A "jitter" can be utilized to include points for each data point.
 
-<details><summary>Jitter and Randomness</details>
+<details><summary>Jitter and Randomness</summary>
 
 Inclusion of jitter typically uses randomness to space the points over the box so you may need to set a random seed in your analysis to ensure the visualization appears exactly one way consistently. However, it's not a major problem if the jitter points move on a plot as they'll have the same numerical axis location, only moving within the categorical axis.
 
