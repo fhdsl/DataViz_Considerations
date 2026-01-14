@@ -3,7 +3,7 @@ title: "Choosing the Right Plot"
 format:
   html:
     toc: true
-    toc-depth: 3
+    toc-depth: 4
 ---
 
 A data visualization represents data in a simplified way by encoding that data with textual and graphical design elements which are then combined in a specific layout. Each plot type has a certain combination of the design elements and an associated typical configuration. The design elements act as building blocks for the overall data visualizations.
