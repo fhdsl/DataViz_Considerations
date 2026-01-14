@@ -1,0 +1,196 @@
+# Elements of Data Visualization
+
+A data visualization represents data in a simplified way. The visualization is made up of the represented data as well as the means by which the data is represented: textual and graphical design elements. Each conventional plot type utilizes a combination of design elements in a predictable way or layout. Because the design elements are the building blocks for the data visualizations, an important step in choosing an appropriate plot for your data is considering what your data is and how it can be encoded or represented.
+
+## Learning Objectives
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This chapter will demonstrate how to illustrate what a dataset for data visualization may look like, categorize the type or types of data within your dataset, explain how data is encoded within data visualizations, describe additional visual design tools used to separate plot elements, and assess which coordinate system is appropriate for your data visualization task."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_31#slide=id.g3a4b3643292_0_31")
+```
+
+## Data Types
+
+A dataset is a collection of records or observations. This course assumes that the dataset you are going to visualize has been processed and wrangled such that it is a "structured dataset." In structured datasets, typically each row (or "record") contains observations for a single sample or patient. Each column is a different observation or variable for that sample or patient. Every variable will be unique either because different things are being measured or documented or because the same thing is being measured at different time points. When thinking about the amount of data that will be displayed in a visualization, there are two different considerations: the number of observations (the number of rows) and the number of variables (which and how many columns).
+
+<details><summary>Wide vs Long datasets</summary>
+
+Some datasets may utilize a "long" approach to stack similar variables on top of each other with a new column helping to distinguish them and repeating record IDs across multiple rows; but this "long" approach is typically used as input to visualization software.
+
+</details>
+
+There are two main types of data within a dataset: **numerical** and **categorical** data. A dataset will likely have a mixture of these data types and new variables may be generated using the original data through transformations. Transformations can be used by performing mathematical operations or converting between data types. Converting numerical data into categorical data is accomplished through binning or by employing a cutoff value. Alternatively, categorical data may need to be encoded as numerals so the data is in a form that requires less storage or so that a computer or algorithm can process it (e.g., machine readable). <ADD REF> There may be more specialized data types depending on your research question, such as relational or spatial data, but these tend to be just more complex and more defined format versions of numerical and categorical data.
+
+### Numerical Data
+
+Numerical data is data that **quantitatively** represents some count or measurement. Mathematical operations such as addition, subtraction, division, multiplication, exponentiation, etc. are appropriate.
+
+There are two subtypes of numerical data: *discrete* and *continuous*. Whole numbers or integers (e.g., 103 and 25,975) are examples of discrete data while decimals (e.g., 98.6 and 32.25) are examples of continuous data.
+
+```{r eval = FALSE, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("")
+```
+
+Examples of numerical data within the biomedical field include
+
+* a blood test result value or concentration
+* a patient's age
+* the thickness of a tumor
+* the length of stay for a patient at the hospital
+* a survival probability
+
+### Categorical Data
+
+Categorical data **qualitatively** characterizes, categorizes, or groups objects or individuals with labels. Categorical data sometimes may look like numbers when they are group IDs or some sort of ranking or index score. However, A-B-C could be switched out for 1-2-3 making such data categorical data.
+
+Survey data frequently has categorical data that appears as numbers because responses are typically "coded". This is especially true for biomedical data from platforms like REDCap.
+
+There are two subtypes of categorical data: *nominal* and *ordinal*. Nominal data is data that can't be ordered, for example "Case" and "Control". Ordinal data is data that can be ordered, for example "A", "B", "C" or "January 14, 1994", "February 8, 1995", "March 18, 1996".
+
+While you may be able to do some arithmetic operations with ordinal data specifically (like finding an average ranking or finding the distance between numerically encoded categories), typically arithmetic operations aren't appropriate for categorical data and shouldn't be used because the numbers don't have mathematical meaning. Index scores particularly should be treated like categorical data given that they represent categories. However, they often have order to them (are ordinal) and therefore, because the index or score is fundamentally a number, it's made up of other numbers and can be tracked over time, etc.
+
+```{r eval = FALSE, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("")
+```
+
+Examples of categorical data within the biomedical field include
+
+* patient or sample IDs
+* treatment group
+* patient sex
+* tumor location
+* Patient Health Questionnaire-9 (PHQ-9) Score / depression severity level <ADD REF>
+* Charlson-Deyo Comorbidity Index <ADD REF>
+
+
+## Data Encodings
+
+Data encoding is the process of representing data using visual elements or graphical attributes. These include geometric marks and visual channels which are the building blocks of data visualization. Different graph types utilize different encodings to represent data. Geometric marks are typically the primary means of representing data across graph types while the visual channels are usually used as secondary or supplementary methods (e.g., shape, color, and textures). However, color can be a primary means of data encoding for certain graphs like heatmaps or choropleths <ADD REF>.
+
+### Geometric Marks
+
+These building blocks are also referred to as "geometric marks" and they include
+
+* points
+* lines
+* bars
+* area
+* angle
+
+::: {.panel-tabset}
+
+#### Points
+
+An example of a conventional plot type that uses **points** is a scatter plot. Points typically are circles but can be other shapes (like triangles or squares), and typically represent one person or sample.
+
+#### Lines
+
+An example of a conventional plot type that uses **lines** is a line plot. Lines connect different data points. Slope may be a value of interest when working with lines, but it's often difficult for audiences to compare slope values visually without labels. Lines may also be trendlines that aren't connecting explicit data points and rather are included in a plot to showcase a general relationship or trend. Lines are often used to indicate summary statistics such as averages as well as medians or quartiles (in boxplots).
+
+#### Bars
+
+**Bars** use height (vertical bars) or length (horizontal bars) to communicate information about a set of samples. Within bar charts, width typically isn't used to communicate information about data, but for plot types like flow diagrams or histograms, bar width does convey a meaningful value.
+
+#### Area
+
+**Area** is often proportional to the amount of data its representing rather than the raw data values itself. Larger areas correspond to larger data values. Area is commonly used in density plots.
+
+#### Angles
+
+**Angles** are most commonly used to represent numerical values such as proportions but can also be used to represent direction rather than just magnitude/size (through use of arrows or slope). Angles are the primary geometric mark used in pie charts.
+
+:::
+
+### Visual Channels
+
+These visual building blocks are also referred to as "visual channels" and they control the way that the geometric building blocks will appear. You can change the shape, color, or size of a point, but it's still a point. Visual channels include:
+
+* position
+* color
+* shape
+* line type
+* patterns
+* size
+* tilt
+
+::: {.panel-tabset}
+
+#### Position
+
+**Position** often reflects numerical value with marks that are near each other having more similar values than marks that are further away. Position may also be used to separate different categories where the general order or position may reflect similar categories, the same parent category, or a numerical variable that is being compared across variables.
+
+#### Color
+
+**Color** may reflect categorization or group membership. Color may control the appearance of any of the geometric marks.
+
+#### Shape
+
+**Shape** may reflect categorization or group membership and controls the way that points appear. Shape is sometimes used in place of or as a supplement to color.
+
+#### Line Type
+
+**Line types** can be used much like shape to communicate categorization or group membership. Line type controls the appearance of lines.
+
+#### Pattern
+
+**Pattern** is sometimes used in place of or as a supplement to color to reflect categorization or group membership. For the recurring pattern to be recognized, it often needs to be used with geometric marks that have enough area for the pattern to be distinguishable (such as bars).
+
+#### Size
+
+**Size** is used to encode quantitative data by altering physical attributes of the geometric marks: thickness of a line, radius of a point, etc. Changes in size are often proportional to the quantitative data with larger sizes corresponding to larger values.
+
+#### Tilt
+
+**Tilt** is another word for angles and can be used as a visual channel, not just a geometric mark. Tilt is used to represent proportions or trends (such as slope). While helpful for comparisons, audiences often find it difficult to compare tilt precisely and designers should not rely on tilt to communicate main messages.
+
+:::
+
+### Preattentive Attributes
+
+Several of the visual channels are considered "Preattentive attributes" which means that they are visual features that the human brain tends to process quickly and unconsciously such that a viewer is instinctively guided to focus their attention on that feature. This is often due to contrast or differences in the feature compared to everything else. Examples include:
+
+  * Bars that are obviously taller than the rest
+  * Mostly one dominant color, but a few data points are a different, more vibrant or contrasting color
+  * Only one data point is outlined
+  * One line is wider than the rest
+
+### Additional Design Tools
+
+These additional design tools may or may not encode data, but do separate out data to enhance clarity and interpretability. The actual group membership will affect what is labeled or separated out, but often other visual design channels (like color) may be used to communicate group membership in a redundant way. These design tools are especially effective at improving the clarity of a visualization without having to change plot types. So if you're building a data visualization and it's a little too cluttered or difficult to interpret, try utilizing one of these design tools before switching plot types to a more complex plot type.
+
+* labels
+* facets or subplots
+* transparency
+
+::: {.panel-tabset}
+
+#### Labels
+
+**Labels** include axis labels, titles, and direct annotations within the plot perhaps specifying a specific summary statistic/number or pointing out the name/value of a specific data point or line. They may be combined with dashed lines, colors, or other visual channels to provide further clarity.
+
+#### Subplots
+
+**Subplots**, also known as faceting, subplots separates out the data into different panels based on group membership. The same plot type will be utilized in each panel. Panels may or may not use the same scaling and axis limits.
+
+#### Transparency
+
+**Transparency** controls the opacity of the geometric marks. If an area appears less transparent, there is a greater density of data there than areas that appear more transparent. This visual channel is especially helpful to distinguish groups that overlap.
+
+:::
+
+## Coordinate System
+
+Most data visualizations will utilize a two dimensional XY coordinate system (or Cartesian plane) with a horizontal (x-) axis and a vertical (y-) axis that are perpendicular and intersect where x = 0 and y = 0. Each variable will be assigned to one of the axes. If working with regression or where you have a dependent variable (outcome or event being measured or observed) and an independent variable (the variable being controlled or changed/purposefully manipulated), the independent variable is assigned to the x-axis and the dependent variable is assigned to the y-axis. When working with numerical data, this XY coordinate system allows for the positioning of the numerical data along these axes. When working with a categorical data, the categories can still be positioned along of the numerical axes, however the corresponding numerical positions will not have the same meaning they would otherwise have. The two axes can utilize different units (e..g, micrograms per milliliter, percentage, grams, log fold change, etc.) and scales, however, if the same units are used for the two axes, then the scaling should be equal for both axes to avoid distortion.
+
+<details><summary>Additional coordinate systems</summary>
+
+Additional coordinate systems are appropriate for some specific visualizations such as a three dimensional XYZ coordinate system, the polar coordinate system (e.g., pie charts and spider charts), and a geospatial coordinate system for maps such as the projected coordinate system.
+
+  * The XYZ coordinate system utilizes a third axis (z-) that intersects the XY-plane perpendicularly at x = 0, y = 0, and z = 0.
+  * The polar coordinate system uses angles to position groups and radii length to represent magnitude or group size.
+  * A projected coordinate system is a two dimensional map.
+
+</details>
+
+## Summary
+
+Data has two main subdivisions: numeric and categorical data. Each type of data has certain geometric marks and visual channels that best represent that type of data. Categorical data communicates qualitative information such as groups, categorizations, or rankings and is best represented by color and shape as well as line type or patterns. Position may also be used for categorical data though position is typically associated with numerical data. Numerical data communicates quantitative information such as a measurement, count, or other numerical value perhaps the result of a mathematical operation.

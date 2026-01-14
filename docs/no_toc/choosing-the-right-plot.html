@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Choosing the Right Plot | Considerations for Data Visualization</title>
+  <meta name="description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Choosing the Right Plot | Considerations for Data Visualization" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Choosing the Right Plot | Considerations for Data Visualization" />
+  
+  <meta name="twitter:description" content="This ITN course introduces considerations for best practices in data visualization focusing on and discussing topics such as defining what data visualization is, utilizing exploratory data analysis, employing visual design principles, and making visualizations accessible." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/ITN_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="elements-of-data-visualization.html"/>
+<link rel="next" href="high-quality-and-inclusive-data-visualizations.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<base target="_blank">
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="assets/style_ITN.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.itcrtraining.org/"><img src="assets/ITN_logo.png" style="padding-left: 15px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#available-course-formats"><i class="fa fa-check"></i><b>0.1</b> Available Course Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#motivation"><i class="fa fa-check"></i><b>1.1</b> Motivation</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#target-audience"><i class="fa fa-check"></i><b>1.2</b> Target audience</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#curriculum"><i class="fa fa-check"></i><b>1.3</b> Curriculum</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#objectives"><i class="fa fa-check"></i><b>1.4</b> Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="defining-data-visualization.html"><a href="defining-data-visualization.html"><i class="fa fa-check"></i><b>2</b> Defining Data Visualization</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="defining-data-visualization.html"><a href="defining-data-visualization.html#learning-objectives"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="defining-data-visualization.html"><a href="defining-data-visualization.html#what-is-data-visualization"><i class="fa fa-check"></i><b>2.2</b> What is Data Visualization?</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="defining-data-visualization.html"><a href="defining-data-visualization.html#exploratory-visualizations"><i class="fa fa-check"></i><b>2.2.1</b> Exploratory Visualizations</a></li>
+<li class="chapter" data-level="2.2.2" data-path="defining-data-visualization.html"><a href="defining-data-visualization.html#expository-visualizations"><i class="fa fa-check"></i><b>2.2.2</b> Expository Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="defining-data-visualization.html"><a href="defining-data-visualization.html#need-for-data-visualization"><i class="fa fa-check"></i><b>2.3</b> Need for Data Visualization</a></li>
+<li class="chapter" data-level="2.4" data-path="defining-data-visualization.html"><a href="defining-data-visualization.html#summary"><i class="fa fa-check"></i><b>2.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html"><i class="fa fa-check"></i><b>3</b> Elements of Data Visualization</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html#learning-objectives-1"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html#data-types"><i class="fa fa-check"></i><b>3.2</b> Data Types</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html#numerical-data"><i class="fa fa-check"></i><b>3.2.1</b> Numerical Data</a></li>
+<li class="chapter" data-level="3.2.2" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html#categorical-data"><i class="fa fa-check"></i><b>3.2.2</b> Categorical Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html#data-encodings"><i class="fa fa-check"></i><b>3.3</b> Data Encodings</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html#geometric-marks"><i class="fa fa-check"></i><b>3.3.1</b> Geometric Marks</a></li>
+<li><a href="elements-of-data-visualization.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="3.3.2" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html#visual-channels"><i class="fa fa-check"></i><b>3.3.2</b> Visual Channels</a></li>
+<li><a href="elements-of-data-visualization.html#section-1" id="toc-section-1"></a></li>
+<li class="chapter" data-level="3.3.3" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html#preattentive-attributes"><i class="fa fa-check"></i><b>3.3.3</b> Preattentive Attributes</a></li>
+<li class="chapter" data-level="3.3.4" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html#additional-design-tools"><i class="fa fa-check"></i><b>3.3.4</b> Additional Design Tools</a></li>
+<li><a href="elements-of-data-visualization.html#section-2" id="toc-section-2"></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html#coordinate-system"><i class="fa fa-check"></i><b>3.4</b> Coordinate System</a></li>
+<li class="chapter" data-level="3.5" data-path="elements-of-data-visualization.html"><a href="elements-of-data-visualization.html#summary-1"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="choosing-the-right-plot.html"><a href="choosing-the-right-plot.html"><i class="fa fa-check"></i><b>4</b> Choosing the Right Plot</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="choosing-the-right-plot.html"><a href="choosing-the-right-plot.html#learning-objectives-2"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="choosing-the-right-plot.html"><a href="choosing-the-right-plot.html#goals-of-data-visualization"><i class="fa fa-check"></i><b>4.2</b> Goals of Data Visualization</a></li>
+<li class="chapter" data-level="4.3" data-path="choosing-the-right-plot.html"><a href="choosing-the-right-plot.html#standard-graph-types"><i class="fa fa-check"></i><b>4.3</b> Standard Graph Types</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="choosing-the-right-plot.html"><a href="choosing-the-right-plot.html#conventional-graphs"><i class="fa fa-check"></i><b>4.3.1</b> Conventional Graphs</a></li>
+<li class="chapter" data-level="4.3.2" data-path="choosing-the-right-plot.html"><a href="choosing-the-right-plot.html#ranking-and-distribution-plots"><i class="fa fa-check"></i><b>4.3.2</b> Ranking and Distribution Plots</a></li>
+<li><a href="choosing-the-right-plot.html#section-3" id="toc-section-3"></a></li>
+<li class="chapter" data-level="4.3.3" data-path="choosing-the-right-plot.html"><a href="choosing-the-right-plot.html#group-composition-complex-relationships-and-response-plots"><i class="fa fa-check"></i><b>4.3.3</b> Group Composition, Complex Relationships, and Response Plots</a></li>
+<li><a href="choosing-the-right-plot.html#section-4" id="toc-section-4"></a></li>
+<li class="chapter" data-level="4.3.4" data-path="choosing-the-right-plot.html"><a href="choosing-the-right-plot.html#field-standard-plots"><i class="fa fa-check"></i><b>4.3.4</b> Field Standard Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="choosing-the-right-plot.html"><a href="choosing-the-right-plot.html#galleries"><i class="fa fa-check"></i><b>4.4</b> Galleries</a></li>
+<li class="chapter" data-level="4.5" data-path="choosing-the-right-plot.html"><a href="choosing-the-right-plot.html#summary-2"><i class="fa fa-check"></i><b>4.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html"><i class="fa fa-check"></i><b>5</b> High quality and inclusive data visualizations</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#learning-objectives-3"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#visual-design-principles"><i class="fa fa-check"></i><b>5.2</b> Visual Design Principles</a></li>
+<li class="chapter" data-level="5.3" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#accessibility-considerations"><i class="fa fa-check"></i><b>5.3</b> Accessibility Considerations</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#color-palettes"><i class="fa fa-check"></i><b>5.3.1</b> Color palettes</a></li>
+<li class="chapter" data-level="5.3.2" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#labels-1"><i class="fa fa-check"></i><b>5.3.2</b> Labels</a></li>
+<li class="chapter" data-level="5.3.3" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#captions-and-alternative-text-descriptions"><i class="fa fa-check"></i><b>5.3.3</b> Captions and alternative text descriptions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#ethical-considerations"><i class="fa fa-check"></i><b>5.4</b> Ethical Considerations</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#data-distortions"><i class="fa fa-check"></i><b>5.4.1</b> Data Distortions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="high-quality-and-inclusive-data-visualizations.html"><a href="high-quality-and-inclusive-data-visualizations.html#annotations-and-other-points-of-reference"><i class="fa fa-check"></i><b>5.5</b> Annotations and other points of reference</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html"><i class="fa fa-check"></i><b>6</b> Field Specific Visualizations</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#learning-objectives-4"><i class="fa fa-check"></i><b>6.1</b> Learning Objectives</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#repeated-measures-plot-maybe"><i class="fa fa-check"></i><b>6.1.1</b> Repeated Measures Plot (maybe?)</a></li>
+<li class="chapter" data-level="6.1.2" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#caterpillar-plot"><i class="fa fa-check"></i><b>6.1.2</b> Caterpillar Plot</a></li>
+<li class="chapter" data-level="6.1.3" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#waterfall-plot"><i class="fa fa-check"></i><b>6.1.3</b> Waterfall Plot</a></li>
+<li class="chapter" data-level="6.1.4" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#kaplan-meier-km-curve-definitely"><i class="fa fa-check"></i><b>6.1.4</b> Kaplan-Meier (KM) Curve (definitely)</a></li>
+<li class="chapter" data-level="6.1.5" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#volcano-plot-definitely"><i class="fa fa-check"></i><b>6.1.5</b> Volcano Plot (definitely)</a></li>
+<li class="chapter" data-level="6.1.6" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#enrichment-plot-maybe"><i class="fa fa-check"></i><b>6.1.6</b> Enrichment Plot (maybe)</a></li>
+<li class="chapter" data-level="6.1.7" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#ma-diagram-definitely"><i class="fa fa-check"></i><b>6.1.7</b> MA Diagram (definitely)</a></li>
+<li class="chapter" data-level="6.1.8" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#principal-components-analysis-pca-plot-probably"><i class="fa fa-check"></i><b>6.1.8</b> Principal Components Analysis (PCA) Plot (probably)</a></li>
+<li class="chapter" data-level="6.1.9" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#circos-plot-maybe"><i class="fa fa-check"></i><b>6.1.9</b> Circos Plot (maybe)</a></li>
+<li class="chapter" data-level="6.1.10" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#biomedical-knowledge-graph-kg-probably"><i class="fa fa-check"></i><b>6.1.10</b> Biomedical Knowledge Graph (KG) (probably)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="field-specific-visualizations.html"><a href="field-specific-visualizations.html#summary-of-strengths"><i class="fa fa-check"></i><b>6.2</b> Summary of Strengths</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="wrapping-up.html"><a href="wrapping-up.html"><i class="fa fa-check"></i><b>7</b> Wrapping up</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="wrapping-up.html"><a href="wrapping-up.html#learning-objectives-5"><i class="fa fa-check"></i><b>7.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="7.2" data-path="wrapping-up.html"><a href="wrapping-up.html#in-summary"><i class="fa fa-check"></i><b>7.2</b> In Summary</a></li>
+<li class="chapter" data-level="7.3" data-path="wrapping-up.html"><a href="wrapping-up.html#checklist"><i class="fa fa-check"></i><b>7.3</b> Checklist</a></li>
+<li class="chapter" data-level="7.4" data-path="wrapping-up.html"><a href="wrapping-up.html#additional-considerations"><i class="fa fa-check"></i><b>7.4</b> Additional Considerations</a></li>
+<li class="chapter" data-level="7.5" data-path="wrapping-up.html"><a href="wrapping-up.html#see-next"><i class="fa fa-check"></i><b>7.5</b> See next</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://www.ottrproject.org/" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown using</a> </p>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template"> The OTTR Template by:</a></p>
+<p style="text-align:center;"> <a href="http://jhudatascience.org/"> The Johns Hopkins Data Science Lab </a></p>
+<a href="http://jhudatascience.org/"><img src="https://jhudatascience.org/images/dasl.png" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/hc8Xt3Y2Znjb6M4Y7"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Considerations for Data Visualization</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_ITN.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/itcr_main_image.png">
+</div>
+<div id="choosing-the-right-plot" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Choosing the Right Plot<a href="choosing-the-right-plot.html#choosing-the-right-plot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A data visualization represents data in a simplified way by encoding that data with textual and graphical design elements which are then combined in a specific layout. Each plot type has a certain combination of the design elements and an associated typical configuration. The design elements act as building blocks for the overall data visualizations.</p>
+<p>Therefore, deciding which design elements and plot type to use depends on:</p>
+<ul>
+<li>The type(s) and amount of data that you’re visualizing</li>
+<li>the question you are trying to answer or message you want to communicate</li>
+</ul>
+<p>The previous chapter discussed the types of data and how those are encoded or appropriate visual design elements to represent certain types of data. This chapter discusses the questions typical visualizations can answer and puts together all of the considerations in describing standard plot types.</p>
+<div id="learning-objectives-2" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Learning Objectives<a href="choosing-the-right-plot.html#learning-objectives-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="04_graph_info_files/figure-html/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3b78517deb9_0_29.png" alt="Learning objectives This chapter will demonstrate how to Describe questions that data visualizations attempt to answer, analyze which plot works with your data types and the question you want to answer, evaluate strengths and weaknesses of various standard plots, and identify resources that can help you choose which plot works for you." width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="goals-of-data-visualization" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Goals of Data Visualization<a href="choosing-the-right-plot.html#goals-of-data-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are many different possible goals for creating a data visualization. Among those include</p>
+<ul>
+<li>looking at a <u>distribution</u></li>
+<li>showing a <u>correlation</u> or other relationship between variables</li>
+<li>finding a <u>ranking</u></li>
+<li>displaying <u>change</u> over time or after an intervention</li>
+<li>indicating <u>location</u> and <u>spatial</u> relationships or distributions</li>
+</ul>
+</div>
+<div id="standard-graph-types" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Standard Graph Types<a href="choosing-the-right-plot.html#standard-graph-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Standard graph types include conventional graphs like histograms, scatter plots, bar plots, and line charts as well as other graphs used to look at distributions or find rankings or used to consider group composition, complex relationships, and response. For the conventional plots, this section will describe the appropriate kinds and amount of data needed to use that plot type as well as questions that plot type can be used to answer. For the graphs beyond those four, additional information will be provided such as a description, strengths, weaknesses, and alternative plots.</p>
+<div id="conventional-graphs" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Conventional Graphs<a href="choosing-the-right-plot.html#conventional-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Conventional graph types include histograms, scatter plots, bar plots, and line charts. Each of these are used to answer a different question.</p>
+<table>
+<colgroup>
+<col width="38%" />
+<col width="14%" />
+<col width="18%" />
+<col width="13%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="center">Histogram</th>
+<th align="center">Scatter plot</th>
+<th align="center">Bar plot</th>
+<th align="center">Line chart</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Primary type of data</td>
+<td align="center">Numerical</td>
+<td align="center">Numerical</td>
+<td align="center">Numerical &amp; Categorical</td>
+<td align="center">Numerical</td>
+</tr>
+<tr class="even">
+<td align="left">Minimum number of variables</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">2</td>
+</tr>
+<tr class="odd">
+<td align="left">Primary data encoding</td>
+<td align="center">Area and Position</td>
+<td align="center">Point and Position</td>
+<td align="center">Area &amp; Labels/Position</td>
+<td align="center">Line and Position</td>
+</tr>
+<tr class="even">
+<td align="left">Goal</td>
+<td align="center">looking at a distribution</td>
+<td align="center">showing a correlation</td>
+<td align="center">finding a ranking</td>
+<td align="center">displaying change over time</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+Additional data and data encodings for conventional graph types
+</summary>
+<p>A <em>histogram</em> may visualize more than one distribution within the same visualization. In that case, the dataset will have categorical data and more than one variable. Such a visualization would likely incorporate color or patterns and should increase opacity/transparency.</p>
+<p>A <em>scatter plot</em> may have categorical data that can be encoded with shape or color. Any additional numerical variables beyond the minimum of 2 (one for the x-axis and one for the y-axis) could be encoded with size or color (using a sequential color palette).</p>
+<p>A <em>bar plot</em> tends to have categories and counts for those categories (two variables, one categorical and one numerical), though a dataset may have just the categories which would need to be counted (which some visualization software can do this for the researcher). Additional data could represent some grouping or categorization of the categorical data (another categorical variable) in which case color may be used to encode that additional variable.</p>
+<p>A <em>line chart</em> may or may not use points in addition to lines. It is good practice for the researcher to display the data points and not just the lines connecting them. If the dataset contains additional variables beyond the minimum of 2 (one for the x-axis and one for the y-axis), categorical data could be encoded with shape or color while numerical data could be encoded with size or color (using a sequential color palette).</p>
+</details>
+</div>
+<div id="ranking-and-distribution-plots" class="section level3 tabset hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Ranking and Distribution Plots<a href="choosing-the-right-plot.html#ranking-and-distribution-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Of the conventional plots described above, bar plots and histograms both fit within this category. Bar plots are typically used to find a ranking while histograms display a distribution. Ranking and distribution plots are often, but not exclusively, used for exploratory data analysis and internal visualizations. If presented as an expository visualization, these plots will usually supplement or support a more complex figure, perhaps as a subpanel within that larger figure. Even if ranking and distribution plots are rarely the focal point, they are a powerful tool in the researcher’s data visualization toolbox to profile data characteristics and compare groups.</p>
+<div id="violin-plots" class="section level4 unnumbered hasAnchor">
+<h4>Violin Plots<a href="choosing-the-right-plot.html#violin-plots" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Description</strong>: Displays the density of data where narrow sections correspond to lower density and wider sections correspond to higher density. The plots generally resemble the outline of a violin.</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Numerical data (may have categorical data if looking at multiple distributions)</li>
+<li>Minimum of 1 variable</li>
+<li>Best with minimal number of categories</li>
+<li>Primary data encodings are area and position</li>
+<li>Used to show distributions and rank groups</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Better at comparing multiple distributions than histograms (the conventional plot type)</li>
+<li>Displays distribution shape such as skew and modes better than boxplots do</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Doesn’t show individual data points</li>
+<li>Limited usefulness when there’s little amounts of data (e.g., few records/patients/samples)</li>
+<li>The method for creating the density visualization is a bit arbitrary</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li><a href="https://www.data-to-viz.com/caveat/boxplot.html">Boxplot</a> (especially with jitter to show individual data points)</li>
+<li>Ridgeline plot</li>
+<li>Raincloud plot</li>
+</ul>
+<p><strong>Example plot</strong></p>
+<details>
+<summary>
+Example of the plot in the biomedical, bioinformatics, or cancer informatics literature
+</summary>
+<p>Figure 5c in this paper showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: <a href="https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2" class="uri">https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2</a>.</p>
+</details>
+</div>
+<div id="boxplots-with-jitter" class="section level4 unnumbered hasAnchor">
+<h4>Boxplots (with jitter)<a href="choosing-the-right-plot.html#boxplots-with-jitter" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Description</strong>: Boxplots use a box to delineate the median and quartiles of the data with whiskers to display the range and potentially points for outliers. A “jitter” can be utilized to include points for each data point.</p>
+<details>
+<summary>
+Jitter and Randomness
+</details>
+<p>Inclusion of jitter typically uses randomness to space the points over the box so you may need to set a random seed in your analysis to ensure the visualization appears exactly one way consistently. However, it’s not a major problem if the jitter points move on a plot as they’ll have the same numerical axis location, only moving within the categorical axis.</p>
+</summary>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Numerical data (may have categorical data if looking at multiple distributions)</li>
+<li>Minimum of 1 variable</li>
+<li>Best if used with intermediate to large sample sizes</li>
+<li>Primary data encodings are lines and points</li>
+<li>Used to show distributions and rank groups</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Shows the data as well as helpful summary statistics and overall variation</li>
+<li>Can quickly spot outliers</li>
+<li>Can compare groups efficiently</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Doesn’t show multiple modes as well as violin plots</li>
+<li>Quartiles may not be familiar concepts for general audiences</li>
+<li>Outliers need further investigation</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>Violin plot</li>
+<li>Histogram</li>
+<li>Ridgeline plot</li>
+<li><a href="https://datavizproject.com/data-type/strip-plot/">Strip plot</a> (shows the individual data points only)</li>
+<li>Raincloud plot</li>
+<li>Swarm plot</li>
+</ul>
+<p><strong>Example plot</strong></p>
+</div>
+<div id="ridgeline-plots" class="section level4 unnumbered hasAnchor">
+<h4>Ridgeline Plots<a href="choosing-the-right-plot.html#ridgeline-plots" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Description</strong>: Shows the distribution of multiple categories of numerical data, using densities (half a violin). Looks like stacked, but slightly offset mountain ridges.</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Numerical data (with categorical data for groups)</li>
+<li>Minimum of 2 variables</li>
+<li>Best with a higher number of categories</li>
+<li>Primary data encodings are area and position</li>
+<li>Used to show distributions and rank groups</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Efficiently displays distributions for many groups or categories</li>
+<li>Shows distribution shape (e.g., skew and modes)</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Can be cluttered if there is too much overlap between groups or not a clear ordering of the categories</li>
+<li>Good for general comparison among groups, but not for finding precise quantitative differences</li>
+<li>The method for creating the density visualizations is a bit arbitrary</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li><a href="https://www.data-to-viz.com/caveat/boxplot.html">Boxplot</a> (especially with jitter to show individual data points)</li>
+<li><a href="https://datavizproject.com/data-type/strip-plot/">Strip plot</a></li>
+<li>In some cases, a sorted <a href="https://www.data-to-viz.com/graph/heatmap.html">heatmap</a></li>
+<li>A table may be better if you need to make quantitative comparisons</li>
+</ul>
+<p><strong>Example plot</strong></p>
+</div>
+<div id="raincloud-plots" class="section level4 unnumbered hasAnchor">
+<h4>Raincloud Plots<a href="choosing-the-right-plot.html#raincloud-plots" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Description</strong>: Combines 3 plots: density, boxplot, individual data points. Generally looks like a raining cloud.</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Numerical data (with categorical data for groups)</li>
+<li>Minimum of 1 variable</li>
+<li>Best with minimal number of categories</li>
+<li>Primary data encodings are area, lines, and points</li>
+<li>Used to show distributions and rank groups</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Show density/distribution shape as well as individual data points and common summary statistics – so much information</li>
+<li>Works well with small datasets</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>A lot is going on</li>
+<li>Harder to interpret and cluttered or squished if there are more than a few groups</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li><a href="https://www.data-to-viz.com/graph/violin.html">Violin plot</a></li>
+<li><a href="https://www.data-to-viz.com/caveat/boxplot.html">Boxplot</a> (especially with jitter to show individual data points)</li>
+<li><a href="https://r-graph-gallery.com/beeswarm.html">Swarm plot</a></li>
+</ul>
+<p><strong>Example plot</strong></p>
+</div>
+</div>
+<div id="section-3" class="section level3 unnumbered">
+<h3 class="unnumbered"></h3>
+<p><u>The strengths of the plots that help you visualize distributions and compare groups</u></p>
+<p><b>Violin</b> plots are good if you want to look at distribution characteristics (e.g., skew or multimodality) at a glance.</p>
+<p><b>Boxplots</b> are great if you want to see the data and general summary statistics (e.g., median).</p>
+<p><b>Ridgeline</b> plots are great at comparing distributions of lots of groups.</p>
+<p><b>Raincloud</b> plots are great when you want to go deep and see everything for a small number of groups (exploratory analysis).</p>
+</div>
+<div id="group-composition-complex-relationships-and-response-plots" class="section level3 tabset hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Group Composition, Complex Relationships, and Response Plots<a href="choosing-the-right-plot.html#group-composition-complex-relationships-and-response-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Of the conventional plots described above, scatter plots and line charts both fit within this category. Scatter plots are usually used to display a response as well as complex relationships while line charts may show a response or change over time. Plots within this category are more frequently expository data visualizations than exploratory data visualizations. These plots are often less intuitive for an audience to interpret without guidance. Therefore the polishing and refinement steps as well as including informative titles, captions, and labels are especially important when designing and building visualizations within this category.</p>
+<div id="stacked-bar-charts" class="section level4 unnumbered hasAnchor">
+<h4>Stacked Bar Charts<a href="choosing-the-right-plot.html#stacked-bar-charts" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Description</strong>: Displays multiple categories within a single bar, stacked on top (vertical) or next to (horizontal) each other. Each overall bar represents a group. Within bars, each stack is a sub-category or subgroup.</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Numerical data with categorical data for groups</li>
+<li>Minimum of 2 variables</li>
+<li>Primary data encodings are bars, position, and color or pattern</li>
+<li>Used to find a ranking or change over time</li>
+<li>Compare sub-categories within a bar or consider how sub-category contribution to the total bar composition changes over time/across bars</li>
+<li>Avoid if you have a lot of sub-categories or want to compare individual sub-categories to each other</li>
+<li>If using more than a couple of categories, consider using proportions (that sum to 100%) on the numerical axis</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Summarizes complex group composition in a compact way</li>
+<li>Can compare composition over time or across groups</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Difficulty comparing subgroups that aren’t aligned or in the middle of the overall bar</li>
+<li>If one subgroup contributes too much, it can dwarf other subgroups; similarly, if the groups have uneven sizes, it can dwarf other groups</li>
+<li>If the numerical axis uses proportions, raw numbers aren’t visualized</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>Grouped bar chart</li>
+<li>Lollipop plot</li>
+<li>Line chart</li>
+<li>A table</li>
+<li>A waterfall plot for the most important sub-category</li>
+</ul>
+<p><strong>Example plot</strong></p>
+<details>
+<summary>
+Example of the plot in the biomedical, bioinformatics, or cancer informatics literature
+</summary>
+<p><a href="https://www.mdpi.com/2079-9721/13/2/37" class="uri">https://www.mdpi.com/2079-9721/13/2/37</a></p>
+</details>
+</div>
+<div id="heatmaps" class="section level4 unnumbered hasAnchor">
+<h4>Heatmaps<a href="choosing-the-right-plot.html#heatmaps" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Description</strong>: A visualization (typically two dimensional – with rows and columns – of a table or matrix) using color. Always uses colors to display numbers or categories; the two dimensional matrix while typical is not a requirement, because the two dimensions could be a map projection or tissue sample.</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Categorical or numerical data or a mixture</li>
+<li>Minimum of 3 variables</li>
+<li>Primary data encodings are color and position</li>
+<li>Used to look at a distribution across samples or change over time/after an intervention</li>
+<li>May also exhibit pairwise correlation for many groups</li>
+<li>Not recommended if you need to know or display actual values</li>
+<li>Often used together with hierarchical clustering or reordering sample location to highlight trends or areas of similarity</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Provides a broad overview to identify trends, areas of density, sparsity, or outliers</li>
+<li>Efficiently and compactly simplifies complex data into one visualization</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>The “matrix” aspect can be difficult for viewers to grasp</li>
+<li>Rearranging data can be helpful but also misleading if not described</li>
+<li>Actual values and summary stats are rare/difficult to display if there are many rows and columns</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>A <a href="https://r-graph-gallery.com/table.html">table</a></li>
+<li><a href="https://www.data-to-viz.com/graph/scatter.html">Scatter</a> plot</li>
+<li><a href="https://www.data-to-viz.com/graph/line.html">Line plot</a></li>
+<li><a href="https://www.data-to-viz.com/graph/bubble.html">Bubble charts</a> if another dimension is needed</li>
+<li><a href="https://www.data-to-viz.com/graph/parallel.html">Parallel plot</a></li>
+</ul>
+<p><strong>Example plot</strong></p>
+<details>
+<summary>
+Pairwise correlation: Full matrix vs lower triangle
+</summary>
+<p>When using a heatmap to display pairwise correlation, the heatmap is symmetrical and presents redundant information (each correlation is displayed twice) because the correlation of A to B is the same as the correlation of B to A. The diagonal will always have perfect correlation because it’s comparing a sample or variable to itself. If looking at just the lower triangle, it presents the pairwise correlation only once and removes the redundant information.</p>
+<details>
+</div>
+<div id="sankey-diagrams" class="section level4 unnumbered hasAnchor">
+<h4>Sankey Diagrams<a href="choosing-the-right-plot.html#sankey-diagrams" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Description</strong>: Represents the “flow” or movement of quantities (e.g., patients or samples) among different categories through different steps (e.g., demographics or steps of an analysis or trial)</p>
+<p><strong>When to use</strong>:</p>
+<ul>
+<li>Categorical data and sometimes numerical data/counts</li>
+<li>Requires several variables</li>
+<li>Primary data encodings are lines, area, and color</li>
+<li>Used to show change over time</li>
+<li>Best with datasets with some sort of longitudinal data or time points with categories at each time point</li>
+<li>Example uses include tracking patient response or symptom trajectories as well as patient cohort stratification</li>
+</ul>
+<p><strong>Strengths</strong>:</p>
+<ul>
+<li>Provides a lot of information about the study population and shows all possible paths</li>
+<li>Provides a visual or graphical representation of data that would otherwise be in a table or just described in text</li>
+</ul>
+<p><strong>Weaknesses</strong>:</p>
+<ul>
+<li>Difficult or complex to interpret</li>
+<li>Flows that cross or overlap or flows with similar widths can be difficult to compare though interactivity can alleviate this</li>
+<li>Diagrams don’t always clearly and explicitly display sample dropout (discontinue treatment, etc.)</li>
+<li>Often require specialized tools to create visualization</li>
+</ul>
+<p><strong>Alternatives</strong>:</p>
+<ul>
+<li>A table</li>
+<li>Stacked bar charts, but these lose the connection/possible path aspect</li>
+<li>Flowcharts</li>
+<li>Treemaps</li>
+<li>Other graphical visualizations or some custom made visualization</li>
+</ul>
+<p><strong>Example plot</strong></p>
+</div>
+</div>
+<div id="section-4" class="section level3 unnumbered">
+<h3 class="unnumbered"></h3>
+<p><u>The strengths of the plots for group composition, complex relationships, and response</u></p>
+<p><b>Stacked bar</b> charts are good if you want to look at how subgroup composition changes at a glance over time, but it is less useful with lots of subgroups.</p>
+<p><b>Heatmaps</b> are good if you have at least 3 variables that you need to visualize and want to use color as the primary means to communicate the point of the visualization (e.g., the range of values, correlation, areas of density, patterns across groups or time)</p>
+<p><b>Sankey diagrams</b> are good if you want to look at the possible trajectories of symptoms, treatments, etc. and it’s important to know what combinations occur.</p>
+</div>
+<div id="field-standard-plots" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Field Standard Plots<a href="choosing-the-right-plot.html#field-standard-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are several common plots that are “field standard” or customarily used within the biomedical field. These plots (including Waterfall plots, Caterpillar plots, Kaplan-Meier curves, Volcano plots, MA diagrams, etc.) plots will be discussed in the final chapter. They often align with the category of group composition, complex relationships, and response plots. When deciding what plot is best for you and your research question, a field standard plot may be the answer given that the audience will be more familiar with such plots.</p>
+</div>
+</div>
+<div id="galleries" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Galleries<a href="choosing-the-right-plot.html#galleries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Galleries can be useful to browse standard plots and learn information about them.</p>
+<ul>
+<li><strong>from Data to Viz Gallery</strong>: An example of a gallery that provides visual examples and explanations for necessary data types is the <a href="https://www.data-to-viz.com/#explore">from Data to Viz gallery</a></li>
+<li><strong>R Graph Gallery</strong>: The <a href="https://r-graph-gallery.com/">R Graph Gallery</a> provides visual examples and templates for creating standard plots with the R programming language.</li>
+<li><strong>Python Graph Gallery</strong>: The <a href="https://python-graph-gallery.com/">Python Graph Gallery</a> provides visual examples and templates for creating standard plots with the Python programming language.</li>
+<li><strong>SMART App Gallery</strong>: For more specialized galleries related to biomedical applications, consider the <a href="https://apps.smarthealthit.org/apps/category/data-visualization?sort=name-asc">Substitutable Medical Apps, Reusable Technology (SMART) App Gallery</a> which provides free and open source apps for healthcare providers and researchers to work with and visualize health data. The integrated apps describe specific data types and goals and can provide dashboards and visualizations specifically for those data types/goals.</li>
+<li><strong>Genomics Data Visualization course website</strong>: The <a href="https://jef.works/genomic-data-visualization-2024/index.html">Genomics Data Visualization course website</a> is another more specialized gallery from the Johns Hopkins University Fan lab which provides featured visualizations meant for working with large-scale single-cell and spatially-resolved omics datasets using R.</li>
+<li><strong>Publications</strong>: Journal publications provide a myriad of example visualizations working with field specific data. Reading publications, studying their figures, and critically evaluating the design choices is a wonderful way to improve your own data visualization skills. In the near future, as you read journal articles and look at the figures, ask yourself the following questions:
+<ul>
+<li>What was the goal or overarching message this visualization was meant to communicate?</li>
+<li>What was difficult for me to understand about this figure and what design choices could have made this figure easier for me to follow along?</li>
+<li>What did I like best about this visualization?</li>
+<li>Are these visualizations standard/common plot types or were there any new (at least to me) visualizations? What was unique about them?</li>
+</ul></li>
+</ul>
+</div>
+<div id="summary-2" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Summary<a href="choosing-the-right-plot.html#summary-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are strengths and weaknesses to every kind of plot. Some plots are better for exploratory analysis than for sharing with wide audiences. If exact quantitative values need to be considered, don’t underestimate the power of a good table. When preparing an expository visualization, focus on one message.</p>
+<p>Choosing which plot to use may be field, context, and data dependent. Use the simplest or most mainstream plot you can! Make sure that the plot works with your data type(s), number of variables, number of observations (e.g., patients or samples), and the overall goal or research question. Use design tools to develop your visualization before switching to a more complex plot. These design tools include utilizing facets or subplots, dashed lines and text labels, and varying colors, textures, or shapes. Finally, consider browsing a visualization gallery for inspiration!</p>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="elements-of-data-visualization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="high-quality-and-inclusive-data-visualizations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

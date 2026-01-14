@@ -8,9 +8,7 @@ A data visualization represents data in a simplified way. The visualization is m
 
 ## Learning Objectives
 
-```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "This chapter will demonstrate how to illustrate what a dataset for data visualization may look like, categorize the type or types of data within your dataset, explain how data is encoded within data visualizations, describe additional visual design tools used to separate plot elements, and assess which coordinate system is appropriate for your data visualization task."}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_31#slide=id.g3a4b3643292_0_31")
-```
+<img src="03_data_files/figure-html//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3a4b3643292_0_31.png" alt="This chapter will demonstrate how to illustrate what a dataset for data visualization may look like, categorize the type or types of data within your dataset, explain how data is encoded within data visualizations, describe additional visual design tools used to separate plot elements, and assess which coordinate system is appropriate for your data visualization task." width="100%" style="display: block; margin: auto;" />
 
 ## Data Types
 
@@ -30,9 +28,7 @@ Numerical data is data that **quantitatively** represents some count or measurem
 
 There are two subtypes of numerical data: *discrete* and *continuous*. Whole numbers or integers (e.g., 103 and 25,975) are examples of discrete data while decimals (e.g., 98.6 and 32.25) are examples of continuous data.
 
-```{r eval = FALSE, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
-ottrpal::include_slide("")   
-```
+
 
 Examples of numerical data within the biomedical field include
 
@@ -52,9 +48,7 @@ There are two subtypes of categorical data: *nominal* and *ordinal*. Nominal dat
 
 While you may be able to do some arithmetic operations with ordinal data specifically (like finding an average ranking or finding the distance between numerically encoded categories), typically arithmetic operations aren't appropriate for categorical data and shouldn't be used because the numbers don't have mathematical meaning. Index scores particularly should be treated like categorical data given that they represent categories. However, they often have order to them (are ordinal) and therefore, because the index or score is fundamentally a number, it's made up of other numbers and can be tracked over time, etc.
 
-```{r eval = FALSE, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
-ottrpal::include_slide("")   
-```
+
 
 Examples of categorical data within the biomedical field include
 

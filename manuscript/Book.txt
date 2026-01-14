@@ -1,9 +1,10 @@
 1-Introduction.md
 2-Defining-Data-Visualization.md
-3-Which-visualization-should-I-use.md
-4-High-quality-and-inclusive-data-visualizations.md
-5-Standard-plots-used-within-the-biomedical-field.md
-6-Wrapping-up.md
-7-References.md
+3-Elements-of-Data-Visualization.md
+4-Choosing-the-Right-Plot.md
+5-High-quality-and-inclusive-data-visualizations.md
+6-Field-Specific-Visualizations.md
+7-Wrapping-up.md
+8-References.md
 About-this-Course.md
 About-the-Authors.md
