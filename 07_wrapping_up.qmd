@@ -327,18 +327,18 @@ This iteration, uses color to distinguish the data points according to whether o
 ##### R code
 
 ```{r}
-to_plot$Chocolate <- "No"                   #<4>
-to_plot$Chocolate[c(13, 22, 26, 28, 34, 44, #<4>
-                    46, 47, 49, 50, 51, 52, #<4>
-                    54, 55, 56, 57, 58, 59, #<4>
-                    60, 61, 62, 63, 64, 65, #<4>
-                    66, 67, 68, 69, 70, 71, #<4>
-                    72, 73, 74, 75, 76,77 )] <- "Yes"  #<4>
+to_plot$Chocolate <- "No"                   # <4>
+to_plot$Chocolate[c(13, 22, 26, 28, 34, 44, # <4>
+                    46, 47, 49, 50, 51, 52, # <4>
+                    54, 55, 56, 57, 58, 59, # <4>
+                    60, 61, 62, 63, 64, 65, # <4>
+                    66, 67, 68, 69, 70, 71, # <4>
+                    72, 73, 74, 75, 76,77 )] <- "Yes"  # <4>
 
 to_plot %>%
   ggplot(aes(x=JOY,
              y = DESPAIR,
-             color = Chocolate)) +                       #<5>
+             color = Chocolate)) +                       # <5>
   geom_point() +
   xlim(0, 1) +
   ylim(0, 1) +
