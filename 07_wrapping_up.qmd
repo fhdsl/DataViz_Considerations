@@ -1,3 +1,7 @@
+---
+code-annotations: hover
+---
+
 # Wrapping up
 
 ```{r, include = FALSE}
@@ -160,7 +164,7 @@ Given the data that we have to work with and the goal of the visualization, what
 
 ::: {.emphasis_block}
 
-<details><summary>Comparing and contrasting plot tops for this visualization</summary>
+<details><summary>Comparing and contrasting plot types for this visualization</summary>
 
 Note that respondents did not simply rank the candy based on preference and we instead have two numerical values for each candy. Therefore we should probably consider plots types beyond the conventional ranking plots described in Chapter 4.
 
@@ -178,11 +182,11 @@ A scatter plot is constructed with two numerical variables and is often used to 
 
 </details>
 
+:::
+
 <div class="notice">
 To review different conventional plot types, visit [Chapter 4](https://hutchdatascience.org/DataViz_Considerations/04_graph_info.html#standard-graph-types).
 </div>
-
-:::
 
 ### Building the plot
 
@@ -209,7 +213,7 @@ To review the differences between exploratory and expository data visualizations
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_9#slide=id.g3be338b6b90_0_9")
 ```
 
-This iteration is an exploratory data analysis step. We're not worried about making the plot look pretty yet. We just want to look at the data. Primarily we want to see whether or not the relationship that we expect between the joy and despair variables hold true.
+This iteration is an exploratory data analysis step. We're not worried about making the plot look pretty yet. We just want to look at the data. Primarily we want to see whether or not the relationship that we expect between the joy and despair variables holds true.
 
 ##### R code
 
@@ -236,6 +240,8 @@ to_plot %>%
        y = "Fraction of respondents who reported DESPAIR") +
   theme(text = element_text(size = 14))
 ```
+Note that normally in a first iteration of exploratory data analysis, we might not set the axis labels (they'll default to the column name of whatever is being plotted.), and we might not adjust the text size. Both of these are done here to add clarity to this example.
+
 </details>
 
 :::
@@ -252,36 +258,81 @@ We can use a labeling function to add the candy names to the plot, labeling spec
 
 #### Iteration 2
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+::: {.panel_tabset}
+
+##### Description
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration uses the candy names to label the points. We notice that Any full sized candy bar is on the extreme for the most joy and least despair. Other chocolate candies like Twix and Kit Kat and 100 Grand Bar are near it. On the other extreme are candies like Mary Janes, Peeps, circus peanuts, gum from baseball cards, etc."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_25#slide=id.g3be338b6b90_0_25")
 ```
 
 This is another exploratory data analysis step. Now that we've confirmed the relationship between the variables that we expected, we want to know want candies are the most highly ranked and what candies are the least highly ranked. We can use the categorical candy name variable for this and add labels to the points.
 
-<add a question about what they observe here>
+##### R code
+
+<details><summary>R code for adding the candy names as labels</summary>
+
+```{r}
+to_plot %>%
+  ggplot(aes(x=JOY,
+             y = DESPAIR,
+             label = column_name # <1>
+             )
+         ) +
+  geom_point() +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_bw() +
+  geom_text_repel(show.legend = FALSE, max.overlaps = 20) + #<2>
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+```
+
+1. Adds the candy names as what will be labeled
+2. Uses `geom_text_repel()` to label the points, using repel to handle overlapping points/labels
+
+</details>
+
+:::
+
+<div class="reflection">
+What do you notice after observing the labels? Do you have any ideas on new variables or a takeaway message?
+</div>
+
+::: {.emphasis_block}
+<details><summary>Takeaways from the candy name labeling</summary>
+It looks like chocolate candy (Twix, Kit Kat, 100 Grand Bar...) is among the most liked candy. It could be beneficial to create a new categorical variable that represents if each candy is chocolate or not.
+</details>
+:::
 
 #### Iteration 3
-
-Within this iteration, we'll use color to distinguish the data points according to whether or not they represent a chocolate candy.
 
 ::: {.panel-tabset}
 
 ##### Description
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds color to distinguish groups, specifically chocolate versus not chocolate groups. We see a fairly clear separation with chocolate on one extreme and non-chocolate on the other with mixing of the groups in the middle."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_39#slide=id.g3be338b6b90_0_39")
 ```
+
+This iteration, uses color to distinguish the data points according to whether or not they represent a chocolate candy. We've removed the labeling for now (and will add it back later -- labeling fewer or specific candies only). Note that we're assuming that any full sized candy bar is chocolate since the majority of full sized candy bars tend to have chocolate.
 
 ##### R code
 
 ```{r}
-to_plot$Chocolate <- "No"
-to_plot$Chocolate[c(13, 22, 26, 28, 34, 44, 46, 47, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76,77 )] <- "Yes"
+to_plot$Chocolate <- "No"                                #<1>
+to_plot$Chocolate[c(13, 22, 26, 28, 34, 44,
+                    46, 47, 49, 50, 51, 52,
+                    54, 55, 56, 57, 58, 59,
+                    60, 61, 62, 63, 64, 65,
+                    66, 67, 68, 69, 70, 71,
+                    72, 73, 74, 75, 76,77 )] <- "Yes"    #<1>
 
 to_plot %>%
   ggplot(aes(x=JOY,
              y = DESPAIR,
-             color = Chocolate)) +
+             color = Chocolate)) +                       #<2>
   geom_point() +
   xlim(0, 1) +
   ylim(0, 1) +
@@ -291,13 +342,55 @@ to_plot %>%
   theme(text = element_text(size = 14))
 ```
 
+We've removed the labeling for now.
+
+1. We've created a new categorical variable
+2. We've specified that color should use that new categorical variable
+
+:::
+
+<div class="reflection">
+What do you observe about the group coloring?
+</div>
+
+::: {.emphasis_block}
+<details><summary>Takeaways from the group coloring</summary>
+It looks even more convincing that chocolate candy is among the most liked candy -- a strong pattern that could be our takeaway message.
+</details>
 :::
 
 #### Iteration 4
 
+::: {.panel-tabset}
+
+##### Description
+
 ```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_12#slide=id.g3bb275f27df_0_12")
 ```
+
+This is the first polishing iteration. As discussed in [Chapter 5](https://hutchdatascience.org/DataViz_Considerations/04_how_to_improve_viz.html#accessibility-considerations), to enhance accessibility, we don't want to rely on color alone to distinguish groups. So we'll also use shape to distinguish the groups.
+
+##### R code
+
+```{r}
+to_plot %>%
+  ggplot(aes(x=JOY,
+             y = DESPAIR,
+             color = Chocolate,
+             shape = Chocolate)) + #<1>
+  geom_point() +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_bw() +
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+```
+
+1. This specifies that the shape of the points should also display the chocolate/not-chocolate categorical variable.
+
+:::
 
 #### Iteration 5
 
@@ -373,6 +466,10 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_92#slide=id.g3be338b6b90_0_92")
 ```
 
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c26f54f9da_0_0#slide=id.g3c26f54f9da_0_0")
+```
+
 #### Iteration 16
 
 ```{r, fig.align = "center", echo = FALSE, out.width="100%"}
@@ -401,6 +498,10 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 ```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_99#slide=id.g3be338b6b90_0_99")
+```
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c26f54f9da_0_8#slide=id.g3c26f54f9da_0_8")
 ```
 
 #### The plot!
@@ -436,6 +537,6 @@ Aim for understanding and readability over complexity. When you are working with
 
 This checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize its complexity, enhance its clarity and accessibility, and assess its accuracy.
 
-## Additional Considerations
+## Keep Practicing!
 
-## See next
+Give some examples
