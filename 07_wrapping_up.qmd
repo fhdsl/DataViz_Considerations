@@ -6,12 +6,13 @@ ottrpal::set_knitr_image_path()
 
 ## Learning Objectives
 
-This chapter will cover:
-
-- {LO1}
-- {LO2}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bc553a32e9_0_0#slide=id.g3bc553a32e9_0_0")
+```
 
 ## Iterative Example
+
+
 
 ### Data Introduction
 
