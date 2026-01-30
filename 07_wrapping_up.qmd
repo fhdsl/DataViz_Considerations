@@ -273,24 +273,27 @@ This is another exploratory data analysis step. Now that we've confirmed the rel
 <details><summary>R code for adding the candy names as labels</summary>
 
 ```{r}
+library(ggrepel) #<1>
+
 to_plot %>%
   ggplot(aes(x=JOY,
              y = DESPAIR,
-             label = column_name # <1>
+             label = column_name #<2>
              )
          ) +
   geom_point() +
   xlim(0, 1) +
   ylim(0, 1) +
   theme_bw() +
-  geom_text_repel(show.legend = FALSE, max.overlaps = 20) + #<2>
+  geom_text_repel(show.legend = FALSE, max.overlaps = 20) + #<3>
   labs(x = "Fraction of respondents who reported JOY",
        y = "Fraction of respondents who reported DESPAIR") +
   theme(text = element_text(size = 14))
 ```
 
-1. Adds the candy names as what will be labeled
-2. Uses `geom_text_repel()` to label the points, using repel to handle overlapping points/labels
+1. Need to load this package for the labeling function
+2. Specifies the candy names/variable that will be used for labeling
+2. Uses `geom_text_repel()` from `ggrepel` package to label the points, using the repel part of the function to handle overlapping points/labels
 
 </details>
 
