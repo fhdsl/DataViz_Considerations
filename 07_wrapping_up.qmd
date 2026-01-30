@@ -327,6 +327,7 @@ This iteration, uses color to distinguish the data points according to whether o
 ##### R code
 
 ```{r}
+#removed code related to the labeling for now
 to_plot$Chocolate <- "No"                   #<4>
 to_plot$Chocolate[c(13, 22, 26, 28, 34, 44, #<4>
                     46, 47, 49, 50, 51, 52, #<4>
@@ -351,7 +352,6 @@ to_plot %>%
 4. Create a new categorical variable
 5. Specify that color should use that new categorical variable
 
-We've removed code related to the labeling for now
 :::
 
 ::: {.emphasis_block}
