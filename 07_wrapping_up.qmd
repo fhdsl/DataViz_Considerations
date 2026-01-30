@@ -1,3 +1,7 @@
+---
+code-annotations: hover
+---
+
 # Wrapping up
 
 ```{r, include = FALSE}
@@ -6,19 +10,539 @@ ottrpal::set_knitr_image_path()
 
 ## Learning Objectives
 
-This chapter will cover:
+```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This chapter will demonstrate how to iteratively construct a data visualization, evaluate whether a data visualization can be improved to enhance its clarity, accessibility, or accuracy, and to discuss ways to hone data visualization skills"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bc553a32e9_0_0#slide=id.g3bc553a32e9_0_0")
+```
 
-- {LO1}
-- {LO2}
+## Iterative Example
+
+To summarize all of the considerations and best practices discussed in the chapters before this, the first section of this final chapter will walk through an example, step-by-step, of iteratively building up an expository data visualization.
+
+### Data Introduction
+
+::: {.panel-tabset}
+
+#### Description
+
+A [2017 survey from the University of British Columbia](https://www.scq.ubc.ca/wp-content/uploads/2017/10/candyhierarchysurvey2017.pdf) asked potential trick or treaters a series of questions. The main question provided a list of candy (and a few joke non-candy items) to survey takers. The prompt asked
+
+>Basically, consider that feeling you get when you receive this item in your Halloween haul. Does it make you really happy (joy)? Or is it something that you automatically
+place in the junk pile (despair)? Meh for indifference, and you can leave blank if you have no idea what the item is.
+
+Using this [dataset](https://www.scq.ubc.ca/so-much-candy-data-seriously/), we focused on responses to the question about feelings related to specific candies, selecting only real candy, for a total of 77 candies. For each of these candies, we computed the proportion of respondents who replied with each general feeling (e.g., Joy, Despair, Indifference, or No response).
+
+#### R Code
+
+<details><summary>R code for data import and preliminary wrangling steps</summary>
+
+```{r warning = FALSE, message= FALSE}
+library(here)
+library(tidyverse)
+
+df_2017 <- read.csv(here("data/candyhierarchy2017.csv"), fileEncoding = "ISO-8859-1")
+
+non_candy <- c("Bonkers  the board game",
+               "Box o Raisins",
+               "Broken glow stick",
+               "Cash  or other forms of legal tender",
+               "Chardonnay",
+               "Creepy Religious comics Chick Tracts",
+               "Dental paraphenalia",
+               "Generic Brand Acetaminophen",
+               "Glow sticks",
+               "Healthy Fruit",
+               "Hugs  actual physical hugs",
+               "JoyJoy  Mit Iodine",
+               "Kale smoothie",
+               "Green Party M M s",
+               "Independent M M s",
+               "Abstained from M M ing",
+               "Minibags of chips",
+               "Pencils",
+               "Real Housewives of Orange County Season 9 Blue Ray",
+               "Sandwich sized bags filled with BooBerry Crunch",
+               "Spotted Dick",
+               "Trail Mix",
+               "Vials of pure high fructose corn syrup  for main lining into your vein",
+               "Vicodin",
+               "White Bread",
+               "Whole Wheat anything")
+
+#making a dataframe with just candy feeling responses
+## selecting columns related to Question 6 about feelings about candy. Each candy has its own column
+## polishing the column names to remove "Q6", "." and white space
+## selecting columns that are just the candy by excluding all of the non-candy
+## using pivot_longer to make a column that has candy names (`column_name`) and responses of "JOY", "DESPAIR", or "MEH" in `value`
+## each candy will have multiple rows because of pivot_longer use
+## grouping by candy and the value to count (using `summarise`) the number of respondents who felt Joy, Despair, or Meh for each candy
+## dropping the value grouping to sum counts to find total counts for each candy
+## undoing all of the grouping
+## finding a proportion for each row: candy and feeling combo
+
+df_2017_jc <- df_2017 %>%
+  select(starts_with("Q6")) %>%
+  rename_with(~ str_remove(., "Q6...")) %>%
+  rename_with(~ str_replace_all(., "\\.", " ")) %>%
+  rename_with(~ str_trim(.x, side = "both")) %>%
+  select(-all_of(non_candy)) %>%
+  pivot_longer(everything(), names_to = "column_name", values_to = "value") %>%
+  group_by(column_name, value) %>%
+  summarise(count = n(), .groups = "drop_last") %>%
+  mutate(total = sum(count)) %>%
+  ungroup() %>%
+  mutate(proportion = count / total)
+
+
+# replacing empty values with NA
+
+df_2017_jc[df_2017_jc==""]<- NA
+
+## replacing NA with "Not Answered"
+## using pivot_wider to recollapse the data so that each candy has a single row
+## there will be a column with proportions for each feeling
+## arrange the data according to magnitude of joy proportions
+
+to_plot <- df_2017_jc %>%
+  replace_na(list(value = "Not Answered")) %>%
+  pivot_wider(id_cols = column_name,
+              names_from = value,
+              values_from = proportion) %>%
+  arrange(JOY)
+```
+
+</details>
+
+:::
+
+:::{.emphasis_block}
+
+<div class = "reflection">
+What variables (specifically what types of variables -- categorical or numerical) are part of this dataset as described?
+</div>
+
+<details><summary>Variables in the candy dataset</summary>
+
+This means that the candy dataset (at least given the way we have worked with or "wrangled" it) has a few main variables of interest:
+
+1. Names of the candy
+    * A **categorical** variable
+    * 77 different values
+2. Proportion of respondents who reported joy
+    * A **numerical** variable
+    * Specifically a *continuous* numerical variable
+    * Bounded between 0 and 1.0
+    * 77 different values - one for each candy
+3. Proportion of respondents who reported despair
+    * A **numerical** variable
+    * Specifically a *continuous* numerical variable
+    * Bounded between 0 and 1.0
+    * 77 different values - one for each candy
+
+There are additional variables such as responses to demographic questions as well as the proportion of respondents who reported indifference or didn't respond at all. However, to simplify the message we wish to communicate with our data visualization, we won't directly use these variables for this example.
+
+</details>
+
+:::
+
+<div class="notice">
+To review variables and different types of data, visit [Chapter 3](https://hutchdatascience.org/DataViz_Considerations/03_data.html#data-types)
+</div>
+
+### Goal
+
+Our goal is to visualize a ranking for the most liked candies in 2017 according to this dataset.
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This is an iterative example putting it all together. Given a 2017 candy dataset that asks respondents to report their feelings of joy despair or indifference, our goal is to visualize a ranking of the most liked candies"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_6#slide=id.g3bb275f27df_0_6")
+```
+
+### Choosing a plot type
+
+::: {.emphasis_block}
+
+<div class="reflection">
+Given the data that we have to work with and the goal of the visualization, what type of plot would you use?
+</div>
+
+<details><summary>Comparing and contrasting plot types for this visualization</summary>
+
+Note that respondents did not simply rank the candy based on preference and we instead have two numerical values for each candy. Therefore we should probably consider plots types beyond the conventional ranking plots described in Chapter 4.
+
+**A more conventional approach**:
+
+A bar plot or even a stacked bar plot could work if we computed a single score (proportion of Joy - proportion of Despair perhaps), but with 77 candies, we would need to arrange the bars based on the magnitude or size and just focus on the bars on the extremes. The visualization would likely appear pretty cramped overall if we tried to show every candy.
+
+  * Here's an example of an analysis that utilized bar plots: [https://github.com/phoebewong/candy-hierarchy-2017](https://github.com/phoebewong/candy-hierarchy-2017). Notice, for this example they focused on a couple specific candies which gets around the "cramped" visualization concern.
+
+  * Similar to a bar plot is a lollipop chart (seems fitting for a candy dataset): [https://x.com/ttrodrigz/status/923582440937021440](https://x.com/ttrodrigz/status/923582440937021440). This example uses a log ratio rather than a difference for each candy, sorts based on magnitude, and then focuses on the extremes as expected.
+
+**A more unconventional approach**:
+
+A scatter plot is constructed with two numerical variables and is often used to show a correlation. We might expect our data to have some sort of a correlation because likely candy that is greatly enjoyed by many won't be despised by many. And conversely, candy that is despised by many probably won't be greatly enjoyed. The only way to see if this expectation is true is to explore the data and just plot it. So that's what we'll do for the first iteration.
+
+</details>
+
+:::
+
+<div class="notice">
+To review different conventional plot types, visit [Chapter 4](https://hutchdatascience.org/DataViz_Considerations/04_graph_info.html#standard-graph-types).
+</div>
+
+### Building the plot
+
+The first few iterations will be an exploratory analysis of the data where we don't focus on aesthetics, but rather
+
+* what the data looks like
+* if patterns match our expectations
+* if our chosen plot style will work for us
+* perhaps even hypothesis or idea generation
+
+Then the remaining iterations will transition into polishing the visualization in order to prepare an expository data visualization.
+
+<div class="notice">
+To review the differences between exploratory and expository data visualizations, visit [Chapter 2](https://hutchdatascience.org/DataViz_Considerations/02_what_why_intro.html#what-is-data-visualization).
+</div>
+
+#### Iteration 1
+
+::: {.panel-tabset}
+
+##### Description
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "Plotting the feelings dataset in a basic way with fraction of respondents who reported Joy on the x axis and fraction of respondents who reported despair on the y axis. The data appears to be inversely correlated."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_9#slide=id.g3be338b6b90_0_9")
+```
+
+This iteration is an exploratory data analysis step. We're not worried about making the plot look pretty yet. We just want to look at the data. Primarily we want to see whether or not the relationship that we expect between the joy and despair variables holds true.
+
+##### R code
+
+<details><summary>R code for plotting a scatter plot</summary>
+
+```{r}
+##proportion of Joy on x-axis
+##proportion of Despair on the y-axis
+##geom_point for scatter plot
+##set xlim and ylim to 0,1 since our data is bounded that way
+##theme_bw() is a quick way to adjust theme to make it simpler
+##using labs to set quick axis labels
+## setting overall text size just for example purposes
+
+to_plot %>%
+  ggplot(aes(x=JOY,
+             y = DESPAIR
+             )) +
+  geom_point() +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_bw() +
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+```
+Note that normally in a first iteration of exploratory data analysis, we might not set the axis labels (they'll default to the column name of whatever is being plotted.), and we might not adjust the text size. Both of these are done here to add clarity to this example.
+
+</details>
+
+:::
+
+::: {.emphasis_block}
+
+<div class="reflection">
+So far, this is just using 2 of the 3 main variables we identified. How can we use the third variable?
+</div>
+
+<details><summary>Plotting the candy names</summary>
+We can use a labeling function to add the candy names to the plot, labeling specific points.
+</details>
+:::
+
+#### Iteration 2
+
+::: {.panel-tabset}
+
+##### Description
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration uses the candy names to label the points. We notice that Any full sized candy bar is on the extreme for the most joy and least despair. Other chocolate candies like Twix and Kit Kat and 100 Grand Bar are near it. On the other extreme are candies like Mary Janes, Peeps, circus peanuts, gum from baseball cards, etc."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_25#slide=id.g3be338b6b90_0_25")
+```
+
+This is another exploratory data analysis step. Now that we've confirmed the relationship between the variables that we expected, we want to know what candies are the most highly ranked and what candies are the least highly ranked. We can use the categorical candy name variable for this and add labels directly to the points.
+
+##### R code
+
+<details><summary>R code for adding the candy names as labels</summary>
+
+```{r, warning = FALSE, message = FALSE}
+install.packages("ggrepel")
+library(ggrepel) #<1>
+
+to_plot %>%
+  ggplot(aes(x=JOY,
+             y = DESPAIR,
+             label = column_name #<2>
+             )
+         ) +
+  geom_point() +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_bw() +
+  geom_text_repel(show.legend = FALSE, max.overlaps = 20) + #<3>
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+```
+
+1. Need to load this package for the labeling function
+2. Specifies the candy names/variable that will be used for labeling
+2. Uses `geom_text_repel()` from `ggrepel` package to label the points, using the repel part of the function to handle overlapping points/labels
+
+</details>
+
+:::
+
+::: {.emphasis_block}
+
+<div class="reflection">
+What do you notice after observing the labels? Do you have any ideas on new variables or a takeaway message?
+</div>
+
+<details><summary>Takeaways from the candy name labeling</summary>
+It looks like chocolate candy (Twix, Kit Kat, 100 Grand Bar...) is among the most liked candy. It could be beneficial to create a new categorical variable that represents if each candy is chocolate or not.
+</details>
+:::
+
+#### Iteration 3
+
+::: {.panel-tabset}
+
+##### Description
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds color to distinguish groups, specifically chocolate versus not chocolate groups. Light blue represents chocolate while light pink represents not chocolate candy. We see a fairly clear separation with chocolate on one extreme and non-chocolate on the other with mixing of the groups in the middle."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_39#slide=id.g3be338b6b90_0_39")
+```
+
+This iteration, uses color to distinguish the data points according to whether or not they represent a chocolate candy. We've removed the labeling for now (and will add it back later -- labeling fewer or specific candies only). Note that we're assuming that any full sized candy bar is chocolate since the majority of full sized candy bars tend to have chocolate.
+
+##### R code
+
+```{r}
+#removed code related to the labeling for now
+to_plot$Chocolate <- "No"                   #<4>
+to_plot$Chocolate[c(13, 22, 26, 28, 34, 44, #<4>
+                    46, 47, 49, 50, 51, 52, #<4>
+                    54, 55, 56, 57, 58, 59, #<4>
+                    60, 61, 62, 63, 64, 65, #<4>
+                    66, 67, 68, 69, 70, 71, #<4>
+                    72, 73, 74, 75, 76,77 )] <- "Yes" #<4>
+
+to_plot %>%
+  ggplot(aes(x=JOY,
+             y = DESPAIR,
+             color = Chocolate)) +                       #<5>
+  geom_point() +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_bw() +
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+```
+
+4. Create a new categorical variable
+5. Specify that color should use that new categorical variable
+
+:::
+
+::: {.emphasis_block}
+
+<div class="reflection">
+What do you observe about the group coloring?
+</div>
+
+<details><summary>Takeaways from the group coloring</summary>
+It looks even more convincing that chocolate candy is among the most liked candy -- a strong pattern that could be our takeaway message.
+</details>
+:::
+
+#### Iteration 4
+
+::: {.panel-tabset}
+
+##### Description
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds shape as a redundant way to distinguish the groups. light blue triangles now represent chocolate candy while light pink circles represent non chocolate"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_12#slide=id.g3bb275f27df_0_12")
+```
+
+This is the first polishing iteration. As discussed in [Chapter 5](https://hutchdatascience.org/DataViz_Considerations/04_how_to_improve_viz.html#accessibility-considerations), to enhance accessibility, we don't want to rely on color alone to distinguish groups. So we'll also use shape to distinguish the groups. This is a bit redundant but can be beneficial to our future audience.
+
+##### R code
+
+```{r}
+to_plot %>%
+  ggplot(aes(x=JOY,
+             y = DESPAIR,
+             color = Chocolate,
+             shape = Chocolate)) + #<6>
+  geom_point() +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_bw() +
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+```
+
+6. Specify that the shape of the points should also display the chocolate/not-chocolate categorical variable.
+
+:::
+
+#### Iteration 5
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_45#slide=id.g3be338b6b90_0_45")
+```
+
+#### Iteration 6
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_49#slide=id.g3be338b6b90_0_49")
+```
+
+#### Iteration 7
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_57#slide=id.g3be338b6b90_0_57")
+```
+
+#### Iteration 8
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_63#slide=id.g3be338b6b90_0_63")
+```
+
+#### Iteration 9
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_67#slide=id.g3be338b6b90_0_67")
+```
+
+#### Iteration 10
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_71#slide=id.g3be338b6b90_0_71")
+```
+
+We want to add some labels to the quadrants in this plot. Viewers need to a quick way to know the signifiance of where the data points are with respect to the dashed lines.
+
+This step is an example of how sometimes there is no "single right choice" when it comes to data visualization. Labeling the quadrants could be done in several ways. And if you're in a setting where peak professionalism isn't necessary, you could even have some fun here -- perhaps using emojis instead of words!
+
+#### Iteration 11
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_125#slide=id.g3be338b6b90_0_125")
+```
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_0#slide=id.g3bb275f27df_0_0")
+```
+
+#### Iteration 12
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_120#slide=id.g3be338b6b90_0_120")
+```
+
+#### Iteration 13
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_87#slide=id.g3be338b6b90_0_87")
+```
+
+#### Iteration 14
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_138#slide=id.g3be338b6b90_0_138")
+```
+
+#### Iteration 15
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_92#slide=id.g3be338b6b90_0_92")
+```
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c26f54f9da_0_0#slide=id.g3c26f54f9da_0_0")
+```
+
+#### Iteration 16
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_105#slide=id.g3be338b6b90_0_105")
+```
+
+#### Iteration 17
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_133#slide=id.g3be338b6b90_0_133")
+```
+
+#### Iteration 18
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_40#slide=id.g3bb275f27df_0_40")
+```
+
+#### Iteration 19
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_31#slide=id.g3bb275f27df_0_31")
+```
+
+#### Iteration 20
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_99#slide=id.g3be338b6b90_0_99")
+```
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c26f54f9da_0_8#slide=id.g3c26f54f9da_0_8")
+```
+
+#### The plot!
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_146#slide=id.g3be338b6b90_0_146")
+```
+
+But we're not done yet....
+
+#### The caption!
+
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_20#slide=id.g3bb275f27df_0_20")
+```
+
+#### Going further
+
+The dataset is an open dataset meaning that it is available for you to explore and visualize on your own!
+
+Perhaps you are interested in whether there's a difference in rankings depending on the sex of respondent or some other demographics. Do males prefer chocolate over non-chocolate candy? Does the age or location of the respondent impact the rankings?
+
+Perhaps you are interested in how the proportion of indifference affects these rankings. Is there a design element that can be added to this plot to visualize that specifically?
+
+Perhaps you'd like to try to plot this with a completely different plot type! Whatever your question -- go for it! Practice is one of the best ways to improve your data visualization skills.
 
 ## In Summary
 
-Aim for understanding and readability over complexity.
+Aim for understanding and readability over complexity. When you are working with your data and selecting your plot, think about what message you want to communicate.
+
 
 ## Checklist
 
-This checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize its complexity, enhance its clarity and accessibility, and assess its accuracy.  
+This checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize its complexity, enhance its clarity and accessibility, and assess its accuracy.
 
-## Additional Considerations
+## Keep Practicing!
 
-## See next
+Give some examples
