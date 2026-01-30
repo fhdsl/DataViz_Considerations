@@ -11,13 +11,214 @@ This chapter will cover:
 - {LO1}
 - {LO2}
 
+## Iterative Example
+
+### Data Introduction
+
+A [2017 survey from the University of British Columbia](https://www.scq.ubc.ca/wp-content/uploads/2017/10/candyhierarchysurvey2017.pdf) asked potential trick or treaters a series of questions. The main question provided a list of candy (and a few joke non-candy items) to survey takers. The prompt asked
+
+>Basically, consider that feeling you get when you receive this item in your Halloween haul. Does it make you really happy (joy)? Or is it something that you automatically
+place in the junk pile (despair)? Meh for indifference, and you can leave blank if you have no idea what the item is.
+
+Using this [dataset](https://www.scq.ubc.ca/so-much-candy-data-seriously/), we focused on responses to the question about feelings related to specific candies, selecting only real candy, for a total of 77 candies. For each of these candies, we computed the proportion of respondents who replied with each general feeling (e.g., Joy, Despair, Indifference, or No response).
+
+<Add a thought question on what variables are part of this dataset as described thus far.>
+
+This means that our dataset has a few main variables of interest:
+
+1. Names of the candy
+  * A **categorical** variable
+  * 77 different values
+2. Proportion of respondents who reported joy
+  * A **numerical** variable
+  * Specifically a *continuous* numerical variable
+  * Bounded between 0 and 1.0
+  * 77 different values - one for each candy
+3. Proportion of respondents who reported despair
+  * A **numerical** variable
+  * Specifically a *continuous* numerical variable
+  * Bounded between 0 and 1.0
+  * 77 different values - one for each candy
+
+There are additional variables such as responses to demographic questions as well as the proportion of respondents who reported indifference or didn't respond at all. However, to simplify the message we wish to communicate with our data visualization, we won't directly use these variables for this example.
+
+
+### Goal
+
+Our goal is to visualize a ranking for the most liked candies in 2017 according to this dataset.
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_6#slide=id.g3bb275f27df_0_6")
+```
+
+### Choosing a plot type
+
+Given that respondents did not simply rank the candy based on preference and we instead have two numerical values for each candy, we should consider plots types beyond the conventional ranking plots described in Chapter 4.
+
+A bar plot could work if we computed a single score (proportion of Joy - proportion of Despair perhaps), but with 77 candies, we would need to arrange the bars and just focus on the bars on the extremes. It would also appear pretty cramped.
+
+<provide examples of people who have done this>
+
+A scatter plot is constructed with two numerical variables and is often used to show a correlation. We might expect our data to have some sort of a correlation because likely candy that is greatly enjoyed by many won't be despised by many. And conversely, candy that is despised by many probably won't be greatly enjoyed. The only way to see if this expectation is true is to explore the data and just plot it. So that's what we'll do for the first iteration.
+
+### Building the plot
+
+The first few iterations will be an exploratory analysis of the data.
+
+#### Iteration 1
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_9#slide=id.g3be338b6b90_0_9")
+```
+
+This is an exploratory data analysis step. We're not worried about making the plot look pretty yet. We just want to look at the data. Primarily we want to see whether or not the relationship that we expect between the joy and despair variables holds true.
+
+<add a question about how to use our 3rd main variable here>
+
+#### Iteration 2
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_25#slide=id.g3be338b6b90_0_25")
+```
+
+This is another exploratory data analysis step. Now that we've confirmed the relationship between the variables that we expected, we want to know want candies are the most highly ranked and what candies are the least highly ranked. We can use the categorical candy name variable for this and add labels to the points.
+
+<add a question about what they observe here>
+
+#### Iteration 3
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_39#slide=id.g3be338b6b90_0_39")
+```
+
+#### Iteration 4
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_12#slide=id.g3bb275f27df_0_12")
+```
+
+#### Iteration 5
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_45#slide=id.g3be338b6b90_0_45")
+```
+
+#### Iteration 6
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_49#slide=id.g3be338b6b90_0_49")
+```
+
+#### Iteration 7
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_57#slide=id.g3be338b6b90_0_57")
+```
+
+#### Iteration 8
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_63#slide=id.g3be338b6b90_0_63")
+```
+
+#### Iteration 9
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_67#slide=id.g3be338b6b90_0_67")
+```
+
+#### Iteration 10
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_71#slide=id.g3be338b6b90_0_71")
+```
+
+#### Iteration 11
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_125#slide=id.g3be338b6b90_0_125")
+```
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_0#slide=id.g3bb275f27df_0_0")
+```
+
+#### Iteration 12
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_120#slide=id.g3be338b6b90_0_120")
+```
+
+#### Iteration 13
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_87#slide=id.g3be338b6b90_0_87")
+```
+
+#### Iteration 14
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_138#slide=id.g3be338b6b90_0_138")
+```
+
+#### Iteration 15
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_92#slide=id.g3be338b6b90_0_92")
+```
+
+#### Iteration 16
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_105#slide=id.g3be338b6b90_0_105")
+```
+
+#### Iteration 17
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_133#slide=id.g3be338b6b90_0_133")
+```
+
+#### Iteration 18
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_40#slide=id.g3bb275f27df_0_40")
+```
+
+#### Iteration 19
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_31#slide=id.g3bb275f27df_0_31")
+```
+
+#### Iteration 20
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_99#slide=id.g3be338b6b90_0_99")
+```
+
+#### The plot!
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_146#slide=id.g3be338b6b90_0_146")
+```
+
+But we're not done yet....
+
+#### The caption!
+
+```{r, echo = FALSE}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_20#slide=id.g3bb275f27df_0_20")
+```
+
 ## In Summary
 
-Aim for understanding and readability over complexity.
+Aim for understanding and readability over complexity. When you are working with your data and selecting your plot, think about what message you want to communicate.
+
 
 ## Checklist
 
-This checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize its complexity, enhance its clarity and accessibility, and assess its accuracy.  
+This checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize its complexity, enhance its clarity and accessibility, and assess its accuracy.
 
 ## Additional Considerations
 
