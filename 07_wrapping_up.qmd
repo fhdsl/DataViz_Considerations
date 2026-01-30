@@ -312,7 +312,7 @@ It looks like chocolate candy (Twix, Kit Kat, 100 Grand Bar...) is among the mos
 
 ##### Description
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds color to distinguish groups, specifically chocolate versus not chocolate groups. We see a fairly clear separation with chocolate on one extreme and non-chocolate on the other with mixing of the groups in the middle."}
+```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds color to distinguish groups, specifically chocolate versus not chocolate groups. Light blue represents chocolate while light pink represents not chocolate candy. We see a fairly clear separation with chocolate on one extreme and non-chocolate on the other with mixing of the groups in the middle."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_39#slide=id.g3be338b6b90_0_39")
 ```
 
@@ -365,11 +365,11 @@ It looks even more convincing that chocolate candy is among the most liked candy
 
 ##### Description
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds shape as a redundant way to distinguish the groups. light blue triangles now represent chocolate candy while light pink circles represent non chocolate"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_12#slide=id.g3bb275f27df_0_12")
 ```
 
-This is the first polishing iteration. As discussed in [Chapter 5](https://hutchdatascience.org/DataViz_Considerations/04_how_to_improve_viz.html#accessibility-considerations), to enhance accessibility, we don't want to rely on color alone to distinguish groups. So we'll also use shape to distinguish the groups.
+This is the first polishing iteration. As discussed in [Chapter 5](https://hutchdatascience.org/DataViz_Considerations/04_how_to_improve_viz.html#accessibility-considerations), to enhance accessibility, we don't want to rely on color alone to distinguish groups. So we'll also use shape to distinguish the groups. This is a bit redundant but can be beneficial to our future audience.
 
 ##### R code
 
