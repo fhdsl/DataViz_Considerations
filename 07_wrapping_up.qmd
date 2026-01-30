@@ -273,6 +273,7 @@ This is another exploratory data analysis step. Now that we've confirmed the rel
 <details><summary>R code for adding the candy names as labels</summary>
 
 ```{r}
+install.packages("ggrepel")
 library(ggrepel) #<1>
 
 to_plot %>%
