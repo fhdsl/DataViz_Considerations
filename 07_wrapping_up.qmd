@@ -35,7 +35,7 @@ Using this [dataset](https://www.scq.ubc.ca/so-much-candy-data-seriously/), we f
 
 <details><summary>R code for data import and preliminary wrangling steps</summary>
 
-```{r}
+```{r warning = FALSE, message= FALSE}
 library(here)
 library(tidyverse)
 
@@ -114,11 +114,11 @@ to_plot <- df_2017_jc %>%
 
 :::
 
+:::{.emphasis_block}
+
 <div class = "reflection">
 What variables (specifically what types of variables -- categorical or numerical) are part of this dataset as described?
 </div>
-
-:::{.emphasis_block}
 
 <details><summary>Variables in the candy dataset</summary>
 
@@ -158,11 +158,11 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 ### Choosing a plot type
 
+::: {.emphasis_block}
+
 <div class="reflection">
 Given the data that we have to work with and the goal of the visualization, what type of plot would you use?
 </div>
-
-::: {.emphasis_block}
 
 <details><summary>Comparing and contrasting plot types for this visualization</summary>
 
@@ -246,11 +246,12 @@ Note that normally in a first iteration of exploratory data analysis, we might n
 
 :::
 
+::: {.emphasis_block}
+
 <div class="reflection">
 So far, this is just using 2 of the 3 main variables we identified. How can we use the third variable?
 </div>
 
-::: {.emphasis_block}
 <details><summary>Plotting the candy names</summary>
 We can use a labeling function to add the candy names to the plot, labeling specific points.
 </details>
@@ -258,7 +259,7 @@ We can use a labeling function to add the candy names to the plot, labeling spec
 
 #### Iteration 2
 
-::: {.panel_tabset}
+::: {.panel-tabset}
 
 ##### Description
 
@@ -266,13 +267,13 @@ We can use a labeling function to add the candy names to the plot, labeling spec
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_25#slide=id.g3be338b6b90_0_25")
 ```
 
-This is another exploratory data analysis step. Now that we've confirmed the relationship between the variables that we expected, we want to know want candies are the most highly ranked and what candies are the least highly ranked. We can use the categorical candy name variable for this and add labels to the points.
+This is another exploratory data analysis step. Now that we've confirmed the relationship between the variables that we expected, we want to know what candies are the most highly ranked and what candies are the least highly ranked. We can use the categorical candy name variable for this and add labels directly to the points.
 
 ##### R code
 
 <details><summary>R code for adding the candy names as labels</summary>
 
-```{r}
+```{r, warning = FALSE, message = FALSE}
 install.packages("ggrepel")
 library(ggrepel) #<1>
 
@@ -300,11 +301,12 @@ to_plot %>%
 
 :::
 
+::: {.emphasis_block}
+
 <div class="reflection">
 What do you notice after observing the labels? Do you have any ideas on new variables or a takeaway message?
 </div>
 
-::: {.emphasis_block}
 <details><summary>Takeaways from the candy name labeling</summary>
 It looks like chocolate candy (Twix, Kit Kat, 100 Grand Bar...) is among the most liked candy. It could be beneficial to create a new categorical variable that represents if each candy is chocolate or not.
 </details>
@@ -325,18 +327,18 @@ This iteration, uses color to distinguish the data points according to whether o
 ##### R code
 
 ```{r}
-to_plot$Chocolate <- "No"                                #<1>
-to_plot$Chocolate[c(13, 22, 26, 28, 34, 44,
-                    46, 47, 49, 50, 51, 52,
-                    54, 55, 56, 57, 58, 59,
-                    60, 61, 62, 63, 64, 65,
-                    66, 67, 68, 69, 70, 71,
-                    72, 73, 74, 75, 76,77 )] <- "Yes"    #<1>
+to_plot$Chocolate <- "No"                   #<4>
+to_plot$Chocolate[c(13, 22, 26, 28, 34, 44, #<4>
+                    46, 47, 49, 50, 51, 52, #<4>
+                    54, 55, 56, 57, 58, 59, #<4>
+                    60, 61, 62, 63, 64, 65, #<4>
+                    66, 67, 68, 69, 70, 71, #<4>
+                    72, 73, 74, 75, 76,77 )] <- "Yes"  #<4>
 
 to_plot %>%
   ggplot(aes(x=JOY,
              y = DESPAIR,
-             color = Chocolate)) +                       #<2>
+             color = Chocolate)) +                       #<5>
   geom_point() +
   xlim(0, 1) +
   ylim(0, 1) +
@@ -348,16 +350,17 @@ to_plot %>%
 
 We've removed the labeling for now.
 
-1. We've created a new categorical variable
-2. We've specified that color should use that new categorical variable
+4. We've created a new categorical variable
+5. We've specified that color should use that new categorical variable
 
 :::
+
+::: {.emphasis_block}
 
 <div class="reflection">
 What do you observe about the group coloring?
 </div>
 
-::: {.emphasis_block}
 <details><summary>Takeaways from the group coloring</summary>
 It looks even more convincing that chocolate candy is among the most liked candy -- a strong pattern that could be our takeaway message.
 </details>
@@ -382,7 +385,7 @@ to_plot %>%
   ggplot(aes(x=JOY,
              y = DESPAIR,
              color = Chocolate,
-             shape = Chocolate)) + #<1>
+             shape = Chocolate)) + #<6>
   geom_point() +
   xlim(0, 1) +
   ylim(0, 1) +
@@ -392,7 +395,7 @@ to_plot %>%
   theme(text = element_text(size = 14))
 ```
 
-1. This specifies that the shape of the points should also display the chocolate/not-chocolate categorical variable.
+6. This specifies that the shape of the points should also display the chocolate/not-chocolate categorical variable.
 
 :::
 
