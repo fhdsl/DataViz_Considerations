@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Considerations for Data Visualization</title>
+<title>1&nbsp; Introduction – Considerations for Data Visualization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +19,6 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -30,7 +26,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-intro.html" rel="next">
+<link href="./02_what_why_intro.html" rel="next">
+<link href="./index.html" rel="prev">
 <link href="./assets/ITN_favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -42,8 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d6ecc8c200f2f0692a05003089f8bde7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-d6ecc8c200f2f0692a05003089f8bde7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -69,48 +65,35 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-
-<script type="text/javascript">
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
-</script>
-
-
-<link rel="stylesheet" href="assets/style_ITN.css">
+</script><link rel="stylesheet" href="assets/style_ITN.css">
 </head>
-
 <body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Considerations for Data Visualization</h1>
+          <h1 class="quarto-secondary-nav-title">
+<span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span>
+</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="https://www.itcrtraining.org/" class="sidebar-logo-link">
-      <img src="./assets/ITN_logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="./assets/ITN_logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
-      </a>
+      <img src="./assets/ITN_logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="./assets/ITN_logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Considerations for Data Visualization</a> 
         <div class="sidebar-tools-main">
@@ -125,15 +108,15 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About this Course</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -174,28 +157,24 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#about-this-course" id="toc-about-this-course" class="nav-link active" data-scroll-target="#about-this-course">About this Course</a>
-  <ul class="collapse">
-  <li><a href="#available-course-formats" id="toc-available-course-formats" class="nav-link" data-scroll-target="#available-course-formats">Available Course Formats</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/DataViz_Considerations/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">1.1</span> Motivation</a></li>
+  <li><a href="#target-audience" id="toc-target-audience" class="nav-link" data-scroll-target="#target-audience"><span class="header-section-number">1.2</span> Target audience</a></li>
+  <li><a href="#curriculum" id="toc-curriculum" class="nav-link" data-scroll-target="#curriculum"><span class="header-section-number">1.3</span> Curriculum</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><span class="header-section-number">1.4</span> Objectives</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/DataViz_Considerations/edit/main/01-intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block">Considerations for Data Visualization</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title d-none d-lg-block">
+<span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span>
+</h1>
 </div>
 
 
@@ -209,35 +188,45 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
   
 
 
-</header>
+</header><p>This course is meant to discuss best practices when constructing data visualizations with a special focus on graphs within biology research.</p>
+<section id="motivation" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="motivation">
+<span class="header-section-number">1.1</span> Motivation</h2>
+<p>Data is now used more than ever to evaluate and understand questions across many fields including pubic health, bioinformatics, and clinical research. It is critical to produce effective visual summaries of our data. Data visualization is useful for exploration, validation, and presentation of research, aiding in the understanding of underlying biology in datasets, debugging errors in informatics workflows, and identifying/avoiding sources of bias. This course is designed to introduce key concepts of data visualization, in particular for visualizing complex data and accessibility. In addition we will point to additional resources.</p>
+</section><section id="target-audience" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="target-audience">
+<span class="header-section-number">1.2</span> Target audience</h2>
+<p>The course is intended for anyone who has an interest in data visualization, but contains sections of specific interest for cancer researchers with experience using basic informatics tools.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3015fd53a67_4_147.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="for individuals who: work with data and want to create data visualizations as a way to share their results with others, are interested in making their visualizations more accessible, and want to explore ways to enhance the clarity of their visualizations"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="curriculum" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="curriculum">
+<span class="header-section-number">1.3</span> Curriculum</h2>
+<p>The course covers why data visualizations are important for communication within the biomedical and bioinformatics fields as well as best practices and design principles that researchers should consider when constructing data visualizations for their work.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3015fd53a67_4_164.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="the topics covered in this course include defining the types of data and visualizations, discussing axis limits and labels, tips to minimize complexity, tips for making ethical and accessible visualizations, enhancing clear communication, and field standard or typical data visualizations"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="objectives" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="objectives">
+<span class="header-section-number">1.4</span> Objectives</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3015fd53a67_4_171.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="This course will demonstrate how to explain the importance of data visualization, contrast exploratory and expository visualizations, choose appropriate graph types based on your dataset and question, list steps to simplify or improve a visualization to enhance clarity, identify ways to improve the accessibility of a visualization, and how to discuss ethical considerations when making data visualizations"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
-<section id="about-this-course" class="level1 unnumbered">
-<h1 class="unnumbered">About this Course</h1>
-<p>This course is part of a series of courses for the <a href="https://www.cancer.gov/about-nci/organization/cssi/research/itcr">Informatics Technology for Cancer Research (ITCR)</a>. This material was created by the ITCR Training Network (ITN) which is a collaborative effort of researchers around the United States to support cancer informatics and data science training through resources, technology, and events. This initiative is funded by the following grant: <a href="https://www.cancer.gov/">National Cancer Institute (NCI)</a> UE5 CA254170. Our courses feature tools developed by ITCR Investigators and make it easier for principal investigators, scientists, and analysts to integrate cancer informatics into their workflows. Please see our website at <a href="https://www.itcrtraining.org/">www.itcrtraining.org</a> for more information.</p>
-<p>Considerations for Bioinformatic Data Visualization is the first in a series of two courses on data visualization. This course focuses on considerations for best practices in data visualization discussing topics such as</p>
-<ul>
-<li>defining what data visualization is</li>
-<li>utilizing exploratory data analysis</li>
-<li>deciding which type of visualization is appropriate for your data/research question</li>
-<li>employing visual design principles in polishing visualizations for publication</li>
-<li>making visualizations accessible</li>
-<li>avoiding data distortions</li>
-</ul>
-<section id="available-course-formats" class="level2">
-<h2 class="anchored" data-anchor-id="available-course-formats">Available Course Formats</h2>
-<ul>
-<li>The material for this course can be viewed without login requirement on this <a href="https://hutchdatascience.org/DataViz_Considerations/">Bookdown website</a>. This format might be most appropriate for you if you rely on screen-reader technology.</li>
-<li>Our courses are open source, you can find the <a href="https://github.com/fhdsl/DataViz_Considerations/">source material for this course on GitHub</a>.</li>
-<li>The second course in the series will focus on building data visualizations, pointing to resources across R and Python, while integrating the best practice considerations discussed in this course.</li>
-</ul>
-
-
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -641,39 +630,37 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="About this Course">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About this Course</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02_what_why_intro.html" class="pagination-link" aria-label="Defining Data Visualization">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Defining Data Visualization</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>This book was built with <a href="https://quarto.org/" style="color: #0000FF;">Quarto</a> using <a href="https://github.com/fhdsl/OTTR_Quarto" style="color: #0000FF;">OTTR</a>.</p>
 </div>   
     <div class="nav-footer-center">
 <p>All illustrations <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;">CC-BY. </a> <br> All other materials <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;"> CC-BY </a> unless noted otherwise.</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fhdsl/DataViz_Considerations/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/fhdsl/DataViz_Considerations/edit/main/01-intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
 
 
 </body></html>
