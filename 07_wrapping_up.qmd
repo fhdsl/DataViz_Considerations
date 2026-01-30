@@ -47,7 +47,7 @@ There are additional variables such as responses to demographic questions as wel
 
 Our goal is to visualize a ranking for the most liked candies in 2017 according to this dataset.
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_6#slide=id.g3bb275f27df_0_6")
 ```
 
@@ -67,7 +67,7 @@ The first few iterations will be an exploratory analysis of the data.
 
 #### Iteration 1
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_9#slide=id.g3be338b6b90_0_9")
 ```
 
@@ -77,7 +77,7 @@ This is an exploratory data analysis step. We're not worried about making the pl
 
 #### Iteration 2
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_25#slide=id.g3be338b6b90_0_25")
 ```
 
@@ -87,49 +87,49 @@ This is another exploratory data analysis step. Now that we've confirmed the rel
 
 #### Iteration 3
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_39#slide=id.g3be338b6b90_0_39")
 ```
 
 #### Iteration 4
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_12#slide=id.g3bb275f27df_0_12")
 ```
 
 #### Iteration 5
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_45#slide=id.g3be338b6b90_0_45")
 ```
 
 #### Iteration 6
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_49#slide=id.g3be338b6b90_0_49")
 ```
 
 #### Iteration 7
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_57#slide=id.g3be338b6b90_0_57")
 ```
 
 #### Iteration 8
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_63#slide=id.g3be338b6b90_0_63")
 ```
 
 #### Iteration 9
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_67#slide=id.g3be338b6b90_0_67")
 ```
 
 #### Iteration 10
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_71#slide=id.g3be338b6b90_0_71")
 ```
 
@@ -139,71 +139,71 @@ This step is an example of how sometimes there is no "single right choice" when 
 
 #### Iteration 11
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_125#slide=id.g3be338b6b90_0_125")
 ```
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_0#slide=id.g3bb275f27df_0_0")
 ```
 
 #### Iteration 12
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_120#slide=id.g3be338b6b90_0_120")
 ```
 
 #### Iteration 13
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_87#slide=id.g3be338b6b90_0_87")
 ```
 
 #### Iteration 14
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_138#slide=id.g3be338b6b90_0_138")
 ```
 
 #### Iteration 15
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_92#slide=id.g3be338b6b90_0_92")
 ```
 
 #### Iteration 16
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_105#slide=id.g3be338b6b90_0_105")
 ```
 
 #### Iteration 17
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_133#slide=id.g3be338b6b90_0_133")
 ```
 
 #### Iteration 18
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_40#slide=id.g3bb275f27df_0_40")
 ```
 
 #### Iteration 19
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_31#slide=id.g3bb275f27df_0_31")
 ```
 
 #### Iteration 20
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_99#slide=id.g3be338b6b90_0_99")
 ```
 
 #### The plot!
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_146#slide=id.g3be338b6b90_0_146")
 ```
 
@@ -211,7 +211,7 @@ But we're not done yet....
 
 #### The caption!
 
-```{r, echo = FALSE, out.width=100%}
+```{r, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_20#slide=id.g3bb275f27df_0_20")
 ```
 
