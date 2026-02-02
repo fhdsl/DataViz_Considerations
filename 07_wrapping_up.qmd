@@ -29,9 +29,9 @@ A [2017 survey from the University of British Columbia](https://www.scq.ubc.ca/w
 >Basically, consider that feeling you get when you receive this item in your Halloween haul. Does it make you really happy (joy)? Or is it something that you automatically
 place in the junk pile (despair)? Meh for indifference, and you can leave blank if you have no idea what the item is.
 
-Using this [dataset](https://www.scq.ubc.ca/so-much-candy-data-seriously/), we focused on responses to the question about feelings related to specific candies, selecting only real candy, for a total of 77 candies. For each of these candies, we computed the proportion of respondents who replied with each general feeling (e.g., Joy, Despair, Indifference, or No response).
+Using this [dataset](https://www.scq.ubc.ca/so-much-candy-data-seriously/), we focused on responses to the question about feelings related to specific candies, selecting only real candy, for a total of 76 candies. For each of these candies, we computed the proportion of respondents who replied with each general feeling (e.g., Joy, Despair, Indifference, or No response).
 
-#### R Code
+#### R code
 
 <details><summary>R code for data import and preliminary wrangling steps</summary>
 
@@ -54,6 +54,7 @@ non_candy <- c("Bonkers  the board game",
                "Hugs  actual physical hugs",
                "JoyJoy  Mit Iodine",
                "Kale smoothie",
+               "Senior Mints",
                "Green Party M M s",
                "Independent M M s",
                "Abstained from M M ing",
@@ -108,6 +109,37 @@ to_plot <- df_2017_jc %>%
               names_from = value,
               values_from = proportion) %>%
   arrange(JOY)
+
+nrow(to_plot)
+```
+
+</details>
+
+#### Python code
+
+<details><summary>Python code for data import and preliminary wrangling steps</summary>
+
+```{python}
+import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+
+df_2017 = pd.read_csv('data/candyhierarchy2017_export.csv', encoding = "ISO-8859-1")
+
+just_q6= df_2017.filter(like="Q6 |", axis=1)
+q6_counts = just_q6.apply(lambda x: x.value_counts()).T
+q6_counts['total_response'] = pd.DataFrame.sum(q6_counts, axis=1)
+q6_counts['likeness'] = q6_counts['JOY'] / q6_counts['total_response']
+q6_counts['indifference'] = q6_counts['MEH'] / q6_counts['total_response']
+q6_counts['dislikeness'] = q6_counts['DESPAIR'] / q6_counts['total_response']
+
+q6_counts.index = q6_counts.index.str.replace("Q6 | ", "")
+
+just_candy_props = q6_counts[~q6_counts.index.isin(["Bonkers (the board game)", "Box'o'Raisins", "Broken glow stick", "Cash, or other forms of legal tender", "Chardonnay", "Creepy Religious comics/Chick Tracts", "Dental paraphenalia", 'Generic Brand Acetaminophen', "Glow sticks", "Healthy Fruit", "Hugs (actual physical hugs)", "JoyJoy (Mit Iodine!)", "Senior Mints", "Kale smoothie", "Green Party M&M's", "Independent M&M's", "Abstained from M&M'ing.", "Minibags of chips", "Pencils", "Real Housewives of Orange County Season 9 Blue-Ray", "Sandwich-sized bags filled with BooBerry Crunch", "Spotted Dick", "Trail Mix", "Vials of pure high fructose corn syrup, for main-lining into your vein", "Vicodin", "White Bread", "Whole Wheat anything"])]
+
+just_candy_props.shape[0]
+
 ```
 
 </details>
@@ -126,17 +158,17 @@ This means that the candy dataset (at least given the way we have worked with or
 
 1. Names of the candy
     * A **categorical** variable
-    * 77 different values
+    * 76 different values
 2. Proportion of respondents who reported joy
     * A **numerical** variable
     * Specifically a *continuous* numerical variable
     * Bounded between 0 and 1.0
-    * 77 different values - one for each candy
+    * 76 different values - one for each candy
 3. Proportion of respondents who reported despair
     * A **numerical** variable
     * Specifically a *continuous* numerical variable
     * Bounded between 0 and 1.0
-    * 77 different values - one for each candy
+    * 76 different values - one for each candy
 
 There are additional variables such as responses to demographic questions as well as the proportion of respondents who reported indifference or didn't respond at all. However, to simplify the message we wish to communicate with our data visualization, we won't directly use these variables for this example.
 
@@ -170,7 +202,7 @@ Note that respondents did not simply rank the candy based on preference and we i
 
 **A more conventional approach**:
 
-A bar plot or even a stacked bar plot could work if we computed a single score (proportion of Joy - proportion of Despair perhaps), but with 77 candies, we would need to arrange the bars based on the magnitude or size and just focus on the bars on the extremes. The visualization would likely appear pretty cramped overall if we tried to show every candy.
+A bar plot or even a stacked bar plot could work if we computed a single score (proportion of Joy - proportion of Despair perhaps), but with 76 candies, we would need to arrange the bars based on the magnitude or size and just focus on the bars on the extremes. The visualization would likely appear pretty cramped overall if we tried to show every candy.
 
   * Here's an example of an analysis that utilized bar plots: [https://github.com/phoebewong/candy-hierarchy-2017](https://github.com/phoebewong/candy-hierarchy-2017). Notice, for this example they focused on a couple specific candies which gets around the "cramped" visualization concern.
 
@@ -243,6 +275,25 @@ to_plot %>%
 Note that normally in a first iteration of exploratory data analysis, we might not set the axis labels (they'll default to the column name of whatever is being plotted.), and we might not adjust the text size. Both of these are done here to add clarity to this example.
 
 </details>
+
+##### Python code
+
+```{python}
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'])
+ax.set_xlim(0,1)
+ax.set_ylim(0,1)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_aspect('equal')
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+plt.show()
+```
 
 :::
 
@@ -328,6 +379,7 @@ This iteration, uses color to distinguish the data points according to whether o
 
 ```{r}
 #removed code related to the labeling for now
+
 to_plot$Chocolate <- "No"                   #<4>
 to_plot$Chocolate[c(13, 22, 26, 28, 34, 44, #<4>
                     46, 47, 49, 50, 51, 52, #<4>
