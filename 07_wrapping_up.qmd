@@ -33,12 +33,12 @@ Using this [dataset](https://www.scq.ubc.ca/so-much-candy-data-seriously/), we f
 
 #### R code
 
-<details><summary>R code for data import and preliminary wrangling steps</summary>
-
 ```{r}
 #| label: importR
 #| warning: false
 #| message: false
+#| code-fold: show
+#| code-summary: "R code for data import and preliminary wrangling steps"
 
 library(here)
 library(tidyverse)
@@ -117,14 +117,12 @@ to_plot <- df_2017_jc %>%
 nrow(to_plot)
 ```
 
-</details>
-
 #### Python code
-
-<details><summary>Python code for data import and preliminary wrangling steps</summary>
 
 ```{python}
 #| label: importPython
+#| code-fold: show
+#| code-summary: "Python code for data import and preliminary wrangling steps"
 
 import pandas as pd
 import matplotlib as mpl
@@ -173,8 +171,6 @@ just_candy_props = q6_counts[~q6_counts.index.isin(["Bonkers (the board game)",
 just_candy_props.shape[0]
 
 ```
-
-</details>
 
 :::
 
@@ -281,11 +277,12 @@ This iteration is an exploratory data analysis step. We're not worried about mak
 
 ##### R code
 
-<details><summary>R code for plotting a scatter plot</summary>
-
 ```{r}
 #| label: iter1R
-#| output: false
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for plotting a scatter plot"
 
 ##proportion of Joy on x-axis
 ##proportion of Despair on the y-axis
@@ -309,36 +306,35 @@ to_plot %>%
 ```
 Note that normally in a first iteration of exploratory data analysis, we might not set the axis labels (they'll default to the column name of whatever is being plotted.), and we might not adjust the text size. Both of these are done here to add clarity to this example.
 
-</details>
 
 ##### Python code
 
-<details><summary>Python code for plotting a scatter plot</summary>
-
 ```{python}
 #| label: iter1Python
-#| output: false
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Python code for plotting a scatter plot"
+
 
 mpl.rcParams["font.size"] = 14
 
-plt.style.use('seaborn-v0_8-deep')
-fig, ax = plt.subplots()
-ax.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'])
-ax.set_xlim(0,1)
-ax.set_ylim(0,1)
-ax.minorticks_on()                                                                #<1>
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)   #<1>
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)   #<1>
-ax.set_xlabel('Fraction of respondents who reported JOY')
-ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+plt.style.use('seaborn-v0_8-deep')                                                #<1>
+fig1, ax1 = plt.subplots()
+ax1.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'])
+ax1.set_xlim(0,1)
+ax1.set_ylim(0,1)
+ax1.minorticks_on()                                                                #<1>
+ax1.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)   #<1>
+ax1.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)   #<1>
+ax1.set_xlabel('Fraction of respondents who reported JOY')
+ax1.set_ylabel('Fraction of respondents who reported DESPAIR')
 plt.show()
 ```
 
 1. Replicating the `theme_bw` style of ggplot
 
 Note that normally in a first iteration of exploratory data analysis, we might not set the axis labels (Python won't add any labels) and we might not adjust the text size. Both of these are done here to add clarity to this example.
-
-</details>
 
 :::
 
@@ -367,13 +363,13 @@ This is another exploratory data analysis step. Now that we've confirmed the rel
 
 ##### R code
 
-<details><summary>R code for adding the candy names as labels</summary>
-
 ```{r}
 #| label: iter2R
-#| output: false
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for adding the candy names as labels"
 
-install.packages("ggrepel")
 library(ggrepel) #<1>
 
 to_plot %>%
@@ -392,17 +388,60 @@ to_plot %>%
   theme(text = element_text(size = 14))
 ```
 
-1. Need to load this package for the labeling function
+1. Need to load [ggrepel package](https://ggrepel.slowkow.com/) for the labeling function
 2. Specifies the candy names/variable that will be used for labeling
 2. Uses `geom_text_repel()` from `ggrepel` package to label the points, using the repel part of the function to handle overlapping points/labels
 
-</details>
-
 ##### Python code
 
-<details><summary>Python code for adding the candy names as labels</summary>
+<!--
+The adjust_text function has a lot of output that cannot be suppressed in the usual ways because it is standard out.
+The only way to suppress it is to set output to false.
+But then the code blocks are cut up wherever there would be output and the code annotation for #<2> isn't connected with its comment properly.
+So setting this chunk such that it will not evaluate during rendering and just embedding the output figure manually.
+-->
 
-</details>
+```{python}
+#| label: iter2Python
+#| eval: false
+#| code-fold: show
+#| code-summary: "Python code for adding the candy names as labels"
+
+from adjustText import adjust_text                                               #<2>
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig2, ax2 = plt.subplots()
+ax2.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'])
+ax2.set_xlim(0,1)
+ax2.set_ylim(0,1)
+ax2.minorticks_on()
+ax2.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax2.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax2.set_xlabel('Fraction of respondents who reported JOY')
+ax2.set_ylabel('Fraction of respondents who reported DESPAIR')
+texts = [plt.text(just_candy_props['likeness'].iloc[i],                          #<3>
+                  just_candy_props['dislikeness'].iloc[i],                       #<3>
+                  just_candy_props.index[i])                                     #<3>
+          for i in range(len(just_candy_props)) if i % 3 == 0]                   #<3>
+adjust_text(texts,                                                               #<4>
+  avoid_points = False,                                                          #<4>
+  expand = (0.5, 0.5),                                                           #<4>
+  force_text = (0.5, 0.5),                                                       #<4>
+  arrowprops=dict(arrowstyle="->"))                                              #<4>
+plt.show()
+```
+
+2. Need to load [adjustText package](https://adjusttext.readthedocs.io/en/latest/index.html) for the labeling function. Python equivalent of ggrepel.
+3. Using list comprehension to build an input to the labeling function of what the labels are and where they're going to go. Only labeling one out of every three candies to avoid overcrowding.
+4. Using the adjust_text function from the adjustText package to automatically adjust the position of text labels to minimize overlaps
+
+<!--
+The image embedded below was saved locally after running the above code manually. Note that it does NOT autoupdate if any changes are made to the content.
+-->
+
+![](resources/images/candy_iter2_python.png){fig-alt="Python plot that labels the candy names"}
 
 :::
 
@@ -431,7 +470,13 @@ This iteration, uses color to distinguish the data points according to whether o
 
 ##### R code
 
-```{r iter3R}
+```{r}
+#| label: iter3R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for adding color to distinguish groups"
+
 #removed code related to the labeling for now
 
 to_plot$Chocolate <- "No"                   #<4>
@@ -485,7 +530,13 @@ This is the first polishing iteration. As discussed in [Chapter 5](https://hutch
 
 ##### R code
 
-```{r iter4R}
+```{r}
+#| label: iter4R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for using color and shape together"
+
 to_plot %>%
   ggplot(aes(x=JOY,
              y = DESPAIR,
