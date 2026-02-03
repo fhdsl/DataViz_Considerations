@@ -4,13 +4,13 @@ code-annotations: hover
 
 # Wrapping up
 
-```{r, include = FALSE}
+```{r setup, include = FALSE}
 ottrpal::set_knitr_image_path()
 ```
 
 ## Learning Objectives
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This chapter will demonstrate how to iteratively construct a data visualization, evaluate whether a data visualization can be improved to enhance its clarity, accessibility, or accuracy, and to discuss ways to hone data visualization skills"}
+```{r los, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This chapter will demonstrate how to iteratively construct a data visualization, evaluate whether a data visualization can be improved to enhance its clarity, accessibility, or accuracy, and to discuss ways to hone data visualization skills"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bc553a32e9_0_0#slide=id.g3bc553a32e9_0_0")
 ```
 
@@ -29,13 +29,17 @@ A [2017 survey from the University of British Columbia](https://www.scq.ubc.ca/w
 >Basically, consider that feeling you get when you receive this item in your Halloween haul. Does it make you really happy (joy)? Or is it something that you automatically
 place in the junk pile (despair)? Meh for indifference, and you can leave blank if you have no idea what the item is.
 
-Using this [dataset](https://www.scq.ubc.ca/so-much-candy-data-seriously/), we focused on responses to the question about feelings related to specific candies, selecting only real candy, for a total of 77 candies. For each of these candies, we computed the proportion of respondents who replied with each general feeling (e.g., Joy, Despair, Indifference, or No response).
+Using this [dataset](https://www.scq.ubc.ca/so-much-candy-data-seriously/), we focused on responses to the question about feelings related to specific candies, selecting only real candy, for a total of 76 candies. For each of these candies, we computed the proportion of respondents who replied with each general feeling (e.g., Joy, Despair, Indifference, or No response).
 
-#### R Code
+#### R code
 
-<details><summary>R code for data import and preliminary wrangling steps</summary>
+```{r}
+#| label: importR
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for data import and preliminary wrangling steps"
 
-```{r warning = FALSE, message= FALSE}
 library(here)
 library(tidyverse)
 
@@ -54,6 +58,7 @@ non_candy <- c("Bonkers  the board game",
                "Hugs  actual physical hugs",
                "JoyJoy  Mit Iodine",
                "Kale smoothie",
+               "Senior Mints",
                "Green Party M M s",
                "Independent M M s",
                "Abstained from M M ing",
@@ -108,9 +113,64 @@ to_plot <- df_2017_jc %>%
               names_from = value,
               values_from = proportion) %>%
   arrange(JOY)
+
+nrow(to_plot)
 ```
 
-</details>
+#### Python code
+
+```{python}
+#| label: importPython
+#| code-fold: show
+#| code-summary: "Python code for data import and preliminary wrangling steps"
+
+import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+
+df_2017 = pd.read_csv('data/candyhierarchy2017.csv', encoding = "ISO-8859-1")
+
+just_q6= df_2017.filter(like="Q6 |", axis=1)
+q6_counts = just_q6.apply(lambda x: x.value_counts()).T
+q6_counts['total_response'] = pd.DataFrame.sum(q6_counts, axis=1)
+q6_counts['likeness'] = q6_counts['JOY'] / q6_counts['total_response']
+q6_counts['indifference'] = q6_counts['MEH'] / q6_counts['total_response']
+q6_counts['dislikeness'] = q6_counts['DESPAIR'] / q6_counts['total_response']
+
+q6_counts.index = q6_counts.index.str.replace("Q6 | ", "")
+
+just_candy_props = q6_counts[~q6_counts.index.isin(["Bonkers (the board game)",
+                                                    "Box'o'Raisins",
+                                                    "Broken glow stick",
+                                                    "Cash, or other forms of legal tender",
+                                                    "Chardonnay",
+                                                    "Creepy Religious comics/Chick Tracts",
+                                                    "Dental paraphenalia",
+                                                    'Generic Brand Acetaminophen',
+                                                    "Glow sticks",
+                                                    "Healthy Fruit",
+                                                    "Hugs (actual physical hugs)",
+                                                    "JoyJoy (Mit Iodine!)",
+                                                    "Senior Mints",
+                                                    "Kale smoothie",
+                                                    "Green Party M&M's",
+                                                    "Independent M&M's",
+                                                    "Abstained from M&M'ing.",
+                                                    "Minibags of chips",
+                                                    "Pencils",
+                                                    "Real Housewives of Orange County Season 9 Blue-Ray",
+                                                    "Sandwich-sized bags filled with BooBerry Crunch",
+                                                    "Spotted Dick",
+                                                    "Trail Mix",
+                                                    "Vials of pure high fructose corn syrup, for main-lining into your vein",
+                                                    "Vicodin",
+                                                    "White Bread",
+                                                    "Whole Wheat anything"])]
+
+just_candy_props.shape[0]
+
+```
 
 :::
 
@@ -126,17 +186,17 @@ This means that the candy dataset (at least given the way we have worked with or
 
 1. Names of the candy
     * A **categorical** variable
-    * 77 different values
+    * 76 different values
 2. Proportion of respondents who reported joy
     * A **numerical** variable
     * Specifically a *continuous* numerical variable
     * Bounded between 0 and 1.0
-    * 77 different values - one for each candy
+    * 76 different values - one for each candy
 3. Proportion of respondents who reported despair
     * A **numerical** variable
     * Specifically a *continuous* numerical variable
     * Bounded between 0 and 1.0
-    * 77 different values - one for each candy
+    * 76 different values - one for each candy
 
 There are additional variables such as responses to demographic questions as well as the proportion of respondents who reported indifference or didn't respond at all. However, to simplify the message we wish to communicate with our data visualization, we won't directly use these variables for this example.
 
@@ -152,7 +212,7 @@ To review variables and different types of data, visit [Chapter 3](https://hutch
 
 Our goal is to visualize a ranking for the most liked candies in 2017 according to this dataset.
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This is an iterative example putting it all together. Given a 2017 candy dataset that asks respondents to report their feelings of joy despair or indifference, our goal is to visualize a ranking of the most liked candies"}
+```{r goalImage, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This is an iterative example putting it all together. Given a 2017 candy dataset that asks respondents to report their feelings of joy despair or indifference, our goal is to visualize a ranking of the most liked candies"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_6#slide=id.g3bb275f27df_0_6")
 ```
 
@@ -170,7 +230,7 @@ Note that respondents did not simply rank the candy based on preference and we i
 
 **A more conventional approach**:
 
-A bar plot or even a stacked bar plot could work if we computed a single score (proportion of Joy - proportion of Despair perhaps), but with 77 candies, we would need to arrange the bars based on the magnitude or size and just focus on the bars on the extremes. The visualization would likely appear pretty cramped overall if we tried to show every candy.
+A bar plot or even a stacked bar plot could work if we computed a single score (proportion of Joy - proportion of Despair perhaps), but with 76 candies, we would need to arrange the bars based on the magnitude or size and just focus on the bars on the extremes. The visualization would likely appear pretty cramped overall if we tried to show every candy.
 
   * Here's an example of an analysis that utilized bar plots: [https://github.com/phoebewong/candy-hierarchy-2017](https://github.com/phoebewong/candy-hierarchy-2017). Notice, for this example they focused on a couple specific candies which gets around the "cramped" visualization concern.
 
@@ -209,7 +269,7 @@ To review the differences between exploratory and expository data visualizations
 
 ##### Description
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "Plotting the feelings dataset in a basic way with fraction of respondents who reported Joy on the x axis and fraction of respondents who reported despair on the y axis. The data appears to be inversely correlated."}
+```{r iter1Plot, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "Plotting the feelings dataset in a basic way with fraction of respondents who reported Joy on the x axis and fraction of respondents who reported despair on the y axis. The data appears to be inversely correlated."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_9#slide=id.g3be338b6b90_0_9")
 ```
 
@@ -217,9 +277,13 @@ This iteration is an exploratory data analysis step. We're not worried about mak
 
 ##### R code
 
-<details><summary>R code for plotting a scatter plot</summary>
-
 ```{r}
+#| label: iter1R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for plotting a scatter plot"
+
 ##proportion of Joy on x-axis
 ##proportion of Despair on the y-axis
 ##geom_point for scatter plot
@@ -242,7 +306,35 @@ to_plot %>%
 ```
 Note that normally in a first iteration of exploratory data analysis, we might not set the axis labels (they'll default to the column name of whatever is being plotted.), and we might not adjust the text size. Both of these are done here to add clarity to this example.
 
-</details>
+
+##### Python code
+
+```{python}
+#| label: iter1Python
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Python code for plotting a scatter plot"
+
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')                                                #<1>
+fig1, ax1 = plt.subplots()
+ax1.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'])
+ax1.set_xlim(0,1)
+ax1.set_ylim(0,1)
+ax1.minorticks_on()                                                                #<1>
+ax1.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)   #<1>
+ax1.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)   #<1>
+ax1.set_xlabel('Fraction of respondents who reported JOY')
+ax1.set_ylabel('Fraction of respondents who reported DESPAIR')
+plt.show()
+```
+
+1. Replicating the `theme_bw` style of ggplot
+
+Note that normally in a first iteration of exploratory data analysis, we might not set the axis labels (Python won't add any labels) and we might not adjust the text size. Both of these are done here to add clarity to this example.
 
 :::
 
@@ -263,7 +355,7 @@ We can use a labeling function to add the candy names to the plot, labeling spec
 
 ##### Description
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration uses the candy names to label the points. We notice that Any full sized candy bar is on the extreme for the most joy and least despair. Other chocolate candies like Twix and Kit Kat and 100 Grand Bar are near it. On the other extreme are candies like Mary Janes, Peeps, circus peanuts, gum from baseball cards, etc."}
+```{r iter2Plot, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration uses the candy names to label the points. We notice that Any full sized candy bar is on the extreme for the most joy and least despair. Other chocolate candies like Twix and Kit Kat and 100 Grand Bar are near it. On the other extreme are candies like Mary Janes, Peeps, circus peanuts, gum from baseball cards, etc."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_25#slide=id.g3be338b6b90_0_25")
 ```
 
@@ -271,10 +363,13 @@ This is another exploratory data analysis step. Now that we've confirmed the rel
 
 ##### R code
 
-<details><summary>R code for adding the candy names as labels</summary>
+```{r}
+#| label: iter2R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for adding the candy names as labels"
 
-```{r, warning = FALSE, message = FALSE}
-install.packages("ggrepel")
 library(ggrepel) #<1>
 
 to_plot %>%
@@ -293,11 +388,60 @@ to_plot %>%
   theme(text = element_text(size = 14))
 ```
 
-1. Need to load this package for the labeling function
+1. Need to load [ggrepel package](https://ggrepel.slowkow.com/) for the labeling function
 2. Specifies the candy names/variable that will be used for labeling
 2. Uses `geom_text_repel()` from `ggrepel` package to label the points, using the repel part of the function to handle overlapping points/labels
 
-</details>
+##### Python code
+
+<!--
+The adjust_text function has a lot of output that cannot be suppressed in the usual ways because it is standard out.
+The only way to suppress it is to set output to false.
+But then the code blocks are cut up wherever there would be output and the code annotation for #<2> isn't connected with its comment properly.
+So setting this chunk such that it will not evaluate during rendering and just embedding the output figure manually.
+-->
+
+```{python}
+#| label: iter2Python
+#| eval: false
+#| code-fold: show
+#| code-summary: "Python code for adding the candy names as labels"
+
+from adjustText import adjust_text                                               #<2>
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig2, ax2 = plt.subplots()
+ax2.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'])
+ax2.set_xlim(0,1)
+ax2.set_ylim(0,1)
+ax2.minorticks_on()
+ax2.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax2.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax2.set_xlabel('Fraction of respondents who reported JOY')
+ax2.set_ylabel('Fraction of respondents who reported DESPAIR')
+texts = [plt.text(just_candy_props['likeness'].iloc[i],                          #<3>
+                  just_candy_props['dislikeness'].iloc[i],                       #<3>
+                  just_candy_props.index[i])                                     #<3>
+          for i in range(len(just_candy_props)) if i % 3 == 0]                   #<3>
+adjust_text(texts,                                                               #<4>
+  avoid_points = False,                                                          #<4>
+  expand = (0.5, 0.5),                                                           #<4>
+  force_text = (0.5, 0.5),                                                       #<4>
+  arrowprops=dict(arrowstyle="->"))                                              #<4>
+plt.show()
+```
+
+2. Need to load [adjustText package](https://adjusttext.readthedocs.io/en/latest/index.html) for the labeling function. Python equivalent of ggrepel.
+3. Using list comprehension to build an input to the labeling function of what the labels are and where they're going to go. Only labeling one out of every three candies to avoid overcrowding.
+4. Using the adjust_text function from the adjustText package to automatically adjust the position of text labels to minimize overlaps
+
+<!--
+The image embedded below was saved locally after running the above code manually. Note that it does NOT autoupdate if any changes are made to the content.
+-->
+
+![](resources/images/candy_iter2_python.png){fig-alt="Python plot that labels the candy names"}
 
 :::
 
@@ -318,7 +462,7 @@ It looks like chocolate candy (Twix, Kit Kat, 100 Grand Bar...) is among the mos
 
 ##### Description
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds color to distinguish groups, specifically chocolate versus not chocolate groups. Light blue represents chocolate while light pink represents not chocolate candy. We see a fairly clear separation with chocolate on one extreme and non-chocolate on the other with mixing of the groups in the middle."}
+```{r iter3Plot, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds color to distinguish groups, specifically chocolate versus not chocolate groups. Light blue represents chocolate while light pink represents not chocolate candy. We see a fairly clear separation with chocolate on one extreme and non-chocolate on the other with mixing of the groups in the middle."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_39#slide=id.g3be338b6b90_0_39")
 ```
 
@@ -327,14 +471,21 @@ This iteration, uses color to distinguish the data points according to whether o
 ##### R code
 
 ```{r}
+#| label: iter3R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for adding color to distinguish groups"
+
 #removed code related to the labeling for now
+
 to_plot$Chocolate <- "No"                   #<4>
-to_plot$Chocolate[c(13, 22, 26, 28, 34, 44, #<4>
-                    46, 47, 49, 50, 51, 52, #<4>
-                    54, 55, 56, 57, 58, 59, #<4>
-                    60, 61, 62, 63, 64, 65, #<4>
-                    66, 67, 68, 69, 70, 71, #<4>
-                    72, 73, 74, 75, 76,77 )] <- "Yes" #<4>
+to_plot$Chocolate[c(12, 21, 25, 27, 33, 43, #<4>
+                    45, 46, 48, 49, 50, 51, #<4>
+                    53, 54, 55, 56, 57, 58, #<4>
+                    59, 60, 61, 62, 63, 64, #<4>
+                    65, 66, 67, 68, 69, 70, #<4>
+                    71, 72, 73, 74, 75, 76 )] <- "Yes" #<4>
 
 to_plot %>%
   ggplot(aes(x=JOY,
@@ -371,7 +522,7 @@ It looks even more convincing that chocolate candy is among the most liked candy
 
 ##### Description
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds shape as a redundant way to distinguish the groups. light blue triangles now represent chocolate candy while light pink circles represent non chocolate"}
+```{r iter4Plot, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds shape as a redundant way to distinguish the groups. light blue triangles now represent chocolate candy while light pink circles represent non chocolate"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_12#slide=id.g3bb275f27df_0_12")
 ```
 
@@ -380,6 +531,12 @@ This is the first polishing iteration. As discussed in [Chapter 5](https://hutch
 ##### R code
 
 ```{r}
+#| label: iter4R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for using color and shape together"
+
 to_plot %>%
   ggplot(aes(x=JOY,
              y = DESPAIR,
@@ -400,37 +557,37 @@ to_plot %>%
 
 #### Iteration 5
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter5Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_45#slide=id.g3be338b6b90_0_45")
 ```
 
 #### Iteration 6
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter6Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_49#slide=id.g3be338b6b90_0_49")
 ```
 
 #### Iteration 7
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter7Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_57#slide=id.g3be338b6b90_0_57")
 ```
 
 #### Iteration 8
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter8Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_63#slide=id.g3be338b6b90_0_63")
 ```
 
 #### Iteration 9
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter9Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_67#slide=id.g3be338b6b90_0_67")
 ```
 
 #### Iteration 10
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter10Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_71#slide=id.g3be338b6b90_0_71")
 ```
 
@@ -440,79 +597,79 @@ This step is an example of how sometimes there is no "single right choice" when 
 
 #### Iteration 11
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter11Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_125#slide=id.g3be338b6b90_0_125")
 ```
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter11bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_0#slide=id.g3bb275f27df_0_0")
 ```
 
 #### Iteration 12
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter12Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_120#slide=id.g3be338b6b90_0_120")
 ```
 
 #### Iteration 13
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter13Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_87#slide=id.g3be338b6b90_0_87")
 ```
 
 #### Iteration 14
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter14Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_138#slide=id.g3be338b6b90_0_138")
 ```
 
 #### Iteration 15
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter15Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_92#slide=id.g3be338b6b90_0_92")
 ```
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter15bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c26f54f9da_0_0#slide=id.g3c26f54f9da_0_0")
 ```
 
 #### Iteration 16
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter16Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_105#slide=id.g3be338b6b90_0_105")
 ```
 
 #### Iteration 17
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter17Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_133#slide=id.g3be338b6b90_0_133")
 ```
 
 #### Iteration 18
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter18Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_40#slide=id.g3bb275f27df_0_40")
 ```
 
 #### Iteration 19
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter19Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_31#slide=id.g3bb275f27df_0_31")
 ```
 
 #### Iteration 20
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter20Pot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_99#slide=id.g3be338b6b90_0_99")
 ```
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter20bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c26f54f9da_0_8#slide=id.g3c26f54f9da_0_8")
 ```
 
 #### The plot!
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r finalPlot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_146#slide=id.g3be338b6b90_0_146")
 ```
 
@@ -520,7 +677,7 @@ But we're not done yet....
 
 #### The caption!
 
-```{r, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r plotCaption, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_20#slide=id.g3bb275f27df_0_20")
 ```
 
