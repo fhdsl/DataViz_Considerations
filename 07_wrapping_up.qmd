@@ -561,31 +561,27 @@ to_plot %>%
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_45#slide=id.g3be338b6b90_0_45")
 ```
 
-#### Iteration 6
-
 ```{r iter6Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_49#slide=id.g3be338b6b90_0_49")
 ```
 
-#### Iteration 7
+#### Iteration 6
 
 ```{r iter7Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_57#slide=id.g3be338b6b90_0_57")
 ```
 
-#### Iteration 8
-
 ```{r iter8Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_63#slide=id.g3be338b6b90_0_63")
 ```
 
-#### Iteration 9
+#### Iteration 7
 
 ```{r iter9Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_67#slide=id.g3be338b6b90_0_67")
 ```
 
-#### Iteration 10
+#### Iteration 8
 
 ```{r iter10Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_71#slide=id.g3be338b6b90_0_71")
@@ -595,7 +591,7 @@ We want to add some labels to the quadrants in this plot. Viewers need to a quic
 
 This step is an example of how sometimes there is no "single right choice" when it comes to data visualization. Labeling the quadrants could be done in several ways. And if you're in a setting where peak professionalism isn't necessary, you could even have some fun here -- perhaps using emojis instead of words!
 
-#### Iteration 11
+#### Iteration 9
 
 ```{r iter11Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_125#slide=id.g3be338b6b90_0_125")
@@ -605,25 +601,25 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_0#slide=id.g3bb275f27df_0_0")
 ```
 
-#### Iteration 12
-
 ```{r iter12Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_120#slide=id.g3be338b6b90_0_120")
 ```
 
-#### Iteration 13
+#### Iteration 10
 
 ```{r iter13Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_87#slide=id.g3be338b6b90_0_87")
 ```
 
-#### Iteration 14
-
 ```{r iter14Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_138#slide=id.g3be338b6b90_0_138")
 ```
 
-#### Iteration 15
+```{r iter19Plot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_31#slide=id.g3bb275f27df_0_31")
+```
+
+#### Iteration 11
 
 ```{r iter15Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_92#slide=id.g3be338b6b90_0_92")
@@ -633,31 +629,19 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c26f54f9da_0_0#slide=id.g3c26f54f9da_0_0")
 ```
 
-#### Iteration 16
-
-```{r iter16Plot, fig.align = "center", echo = FALSE, out.width="100%"}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_105#slide=id.g3be338b6b90_0_105")
-```
-
-#### Iteration 17
-
-```{r iter17Plot, fig.align = "center", echo = FALSE, out.width="100%"}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_133#slide=id.g3be338b6b90_0_133")
-```
-
-#### Iteration 18
+#### Iteration 12
 
 ```{r iter18Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_40#slide=id.g3bb275f27df_0_40")
 ```
 
-#### Iteration 19
+<div class = "ethics">
 
-```{r iter19Plot, fig.align = "center", echo = FALSE, out.width="100%"}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_31#slide=id.g3bb275f27df_0_31")
-```
+When axes have the same limits, fixing the aspect ratio to 1:1 is the most ethical approach to avoid distorting data.
 
-#### Iteration 20
+</div>
+
+#### Iteration 13
 
 ```{r iter20Pot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_99#slide=id.g3be338b6b90_0_99")

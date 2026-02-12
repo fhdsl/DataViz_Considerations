@@ -313,7 +313,17 @@ div.warning{
   background-image: url("../assets/box_images/warning.png");
 }
 
-
+div.ethics{
+  padding: 1em;
+  margin: 1em 0;
+  padding-left: 100px;
+  background-size: 70px;
+  background-position: 15px center;
+  background-color: #e8ebee;
+  background-image: url("../assets/box_images/justice.png");
+  border: 4px #b842ca;
+  border-style: solid;
+}
 
 div.github{
   border: 4px #000000;
