@@ -314,15 +314,20 @@ div.warning{
 }
 
 div.ethics{
+  border: 4px #b842ca;
+  border-style: solid;
   padding: 1em;
   margin: 1em 0;
   padding-left: 100px;
   background-size: 70px;
+  background-repeat: no-repeat;
   background-position: 15px center;
+  min-height: 120px;
   background-color: #e8ebee;
+}
+
+div.ethics{
   background-image: url("../assets/box_images/justice.png");
-  border: 4px #b842ca;
-  border-style: solid;
 }
 
 div.github{
