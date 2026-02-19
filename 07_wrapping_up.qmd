@@ -1,12 +1,11 @@
 ---
-code-annotations: hover
+title: "Wrapping up"
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    code-annotations: hover
 ---
-
-# Wrapping up
-
-```{r setup, include = FALSE}
-ottrpal::set_knitr_image_path()
-```
 
 ## Learning Objectives
 
@@ -263,7 +262,11 @@ Then the remaining iterations will transition into polishing the visualization i
 To review the differences between exploratory and expository data visualizations, visit [Chapter 2](https://hutchdatascience.org/DataViz_Considerations/02_what_why_intro.html#what-is-data-visualization).
 </div>
 
-#### Iteration 1
+<!--
+Include a description of the iteration instead of just "Iteration 1, etc." and include them in the TOC
+-->
+
+#### 1: Plot the data
 
 ::: {.panel-tabset}
 
@@ -273,7 +276,7 @@ To review the differences between exploratory and expository data visualizations
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_9#slide=id.g3be338b6b90_0_9")
 ```
 
-This iteration is an exploratory data analysis step. We're not worried about making the plot look pretty yet. We just want to look at the data. Primarily we want to see whether or not the relationship that we expect between the joy and despair variables holds true.
+This first iteration is an exploratory data analysis step. We're not worried about making the plot look pretty yet. We just want to look at the data. Primarily we want to see whether or not the relationship that we expect between the joy and despair variables holds true.
 
 ##### R code
 
@@ -349,7 +352,7 @@ We can use a labeling function to add the candy names to the plot, labeling spec
 </details>
 :::
 
-#### Iteration 2
+#### 2: Labeling all points
 
 ::: {.panel-tabset}
 
@@ -359,7 +362,7 @@ We can use a labeling function to add the candy names to the plot, labeling spec
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_25#slide=id.g3be338b6b90_0_25")
 ```
 
-This is another exploratory data analysis step. Now that we've confirmed the relationship between the variables that we expected, we want to know what candies are the most highly ranked and what candies are the least highly ranked. We can use the categorical candy name variable for this and add labels directly to the points.
+This second iteration is another exploratory data analysis step. Now that we've confirmed the relationship between the variables that we expected, we want to know what candies are the most highly ranked and what candies are the least highly ranked. We can use the categorical candy name variable for this and add labels directly to the points.
 
 ##### R code
 
@@ -456,7 +459,7 @@ It looks like chocolate candy (Twix, Kit Kat, 100 Grand Bar...) is among the mos
 </details>
 :::
 
-#### Iteration 3
+#### 3: Distinguishing groups
 
 ::: {.panel-tabset}
 
@@ -466,7 +469,7 @@ It looks like chocolate candy (Twix, Kit Kat, 100 Grand Bar...) is among the mos
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_39#slide=id.g3be338b6b90_0_39")
 ```
 
-This iteration, uses color to distinguish the data points according to whether or not they represent a chocolate candy. We've removed the labeling for now (and will add it back later -- labeling fewer or specific candies only). Note that we're assuming that any full sized candy bar is chocolate since the majority of full sized candy bars tend to have chocolate.
+This third iteration, uses color to distinguish the data points according to whether or not they represent a chocolate candy. We've removed the labeling for now (and will add it back later -- labeling fewer or specific candies only). Note that we're assuming that any full sized candy bar is chocolate since the majority of full sized candy bars tend to have chocolate.
 
 ##### R code
 
@@ -516,7 +519,11 @@ It looks even more convincing that chocolate candy is among the most liked candy
 </details>
 :::
 
-#### Iteration 4
+<!--
+Possibly combine 3 & 4 but I think I want to keep them separate since 4 is an accessibility consideration
+-->
+
+#### 4: Using shape with color
 
 ::: {.panel-tabset}
 
@@ -526,7 +533,7 @@ It looks even more convincing that chocolate candy is among the most liked candy
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_12#slide=id.g3bb275f27df_0_12")
 ```
 
-This is the first polishing iteration. As discussed in [Chapter 5](https://hutchdatascience.org/DataViz_Considerations/04_how_to_improve_viz.html#accessibility-considerations), to enhance accessibility, we don't want to rely on color alone to distinguish groups. So we'll also use shape to distinguish the groups. This is a bit redundant but can be beneficial to our future audience.
+This fourth iteration is the first polishing iteration. As discussed in [Chapter 5](https://hutchdatascience.org/DataViz_Considerations/04_how_to_improve_viz.html#accessibility-considerations), to enhance accessibility, we don't want to rely on color alone to distinguish groups. So we'll also use shape to distinguish the groups. This is a bit redundant but can be beneficial to our future audience.
 
 ##### R code
 
@@ -555,7 +562,31 @@ to_plot %>%
 
 :::
 
-#### Iteration 5
+<div class = "accessibilitya">
+
+When using color to distinguish groups, an important accessibility step is to use shape as a redundant way to distinguish groups. This redunancy increases accessibility for those with color vision deficiency.
+
+</div>
+
+or
+
+<div class = "accessibilityb">
+
+When using color to distinguish groups, an important accessibility step is to use shape as a redundant way to distinguish groups. This redunancy increases accessibility for those with color vision deficiency.
+
+</div>
+
+or
+
+<div class = "accessibilityc">
+
+When using color to distinguish groups, an important accessibility step is to use shape as a redundant way to distinguish groups. This redunancy increases accessibility for those with color vision deficiency.
+
+</div>
+
+
+
+#### 5: Adjusting point size, transparency, and color
 
 ```{r iter5Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_45#slide=id.g3be338b6b90_0_45")
@@ -565,7 +596,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_49#slide=id.g3be338b6b90_0_49")
 ```
 
-#### Iteration 6
+#### 6: Ordering of axes to promote readability
 
 ```{r iter7Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_57#slide=id.g3be338b6b90_0_57")
@@ -575,13 +606,13 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_63#slide=id.g3be338b6b90_0_63")
 ```
 
-#### Iteration 7
+#### 7: Adding quadrant delineations
 
 ```{r iter9Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_67#slide=id.g3be338b6b90_0_67")
 ```
 
-#### Iteration 8
+#### 8: Labeling quadrants
 
 ```{r iter10Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_71#slide=id.g3be338b6b90_0_71")
@@ -591,7 +622,7 @@ We want to add some labels to the quadrants in this plot. Viewers need to a quic
 
 This step is an example of how sometimes there is no "single right choice" when it comes to data visualization. Labeling the quadrants could be done in several ways. And if you're in a setting where peak professionalism isn't necessary, you could even have some fun here -- perhaps using emojis instead of words!
 
-#### Iteration 9
+#### 9: Distinguishing quadrant labels
 
 ```{r iter11Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_125#slide=id.g3be338b6b90_0_125")
@@ -601,11 +632,15 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_0#slide=id.g3bb275f27df_0_0")
 ```
 
+<!--
+More contrast on the color labels a blue for low? / consider using emojis instead
+-->
+
 ```{r iter12Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_120#slide=id.g3be338b6b90_0_120")
 ```
 
-#### Iteration 10
+#### 10: Informative title
 
 ```{r iter13Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_87#slide=id.g3be338b6b90_0_87")
@@ -619,7 +654,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_31#slide=id.g3bb275f27df_0_31")
 ```
 
-#### Iteration 11
+#### 11: Labeling extreme and border points
 
 ```{r iter15Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_92#slide=id.g3be338b6b90_0_92")
@@ -629,7 +664,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c26f54f9da_0_0#slide=id.g3c26f54f9da_0_0")
 ```
 
-#### Iteration 12
+#### 12: Fixing the coordinate ratio
 
 ```{r iter18Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_40#slide=id.g3bb275f27df_0_40")
@@ -641,7 +676,7 @@ When axes have the same limits, fixing the aspect ratio to 1:1 is the most ethic
 
 </div>
 
-#### Iteration 13
+#### 13: Simplifying the legend
 
 ```{r iter20Pot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_99#slide=id.g3be338b6b90_0_99")
@@ -650,6 +685,10 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ```{r iter20bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c26f54f9da_0_8#slide=id.g3c26f54f9da_0_8")
 ```
+
+<!--
+Maybe don't have the legend inside. Outside might be better/preferred since we have labels/text inside. At least discuss the options like direct labeling/etc.
+-->
 
 #### The plot!
 
