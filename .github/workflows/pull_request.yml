@@ -145,7 +145,7 @@ jobs:
         fetch-depth: 0
 
     - name: Run render
-      uses: ottrproject/ottr-preview@main
+      uses: ottrproject/ottr-preview@flatten-zip
       with:
         toggle_website: ${{needs.yaml-check.outputs.toggle_website}}
         docker_image: ${{needs.yaml-check.outputs.rendering_docker_image}}
