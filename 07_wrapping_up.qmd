@@ -918,6 +918,8 @@ This step is an example of how sometimes there is no "single right choice" when 
 #| code-fold: show
 #| code-summary: "R code for labeling quadrants with emojis"
 
+library(ggtext)
+
 to_plot %>%
   ggplot(aes(x=JOY,
              y = DESPAIR,
