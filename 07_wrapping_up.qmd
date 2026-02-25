@@ -36,6 +36,7 @@ Using this [dataset](https://www.scq.ubc.ca/so-much-candy-data-seriously/), we w
 #| label: importR
 #| warning: false
 #| message: false
+#| code-fold: true
 #| code-summary: "R code for data import and preliminary wrangling steps"
 
 library(here)
@@ -119,6 +120,7 @@ nrow(to_plot)
 
 ```{python}
 #| label: importPython
+#| code-fold: true
 #| code-summary: "Python code for data import and preliminary wrangling steps"
 
 import pandas as pd
@@ -177,7 +179,7 @@ just_candy_props.shape[0]
 What variables (specifically what types of variables -- categorical or numerical) are part of this dataset as described?
 </div>
 
-<details><summary>Variables in the candy dataset</summary>
+<details open><summary>Variables in the candy dataset</summary>
 
 This means that the candy dataset (at least given the way we have worked with or "wrangled" it) has a few main variables of interest:
 
@@ -620,7 +622,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,                             #<7>
+  geom_point(size = 3,                             #<7>
              alpha = 0.6                             #<8>
             ) +
   xlim(0, 1) +
@@ -676,7 +678,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,
+  geom_point(size = 3,
              alpha = 0.6
             ) +
   xlim(0, 1) +
@@ -729,7 +731,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,
+  geom_point(size = 3,
              alpha = 0.6
             ) +
   xlim(0, 1) +
@@ -785,7 +787,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,
+  geom_point(size = 3,
              alpha = 0.6
             ) +
   xlim(0, 1) +
@@ -846,7 +848,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,
+  geom_point(size = 3,
              alpha = 0.6
             ) +
   xlim(0, 1) +
@@ -904,7 +906,7 @@ to_plot %>%
 ##### Description
 
 ```{r iter8altPlot, fig.align = "center", echo = FALSE, out.width="100%"}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_71#slide=id.g3be338b6b90_0_71")
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c998b579a3_0_17#slide=id.g3c998b579a3_0_17")
 ```
 
 This step is an example of how sometimes there is no "single right choice" when it comes to data visualization. Labeling the quadrants could be done in several ways. And if you're in a setting where peak professionalism isn't necessary, you could even have some fun here -- perhaps using emojis instead of words!
@@ -926,7 +928,7 @@ to_plot %>%
              color = Chocolate,
              shape = Chocolate)) +
   geom_point(alpha=0.6,
-             size=2.5) +
+             size=3) +
   xlim(0, 1) +
   ylim(1, 0) +
   theme_bw() +
@@ -995,16 +997,8 @@ to_plot %>%
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_125#slide=id.g3be338b6b90_0_125")
 ```
 
-```{r iter9bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter9colorPlot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_0#slide=id.g3bb275f27df_0_0")
-```
-
-<!--
-More contrast on the color labels a blue for low? / consider using emojis instead
--->
-
-```{r iter9cPlot, fig.align = "center", echo = FALSE, out.width="100%"}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_120#slide=id.g3be338b6b90_0_120")
 ```
 
 ##### R code
@@ -1023,7 +1017,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,
+  geom_point(size = 3,
              alpha = 0.6
             ) +
   xlim(0, 1) +
@@ -1085,6 +1079,10 @@ to_plot %>%
 
 ##### Description
 
+```{r iter9bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_120#slide=id.g3be338b6b90_0_120")
+```
+
 ##### R code
 
 ```{r}
@@ -1101,7 +1099,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,
+  geom_point(size = 3,
              alpha = 0.6
             ) +
   xlim(0, 1) +
@@ -1167,16 +1165,8 @@ to_plot %>%
 
 ##### Description
 
-```{r iter10aPlot, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter10Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_87#slide=id.g3be338b6b90_0_87")
-```
-
-```{r iter10bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_138#slide=id.g3be338b6b90_0_138")
-```
-
-```{r iter10cPlot, fig.align = "center", echo = FALSE, out.width="100%"}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_31#slide=id.g3bb275f27df_0_31")
 ```
 
 ##### R code
@@ -1195,7 +1185,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,
+  geom_point(size = 3,
              alpha = 0.6
             ) +
   xlim(0, 1) +
@@ -1271,12 +1261,8 @@ to_plot %>%
 
 ##### Description
 
-```{r iter11aPlot, fig.align = "center", echo = FALSE, out.width="100%"}
+```{r iter11Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_92#slide=id.g3be338b6b90_0_92")
-```
-
-```{r iter11bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c26f54f9da_0_0#slide=id.g3c26f54f9da_0_0")
 ```
 
 ##### R code
@@ -1291,18 +1277,18 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 to_plot <- to_plot %>%
   mutate(label = "")
 
-to_plot[nrow(to_plot), "label"] <- "Any full-sized bar"                               #<34>
-to_plot[nrow(to_plot)-1, "label"] <- "Reese's PB Cups"                                #<34>
-to_plot[nrow(to_plot)-2, "label"] <- to_plot[nrow(to_plot)-2, "column_name"]          #<34>
-to_plot[nrow(to_plot)-3, "label"] <- to_plot[nrow(to_plot)-3, "column_name"]          #<34>
-to_plot[nrow(to_plot)-4, "label"] <- to_plot[nrow(to_plot)-4, "column_name"]          #<34>
+to_plot[nrow(to_plot), "label"] <- "Any full-sized bar"                                         #<34>
+to_plot[which(str_detect(to_plot$column_name, "Peanut Butter")), "label"] <- "Reese's PB Cups"  #<34>
+to_plot[nrow(to_plot)-2, "label"] <- to_plot[nrow(to_plot)-2, "column_name"]                    #<34>
+to_plot[nrow(to_plot)-3, "label"] <- to_plot[nrow(to_plot)-3, "column_name"]                    #<34>
+to_plot[nrow(to_plot)-4, "label"] <- to_plot[nrow(to_plot)-4, "column_name"]                    #<34>
 to_plot[which(to_plot$column_name == "Nerds"), "label"] <- "Nerds"                    #<35>
 to_plot[which(to_plot$column_name == "Skittles"), "label"] <- "Skittles"              #<35>
 to_plot[which(to_plot$column_name == "Starburst"), "label"] <- "Starburst"            #<35>
 to_plot[which(to_plot$column_name == "Sweet Tarts"), "label"] <- "Sweet Tarts"        #<35>
-to_plot[1, "label"] <- "Candy that is the stuff given out for free at restaurants"    #<36>
-to_plot[2, "label"] <- "Gum from baseball cards"                                      #<36>
-to_plot[10, "label"] <- "Circus peanuts"                                              #<36>
+to_plot[1, "label"] <- "Candy that is the stuff given out for free at restaurants"          #<36>
+to_plot[2, "label"] <- "Gum from baseball cards"                                            #<36>
+to_plot[which(str_detect(to_plot$column_name, "marshmallow")), "label"] <- "Circus peanuts" #<36>
 
 to_plot %>%
   ggplot(aes(x = JOY,
@@ -1312,7 +1298,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,
+  geom_point(size = 3,
              alpha = 0.6
             ) +
   xlim(0, 1) +
@@ -1413,7 +1399,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,
+  geom_point(size = 3,
              alpha = 0.6
             ) +
   xlim(0, 1) +
@@ -1521,7 +1507,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,
+  geom_point(size = 3,
              alpha = 0.6
             ) +
   xlim(0, 1) +
@@ -1623,7 +1609,7 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 2.5,
+  geom_point(size = 3,
              alpha = 0.6
             ) +
   xlim(0, 1) +
