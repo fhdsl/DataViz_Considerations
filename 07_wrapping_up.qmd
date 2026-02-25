@@ -1032,25 +1032,25 @@ to_plot %>%
   geom_hline(aes(yintercept=0.5), linetype = 'dashed') +
   geom_vline(aes(xintercept=0.5), linetype = 'dashed') +
   annotate("richtext",                                                   #<25>
-           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>    #<25>
+           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>
                     <span style='color: #409AA6;'>Low</span> Despair",   #<25>
            x = 0.955,
            y = 0.025
           ) +
   annotate("richtext",                                                   #<26>
-           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>    #<26>
+           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>
                     <span style='color: #CB2C2C;'>High</span> Despair",  #<26>
            x = 0.955,
            y = 0.975
           ) +
   annotate("richtext",                                                   #<27>
-           label = "<span style='color: #409AA6;'>Low</span> Joy<br>     #<27>
+           label = "<span style='color: #409AA6;'>Low</span> Joy<br>
                     <span style='color: #CB2C2C;'>High</span> Despair",  #<27>
            x = 0.045,
            y = 0.975
           ) +
   annotate("richtext",                                                   #<28>
-           label = "<span style='color: #409AA6;'>Low</span> Joy<br>     #<28>
+           label = "<span style='color: #409AA6;'>Low</span> Joy<br>
                     <span style='color: #409AA6;'>Low</span> Despair",   #<20>
            x = 0.045,
            y = 0.025
@@ -1084,6 +1084,8 @@ to_plot %>%
 ::: {.panel-tabset}
 
 ##### Description
+
+##### R code
 
 ```{r}
 #| label: iter9bR
@@ -1121,27 +1123,27 @@ to_plot %>%
                     <span style='color: #CB2C2C;'>High</span> Despair",
            x = 0.955,
            y = 0.975,
-           fill = NA,                                                   #<29>
-           label.color = NA,                                            #<30>
-           label.padding = grid::unit(rep(0, 4), "pt")                  #<31>
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
           ) +
   annotate("richtext",
            label = "<span style='color: #409AA6;'>Low</span> Joy<br>
                     <span style='color: #CB2C2C;'>High</span> Despair",
            x = 0.045,
            y = 0.975,
-           fill = NA,                                                  #<29>
-           label.color = NA,                                           #<30>
-           label.padding = grid::unit(rep(0, 4), "pt")                 #<31>
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
           ) +
   annotate("richtext",
            label = "<span style='color: #409AA6;'>Low</span> Joy<br>
                     <span style='color: #409AA6;'>Low</span> Despair",
            x = 0.045,
            y = 0.025,
-           fill = NA,                                                 #<29>
-           label.color = NA,                                          #<30>
-           label.padding = grid::unit(rep(0, 4), "pt")                #<31>
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
           ) +
   scale_color_manual(values = c("Yes" = "#543210",
                                 "No" = "#00008B")) +
@@ -1154,6 +1156,8 @@ to_plot %>%
 29. Makes the label background transparent
 30. Removes the box outline from around the label
 31. Removes padding
+
+##### Python code
 
 :::
 
@@ -1247,8 +1251,6 @@ to_plot %>%
 
 32. Setting the title including using <b></b> to bold the title, and a span to color "Chocolate" in the title to match the color scheme
 33. Enables the markdown rendering (like the bolding) in the title and also centers it because of the hjust equals 0.5 argument
-
-```
 
 ##### Python code
 
