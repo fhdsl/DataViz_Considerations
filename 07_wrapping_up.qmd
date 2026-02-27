@@ -512,7 +512,6 @@ to_plot %>%
 
 ```{python}
 #| label: iter3Python
-#| reticulate: false
 #| warning: false
 #| message: false
 #| code-fold: show
@@ -529,8 +528,7 @@ labels[np.array([12, 21, 25, 27, 33, 43,
        71, 72, 73, 74, 75, 76])-1] = "Yes"
 colors = (labels == 'Yes').astype(int)
 
-just_candy_props['Chocolate'] = pd.Series(labels, index = just_candy_props.index)
-just_candy_props['colors'] = pd.Series(colors, index = just_candy_props.index)
+just_candy_props = just_candy_props.assign(Chocolate=labels, colors=colors)
 
 mpl.rcParams["font.size"] = 14
 
