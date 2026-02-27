@@ -543,7 +543,7 @@ ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
 ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 
-ax.legend(handles=scatter.legend_elements()[0], labels=just_candy_props['Chocolate'].unique(), title = "Chocolate")
+ax.legend(handles=list(scatter.legend_elements()[0]), labels=list(just_candy_props['Chocolate'].unique()), title = "Chocolate")
 plt.show()
 
 ```
