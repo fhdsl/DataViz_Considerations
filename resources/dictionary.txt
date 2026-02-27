@@ -1,3 +1,4 @@
+adjustText
 AJS
 AnVIL
 Audiographer
@@ -7,6 +8,7 @@ Bioinformatic
 bioinformatics
 BIPOC
 Bloomberg
+bolding
 Bookdown
 chapt
 Charlson
@@ -35,9 +37,12 @@ fyi
 GDSCN
 geospatial
 Generis
+ggplot
+ggrepel
 GH
 Github
 GitHub
+hjust
 https
 ies
 iframe
@@ -47,6 +52,7 @@ interpretability
 intra
 ITCR
 itcrtraining
+iteratively
 ITN
 jitter
 Kaplan
