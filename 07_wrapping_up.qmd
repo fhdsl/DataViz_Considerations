@@ -15,7 +15,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 ## Iterative Example
 
-To summarize all of the considerations and best practices discussed in the chapters before this, the first section of this final chapter will walk through an example, step-by-step, of iteratively building up an expository data visualization.
+To summarize all of the considerations and best practices discussed in the chapters before this, the first section of this final chapter will walk through an example, step-by-step, of iteratively building up an expository data visualization. Each step or iteration showcases a different view of the same data as we refine how to effectively communicate the message we want to convey for the audience.
 
 ### Data Introduction
 
@@ -131,7 +131,7 @@ import matplotlib.pyplot as plt
 df_2017 = pd.read_csv('data/candyhierarchy2017.csv', encoding = "ISO-8859-1")
 
 just_q6= df_2017.filter(like="Q6 |", axis=1)
-q6_counts = just_q6.apply(lambda x: x.value_counts()).T
+q6_counts = just_q6.apply(lambda x: x.value_counts(dropna=False)).T
 q6_counts['total_response'] = pd.DataFrame.sum(q6_counts, axis=1)
 q6_counts['likeness'] = q6_counts['JOY'] / q6_counts['total_response']
 q6_counts['indifference'] = q6_counts['MEH'] / q6_counts['total_response']
@@ -165,7 +165,7 @@ just_candy_props = q6_counts[~q6_counts.index.isin(["Bonkers (the board game)",
                                                     "Vials of pure high fructose corn syrup, for main-lining into your vein",
                                                     "Vicodin",
                                                     "White Bread",
-                                                    "Whole Wheat anything"])]
+                                                    "Whole Wheat anything"])].sort_values(by='likeness')
 
 just_candy_props.shape[0]
 
@@ -417,7 +417,7 @@ mpl.rcParams["font.size"] = 14
 
 plt.style.use('seaborn-v0_8-deep')
 fig2, ax2 = plt.subplots()
-ax2.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'])
+ax2.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'], s = 10) #<3>
 ax2.set_xlim(0,1)
 ax2.set_ylim(0,1)
 ax2.minorticks_on()
@@ -425,21 +425,20 @@ ax2.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
 ax2.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
 ax2.set_xlabel('Fraction of respondents who reported JOY')
 ax2.set_ylabel('Fraction of respondents who reported DESPAIR')
-texts = [plt.text(just_candy_props['likeness'].iloc[i],                          #<3>
-                  just_candy_props['dislikeness'].iloc[i],                       #<3>
-                  just_candy_props.index[i])                                     #<3>
-          for i in range(len(just_candy_props)) if i % 3 == 0]                   #<3>
-adjust_text(texts,                                                               #<4>
-  avoid_points = False,                                                          #<4>
-  expand = (0.5, 0.5),                                                           #<4>
-  force_text = (0.5, 0.5),                                                       #<4>
-  arrowprops=dict(arrowstyle="->"))                                              #<4>
+texts = [plt.text(just_candy_props['likeness'].iloc[i],                          #<4>
+                  just_candy_props['dislikeness'].iloc[i],                       #<4>
+                  just_candy_props.index[i],                                     #<4>
+                  fontsize = 6)                                                  #<4>
+          for i in range(len(just_candy_props))]                                 #<4>
+adjust_text(texts,                                                               #<5>
+  avoid_points = True)                                                           #<5>
 plt.show()
 ```
 
 2. Need to load [adjustText package](https://adjusttext.readthedocs.io/en/latest/index.html) for the labeling function. Python equivalent of ggrepel.
-3. Using list comprehension to build an input to the labeling function of what the labels are and where they're going to go. Only labeling one out of every three candies to avoid overcrowding.
-4. Using the adjust_text function from the adjustText package to automatically adjust the position of text labels to minimize overlaps
+3. Decreasing the size of the points a bit for readability. Default is s = 35.
+4. Using list comprehension to build an input to the labeling function of what the labels are and where they're going to go. Only labeling one out of every three candies to avoid overcrowding.
+5. Using the adjust_text function from the adjustText package to automatically adjust the position of text labels to minimize overlaps
 
 <!--
 The image embedded below was saved locally after running the above code manually. Note that it does NOT autoupdate if any changes are made to the content.
@@ -518,6 +517,36 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Python code for adding color to distinguish groups"
 
+import numpy as np
+
+labels= np.full(just_candy_props.shape[0], 'No', dtype='U3')
+labels[np.array([12, 21, 25, 27, 33, 43,
+       45, 46, 48, 49, 50, 51,
+       53, 54, 55, 56, 57, 58,
+       59, 60, 61, 62, 63, 64,
+       65, 66, 67, 68, 69, 70,
+       71, 72, 73, 74, 75, 76])-1] = "Yes"
+colors = (labels == 'Yes').astype(int)
+
+just_candy_props['Chocolate'] = pd.Series(labels, index = just_candy_props.index)
+just_candy_props['colors'] = pd.Series(colors, index = just_candy_props.index)
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+scatter = ax.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'], c = just_candy_props['colors'])
+ax.set_xlim(0,1)
+ax.set_ylim(0,1)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+ax.legend(handles=scatter.legend_elements()[0], labels=just_candy_props['Chocolate'].unique(), title = "Chocolate")
+plt.show()
+
 ```
 
 :::
@@ -583,7 +612,35 @@ to_plot %>%
 #| warning: false
 #| message: false
 #| code-fold: show
-#| code-summary: "Python code for adding color to distinguish groups"
+#| code-summary: "Python code for using color and shape together"
+
+shapes = np.where(colors == 1, "^", "o")
+just_candy_props['shapes'] = pd.Series(shapes, index = just_candy_props.index)
+
+mask_choc = np.where(shapes == "^", True, False)
+mask_nc = ~mask_choc
+
+vmin = colors.min()
+vmax = colors.max()
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", vmin = vmin, vmax = vmax, label = "Yes")
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", vmin = vmin, vmax = vmax, label = "No")
+ax.set_xlim(0,1)
+ax.set_ylim(0,1)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate")
+plt.show()
+
 
 ```
 
@@ -647,7 +704,27 @@ to_plot %>%
 #| warning: false
 #| message: false
 #| code-fold: show
-#| code-summary: "Python code for adjusting the point size, transparency, and color"
+#| code-summary: "Python code for adjusting the point transparency and color"
+
+just_candy_props['colors'] = np.where(just_candy_props['Chocolate'] == "Yes", "#543210", "#00008B")
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(0,1)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate")
+plt.show()
 
 ```
 :::
@@ -703,6 +780,24 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Python code for switching the axes"
 
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+scatter_choc = ax.scatter(just_candy_props['dislikeness'][mask_choc],just_candy_props['likeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['dislikeness'][mask_nc],just_candy_props['likeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(0,1)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_ylabel('Fraction of respondents who reported JOY')
+ax.set_xlabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate")
+plt.show()
+
 ```
 
 :::
@@ -756,6 +851,24 @@ to_plot %>%
 #| message: false
 #| code-fold: show
 #| code-summary: "Python code for switching the axes back and reordering y"
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate", loc = 'lower right')
+plt.show()
 
 ```
 
@@ -814,6 +927,26 @@ to_plot %>%
 #| message: false
 #| code-fold: show
 #| code-summary: "Python code for adding quadrant delineations"
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate", loc = "lower right")
+plt.show()
 
 ```
 
@@ -896,6 +1029,30 @@ to_plot %>%
 #| message: false
 #| code-fold: show
 #| code-summary: "Python code for labeling quadrants"
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+ax.text(0.78, 0.1, "High Joy\nLow Despair", fontsize = 10)
+ax.text(0.78, 0.975, "High Joy\nHigh Despair", fontsize = 10)
+ax.text(0.025, 0.975, "Low Joy\nHigh Despair", fontsize = 10)
+ax.text(0.025, 0.1, "Low Joy\nLow Despair", fontsize = 10)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate", loc = "center right")
+plt.show()
 
 ```
 
