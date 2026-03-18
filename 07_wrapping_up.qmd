@@ -1137,7 +1137,90 @@ to_plot %>%
 #| warning: false
 #| message: false
 #| code-fold: show
-#| code-summary: "Python code for labeling quadrants"
+#| code-summary: "Python code for labeling quadrants with emojis"
+
+from matplotlib.cbook import get_sample_data
+from matplotlib.offsetbox import (AnnotationBbox, DrawingArea, OffsetImage,
+                                  TextArea)
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+
+with get_sample_data("resources/images/icons8-smiling.png") as file:
+    arr_img_smiling = plt.imread(file)
+
+im_sm_2 = OffsetImage(arr_img_smiling, zoom=0.2)
+
+with get_sample_data("resources/images/icons8-smiling-face-with-tear.png") as file:
+    arr_img_smiling_tear = plt.imread(file)
+
+im_smt_2 = OffsetImage(arr_img_smiling_tear, zoom=0.2)
+
+with get_sample_data("resources/images/icons8-unhappy.png") as file:
+    arr_img_sad = plt.imread(file)
+
+im_s_2 = OffsetImage(arr_img_sad, zoom=0.2)
+
+with get_sample_data("resources/images/icons8-neutral.png") as file:
+    arr_img_neutral = plt.imread(file)
+
+im_n_2 = OffsetImage(arr_img_neutral, zoom=0.2)
+
+fig, ax = plt.subplots()
+
+#im_sm.image.axes = ax
+#im_smt.image.axes = ax
+#im_s.image.axes = ax
+#im_n.image.axes = ax
+
+ab1 = AnnotationBbox(im_sm_2, (0.955, 0.025),
+                    xybox = (0.955, 0.025),
+                    xycoords='data',
+                    boxcoords = 'data',
+                    frameon = False)
+
+ax.add_artist(ab1)
+
+ab2 = AnnotationBbox(im_smt_2, (0.955, 0.975),
+                    xybox=(0.955, 0.975),
+                    xycoords='data',
+                    boxcoords="data",
+                    frameon = False)
+
+ax.add_artist(ab2)
+
+ab3 = AnnotationBbox(im_s_2, (0.045, 0.975),
+                    xybox=(0.045, 0.975),
+                    xycoords='data',
+                    boxcoords="data",
+                    frameon = False)
+
+ax.add_artist(ab3)
+
+ab4 = AnnotationBbox(im_n_2, (0.045, 0.025),
+                    xybox=(0.045, 0.025),
+                    xycoords='data',
+                    boxcoords="data",
+                    frameon = False)
+
+ax.add_artist(ab4)
+
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate", loc = "center right")
+plt.show()
 
 ```
 
@@ -1226,6 +1309,98 @@ to_plot %>%
 #| message: false
 #| code-fold: show
 #| code-summary: "Python code for distinguishing quadrant labels"
+
+from matplotlib import transforms
+
+import matplotlib.transforms as transforms
+
+def multicolor_text(ax, x, y, an_words, an_colors, fontsize=10):
+    """
+    Draw multi‑colored text at (x, y) in data coordinates.
+    Handles newlines and resets horizontal position correctly.
+
+    Parameters
+    ----------
+    ax : matplotlib Axes
+    x, y : float
+        Starting position in data coordinates.
+    an_words : list of str
+        Text chunks (may include '\n').
+    an_colors : list of str
+        Colors for each chunk.
+    fontsize : int
+        Font size for all chunks.
+    """
+
+    renderer = ax.figure.canvas.get_renderer()
+
+    # Build a starting transform that includes the initial x,y offset
+    start_t = ax.transData + transforms.ScaledTranslation(0, 0, ax.figure.dpi_scale_trans)
+    t = start_t
+
+    for w, c in zip(an_words, colors):
+        # Draw the text chunk
+        text = ax.text(x, y, w, color=c, fontsize=fontsize,
+                       transform=t, va='bottom', ha='left', **kwargs)
+
+        # Measure its size
+        ex = text.get_window_extent(renderer=renderer)
+
+        if "\n" in w:
+            # Reset horizontal offset, move down one line
+            t = transforms.offset_copy(start_t, x=0, y=ex.height, units='dots')
+        else:
+            # Move right for next word
+            t = transforms.offset_copy(t, x=ex.width, units='dots')
+
+
+#ax.text(0.78, 0.1, "High Joy\nLow Despair", fontsize = 10)
+smile_x = 0.78
+smile_y = 0.1
+smile_words = ["High ", "Joy\n", "Low ", "Despair"]
+smile_colors = ["#CB2C2C", "Black", "#409AA6", "Black"]
+
+#ax.text(0.78, 0.975, "High Joy\nHigh Despair", fontsize = 10)
+smiletear_x = 0.78
+smiletear_y = 0.975
+smiletear_words = ["High ", "Joy\n", "High ", "Despair"]
+smiletear_colors = ["#CB2C2C", "Black", "#CB2C2C", "Black"]
+
+#ax.text(0.025, 0.975, "Low Joy\nHigh Despair", fontsize = 10)
+sad_x = 0.025
+sad_y = 0.975
+sad_words = ["Low ", "Joy\n", "High ", "Despair"]
+sad_colors = ["#409AA6", "Black", "#CB2C2C", "Black"]
+
+#ax.text(0.025, 0.1, "Low Joy\nLow Despair", fontsize = 10)
+neutral_x = 0.025
+neutral_y = 0.1
+neutral_words = ["Low ", "Joy\n", "Low ", "Despair"]
+neutral_colors = ["#409AA6", "Black", "#409AA6", "Black"]
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+multicolor_text(ax, smile_x, smile_y, smile_words, smile_colors)
+multicolor_text(ax, smiletear_x, smiletear_y, smiletear_words, smiletear_colors)
+multicolor_text(ax, sad_x, sad_y, sad_words, sad_colors)
+multicolor_text(ax, neutral_x, neutral_y, neutral_words, neutral_colors)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate", loc = "center right")
+plt.show()
 
 ```
 
