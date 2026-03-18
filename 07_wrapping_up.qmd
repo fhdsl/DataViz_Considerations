@@ -1334,10 +1334,10 @@ def multicolor_text(ax, x, y, an_words, an_colors, fontsize=10):
     start_t = ax.transData + transforms.ScaledTranslation(0, 0, ax.figure.dpi_scale_trans)
     t = start_t
 
-    for w, c in zip(an_words, colors):
+    for w, c in zip(an_words, an_colors):
         # Draw the text chunk
         text = ax.text(x, y, w, color=c, fontsize=fontsize,
-                       transform=t, va='bottom', ha='left', **kwargs)
+                       transform=t, va='bottom', ha='left')
 
         # Measure its size
         ex = text.get_window_extent(renderer=renderer)
