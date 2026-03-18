@@ -1399,6 +1399,7 @@ scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_pro
 scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
+fig.canvas.draw()
 multicolor_text(ax, smile_x, smile_y, smile_lines)
 multicolor_text(ax, smiletear_x, smiletear_y, smiletear_lines)
 multicolor_text(ax, sad_x, sad_y, sad_lines)
