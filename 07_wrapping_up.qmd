@@ -1139,34 +1139,28 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Python code for labeling quadrants with emojis"
 
-from matplotlib.cbook import get_sample_data
+
 from matplotlib.offsetbox import (AnnotationBbox, DrawingArea, OffsetImage,
                                   TextArea)
-import os
 
 mpl.rcParams["font.size"] = 14
-mpl.rcParams['examples.directory'] = os.getcwd()
 
 plt.style.use('seaborn-v0_8-deep')
 
-with get_sample_data("resources/images/icons8-smiling.png") as file:
-    arr_img_smiling = plt.imread(file)
 
+arr_img_smiling = plt.imread("resources/images/icons8-smiling.png")
 im_sm_2 = OffsetImage(arr_img_smiling, zoom=0.2)
 
-with get_sample_data("resources/images/icons8-smiling-face-with-tear.png") as file:
-    arr_img_smiling_tear = plt.imread(file)
 
+arr_img_smiling_tear = plt.imread("resources/images/icons8-smiling-face-with-tear.png")
 im_smt_2 = OffsetImage(arr_img_smiling_tear, zoom=0.2)
 
-with get_sample_data("resources/images/icons8-unhappy.png") as file:
-    arr_img_sad = plt.imread(file)
 
+arr_img_sad = plt.imread("resources/images/icons8-unhappy.png")
 im_s_2 = OffsetImage(arr_img_sad, zoom=0.2)
 
-with get_sample_data("resources/images/icons8-neutral.png") as file:
-    arr_img_neutral = plt.imread(file)
 
+arr_img_neutral = plt.imread("resources/images/icons8-neutral.png")
 im_n_2 = OffsetImage(arr_img_neutral, zoom=0.2)
 
 fig, ax = plt.subplots()
