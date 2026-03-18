@@ -1310,44 +1310,39 @@ from matplotlib import transforms
 
 import matplotlib.transforms as transforms
 
-def multicolor_text(ax, x, y, an_words, an_colors, fontsize=10):
+import matplotlib.transforms as transforms
+
+def multicolor_text(ax, x, y, lines, fontsize=10):
     """
-    Draw multi‑colored text at (x, y) in data coordinates.
-    Handles newlines and resets horizontal position correctly.
+    lines: list of lines, where each line is a list of (word, color) tuples.
 
-    Parameters
-    ----------
-    ax : matplotlib Axes
-    x, y : float
-        Starting position in data coordinates.
-    an_words : list of str
-        Text chunks (may include '\n').
-    an_colors : list of str
-        Colors for each chunk.
-    fontsize : int
-        Font size for all chunks.
+    Example:
+    lines = [
+        [("High ", "#CB2C2C"), ("Joy", "black")],
+        [("Low ", "#409AA6"), ("Despair", "black")]
+    ]
     """
+    fig = ax.figure
+    renderer = fig.canvas.get_renderer()
 
-    renderer = ax.figure.canvas.get_renderer()
+    # First, get a line height from a dummy text
+    dummy = ax.text(x, y, "Ag", fontsize=fontsize, va="bottom", ha="left")
+    bbox = dummy.get_window_extent(renderer=renderer)
+    line_height = bbox.height
+    dummy.remove()
 
-    # Build a starting transform that includes the initial x,y offset
-    start_t = ax.transData + transforms.ScaledTranslation(0, 0, ax.figure.dpi_scale_trans)
-    t = start_t
+    for line_idx, line in enumerate(lines):
+        # vertical offset: move down by line_idx * line_height
+        t_line = transforms.offset_copy(ax.transData, x=0, y=-line_idx*line_height, units="dots")
 
-    for w, c in zip(an_words, an_colors):
-        # Draw the text chunk
-        text = ax.text(x, y, w, color=c, fontsize=fontsize,
-                       transform=t, va='bottom', ha='left')
+        x_offset = 0
+        for word, color in line:
+            t_word = transforms.offset_copy(t_line, x=x_offset, y=0, units="dots")
+            text = ax.text(x, y, word, color=color, fontsize=fontsize,
+                           transform=t_word, va="bottom", ha="left")
+            ex = text.get_window_extent(renderer=renderer)
+            x_offset += ex.width
 
-        # Measure its size
-        ex = text.get_window_extent(renderer=renderer)
-
-        if "\n" in w:
-            # Reset horizontal offset, move down one line
-            t = transforms.offset_copy(start_t, x=0, y=ex.height, units='dots')
-        else:
-            # Move right for next word
-            t = transforms.offset_copy(t, x=ex.width, units='dots')
 
 
 #ax.text(0.78, 0.1, "High Joy\nLow Despair", fontsize = 10)
@@ -1374,6 +1369,26 @@ neutral_y = 0.1
 neutral_words = ["Low ", "Joy\n", "Low ", "Despair"]
 neutral_colors = ["#409AA6", "Black", "#409AA6", "Black"]
 
+smile_lines = [
+    [("High ", "#CB2C2C"), ("Joy", "black")],
+    [("Low ", "#409AA6"), ("Despair", "black")]
+]
+
+smiletear_lines = [
+    [("High ", "#CB2C2C"), ("Joy", "black")],
+    [("High ", "#CB2C2C"), ("Despair", "black")]
+]
+
+sad_lines = [
+    [("Low ", "#409AA6"), ("Joy", "black")],
+    [("High ", "#CB2C2C"), ("Despair", "black")]
+]
+
+neutral_lines = [
+    [("Low ", "#409AA6"), ("Joy", "black")],
+    [("Low ", "#409AA6"), ("Despair", "black")]
+]
+
 mpl.rcParams["font.size"] = 14
 
 plt.style.use('seaborn-v0_8-deep')
@@ -1384,10 +1399,10 @@ scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_pro
 scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
-multicolor_text(ax, smile_x, smile_y, smile_words, smile_colors)
-multicolor_text(ax, smiletear_x, smiletear_y, smiletear_words, smiletear_colors)
-multicolor_text(ax, sad_x, sad_y, sad_words, sad_colors)
-multicolor_text(ax, neutral_x, neutral_y, neutral_words, neutral_colors)
+multicolor_text(ax, smile_x, smile_y, smile_lines)
+multicolor_text(ax, smiletear_x, smiletear_y, smiletear_lines)
+multicolor_text(ax, sad_x, sad_y, sad_lines)
+multicolor_text(ax, neutral_x, neutral_y, neutral_lines)
 ax.minorticks_on()
 ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
 ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
