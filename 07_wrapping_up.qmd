@@ -1142,6 +1142,7 @@ to_plot %>%
 from matplotlib.cbook import get_sample_data
 from matplotlib.offsetbox import (AnnotationBbox, DrawingArea, OffsetImage,
                                   TextArea)
+import os
 
 mpl.rcParams["font.size"] = 14
 mpl.rcParams['examples.directory'] = os.getcwd()
