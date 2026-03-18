@@ -1312,11 +1312,11 @@ import matplotlib.transforms as transforms
 
 import matplotlib.transforms as transforms
 
-def multicolor_text(ax, x, y, lines, fontsize=10, hpad=2, vpad=2):
+def multicolor_text(ax, x, y, lines, fontsize=10, hpad=4, vpad=2):
     """
     lines: list of lines, where each line is a list of (word, color) tuples.
 
-    hpad, vpad are in points (roughtly pixels on screen)
+    hpad, vpad: padding in points
 
     Example:
     lines = [
@@ -1328,21 +1328,21 @@ def multicolor_text(ax, x, y, lines, fontsize=10, hpad=2, vpad=2):
     renderer = fig.canvas.get_renderer()
 
     # First, get a line height from a dummy text
-    dummy = ax.text(x, y, "Ag", fontsize=fontsize, va="bottom", ha="left")
-    bbox = dummy.get_window_extent(renderer=renderer)
-    line_height = bbox.height
+    dummy = ax.text(0, 0, "Ag", fontsize=fontsize)
+    line_height = dummy.get_window_extent(renderer=renderer).height
     dummy.remove()
 
     for line_idx, line in enumerate(lines):
         # vertical offset for this line
-        dy = -(line_height + vpad) + line_idx
-        base_t = transforms.offset_copy(ax.transData, x=0, y=dy, units='dots')
+        dy = (line_height + vpad) * line_idx
+        # Offset transform for this line
+        t_line = transforms.offset_copy(ax.transData, x=0, y=dy, units='dots')
 
         x_offset = 0
         for word, color in line:
-            t = transforms.offset_copy(base_t, x=x_offset, y=0, units="dots")
+            t_word = transforms.offset_copy(t_line, x=x_offset, y=0, units="dots")
             text = ax.text(x, y, word, color=color, fontsize=fontsize,
-                           transform=t, va="bottom", ha="left")
+                           transform=t_word, va="top", ha="left")
             ex = text.get_window_extent(renderer=renderer)
             x_offset += ex.width + hpad
 
