@@ -1312,9 +1312,11 @@ import matplotlib.transforms as transforms
 
 import matplotlib.transforms as transforms
 
-def multicolor_text(ax, x, y, lines, fontsize=10):
+def multicolor_text(ax, x, y, lines, fontsize=10, hpad=2, vpad=2):
     """
     lines: list of lines, where each line is a list of (word, color) tuples.
+
+    hpad, vpad are in points (roughtly pixels on screen)
 
     Example:
     lines = [
@@ -1332,16 +1334,17 @@ def multicolor_text(ax, x, y, lines, fontsize=10):
     dummy.remove()
 
     for line_idx, line in enumerate(lines):
-        # vertical offset: move down by line_idx * line_height
-        t_line = transforms.offset_copy(ax.transData, x=0, y=-line_idx*line_height, units="dots")
+        # vertical offset for this line
+        dy = -(line_height + vpad) + line_idx
+        base_t = transforms.offset_copy(ax.transData, x=0, y=dy, units='dots')
 
         x_offset = 0
         for word, color in line:
-            t_word = transforms.offset_copy(t_line, x=x_offset, y=0, units="dots")
+            t = transforms.offset_copy(base_t, x=x_offset, y=0, units="dots")
             text = ax.text(x, y, word, color=color, fontsize=fontsize,
-                           transform=t_word, va="bottom", ha="left")
+                           transform=t, va="bottom", ha="left")
             ex = text.get_window_extent(renderer=renderer)
-            x_offset += ex.width
+            x_offset += ex.width + hpad
 
 
 
