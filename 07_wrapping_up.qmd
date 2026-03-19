@@ -1041,10 +1041,10 @@ scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_pro
 scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
-ax.text(0.78, 0.1, "High Joy\nLow Despair", fontsize = 10, ha = 'center', va = 'center')
-ax.text(0.78, 0.975, "High Joy\nHigh Despair", fontsize = 10, ha = 'center', va = 'center')
-ax.text(0.025, 0.975, "Low Joy\nHigh Despair", fontsize = 10, ha = 'center', va = 'center')
-ax.text(0.025, 0.1, "Low Joy\nLow Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.text(0.88, 0.1, "High Joy\nLow Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.text(0.88, 0.875, "High Joy\nHigh Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.text(0.125, 0.875, "Low Joy\nHigh Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.text(0.125, 0.1, "Low Joy\nLow Despair", fontsize = 10, ha = 'center', va = 'center')
 ax.minorticks_on()
 ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
 ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
@@ -1302,7 +1302,7 @@ to_plot %>%
 ##### Python code
 
 ```{python}
-#| label: iter9Python
+#| label: iter9aPython
 #| warning: false
 #| message: false
 #| code-fold: show
