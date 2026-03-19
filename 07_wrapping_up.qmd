@@ -1310,10 +1310,6 @@ to_plot %>%
 
 from matplotlib import transforms
 
-import matplotlib.transforms as transforms
-
-import matplotlib.transforms as transforms
-
 def multicolor_text(ax, x, y, lines, fontsize=10, hpad=4, vpad=4):
     """
     lines: list of lines, where each line is a list of (word, color) tuples.
@@ -1382,42 +1378,30 @@ def multicolor_text(ax, x, y, lines, fontsize=10, hpad=4, vpad=4):
 #ax.text(0.78, 0.1, "High Joy\nLow Despair", fontsize = 10)
 smile_x = 0.88
 smile_y = 0.05
-smile_words = ["High ", "Joy\n", "Low ", "Despair"]
-smile_colors = ["#CB2C2C", "Black", "#409AA6", "Black"]
-
-#ax.text(0.78, 0.975, "High Joy\nHigh Despair", fontsize = 10)
-smiletear_x = 0.88
-smiletear_y = 0.875
-smiletear_words = ["High ", "Joy\n", "High ", "Despair"]
-smiletear_colors = ["#CB2C2C", "Black", "#CB2C2C", "Black"]
-
-#ax.text(0.025, 0.975, "Low Joy\nHigh Despair", fontsize = 10)
-sad_x = 0.125
-sad_y = 0.875
-sad_words = ["Low ", "Joy\n", "High ", "Despair"]
-sad_colors = ["#409AA6", "Black", "#CB2C2C", "Black"]
-
-#ax.text(0.025, 0.1, "Low Joy\nLow Despair", fontsize = 10)
-neutral_x = 0.125
-neutral_y = 0.05
-neutral_words = ["Low ", "Joy\n", "Low ", "Despair"]
-neutral_colors = ["#409AA6", "Black", "#409AA6", "Black"]
-
 smile_lines = [
     [("High ", "#CB2C2C"), ("Joy", "black")],
     [("Low ", "#409AA6"), ("Despair", "black")]
 ]
 
+#ax.text(0.78, 0.975, "High Joy\nHigh Despair", fontsize = 10)
+smiletear_x = 0.88
+smiletear_y = 0.875
 smiletear_lines = [
     [("High ", "#CB2C2C"), ("Joy", "black")],
     [("High ", "#CB2C2C"), ("Despair", "black")]
 ]
 
+#ax.text(0.025, 0.975, "Low Joy\nHigh Despair", fontsize = 10)
+sad_x = 0.125
+sad_y = 0.875
 sad_lines = [
     [("Low ", "#409AA6"), ("Joy", "black")],
     [("High ", "#CB2C2C"), ("Despair", "black")]
 ]
 
+#ax.text(0.025, 0.1, "Low Joy\nLow Despair", fontsize = 10)
+neutral_x = 0.125
+neutral_y = 0.05
 neutral_lines = [
     [("Low ", "#409AA6"), ("Joy", "black")],
     [("Low ", "#409AA6"), ("Despair", "black")]
@@ -1531,6 +1515,70 @@ to_plot %>%
 29. Makes the label background transparent
 30. Removes the box outline from around the label
 31. Removes padding
+
+##### Python code
+
+```{python}
+#| label: iter9bPython
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Simplified Python code for distinguishing quadrant labels"
+
+from highlight_text import HighlightText, ax_text
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+fig.canvas.draw()
+ax_text(x = 0.88, y = 0.05,
+        s='<High> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ax=ax)
+
+
+ax_text(x = 0.88, y = 0.875,
+        s = '<High> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ax = ax)
+
+ax_text(x = 0.125,  y = 0.875,
+        s = '<Low> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ax = ax)
+
+ax_text(x = 0.025, y = 0.1,
+        s = '<Low> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ax = ax)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate", loc = "center right")
+plt.show()
+plt.close()
+
+```
+
 
 :::
 
