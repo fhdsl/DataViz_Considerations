@@ -2207,8 +2207,10 @@ ax.set_ylabel('Fraction Despair')
 fig_text(x = 0.5, y = 0.9,
         s = '<Chocolate> is among the most liked candies in 2017',
         highlight_textprops = [{"color": "#543210", "weight": "bold"}],
+        textalign = 'center',
         ha = 'center',
-        va = 'bottom')
+        va = 'bottom',
+        fontsize = 30)
 
 ax.legend(bbox_to_anchor = (1.05, 0.5), title="", loc = "center left")
 ax.set_aspect('equal')
@@ -2309,8 +2311,6 @@ to_plot %>%
 
 44. Change the labels in the legend for shape too
 45. Turn off the legend title for shape too
-
-##### Python code
 
 :::
 
