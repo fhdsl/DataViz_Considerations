@@ -1737,8 +1737,7 @@ ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 fig_text(0.125, 0.9,
         '<Chocolate> is among the most liked candies in 2017',
-        highlight_textprops = [{"color": "#543210",
-                                "weight": "bold"}]),
+        highlight_textprops = [{"color": "#543210", "weight": "bold"}]),
         ha = 'center',
         va = 'bottom')
 
@@ -2014,8 +2013,7 @@ ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 fig_text(0.125, 0.9,
         '<Chocolate> is among the most liked candies in 2017',
-        highlight_textprops = [{"color": "#543210",
-                                "weight": "bold"}]),
+        highlight_textprops = [{"color": "#543210", "weight": "bold"}]),
         ha = 'center',
         va = 'bottom')
 
