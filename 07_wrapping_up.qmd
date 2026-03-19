@@ -1532,8 +1532,6 @@ to_plot %>%
 30. Removes the box outline from around the label
 31. Removes padding
 
-##### Python code
-
 :::
 
 #### Informative title
