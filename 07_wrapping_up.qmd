@@ -1869,6 +1869,8 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Python code for labeling the extreme points"
 
+from adjustText import adjust_text 
+
 just_candy_props["label"] = ""
 
 just_candy_props.loc[just_candy_props.index[-1], "label"] = "Any full-sized bar"
