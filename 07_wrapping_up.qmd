@@ -1380,26 +1380,26 @@ def multicolor_text(ax, x, y, lines, fontsize=10, hpad=4, vpad=4):
 
 
 #ax.text(0.78, 0.1, "High Joy\nLow Despair", fontsize = 10)
-smile_x = 0.78
-smile_y = 0.1
+smile_x = 0.88
+smile_y = 0.05
 smile_words = ["High ", "Joy\n", "Low ", "Despair"]
 smile_colors = ["#CB2C2C", "Black", "#409AA6", "Black"]
 
 #ax.text(0.78, 0.975, "High Joy\nHigh Despair", fontsize = 10)
-smiletear_x = 0.78
+smiletear_x = 0.88
 smiletear_y = 0.875
 smiletear_words = ["High ", "Joy\n", "High ", "Despair"]
 smiletear_colors = ["#CB2C2C", "Black", "#CB2C2C", "Black"]
 
 #ax.text(0.025, 0.975, "Low Joy\nHigh Despair", fontsize = 10)
-sad_x = 0.025
+sad_x = 0.125
 sad_y = 0.875
 sad_words = ["Low ", "Joy\n", "High ", "Despair"]
 sad_colors = ["#409AA6", "Black", "#CB2C2C", "Black"]
 
 #ax.text(0.025, 0.1, "Low Joy\nLow Despair", fontsize = 10)
-neutral_x = 0.025
-neutral_y = 0.1
+neutral_x = 0.125
+neutral_y = 0.05
 neutral_words = ["Low ", "Joy\n", "Low ", "Despair"]
 neutral_colors = ["#409AA6", "Black", "#409AA6", "Black"]
 
