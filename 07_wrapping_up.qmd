@@ -2210,7 +2210,7 @@ fig_text(x = 0.5, y = 0.9,
         ha = 'center',
         va = 'bottom')
 
-ax.legend([bbox_to_anchor = (1.05, 0.5), title="", loc = "center left")
+ax.legend(bbox_to_anchor = (1.05, 0.5), title="", loc = "center left")
 ax.set_aspect('equal')
 plt.tight_layout()
 plt.show()
