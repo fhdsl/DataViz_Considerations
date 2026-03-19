@@ -1314,7 +1314,7 @@ import matplotlib.transforms as transforms
 
 import matplotlib.transforms as transforms
 
-def multicolor_text(ax, x, y, lines, fontsize=10, hpad=20, vpad=20):
+def multicolor_text(ax, x, y, lines, fontsize=10, hpad=4, vpad=4):
     """
     lines: list of lines, where each line is a list of (word, color) tuples.
 
@@ -1327,24 +1327,38 @@ def multicolor_text(ax, x, y, lines, fontsize=10, hpad=20, vpad=20):
     ]
     """
     fig = ax.figure
+    fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
 
+    # Convert the (x, y) data coordinate into display coordinates
+    x_disp, y_disp = ax.transData.transform((x, y))
+
     # First, get a line height from a dummy text
-    dummy = ax.text(0, 0, "Ag", fontsize=fontsize)
+    dummy = ax.text(0, 0, "Ag", fontsize=fontsize, va = "top", ha="left")
     line_height = dummy.get_window_extent(renderer=renderer).height
     dummy.remove()
 
     for line_idx, line in enumerate(lines):
-        # vertical offset for this line
-        dy = (line_height + vpad) * line_idx
-        # Offset transform for this line
-        t_line = transforms.offset_copy(ax.transData, x=0, y=dy, units='dots')
+        # vertical offset DOWN the page in display coords
+        y_line = y_disp + (line_height + vpad) * line_idx
 
         x_offset = 0
         for word, color in line:
-            t_word = transforms.offset_copy(t_line, x=x_offset, y=0, units="dots")
-            text = ax.text(x, y, word, color=color, fontsize=fontsize,
-                           transform=t_word, va="top", ha="left")
+            # position in display coords
+            x_word = x_disp + x_offset
+
+            # convert back to data coords for plotting
+            x_data, y_data = ax.transData.inverted().transform((x_word, y_line))
+
+            text = ax.text(
+                x_data, y_data, word,
+                color=color,
+                fontsize=fontsize,
+                va="top",
+                ha="left"
+            )
+
+            # measure width for next word
             ex = text.get_window_extent(renderer=renderer)
             x_offset += ex.width + hpad
 
