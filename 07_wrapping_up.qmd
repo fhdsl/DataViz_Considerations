@@ -1041,10 +1041,10 @@ scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_pro
 scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
-ax.text(0.78, 0.1, "High Joy\nLow Despair", fontsize = 10)
-ax.text(0.78, 0.975, "High Joy\nHigh Despair", fontsize = 10)
-ax.text(0.025, 0.975, "Low Joy\nHigh Despair", fontsize = 10)
-ax.text(0.025, 0.1, "Low Joy\nLow Despair", fontsize = 10)
+ax.text(0.78, 0.1, "High Joy\nLow Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.text(0.78, 0.975, "High Joy\nHigh Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.text(0.025, 0.975, "Low Joy\nHigh Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.text(0.025, 0.1, "Low Joy\nLow Despair", fontsize = 10, ha = 'center', va = 'center')
 ax.minorticks_on()
 ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
 ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
@@ -1525,7 +1525,7 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Simplified Python code for distinguishing quadrant labels"
 
-from highlight_text import HighlightText, ax_text
+from highlight_text import HighlightText, ax_text, fig_text
 
 mpl.rcParams["font.size"] = 14
 
@@ -1538,33 +1538,41 @@ scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
 fig.canvas.draw()
-ax_text(x = 0.88, y = 0.05,
+ax_text(x = 0.78, y = 0.05,
         s='<High> Joy\n<Low> Despair',
         highlight_textprops=[{"color": '#CB2C2C'},
                              {"color": '#409AA6'}],
         fontsize = 10,
-        ax=ax)
+        ha = 'center',
+        va = 'center',
+        ax = ax)
 
 
-ax_text(x = 0.88, y = 0.875,
+ax_text(x = 0.78, y = 0.875,
         s = '<High> Joy\n<High> Despair',
         highlight_textprops=[{"color": '#CB2C2C'},
                              {"color": '#CB2C2C'}],
         fontsize = 10,
+        ha = 'center',
+        va = 'center',
         ax = ax)
 
-ax_text(x = 0.125,  y = 0.875,
+ax_text(x = 0.025,  y = 0.875,
         s = '<Low> Joy\n<High> Despair',
         highlight_textprops=[{"color": '#409AA6'},
                              {"color": '#CB2C2C'}],
         fontsize = 10,
+        ha = 'center',
+        va = 'center',
         ax = ax)
 
-ax_text(x = 0.025, y = 0.1,
+ax_text(x = 0.025, y = 0.05,
         s = '<Low> Joy\n<Low> Despair',
         highlight_textprops=[{"color": '#409AA6'},
                              {"color": '#409AA6'}],
         fontsize = 10,
+        ha = 'center',
+        va = 'center',
         ax = ax)
 ax.minorticks_on()
 ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
@@ -1674,6 +1682,69 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Python code for adding an informative title with styling"
 
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+fig.canvas.draw()
+ax_text(x = 0.78, y = 0.05,
+        s='<High> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        ax = ax)
+
+
+ax_text(x = 0.78, y = 0.875,
+        s = '<High> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        ax = ax)
+
+ax_text(x = 0.025,  y = 0.875,
+        s = '<Low> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        ax = ax)
+
+ax_text(x = 0.025, y = 0.05,
+        s = '<Low> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        ax = ax)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+fig_text(0.125, 0.9,
+        '<Chocolate> is among the most liked candies in 2017',
+        highlight_textprops = [{"color": "#543210",
+                                "weight": "bold"}]),
+        ha = 'center',
+        va = 'bottom')
+
+ax.legend(title="Chocolate", loc = "center right")
+plt.show()
+plt.close()
 ```
 
 :::
@@ -1889,6 +1960,70 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Python code for fixing the coordinate ratio"
 
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+fig.canvas.draw()
+ax_text(x = 0.78, y = 0.05,
+        s='<High> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        ax = ax)
+
+
+ax_text(x = 0.78, y = 0.875,
+        s = '<High> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        ax = ax)
+
+ax_text(x = 0.025,  y = 0.875,
+        s = '<Low> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        ax = ax)
+
+ax_text(x = 0.025, y = 0.05,
+        s = '<Low> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        ax = ax)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+fig_text(0.125, 0.9,
+        '<Chocolate> is among the most liked candies in 2017',
+        highlight_textprops = [{"color": "#543210",
+                                "weight": "bold"}]),
+        ha = 'center',
+        va = 'bottom')
+
+ax.legend(title="Chocolate", loc = "center right")
+ax.set_aspect('equal')
+plt.show()
+plt.close()
+
 ```
 
 :::
@@ -2002,6 +2137,8 @@ to_plot %>%
 #| message: false
 #| code-fold: show
 #| code-summary: "Python code for simplifying the legend"
+
+
 
 ```
 
