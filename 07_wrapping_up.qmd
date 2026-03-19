@@ -1538,41 +1538,37 @@ scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
 fig.canvas.draw()
-ax_text(x = 0.78, y = 0.05,
+ax_text(x = 0.88, y = 0.1,
         s='<High> Joy\n<Low> Despair',
         highlight_textprops=[{"color": '#CB2C2C'},
                              {"color": '#409AA6'}],
         fontsize = 10,
-        ha = 'center',
-        va = 'center',
+        ma = 'center',
         ax = ax)
 
 
-ax_text(x = 0.78, y = 0.875,
+ax_text(x = 0.88, y = 0.875,
         s = '<High> Joy\n<High> Despair',
         highlight_textprops=[{"color": '#CB2C2C'},
                              {"color": '#CB2C2C'}],
         fontsize = 10,
-        ha = 'center',
-        va = 'center',
+        ma = 'center',
         ax = ax)
 
-ax_text(x = 0.025,  y = 0.875,
+ax_text(x = 0.125,  y = 0.875,
         s = '<Low> Joy\n<High> Despair',
         highlight_textprops=[{"color": '#409AA6'},
                              {"color": '#CB2C2C'}],
         fontsize = 10,
-        ha = 'center',
-        va = 'center',
+        ma = 'center',
         ax = ax)
 
-ax_text(x = 0.025, y = 0.05,
+ax_text(x = 0.125, y = 0.1,
         s = '<Low> Joy\n<Low> Despair',
         highlight_textprops=[{"color": '#409AA6'},
                              {"color": '#409AA6'}],
         fontsize = 10,
-        ha = 'center',
-        va = 'center',
+        ma = 'center',
         ax = ax)
 ax.minorticks_on()
 ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
@@ -1694,41 +1690,37 @@ scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
 fig.canvas.draw()
-ax_text(x = 0.78, y = 0.05,
+ax_text(x = 0.88, y = 0.1,
         s='<High> Joy\n<Low> Despair',
         highlight_textprops=[{"color": '#CB2C2C'},
                              {"color": '#409AA6'}],
         fontsize = 10,
-        ha = 'center',
-        va = 'center',
+        ma = 'center',
         ax = ax)
 
 
-ax_text(x = 0.78, y = 0.875,
+ax_text(x = 0.88, y = 0.875,
         s = '<High> Joy\n<High> Despair',
         highlight_textprops=[{"color": '#CB2C2C'},
                              {"color": '#CB2C2C'}],
         fontsize = 10,
-        ha = 'center',
-        va = 'center',
+        ma = 'center',
         ax = ax)
 
-ax_text(x = 0.025,  y = 0.875,
+ax_text(x = 0.125,  y = 0.875,
         s = '<Low> Joy\n<High> Despair',
         highlight_textprops=[{"color": '#409AA6'},
                              {"color": '#CB2C2C'}],
         fontsize = 10,
-        ha = 'center',
-        va = 'center',
+        ma = 'center',
         ax = ax)
 
-ax_text(x = 0.025, y = 0.05,
+ax_text(x = 0.125, y = 0.1,
         s = '<Low> Joy\n<Low> Despair',
         highlight_textprops=[{"color": '#409AA6'},
                              {"color": '#409AA6'}],
         fontsize = 10,
-        ha = 'center',
-        va = 'center',
+        ma = 'center',
         ax = ax)
 ax.minorticks_on()
 ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
@@ -1970,7 +1962,7 @@ scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
 fig.canvas.draw()
-ax_text(x = 0.78, y = 0.05,
+ax_text(x = 0.88, y = 0.1,
         s='<High> Joy\n<Low> Despair',
         highlight_textprops=[{"color": '#CB2C2C'},
                              {"color": '#409AA6'}],
@@ -1980,7 +1972,7 @@ ax_text(x = 0.78, y = 0.05,
         ax = ax)
 
 
-ax_text(x = 0.78, y = 0.875,
+ax_text(x = 0.88, y = 0.875,
         s = '<High> Joy\n<High> Despair',
         highlight_textprops=[{"color": '#CB2C2C'},
                              {"color": '#CB2C2C'}],
@@ -1989,7 +1981,7 @@ ax_text(x = 0.78, y = 0.875,
         va = 'center',
         ax = ax)
 
-ax_text(x = 0.025,  y = 0.875,
+ax_text(x = 0.125,  y = 0.875,
         s = '<Low> Joy\n<High> Despair',
         highlight_textprops=[{"color": '#409AA6'},
                              {"color": '#CB2C2C'}],
@@ -1998,7 +1990,7 @@ ax_text(x = 0.025,  y = 0.875,
         va = 'center',
         ax = ax)
 
-ax_text(x = 0.025, y = 0.05,
+ax_text(x = 0.125, y = 0.1,
         s = '<Low> Joy\n<Low> Despair',
         highlight_textprops=[{"color": '#409AA6'},
                              {"color": '#409AA6'}],
@@ -2011,7 +2003,7 @@ ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
 ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
 ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
-fig_text(x = 0.125, y = 0.9,
+fig_text(x = 0.5, y = 0.9,
         s = '<Chocolate> is among the most liked candies in 2017',
         highlight_textprops = [{"color": "#543210", "weight": "bold"}],
         ha = 'center',
