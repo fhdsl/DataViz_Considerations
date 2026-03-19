@@ -1338,35 +1338,31 @@ def multicolor_text(ax, x, y, lines, fontsize=10, hpad=4, vpad=4):
     line_height = dummy.get_window_extent(renderer=renderer).height
     dummy.remove()
 
-    # --- Measure total block width and height ---
-    line_widths = []
-    for line in lines:
-        w = 0
-        for word, color in line:
-            t = ax.text(0, 0, word, fontsize=fontsize)
-            ex = t.get_window_extent(renderer=renderer)
-            t.remove()
-            w += ex.width + hpad
-        line_widths.append(w - hpad)  # remove trailing padding
+    # --- Compute the center x for the block ---
+    # We use the anchor x as the center
+    center_x = x_disp
 
-    block_width = max(line_widths)
-    block_height = len(lines) * line_height + (len(lines)-1)*vpad
-
-    # --- center the text ---
-    x_disp -= block_width / 2
-    y_disp += block_height / 2
-
-    # --- Draw the text ---
+    # --- Draw each line centered around center_x ---
     for line_idx, line in enumerate(lines):
         # vertical offset DOWN the page in display coords
         y_line = y_disp - (line_height + vpad) * line_idx
 
+        # measure this line's width
+        line_width = 0
+        for word, color in line:
+            t = ax.text(0, 0, word, fontsize=fontsize)
+            ex = t.get_window_extent(renderer=renderer)
+            t.remove()
+            line_width += ex.width + hpad
+        line_width -= hpad  # remove trailing padding
+
+        # compute left edge so line is centered
+        x_left = center_x - line_width / 2
+
+        # draw the line
         x_offset = 0
         for word, color in line:
-            # position in display coords
-            x_word = x_disp + x_offset
-
-            # convert back to data coords for plotting
+            x_word = x_left + x_offset
             x_data, y_data = ax.transData.inverted().transform((x_word, y_line))
 
             text = ax.text(
