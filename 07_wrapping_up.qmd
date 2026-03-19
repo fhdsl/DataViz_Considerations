@@ -2154,8 +2154,8 @@ plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
 ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
 ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
 scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
 fig.canvas.draw()
@@ -2210,8 +2210,9 @@ fig_text(x = 0.5, y = 0.9,
         ha = 'center',
         va = 'bottom')
 
-ax.legend(title="Chocolate", loc = "center right")
+ax.legend(['Not chocolate', 'Chocolate'], bbox_to_anchor = (1.05, 0.5), title="", loc = "center right")
 ax.set_aspect('equal')
+plt.tight_layout()
 plt.show()
 plt.close()
 
