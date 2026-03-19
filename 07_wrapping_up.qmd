@@ -1372,13 +1372,13 @@ smile_colors = ["#CB2C2C", "Black", "#409AA6", "Black"]
 
 #ax.text(0.78, 0.975, "High Joy\nHigh Despair", fontsize = 10)
 smiletear_x = 0.78
-smiletear_y = 0.975
+smiletear_y = 0.875
 smiletear_words = ["High ", "Joy\n", "High ", "Despair"]
 smiletear_colors = ["#CB2C2C", "Black", "#CB2C2C", "Black"]
 
 #ax.text(0.025, 0.975, "Low Joy\nHigh Despair", fontsize = 10)
 sad_x = 0.025
-sad_y = 0.975
+sad_y = 0.875
 sad_words = ["Low ", "Joy\n", "High ", "Despair"]
 sad_colors = ["#409AA6", "Black", "#CB2C2C", "Black"]
 
@@ -1419,10 +1419,10 @@ scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
 fig.canvas.draw()
-multicolor_text(ax, smile_x, smile_y, smile_lines)
-multicolor_text(ax, smiletear_x, smiletear_y, smiletear_lines)
-multicolor_text(ax, sad_x, sad_y, sad_lines)
-multicolor_text(ax, neutral_x, neutral_y, neutral_lines)
+multicolor_text(ax, smile_x, smile_y, smile_lines, hpad = 0)
+multicolor_text(ax, smiletear_x, smiletear_y, smiletear_lines, hpad = 1)
+multicolor_text(ax, sad_x, sad_y, sad_lines, hpad = 2)
+multicolor_text(ax, neutral_x, neutral_y, neutral_lines, hpad =3)
 ax.minorticks_on()
 ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
 ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
