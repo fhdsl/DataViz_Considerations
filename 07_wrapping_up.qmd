@@ -1869,6 +1869,94 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Python code for labeling the extreme points"
 
+just_candy_props["label"] = ""
+
+just_candy_props.loc[just_candy_props.index[-1], "label"] = "Any full-sized bar"
+just_candy_props.loc[just_candy_props.index.str.contains("Peanut Butter", regex=False), "label"] = "Reese's PB Cups"
+just_candy_props.loc[just_candy_props.index[-3], "label"] = just_candy_props.index[-3]
+just_candy_props.loc[just_candy_props.index[-4], "label"] = just_candy_props.index[-4]
+just_candy_props.loc[just_candy_props.index[-5], "label"] = just_candy_props.index[-5]
+
+for candy in ["Nerds", "Skittles", "Starburst", "Sweet Tarts"]:
+    just_candy_props.loc[just_candy_props.index == candy, "label"] = candy
+
+just_candy_props.loc[just_candy_props.index[0], "label"] = "Candy that is the stuff given out for free at restaurants"
+just_candy_props.loc[just_candy_props.index[1], "label"] = "Gum from baseball cards"
+
+just_candy_props.loc[just_candy_props.index.str.contains("marshmallow", regex=False), "label"] = "Circus peanuts"
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+fig.canvas.draw()
+ax_text(x = 0.88, y = 0.1,
+        s='<High> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+
+ax_text(x = 0.88, y = 0.875,
+        s = '<High> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+ax_text(x = 0.125,  y = 0.875,
+        s = '<Low> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+ax_text(x = 0.125, y = 0.1,
+        s = '<Low> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+fig_text(x = 0.5, y = 0.9,
+         s = '<Chocolate> is among the most liked candies in 2017',
+         highlight_textprops = [{"color": "#543210", "weight": "bold"}],
+         ha = 'center',
+         va = 'bottom')
+texts = [plt.text(just_candy_props['likeness'].iloc[i],
+                  just_candy_props['dislikeness'].iloc[i],
+                  just_candy_props['label'].iloc[i],
+                  fontsize = 6)
+          for i in range(len(just_candy_props))]
+adjust_text(texts,
+  avoid_points = True)
+ax.legend(title="Chocolate", loc = "center right")
+plt.show()
+plt.close()
+
 ```
 
 :::
@@ -2210,7 +2298,7 @@ fig_text(x = 0.5, y = 0.9,
         textalign = 'center',
         ha = 'center',
         va = 'bottom',
-        fontsize = 18)
+        fontsize = 15)
 
 ax.legend(bbox_to_anchor = (1.05, 0.5), title="", loc = "center left")
 ax.set_aspect('equal')
