@@ -2210,7 +2210,7 @@ fig_text(x = 0.5, y = 0.9,
         textalign = 'center',
         ha = 'center',
         va = 'bottom',
-        fontsize = 30)
+        fontsize = 18)
 
 ax.legend(bbox_to_anchor = (1.05, 0.5), title="", loc = "center left")
 ax.set_aspect('equal')
