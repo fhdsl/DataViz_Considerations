@@ -1338,9 +1338,28 @@ def multicolor_text(ax, x, y, lines, fontsize=10, hpad=4, vpad=4):
     line_height = dummy.get_window_extent(renderer=renderer).height
     dummy.remove()
 
+    # --- Measure total block width and height ---
+    line_widths = []
+    for line in lines:
+        w = 0
+        for word, color in line:
+            t = ax.text(0, 0, word, fontsize=fontsize)
+            ex = t.get_window_extent(renderer=renderer)
+            t.remove()
+            w += ex.width + hpad
+        line_widths.append(w - hpad)  # remove trailing padding
+
+    block_width = max(line_widths)
+    block_height = len(lines) * line_height + (len(lines)-1)*vpad
+
+    # --- center the text ---
+    x_disp -= block_width / 2
+    y_disp += block_height / 2
+
+    # --- Draw the text ---
     for line_idx, line in enumerate(lines):
         # vertical offset DOWN the page in display coords
-        y_line = y_disp + (line_height + vpad) * line_idx
+        y_line = y_disp - (line_height + vpad) * line_idx
 
         x_offset = 0
         for word, color in line:
@@ -1420,9 +1439,9 @@ ax.set_xlim(0,1)
 ax.set_ylim(1,0)
 fig.canvas.draw()
 multicolor_text(ax, smile_x, smile_y, smile_lines, hpad = 0)
-multicolor_text(ax, smiletear_x, smiletear_y, smiletear_lines, hpad = 1)
-multicolor_text(ax, sad_x, sad_y, sad_lines, hpad = 2)
-multicolor_text(ax, neutral_x, neutral_y, neutral_lines, hpad =3)
+multicolor_text(ax, smiletear_x, smiletear_y, smiletear_lines, hpad = 0)
+multicolor_text(ax, sad_x, sad_y, sad_lines, hpad = 0)
+multicolor_text(ax, neutral_x, neutral_y, neutral_lines, hpad = 0)
 ax.minorticks_on()
 ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
 ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
