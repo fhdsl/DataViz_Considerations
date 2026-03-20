@@ -37,7 +37,7 @@ to_plot %>%
 
 1. Need to load [ggrepel package](https://ggrepel.slowkow.com/) for the labeling function
 2. Specifies the candy names/variable that will be used for labeling
-2. Uses `geom_text_repel()` from `ggrepel` package to label the points, using the repel part of the function to handle overlapping points/labels
+3. Uses `geom_text_repel()` from `ggrepel` package to label the points, using the repel part of the function to handle overlapping points/labels
 
 ##### Python code
 
@@ -60,7 +60,9 @@ mpl.rcParams["font.size"] = 14
 
 plt.style.use('seaborn-v0_8-deep')
 fig2, ax2 = plt.subplots()
-ax2.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'], s = 10) #<3>
+ax2.scatter(just_candy_props['likeness'],
+            just_candy_props['dislikeness'],
+            s = 10) #<3>
 ax2.set_xlim(0,1)
 ax2.set_ylim(0,1)
 ax2.minorticks_on()

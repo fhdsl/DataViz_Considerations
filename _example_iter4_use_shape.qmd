@@ -44,21 +44,31 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Python code for using color and shape together"
 
-shapes = np.where(colors == 1, "^", "o")
-just_candy_props['shapes'] = pd.Series(shapes, index = just_candy_props.index)
+shapes = np.where(colors == 1, "^", "o")                                        #<13>
+just_candy_props['shapes'] = pd.Series(shapes, index = just_candy_props.index)  #<14>
 
-mask_choc = np.where(shapes == "^", True, False)
-mask_nc = ~mask_choc
+mask_choc = np.where(shapes == "^", True, False)                                #<15>
+mask_nc = ~mask_choc                                                            #<16>
 
-vmin = colors.min()
-vmax = colors.max()
+vmin = colors.min()                                                             #<17>
+vmax = colors.max()                                                             #<17>
 
 mpl.rcParams["font.size"] = 14
 
 plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", vmin = vmin, vmax = vmax, label = "Yes")
-scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", vmin = vmin, vmax = vmax, label = "No")
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],
+                          just_candy_props['dislikeness'][mask_choc],
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
+                          vmin = vmin, vmax = vmax,
+                          label = "Yes") #<18>
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
+                        just_candy_props['dislikeness'][mask_nc],
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        vmin = vmin, vmax = vmax,
+                        label = "No")            #<18>
 ax.set_xlim(0,1)
 ax.set_ylim(0,1)
 ax.minorticks_on()
@@ -68,10 +78,18 @@ ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 
 
-ax.legend(title="Chocolate")
+ax.legend(title="Chocolate")                                                    #<19>
 plt.show()
 plt.close()
 
 ```
+
+13. Creating a shape array to reflect different shapes for the candy groups. A caret for chocolate and a circle for not chocolate.
+14. Saving that shape array into the pandas dataframe
+15. Creating a boolean mask (Trues and Falses) that report which rows are chocolate candy
+16. Creating an inverted boolean mask that reports which rows are not chocolate candy
+17. Finding the min and max values for color which we'll give to our scatter calls so that they know there are two colors even though each call is only going to be plotting one specific group. Without finding and passing the vmin and vmax values, all points on the graph would be the same color unless we were passing a specific color name or hexcode.
+18. Two different scatter calls -- one for chocolate and one for not chocolate. We set the markers (needs to be a specific item, not a member of an array) that will be used in the legend. Has to be two calls in Python -- one for each group
+19. Can majorly simplify the call that adds the legend since we set the vmin, vmax, marker, and label within the scatter calls
 
 :::

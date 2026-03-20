@@ -49,14 +49,23 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Python code for adjusting the point transparency and color"
 
-just_candy_props['colors'] = np.where(just_candy_props['Chocolate'] == "Yes", "#543210", "#00008B")
+just_candy_props['colors'] = np.where(just_candy_props['Chocolate'] == "Yes", "#543210", "#00008B") #<20>
 
 mpl.rcParams["font.size"] = 14
 
 plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
-scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc],
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
+                          label = "Yes",
+                          alpha = 0.6)                                          #<21>
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
+                        just_candy_props['dislikeness'][mask_nc],
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        label = "No",
+                        alpha = 0.6)                                            #<21>
 ax.set_xlim(0,1)
 ax.set_ylim(0,1)
 ax.minorticks_on()
@@ -70,4 +79,9 @@ ax.legend(title="Chocolate")
 plt.show()
 plt.close()
 ```
+
+20. Changing the color column in the pandas dataframe to no longer be 1/0 integers but now be hex codes for specific colors. Chocolate rows will be #543210
+21. We can remove the vmin and vmax since we are setting a specific color for each scatter call
+
+
 :::

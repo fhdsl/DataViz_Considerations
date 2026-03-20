@@ -54,24 +54,26 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Python code for adding color to distinguish groups"
 
-import numpy as np
+import numpy as np                                                              #<6>
 
-labels = np.full(just_candy_props.shape[0], 'No', dtype='U3')
-labels[np.array([12, 21, 25, 27, 33, 43,
-       45, 46, 48, 49, 50, 51,
-       53, 54, 55, 56, 57, 58,
-       59, 60, 61, 62, 63, 64,
-       65, 66, 67, 68, 69, 70,
-       71, 72, 73, 74, 75, 76])-1] = "Yes"
-colors = np.where(labels == "Yes", True, False) .astype(int)
+labels = np.full(just_candy_props.shape[0], 'No', dtype='U3')                   #<7>
+labels[np.array([12, 21, 25, 27, 33, 43,                                        #<8>
+       45, 46, 48, 49, 50, 51,                                                  #<8>
+       53, 54, 55, 56, 57, 58,                                                  #<8>
+       59, 60, 61, 62, 63, 64,                                                  #<8>
+       65, 66, 67, 68, 69, 70,                                                  #<8>
+       71, 72, 73, 74, 75, 76])-1] = "Yes"                                      #<8>
+colors = np.where(labels == "Yes", True, False).astype(int)                     #<9>
 
-just_candy_props = just_candy_props.assign(Chocolate=labels, colors=colors)
+just_candy_props = just_candy_props.assign(Chocolate=labels, colors=colors)     #<10>
 
 mpl.rcParams["font.size"] = 14
 
 plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
-scatter = ax.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'], c = just_candy_props['colors'])
+scatter = ax.scatter(just_candy_props['likeness'],
+                     just_candy_props['dislikeness'],
+                     c = just_candy_props['colors']) #<11>
 ax.set_xlim(0,1)
 ax.set_ylim(0,1)
 ax.minorticks_on()
@@ -80,9 +82,17 @@ ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
 ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 
-ax.legend(handles=list(scatter.legend_elements()[0]), labels=list(just_candy_props['Chocolate'].unique()), title = "Chocolate")
+ax.legend(handles=list(scatter.legend_elements()[0]), labels=list(just_candy_props['Chocolate'].unique()), title = "Chocolate") #<12>
 plt.show()
 plt.close()
 ```
+
+6. Using the numpy package for arrays to wrangle the data
+7. Creating an array that has the same number of rows as our data where everything is "No" (not chocolate)
+8. Changing specific locations in that array to "Yes" (chocolate). Using the same indices as the R code, but subtracting one from all of them since Python uses 0-based indexing or numbering rather than the 1-based R does.
+9. Making a new numpy array of Trues and Falses that we convert to an integer (1s and 0s) for the color (which is Matplotlib's preference when it is mapping values to colors)
+10. Adding the numpy arrays for color/chocolate grouping as data within our pandas DataFrame
+11. Added the color column to the scatter call to specify c or color. Note we are saving the output of this line in a variable for later legend use
+12. Creating the legend for color. The Yes/No label from the first numpy array are the labels we display
 
 :::
