@@ -1,0 +1,156 @@
+::: {.panel-tabset}
+
+##### Description
+
+```{r iter9bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_120#slide=id.g3be338b6b90_0_120")
+```
+
+##### R code
+
+```{r}
+#| label: iter9bR
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for simplifying quadrant labels"
+
+to_plot %>%
+  ggplot(aes(x = JOY,
+             y = DESPAIR,
+             color = Chocolate,
+             shape = Chocolate
+            )
+         ) +
+  geom_point(size = 3,
+             alpha = 0.6
+            ) +
+  xlim(0, 1) +
+  ylim(1, 0) +
+  theme_bw() +
+  geom_hline(aes(yintercept=0.5), linetype = 'dashed') +
+  geom_vline(aes(xintercept=0.5), linetype = 'dashed') +
+  annotate("richtext",
+           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>
+                    <span style='color: #409AA6;'>Low</span> Despair",
+           x = 0.955,
+           y = 0.025,
+           fill = NA,                                                   #<29>
+           label.color = NA,                                            #<30>
+           label.padding = grid::unit(rep(0, 4), "pt")                  #<31>
+          ) +
+  annotate("richtext",
+           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>
+                    <span style='color: #CB2C2C;'>High</span> Despair",
+           x = 0.955,
+           y = 0.975,
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
+          ) +
+  annotate("richtext",
+           label = "<span style='color: #409AA6;'>Low</span> Joy<br>
+                    <span style='color: #CB2C2C;'>High</span> Despair",
+           x = 0.045,
+           y = 0.975,
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
+          ) +
+  annotate("richtext",
+           label = "<span style='color: #409AA6;'>Low</span> Joy<br>
+                    <span style='color: #409AA6;'>Low</span> Despair",
+           x = 0.045,
+           y = 0.025,
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
+          ) +
+  scale_color_manual(values = c("Yes" = "#543210",
+                                "No" = "#00008B")) +
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+
+```
+
+29. Makes the label background transparent
+30. Removes the box outline from around the label
+31. Removes padding
+
+##### Python code
+
+```{python}
+#| label: iter9bPython
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Simplified Python code for distinguishing quadrant labels"
+
+from highlight_text import HighlightText, ax_text, fig_text
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+fig.canvas.draw()
+ax_text(x = 0.88, y = 0.1,
+        s='<High> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+
+ax_text(x = 0.88, y = 0.875,
+        s = '<High> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+ax_text(x = 0.125,  y = 0.875,
+        s = '<Low> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+ax_text(x = 0.125, y = 0.1,
+        s = '<Low> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate", loc = "center right")
+plt.show()
+plt.close()
+
+```
+
+:::

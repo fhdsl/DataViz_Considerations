@@ -1,0 +1,168 @@
+::: {.panel-tabset}
+
+##### Description
+
+```{r iter12Plot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_40#slide=id.g3bb275f27df_0_40")
+```
+
+##### R code
+
+```{r}
+#| label: iter12R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for fixing the coordinate ratio"
+
+to_plot %>%
+  ggplot(aes(x = JOY,
+             y = DESPAIR,
+             label = label,
+             color = Chocolate,
+             shape = Chocolate
+            )
+         ) +
+  geom_point(size = 3,
+             alpha = 0.6
+            ) +
+  xlim(0, 1) +
+  ylim(1, 0) +
+  theme_bw() +
+  geom_hline(aes(yintercept=0.5), linetype = 'dashed') +
+  geom_vline(aes(xintercept=0.5), linetype = 'dashed') +
+  annotate("richtext",
+           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>
+                    <span style='color: #409AA6;'>Low</span> Despair",
+           x = 0.955,
+           y = 0.025,
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
+          ) +
+  annotate("richtext",
+           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>
+                    <span style='color: #CB2C2C;'>High</span> Despair",
+           x = 0.955,
+           y = 0.975,
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
+          ) +
+  annotate("richtext",
+           label = "<span style='color: #409AA6;'>Low</span> Joy<br>
+                    <span style='color: #CB2C2C;'>High</span> Despair",
+           x = 0.045,
+           y = 0.975,
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
+          ) +
+  annotate("richtext",
+           label = "<span style='color: #409AA6;'>Low</span> Joy<br>
+                    <span style='color: #409AA6;'>Low</span> Despair",
+           x = 0.045,
+           y = 0.025,
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
+          ) +
+  scale_color_manual(values = c("Yes" = "#543210",
+                                "No" = "#00008B")) +
+  geom_text_repel(show.legend = FALSE, max.overlaps = 16) +
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR",
+       title = "<b><span style='color: #543210;'>Chocolate</span> is among the most liked candies in 2017</b>") +
+  theme(text = element_text(size = 14),
+        plot.title = element_markdown(hjust = 0.5)) +
+  coord_fixed(ratio = 1)                                   #<39>
+
+```
+
+39. By using the `coord_fixed` function we can set a fixed aspect ratio, in this case we want a square ratio of 1 because the axes have equal limits
+
+##### Python code
+
+```{python}
+#| label: iter12Python
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Python code for fixing the coordinate ratio"
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+fig.canvas.draw()
+ax_text(x = 0.88, y = 0.1,
+        s='<High> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+
+ax_text(x = 0.88, y = 0.875,
+        s = '<High> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+ax_text(x = 0.125,  y = 0.875,
+        s = '<Low> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+ax_text(x = 0.125, y = 0.1,
+        s = '<Low> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+fig_text(x = 0.5, y = 0.9,
+        s = '<Chocolate> is among the most liked candies in 2017',
+        highlight_textprops = [{"color": "#543210", "weight": "bold"}],
+        ha = 'center',
+        va = 'bottom')
+texts = [plt.text(just_candy_props['likeness'].iloc[i],
+                  just_candy_props['dislikeness'].iloc[i],
+                  just_candy_props['label'].iloc[i],
+                  fontsize = 6)
+          for i in range(len(just_candy_props))]
+adjust_text(texts,
+  avoid_points = True)
+ax.legend(title="Chocolate", loc = "center right")
+ax.set_aspect('equal')
+plt.show()
+plt.close()
+
+```
+
+:::

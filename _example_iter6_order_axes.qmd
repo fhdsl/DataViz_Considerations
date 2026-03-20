@@ -1,0 +1,142 @@
+::: {.panel-tabset}
+
+##### Description
+
+```{r iter6aPlot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_57#slide=id.g3be338b6b90_0_57")
+```
+
+##### R code
+
+```{r}
+#| label: iter6aR
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for switching the axes"
+
+to_plot %>%
+  ggplot(aes(y = JOY,                                         #<10>
+             x = DESPAIR,                                     #<10>
+             color = Chocolate,
+             shape = Chocolate
+            )
+         ) +
+  geom_point(size = 3,
+             alpha = 0.6
+            ) +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_bw() +
+  scale_color_manual(values = c("Yes" = "#543210",
+                                "No" = "#00008B")) +
+  labs(y = "Fraction of respondents who reported JOY",        #<11>
+       x = "Fraction of respondents who reported DESPAIR") +  #<11>
+  theme(text = element_text(size = 14))
+```
+
+10. switching the y- and x- axis within `aes`
+11. also switching the y- and x- axis labels
+
+##### Python code
+
+```{python}
+#| label: iter6aPython
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Python code for switching the axes"
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+scatter_choc = ax.scatter(just_candy_props['dislikeness'][mask_choc],just_candy_props['likeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['dislikeness'][mask_nc],just_candy_props['likeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(0,1)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_ylabel('Fraction of respondents who reported JOY')
+ax.set_xlabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate")
+plt.show()
+plt.close()
+```
+
+:::
+
+::: {.panel-tabset}
+
+##### Description
+
+```{r iter6bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_63#slide=id.g3be338b6b90_0_63")
+```
+
+##### R code
+
+```{r}
+#| label: iter6bR
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for switching the axes back and reordering y"
+
+to_plot %>%
+  ggplot(aes(x = JOY,                                         #<12>
+             y = DESPAIR,                                     #<12>
+             color = Chocolate,
+             shape = Chocolate
+            )
+         ) +
+  geom_point(size = 3,
+             alpha = 0.6
+            ) +
+  xlim(0, 1) +
+  ylim(1, 0) +                                                #<13>
+  theme_bw() +
+  scale_color_manual(values = c("Yes" = "#543210",
+                                "No" = "#00008B")) +
+  labs(x = "Fraction of respondents who reported JOY",        #<14>
+       y = "Fraction of respondents who reported DESPAIR") +  #<14>
+  theme(text = element_text(size = 14))
+```
+
+12. switching the y- and x- axis back within `aes`
+13. reversing the limits of the y-axis
+14. also switching the y- and x- axis labels back
+
+##### Python code
+
+```{python}
+#| label: iter6bPython
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Python code for switching the axes back and reordering y"
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate", loc = 'lower right')
+plt.show()
+plt.close()
+```
+
+:::

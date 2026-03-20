@@ -1,0 +1,209 @@
+::: {.panel-tabset}
+
+##### Description
+
+```{r iter9aPlot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_125#slide=id.g3be338b6b90_0_125")
+```
+
+```{r iter9colorPlot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_0#slide=id.g3bb275f27df_0_0")
+```
+
+##### R code
+
+```{r}
+#| label: iter9aR
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for distinguishing quadrant labels"
+
+to_plot %>%
+  ggplot(aes(x = JOY,
+             y = DESPAIR,
+             color = Chocolate,
+             shape = Chocolate
+            )
+         ) +
+  geom_point(size = 3,
+             alpha = 0.6
+            ) +
+  xlim(0, 1) +
+  ylim(1, 0) +
+  theme_bw() +
+  geom_hline(aes(yintercept=0.5), linetype = 'dashed') +
+  geom_vline(aes(xintercept=0.5), linetype = 'dashed') +
+  annotate("richtext",                                                   #<25>
+           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>
+                    <span style='color: #409AA6;'>Low</span> Despair",   #<25>
+           x = 0.955,
+           y = 0.025
+          ) +
+  annotate("richtext",                                                   #<26>
+           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>
+                    <span style='color: #CB2C2C;'>High</span> Despair",  #<26>
+           x = 0.955,
+           y = 0.975
+          ) +
+  annotate("richtext",                                                   #<27>
+           label = "<span style='color: #409AA6;'>Low</span> Joy<br>
+                    <span style='color: #CB2C2C;'>High</span> Despair",  #<27>
+           x = 0.045,
+           y = 0.975
+          ) +
+  annotate("richtext",                                                   #<28>
+           label = "<span style='color: #409AA6;'>Low</span> Joy<br>
+                    <span style='color: #409AA6;'>Low</span> Despair",   #<20>
+           x = 0.045,
+           y = 0.025
+          ) +
+  scale_color_manual(values = c("Yes" = "#543210",
+                                "No" = "#00008B")) +
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+
+```
+
+26. Adding color so that "High" in the label is a dark red and "Low" is a light blue
+26. Adding color so that "High" in the label is a dark red
+27. Adding color so that "Low" in the label is a light blue and "High" is a dark red
+28. Adding color so that "Low" in the label is a light blue
+
+##### Python code
+
+```{python}
+#| label: iter9aPython
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Python code for distinguishing quadrant labels"
+
+from matplotlib import transforms
+
+def multicolor_text(ax, x, y, lines, fontsize=10, hpad=4, vpad=4):
+    """
+    lines: list of lines, where each line is a list of (word, color) tuples.
+
+    hpad, vpad: padding in points
+
+    Example:
+    lines = [
+        [("High ", "#CB2C2C"), ("Joy", "black")],
+        [("Low ", "#409AA6"), ("Despair", "black")]
+    ]
+    """
+    fig = ax.figure
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+
+    # Convert the (x, y) data coordinate into display coordinates
+    x_disp, y_disp = ax.transData.transform((x, y))
+
+    # First, get a line height from a dummy text
+    dummy = ax.text(0, 0, "Ag", fontsize=fontsize, va = "top", ha="left")
+    line_height = dummy.get_window_extent(renderer=renderer).height
+    dummy.remove()
+
+    # --- Compute the center x for the block ---
+    # We use the anchor x as the center
+    center_x = x_disp
+
+    # --- Draw each line centered around center_x ---
+    for line_idx, line in enumerate(lines):
+        # vertical offset DOWN the page in display coords
+        y_line = y_disp - (line_height + vpad) * line_idx
+
+        # measure this line's width
+        line_width = 0
+        for word, color in line:
+            t = ax.text(0, 0, word, fontsize=fontsize)
+            ex = t.get_window_extent(renderer=renderer)
+            t.remove()
+            line_width += ex.width + hpad
+        line_width -= hpad  # remove trailing padding
+
+        # compute left edge so line is centered
+        x_left = center_x - line_width / 2
+
+        # draw the line
+        x_offset = 0
+        for word, color in line:
+            x_word = x_left + x_offset
+            x_data, y_data = ax.transData.inverted().transform((x_word, y_line))
+
+            text = ax.text(
+                x_data, y_data, word,
+                color=color,
+                fontsize=fontsize,
+                va="top",
+                ha="left"
+            )
+
+            # measure width for next word
+            ex = text.get_window_extent(renderer=renderer)
+            x_offset += ex.width + hpad
+
+
+
+#ax.text(0.78, 0.1, "High Joy\nLow Despair", fontsize = 10)
+smile_x = 0.88
+smile_y = 0.05
+smile_lines = [
+    [("High ", "#CB2C2C"), ("Joy", "black")],
+    [("Low ", "#409AA6"), ("Despair", "black")]
+]
+
+#ax.text(0.78, 0.975, "High Joy\nHigh Despair", fontsize = 10)
+smiletear_x = 0.88
+smiletear_y = 0.875
+smiletear_lines = [
+    [("High ", "#CB2C2C"), ("Joy", "black")],
+    [("High ", "#CB2C2C"), ("Despair", "black")]
+]
+
+#ax.text(0.025, 0.975, "Low Joy\nHigh Despair", fontsize = 10)
+sad_x = 0.125
+sad_y = 0.875
+sad_lines = [
+    [("Low ", "#409AA6"), ("Joy", "black")],
+    [("High ", "#CB2C2C"), ("Despair", "black")]
+]
+
+#ax.text(0.025, 0.1, "Low Joy\nLow Despair", fontsize = 10)
+neutral_x = 0.125
+neutral_y = 0.05
+neutral_lines = [
+    [("Low ", "#409AA6"), ("Joy", "black")],
+    [("Low ", "#409AA6"), ("Despair", "black")]
+]
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+fig.canvas.draw()
+multicolor_text(ax, smile_x, smile_y, smile_lines, hpad = 0)
+multicolor_text(ax, smiletear_x, smiletear_y, smiletear_lines, hpad = 0)
+multicolor_text(ax, sad_x, sad_y, sad_lines, hpad = 0)
+multicolor_text(ax, neutral_x, neutral_y, neutral_lines, hpad = 0)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate", loc = "center right")
+plt.show()
+plt.close()
+```
+
+:::

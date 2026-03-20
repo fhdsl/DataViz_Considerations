@@ -1,0 +1,102 @@
+::: {.panel-tabset}
+
+##### Description
+
+```{r iter8Plot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_71#slide=id.g3be338b6b90_0_71")
+```
+
+We want to add some labels to the quadrants in this plot. Viewers need to a quick way to know the significance of where the data points are with respect to the dashed lines.
+
+##### R code
+
+```{r}
+#| label: iter8R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for labeling quadrants"
+
+to_plot %>%
+  ggplot(aes(x = JOY,
+             y = DESPAIR,
+             color = Chocolate,
+             shape = Chocolate
+            )
+         ) +
+  geom_point(size = 3,
+             alpha = 0.6
+            ) +
+  xlim(0, 1) +
+  ylim(1, 0) +
+  theme_bw() +
+  geom_hline(aes(yintercept=0.5), linetype = 'dashed') +
+  geom_vline(aes(xintercept=0.5), linetype = 'dashed') +
+  annotate("text",                                        #<17>
+           label = "High Joy\nLow Despair",               #<17>
+           x = 0.955,                                     #<17>
+           y = 0.025                                      #<17>
+          ) +                                             #<17>
+  annotate("text",                                        #<18>
+           label = "High Joy\nHigh Despair",              #<18>
+           x = 0.955,                                     #<18>
+           y = 0.975                                      #<18>
+          ) +                                             #<18>
+  annotate("text",                                        #<19>
+           label = "Low Joy\nHigh Despair",               #<19>
+           x = 0.045,                                     #<19>
+           y = 0.975                                      #<19>
+          ) +                                             #<19>
+  annotate("text",                                        #<20>
+           label = "Low Joy\nLow Despair",                #<20>
+           x = 0.045,                                     #<20>
+           y = 0.025                                      #<20>
+          ) +                                             #<20>
+  scale_color_manual(values = c("Yes" = "#543210",
+                                "No" = "#00008B")) +
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+```
+
+17. Adding labels to the upper right quadrant (I)
+18. Adding labels to the lower right quadrant (IV)
+19. Adding labels to the lower left quadrant (III)
+20. Adding labels to the upper left quadrant (II)
+
+##### Python code
+
+```{python}
+#| label: iter8Python
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Python code for labeling quadrants"
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+ax.text(0.88, 0.1, "High Joy\nLow Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.text(0.88, 0.875, "High Joy\nHigh Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.text(0.125, 0.875, "Low Joy\nHigh Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.text(0.125, 0.1, "Low Joy\nLow Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate", loc = "center right")
+plt.show()
+plt.close()
+```
+
+:::
