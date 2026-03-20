@@ -1,0 +1,155 @@
+### Data Introduction
+
+::: {.panel-tabset}
+
+#### Description
+
+A [2017 survey from the University of British Columbia](https://www.scq.ubc.ca/wp-content/uploads/2017/10/candyhierarchysurvey2017.pdf) asked potential trick-or-treaters a series of questions. The main question provided a list of candy (and a few joke non-candy items) to survey takers. The prompt asked
+
+>Basically, consider that feeling you get when you receive this item in your Halloween haul. Does it make you really happy (joy)? Or is it something that you automatically place in the junk pile (despair)? Meh for indifference, and you can leave blank if you have no idea what the item is.
+place in the junk pile (despair)? Meh for indifference, and you can leave blank if you have no idea what the item is.
+
+Using this [dataset](https://www.scq.ubc.ca/so-much-candy-data-seriously/), we will focus on responses to the question about feelings related to specific candies, selecting only real candy, for a total of 76 candies. For each of these candies, we will compute the proportion of respondents who replied with each general feeling (e.g., Joy, Despair, Indifference, or No response). We will use this to make a visualization about how respondents feel about different kinds of candy.
+
+#### R code
+
+```{r}
+#| label: importR
+#| warning: false
+#| message: false
+#| code-fold: true
+#| code-summary: "R code for data import and preliminary wrangling steps"
+
+library(here)
+library(tidyverse)
+
+df_2017 <- read.csv(here("data/candyhierarchy2017.csv"), fileEncoding = "ISO-8859-1")
+
+non_candy <- c("Bonkers  the board game",
+               "Box o Raisins",
+               "Broken glow stick",
+               "Cash  or other forms of legal tender",
+               "Chardonnay",
+               "Creepy Religious comics Chick Tracts",
+               "Dental paraphenalia",
+               "Generic Brand Acetaminophen",
+               "Glow sticks",
+               "Healthy Fruit",
+               "Hugs  actual physical hugs",
+               "JoyJoy  Mit Iodine",
+               "Kale smoothie",
+               "Senior Mints",
+               "Green Party M M s",
+               "Independent M M s",
+               "Abstained from M M ing",
+               "Minibags of chips",
+               "Pencils",
+               "Real Housewives of Orange County Season 9 Blue Ray",
+               "Sandwich sized bags filled with BooBerry Crunch",
+               "Spotted Dick",
+               "Trail Mix",
+               "Vials of pure high fructose corn syrup  for main lining into your vein",
+               "Vicodin",
+               "White Bread",
+               "Whole Wheat anything")
+
+## making a dataframe of just the feeling responses for the candy
+## selecting columns related to Question 6 about feelings about candy. Each candy has its own column
+## polishing the column names to remove "Q6", "." and white space
+## selecting columns that are just the candy by excluding all of the non-candy
+## using pivot_longer to make a column that has candy names (`column_name`) and responses of "JOY", "DESPAIR", or "MEH" in `value`
+## each candy will have multiple rows because of pivot_longer use
+## grouping by candy and the value to count (using `summarise`) the number of respondents who felt Joy, Despair, or Meh for each candy
+## dropping the value grouping to sum counts to find total counts for each candy
+## undoing all of the grouping
+## finding a proportion for each row: candy and feeling combo
+
+df_2017_jc <- df_2017 %>%
+  select(starts_with("Q6")) %>%
+  rename_with(~ str_remove(., "Q6...")) %>%
+  rename_with(~ str_replace_all(., "\\.", " ")) %>%
+  rename_with(~ str_trim(.x, side = "both")) %>%
+  select(-all_of(non_candy)) %>%
+  pivot_longer(everything(), names_to = "column_name", values_to = "value") %>%
+  group_by(column_name, value) %>%
+  summarise(count = n(), .groups = "drop_last") %>%
+  mutate(total = sum(count)) %>%
+  ungroup() %>%
+  mutate(proportion = count / total)
+
+
+## replacing empty values with NA
+
+df_2017_jc[df_2017_jc==""]<- NA
+
+## replacing NA with "Not Answered"
+## using pivot_wider to recollapse the data so that each candy has a single row
+## there will be a column with proportions for each feeling
+## arrange the data according to magnitude of joy proportions
+
+to_plot <- df_2017_jc %>%
+  replace_na(list(value = "Not Answered")) %>%
+  pivot_wider(id_cols = column_name,
+              names_from = value,
+              values_from = proportion) %>%
+  arrange(JOY)
+
+nrow(to_plot)
+```
+
+#### Python code
+
+```{python}
+#| label: importPython
+#| code-fold: true
+#| code-summary: "Python code for data import and preliminary wrangling steps"
+
+import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+
+df_2017 = pd.read_csv('data/candyhierarchy2017.csv', encoding = "ISO-8859-1")
+
+just_q6= df_2017.filter(like="Q6 |", axis=1)
+q6_counts = just_q6.apply(lambda x: x.value_counts(dropna=False)).T
+q6_counts['total_response'] = pd.DataFrame.sum(q6_counts, axis=1)
+q6_counts['likeness'] = q6_counts['JOY'] / q6_counts['total_response']
+q6_counts['indifference'] = q6_counts['MEH'] / q6_counts['total_response']
+q6_counts['dislikeness'] = q6_counts['DESPAIR'] / q6_counts['total_response']
+
+q6_counts.index = q6_counts.index.str.replace("Q6 | ", "")
+
+just_candy_props = q6_counts[~q6_counts.index.isin(["Bonkers (the board game)",
+                                                    "Box'o'Raisins",
+                                                    "Broken glow stick",
+                                                    "Cash, or other forms of legal tender",
+                                                    "Chardonnay",
+                                                    "Creepy Religious comics/Chick Tracts",
+                                                    "Dental paraphenalia",
+                                                    'Generic Brand Acetaminophen',
+                                                    "Glow sticks",
+                                                    "Healthy Fruit",
+                                                    "Hugs (actual physical hugs)",
+                                                    "JoyJoy (Mit Iodine!)",
+                                                    "Senior Mints",
+                                                    "Kale smoothie",
+                                                    "Green Party M&M's",
+                                                    "Independent M&M's",
+                                                    "Abstained from M&M'ing.",
+                                                    "Minibags of chips",
+                                                    "Pencils",
+                                                    "Real Housewives of Orange County Season 9 Blue-Ray",
+                                                    "Sandwich-sized bags filled with BooBerry Crunch",
+                                                    "Spotted Dick",
+                                                    "Trail Mix",
+                                                    "Vials of pure high fructose corn syrup, for main-lining into your vein",
+                                                    "Vicodin",
+                                                    "White Bread",
+                                                    "Whole Wheat anything"])].sort_values(by='likeness')
+
+just_candy_props.shape[0]
+
+```
+
+:::

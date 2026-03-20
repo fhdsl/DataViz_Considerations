@@ -1,24 +1,253 @@
-# Wrapping up
-
-```{r, include = FALSE}
-ottrpal::set_knitr_image_path()
-```
+---
+title: "Wrapping up"
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    code-annotations: hover
+---
 
 ## Learning Objectives
 
-This chapter will cover:
+```{r los, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This chapter will demonstrate how to iteratively construct a data visualization, evaluate whether a data visualization can be improved to enhance its clarity, accessibility, or accuracy, and to discuss ways to hone data visualization skills"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bc553a32e9_0_0#slide=id.g3bc553a32e9_0_0")
+```
 
-- {LO1}
-- {LO2}
+## Iterative Example
+
+To summarize all of the considerations and best practices discussed in the chapters before this, the first section of this final chapter will walk through an example, step-by-step, of iteratively building up an expository data visualization. Each step or iteration showcases a different view of the same data as we refine how to effectively communicate the message we want to convey for the audience.
+
+{{< include _example_data_description.qmd >}}
+
+:::{.emphasis_block}
+
+<div class = "reflection">
+What variables (specifically what types of variables -- categorical or numerical) are part of this dataset as described?
+</div>
+
+<details open><summary>Variables in the candy dataset</summary>
+
+This means that the candy dataset (at least given the way we have worked with or "wrangled" it) has a few main variables of interest:
+
+1. Names of the candy
+    * A **categorical** variable
+    * 76 different values
+2. Proportion of respondents who reported joy
+    * A **numerical** variable
+    * Specifically a *continuous* numerical variable
+    * Bounded between 0 and 1.0
+    * 76 different values - one for each candy
+3. Proportion of respondents who reported despair
+    * A **numerical** variable
+    * Specifically a *continuous* numerical variable
+    * Bounded between 0 and 1.0
+    * 76 different values - one for each candy
+
+There are additional variables such as responses to demographic questions as well as the proportion of respondents who reported indifference or didn't respond at all. However, to simplify the message we wish to communicate with our data visualization, we won't directly use these variables for this example.
+
+</details>
+
+:::
+
+<div class="notice">
+To review variables and different types of data, visit [Chapter 3](https://hutchdatascience.org/DataViz_Considerations/03_data.html#data-types)
+</div>
+
+### Goal
+
+Our goal is to visualize a ranking for the most liked candies in 2017 according to this dataset.
+
+```{r goalImage, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This is an iterative example putting it all together. Given a 2017 candy dataset that asks respondents to report their feelings of joy despair or indifference, our goal is to visualize a ranking of the most liked candies"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_6#slide=id.g3bb275f27df_0_6")
+```
+
+### Choosing a plot type
+
+::: {.emphasis_block}
+
+<div class="reflection">
+Given the data that we have to work with and the goal of the visualization, what type of plot would you use?
+</div>
+
+<details><summary>Comparing and contrasting plot types for this visualization</summary>
+
+Note that respondents did not simply rank the candy based on preference and we instead have two numerical values for each candy. Therefore we should probably consider plots types beyond the conventional ranking plots described in Chapter 4.
+
+**A more conventional approach**:
+
+A bar plot or even a stacked bar plot could work if we computed a single score (proportion of Joy - proportion of Despair perhaps), but with 76 candies, we would need to arrange the bars based on the magnitude or size and just focus on the bars on the extremes. The visualization would likely appear pretty cramped overall if we tried to show every candy.
+
+  * Here's an example of an analysis that utilized bar plots: [https://github.com/phoebewong/candy-hierarchy-2017](https://github.com/phoebewong/candy-hierarchy-2017). Notice, for this example they focused on a couple specific candies which gets around the "cramped" visualization concern.
+
+  * Similar to a bar plot is a lollipop chart (seems fitting for a candy dataset): [https://x.com/ttrodrigz/status/923582440937021440](https://x.com/ttrodrigz/status/923582440937021440). This example uses a log ratio rather than a difference for each candy, sorts based on magnitude, and then focuses on the extremes as expected.
+
+**A more unconventional approach**:
+
+A scatter plot is constructed with two numerical variables and is often used to show a correlation. We might expect our data to have some sort of a correlation because likely candy that is greatly enjoyed by many won't be despised by many. And conversely, candy that is despised by many probably won't be greatly enjoyed. The only way to see if this expectation is true is to explore the data and just plot it. So that's what we'll do for the first iteration.
+
+</details>
+
+:::
+
+<div class="notice">
+To review different conventional plot types, visit [Chapter 4](https://hutchdatascience.org/DataViz_Considerations/04_graph_info.html#standard-graph-types).
+</div>
+
+### Building the plot
+
+The first few iterations will be an exploratory analysis of the data where we don't focus on aesthetics, but rather:
+
+* what the data looks like
+* if patterns match our expectations
+* if our chosen plot style will work for us
+* perhaps even hypothesis or idea generation
+
+Then the remaining iterations will transition into polishing the visualization in order to prepare an expository data visualization.
+
+<div class="notice">
+To review the differences between exploratory and expository data visualizations, visit [Chapter 2](https://hutchdatascience.org/DataViz_Considerations/02_what_why_intro.html#what-is-data-visualization).
+</div>
+
+
+#### Plot the data
+
+{{< include _example_iter1_plot_data.qmd >}}
+
+::: {.emphasis_block}
+
+<div class="reflection">
+So far, this is just using 2 of the 3 main variables we identified. How can we use the third variable?
+</div>
+
+<details><summary>Plotting the candy names</summary>
+We can use a labeling function to add the candy names to the plot, labeling specific points.
+</details>
+:::
+
+#### Labeling all points
+
+{{< include _example_iter2_label_all_points.qmd >}}
+
+::: {.emphasis_block}
+
+<div class="reflection">
+What do you notice after observing the labels? Do you have any ideas on new variables or a takeaway message?
+</div>
+
+<details><summary>Takeaways from the candy name labeling</summary>
+It looks like chocolate candy (Twix, Kit Kat, 100 Grand Bar...) is among the most liked candy. It could be beneficial to create a new categorical variable that represents if each candy is chocolate or not.
+</details>
+:::
+
+#### Distinguishing groups
+
+{{< include _example_iter3_use_color.qmd >}}
+
+::: {.emphasis_block}
+
+<div class="reflection">
+What do you observe about the group coloring?
+</div>
+
+<details><summary>Takeaways from the group coloring</summary>
+It looks even more convincing that chocolate candy is among the most liked candy -- a strong pattern that could be our takeaway message.
+</details>
+:::
+
+#### Using shape with color
+
+{{< include _example_iter4_use_shape.qmd >}}
+
+<div class = "accessibility">
+
+When using color to distinguish groups, an important accessibility step is to use shape as a redundant way to distinguish groups. This redundancy increases accessibility for those with color vision deficiency.
+
+</div>
+
+
+#### Adjusting point size, transparency, and color
+
+{{< include _example_iter5_adjust_points.qmd >}}
+
+#### Ordering of axes to promote readability
+
+{{< include _example_iter6_order_axes.qmd >}}
+
+#### Adding quadrant delineations
+
+{{< include _example_iter7_quadrants.qmd >}}
+
+
+#### Labeling quadrants
+
+{{< include _example_iter8_quadrant_labels.qmd >}}
+
+{{< include _example_iter8_quadrant_emojis.qmd >}}
+
+#### Distinguishing quadrant labels
+
+{{< include _example_iter9_color_labels.qmd >}}
+
+{{< include _example_iter9_simplify.qmd >}}
+
+
+#### Informative title
+
+{{< include _example_iter10_title.qmd >}}
+
+#### Labeling extreme and border points
+
+{{< include _example_iter11_label_extreme_points.qmd >}}
+
+#### Fixing the coordinate system aspect ratio
+
+{{< include _example_iter12_aspect_ratio.qmd >}}
+
+<div class = "ethics">
+
+When axes have the same limits, fixing the aspect ratio to 1:1 is the most ethical approach to avoid distorting data.
+
+</div>
+
+#### Simplifying labels and increasing text size
+
+{{< include _example_iter13_axis_legend_labels.qmd >}}
+
+#### The plot!
+
+```{r finalPlot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_146#slide=id.g3be338b6b90_0_146")
+```
+
+But we're not done yet....
+
+#### The caption!
+
+```{r plotCaption, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_20#slide=id.g3bb275f27df_0_20")
+```
+
+#### Going further
+
+The dataset is an open dataset, meaning that it is available for you to explore and visualize on your own!
+
+Perhaps you are interested in whether there's a difference in rankings depending on the sex of respondent or some other demographics. Do males prefer chocolate over non-chocolate candy? Does the age or location of the respondent impact the rankings?
+
+Perhaps you are interested in how the proportion of indifference affects these rankings. Is there a design element that can be added to this plot to visualize that specifically?
+
+Perhaps you'd like to try to plot this with a completely different plot type! Whatever your question -- go for it! Practice is one of the best ways to improve your data visualization skills.
 
 ## In Summary
 
-Aim for understanding and readability over complexity.
+Aim for understanding and readability over complexity. When you are working with your data and selecting your plot, think about what message you want to communicate.
+
 
 ## Checklist
 
-This checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize its complexity, enhance its clarity and accessibility, and assess its accuracy.  
+This checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize its complexity, enhance its clarity and accessibility, and assess its accuracy.
 
-## Additional Considerations
+{{< include _summary_checklist.qmd >}}
 
-## See next
+## Keep Practicing!
+
+Give some examples
