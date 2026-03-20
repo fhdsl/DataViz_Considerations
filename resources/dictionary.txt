@@ -52,6 +52,7 @@ interpretability
 intra
 ITCR
 itcrtraining
+iter
 iteratively
 ITN
 jitter
@@ -80,6 +81,7 @@ png
 Preattentive
 pre
 preprint
+qmd
 quartiles
 Quartiles
 Raincloud
