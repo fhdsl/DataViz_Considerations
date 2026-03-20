@@ -9,3 +9,5 @@
 docker/git_token.txt
 .Rproj.user
 docs/*
+
+/.quarto/
