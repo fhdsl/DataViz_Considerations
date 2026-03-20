@@ -182,6 +182,6 @@ plt.close()
 43. Adding the neutral emoji to the plot
 
 
-The [matplotlib AnnotationBbox demo](https://matplotlib.org/stable/gallery/text_labels_and_annotations/demo_annotation_box.html) was instrumental in building this code to add emoji images to the plot
+The [Matplotlib `AnnotationBbox` demo](https://matplotlib.org/stable/gallery/text_labels_and_annotations/demo_annotation_box.html) was instrumental in building this code to add emoji images to the plot
 
 :::

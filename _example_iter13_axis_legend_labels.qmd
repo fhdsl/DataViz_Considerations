@@ -211,7 +211,7 @@ plt.close()
 
 58. Switching to plot the Not Chocolate group first so it'll be listed first in the legend
 59. Switching the display label for the legend
-60. Increasing the fontsize of the title
+60. Increasing the font size of the title
 61. Moving the legend to outside of the plot area to the right in the center. "center left" has to do with alignment
 62. Turning off the title for the legend
 63. Adding a `tight_layout()` call because of the legend being outside of the plotting area

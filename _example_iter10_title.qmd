@@ -108,7 +108,7 @@ ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
 scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],
                           just_candy_props['dislikeness'][mask_choc],
                           c = just_candy_props['colors'][mask_choc],
-                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item()",
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
                           label = "Yes",
                           alpha = 0.6)
 scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
