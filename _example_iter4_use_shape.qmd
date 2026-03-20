@@ -1,0 +1,77 @@
+::: {.panel-tabset}
+
+##### Description
+
+```{r iter4Plot, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds shape as a redundant way to distinguish the groups. light blue triangles now represent chocolate candy while light pink circles represent non chocolate"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_12#slide=id.g3bb275f27df_0_12")
+```
+
+This fourth iteration is the first polishing iteration. As discussed in [Chapter 5](https://hutchdatascience.org/DataViz_Considerations/04_how_to_improve_viz.html#accessibility-considerations), to enhance accessibility, we don't want to rely on color alone to distinguish groups. So we'll also use shape to distinguish the groups. This is a bit redundant but can be beneficial to our future audience.
+
+##### R code
+
+```{r}
+#| label: iter4R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for using color and shape together"
+
+to_plot %>%
+  ggplot(aes(x = JOY,
+             y = DESPAIR,
+             color = Chocolate,
+             shape = Chocolate  #<6>
+            )
+         ) +
+  geom_point() +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_bw() +
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+```
+
+6. Specify that the shape of the points should also display the chocolate/not-chocolate categorical variable.
+
+##### Python code
+
+```{python}
+#| label: iter4Python
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Python code for using color and shape together"
+
+shapes = np.where(colors == 1, "^", "o")
+just_candy_props['shapes'] = pd.Series(shapes, index = just_candy_props.index)
+
+mask_choc = np.where(shapes == "^", True, False)
+mask_nc = ~mask_choc
+
+vmin = colors.min()
+vmax = colors.max()
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", vmin = vmin, vmax = vmax, label = "Yes")
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", vmin = vmin, vmax = vmax, label = "No")
+ax.set_xlim(0,1)
+ax.set_ylim(0,1)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate")
+plt.show()
+plt.close()
+
+```
+
+:::

@@ -1,0 +1,88 @@
+::: {.panel-tabset}
+
+##### Description
+
+```{r iter3Plot, fig.align = "center", echo = FALSE, out.width="100%", fig.alt = "This iteration adds color to distinguish groups, specifically chocolate versus not chocolate groups. Light blue represents chocolate, while light pink represents candy that is not chocolate. We see a fairly clear separation with chocolate on one extreme and non-chocolate on the other with mixing of the groups in the middle."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_39#slide=id.g3be338b6b90_0_39")
+```
+
+This third iteration, uses color to distinguish the data points according to whether or not they represent a chocolate candy. We've removed the labeling for now (and will add it back later -- labeling fewer or specific candies only). Note that we're assuming that any full sized candy bar is chocolate since the majority of full sized candy bars tend to have chocolate.
+
+##### R code
+
+```{r}
+#| label: iter3R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for adding color to distinguish groups"
+
+#removed code related to the labeling for now
+
+to_plot$Chocolate <- "No"                   #<4>
+to_plot$Chocolate[c(12, 21, 25, 27, 33, 43, #<4>
+                    45, 46, 48, 49, 50, 51, #<4>
+                    53, 54, 55, 56, 57, 58, #<4>
+                    59, 60, 61, 62, 63, 64, #<4>
+                    65, 66, 67, 68, 69, 70, #<4>
+                    71, 72, 73, 74, 75, 76 )] <- "Yes" #<4>
+
+to_plot %>%
+  ggplot(aes(x = JOY,
+             y = DESPAIR,
+             color = Chocolate              #<5>
+            )
+         ) +
+  geom_point() +
+  xlim(0, 1) +
+  ylim(0, 1) +
+  theme_bw() +
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+```
+
+4. Create a new categorical variable
+5. Specify that color should use that new categorical variable
+
+##### Python code
+
+```{python}
+#| label: iter3Python
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Python code for adding color to distinguish groups"
+
+import numpy as np
+
+labels = np.full(just_candy_props.shape[0], 'No', dtype='U3')
+labels[np.array([12, 21, 25, 27, 33, 43,
+       45, 46, 48, 49, 50, 51,
+       53, 54, 55, 56, 57, 58,
+       59, 60, 61, 62, 63, 64,
+       65, 66, 67, 68, 69, 70,
+       71, 72, 73, 74, 75, 76])-1] = "Yes"
+colors = np.where(labels == "Yes", True, False) .astype(int)
+
+just_candy_props = just_candy_props.assign(Chocolate=labels, colors=colors)
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+scatter = ax.scatter(just_candy_props['likeness'], just_candy_props['dislikeness'], c = just_candy_props['colors'])
+ax.set_xlim(0,1)
+ax.set_ylim(0,1)
+ax.minorticks_on()
+ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
+ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+ax.legend(handles=list(scatter.legend_elements()[0]), labels=list(just_candy_props['Chocolate'].unique()), title = "Chocolate")
+plt.show()
+plt.close()
+```
+
+:::
