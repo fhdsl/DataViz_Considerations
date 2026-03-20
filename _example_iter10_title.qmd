@@ -6,6 +6,16 @@
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_87#slide=id.g3be338b6b90_0_87")
 ```
 
+For the tenth iteration of the plot, we want to add an informative title. Something that states our conclusion for the audience and perhaps provides needed context.
+
+"Chocolate is among the most liked candies in 2017" states the conclusion or observation that chocolate candies seem to be ranked highly and provides context that the data was collected in 2017.
+
+We'll also add some styling to the title:
+
+* centering
+* bolding
+* coloring "Chocolate" to match how it's displayed within the plot
+
 ##### R code
 
 ```{r}
@@ -95,11 +105,20 @@ plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
 ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
 ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
-scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],
+                          just_candy_props['dislikeness'][mask_choc],
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item()",
+                          label = "Yes",
+                          alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
+                        just_candy_props['dislikeness'][mask_nc],
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        label = "No",
+                        alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
-fig.canvas.draw()
 ax_text(x = 0.88, y = 0.1,
         s='<High> Joy\n<Low> Despair',
         highlight_textprops=[{"color": '#CB2C2C'},
@@ -141,19 +160,29 @@ ax_text(x = 0.125, y = 0.1,
         textalign = 'center',
         ax = ax)
 ax.minorticks_on()
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
 ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
-fig_text(x = 0.5, y = 0.9,
-         s = '<Chocolate> is among the most liked candies in 2017',
-         highlight_textprops = [{"color": "#543210", "weight": "bold"}],
-         ha = 'center',
-         va = 'bottom')
+fig_text(x = 0.5, y = 0.9,                                                      #<52>
+         s = '<Chocolate> is among the most liked candies in 2017',             #<53>
+         highlight_textprops = [{"color": "#543210"}],                          #<53>
+         ha = 'center',                                                         #<54>
+         va = 'bottom',
+         fontweight = 'bold')                                                   #<55>
 
 ax.legend(title="Chocolate", loc = "center right")
 plt.show()
 plt.close()
 ```
+
+52. Using `fig_text` from highlight_text instead of `ax_text` for plotting onto the figure in figure coordinates
+53. Setting the color for the word "Chocolate" only
+54. Centering the title around x = 0.5
+55. Setting the `fontweight` to bold for the whole title
 
 :::

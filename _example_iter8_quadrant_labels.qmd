@@ -6,7 +6,7 @@
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_71#slide=id.g3be338b6b90_0_71")
 ```
 
-We want to add some labels to the quadrants in this plot. Viewers need to a quick way to know the significance of where the data points are with respect to the dashed lines.
+For the eighth iteration, we want to add some labels to the quadrants in this plot. Viewers need to a quick way to know the significance of where the data points are with respect to the dashed lines. In addition, by labeling the quadrants, we can communicate that low levels of despair are at the top within context of the associated level of joy.
 
 ##### R code
 
@@ -79,17 +79,43 @@ plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
 ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
 ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
-scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],
+                          just_candy_props['dislikeness'][mask_choc],
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
+                          label = "Yes",
+                          alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
+                        just_candy_props['dislikeness'][mask_nc],
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        label = "No",
+                         alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
-ax.text(0.88, 0.1, "High Joy\nLow Despair", fontsize = 10, ha = 'center', va = 'center')
-ax.text(0.88, 0.875, "High Joy\nHigh Despair", fontsize = 10, ha = 'center', va = 'center')
-ax.text(0.125, 0.875, "Low Joy\nHigh Despair", fontsize = 10, ha = 'center', va = 'center')
-ax.text(0.125, 0.1, "Low Joy\nLow Despair", fontsize = 10, ha = 'center', va = 'center')
+ax.text(0.88, 0.1,                                                              #<29>
+        "High Joy\nLow Despair",                                                #<29>
+        fontsize = 10,                                                          #<29>
+        ha = 'center', va = 'center')                                           #<29>
+ax.text(0.88, 0.875,                                                            #<30>
+        "High Joy\nHigh Despair",                                               #<30>
+        fontsize = 10,                                                          #<30>
+        ha = 'center', va = 'center')                                           #<30>
+ax.text(0.125, 0.875,                                                           #<31>
+        "Low Joy\nHigh Despair",                                                #<31>
+        fontsize = 10,                                                          #<31>
+        ha = 'center', va = 'center')                                           #<31>
+ax.text(0.125, 0.1,                                                             #<32>
+        "Low Joy\nLow Despair",                                                 #<32>
+        fontsize = 10,                                                          #<32>
+        ha = 'center', va = 'center')                                           #<32>
 ax.minorticks_on()
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
 ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 
@@ -98,5 +124,10 @@ ax.legend(title="Chocolate", loc = "center right")
 plt.show()
 plt.close()
 ```
+
+29. Adding labels to the upper right quadrant (I)
+30. Adding labels to the lower right quadrant (IV)
+31. Adding labels to the lower left quadrant (III)
+32. Adding labels to the upper left quadrant (II)
 
 :::

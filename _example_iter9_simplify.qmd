@@ -6,6 +6,10 @@
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_120#slide=id.g3be338b6b90_0_120")
 ```
 
+For the plot produced with R, we can simplify the labels for the quadrants by removing the border. The outlines are unnecessary/extraneous marks and could draw the attention of viewers before other elements. We want to be judicious with the geometric marks we use and simplify where we can.
+
+For the plot produced with Python, we can use a pre-existing Python library to simplify the code needed to make the plot.
+
 ##### R code
 
 ```{r}
@@ -87,7 +91,7 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Simplified Python code for distinguishing quadrant labels"
 
-from highlight_text import HighlightText, ax_text, fig_text
+from highlight_text import HighlightText, ax_text, fig_text                      #<50>
 
 mpl.rcParams["font.size"] = 14
 
@@ -95,20 +99,29 @@ plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
 ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
 ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
-scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],
+                          just_candy_props['dislikeness'][mask_choc],
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
+                          label = "Yes",
+                          alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
+                        just_candy_props['dislikeness'][mask_nc],
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        label = "No",
+                        alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
-fig.canvas.draw()
-ax_text(x = 0.88, y = 0.1,
-        s='<High> Joy\n<Low> Despair',
-        highlight_textprops=[{"color": '#CB2C2C'},
-                             {"color": '#409AA6'}],
-        fontsize = 10,
-        ha = 'center',
-        va = 'center',
-        textalign = 'center',
-        ax = ax)
+ax_text(x = 0.88, y = 0.1,                                                       #<51>
+        s='<High> Joy\n<Low> Despair',                                           #<51>
+        highlight_textprops=[{"color": '#CB2C2C'},                               #<51>
+                             {"color": '#409AA6'}],                              #<51>
+        fontsize = 10,                                                           #<51>
+        ha = 'center',                                                           #<51>
+        va = 'center',                                                           #<51>
+        textalign = 'center',                                                    #<51>
+        ax = ax)                                                                 #<51>
 
 
 ax_text(x = 0.88, y = 0.875,
@@ -141,8 +154,12 @@ ax_text(x = 0.125, y = 0.1,
         textalign = 'center',
         ax = ax)
 ax.minorticks_on()
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
 ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 
@@ -152,5 +169,8 @@ plt.show()
 plt.close()
 
 ```
+
+50. Using the highlight_text library rather than our complex function
+51. Using the `ax_text` function from the highlight_text library for the upper right label
 
 :::

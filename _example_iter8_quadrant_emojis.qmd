@@ -81,77 +81,85 @@ to_plot %>%
 #| code-summary: "Python code for labeling quadrants with emojis"
 
 
-from matplotlib.offsetbox import (AnnotationBbox, DrawingArea, OffsetImage,
-                                  TextArea)
+from matplotlib.offsetbox import (AnnotationBbox, OffsetImage)
 
 mpl.rcParams["font.size"] = 14
 
 plt.style.use('seaborn-v0_8-deep')
 
 
-arr_img_smiling = plt.imread("resources/images/icons8-smiling.png")
-im_sm_2 = OffsetImage(arr_img_smiling, zoom=0.2)
+arr_img_smiling = plt.imread("resources/images/icons8-smiling.png")              #<33>
+im_sm = OffsetImage(arr_img_smiling, zoom=0.2)                                   #<33>
 
 
-arr_img_smiling_tear = plt.imread("resources/images/icons8-smiling-face-with-tear.png")
-im_smt_2 = OffsetImage(arr_img_smiling_tear, zoom=0.2)
+arr_img_smiling_tear = plt.imread("resources/images/icons8-smiling-face-with-tear.png")  #<34>
+im_smt = OffsetImage(arr_img_smiling_tear, zoom=0.2)                                     #<34>
 
 
-arr_img_sad = plt.imread("resources/images/icons8-unhappy.png")
-im_s_2 = OffsetImage(arr_img_sad, zoom=0.2)
+arr_img_sad = plt.imread("resources/images/icons8-unhappy.png")                   #<35>
+im_s = OffsetImage(arr_img_sad, zoom=0.2)                                         #<35>
 
 
-arr_img_neutral = plt.imread("resources/images/icons8-neutral.png")
-im_n_2 = OffsetImage(arr_img_neutral, zoom=0.2)
+arr_img_neutral = plt.imread("resources/images/icons8-neutral.png")               #<36>
+im_n = OffsetImage(arr_img_neutral, zoom=0.2)                                     #<36>
 
 fig, ax = plt.subplots()
 
-#im_sm.image.axes = ax
-#im_smt.image.axes = ax
-#im_s.image.axes = ax
-#im_n.image.axes = ax
+ab1 = AnnotationBbox(im_sm, (0.955, 0.025),                                      #<37>
+                    xybox = (0.955, 0.025),                                      #<37>
+                    xycoords='data',                                             #<38>
+                    boxcoords = 'data',                                          #<38>
+                    frameon = False)                                             #<39>
 
-ab1 = AnnotationBbox(im_sm_2, (0.955, 0.025),
-                    xybox = (0.955, 0.025),
-                    xycoords='data',
-                    boxcoords = 'data',
-                    frameon = False)
+ax.add_artist(ab1)                                                               #<40>
 
-ax.add_artist(ab1)
+ab2 = AnnotationBbox(im_smt, (0.955, 0.975),                                    #<41>
+                    xybox=(0.955, 0.975),                                       #<41>
+                    xycoords='data',                                            #<41>
+                    boxcoords="data",                                           #<41>
+                    frameon = False)                                            #<41>
 
-ab2 = AnnotationBbox(im_smt_2, (0.955, 0.975),
-                    xybox=(0.955, 0.975),
-                    xycoords='data',
-                    boxcoords="data",
-                    frameon = False)
+ax.add_artist(ab2)                                                              #<41>
 
-ax.add_artist(ab2)
+ab3 = AnnotationBbox(im_s, (0.045, 0.975),                                      #<42>
+                    xybox=(0.045, 0.975),                                       #<42>
+                    xycoords='data',                                            #<42>
+                    boxcoords="data",                                           #<42>
+                    frameon = False)                                            #<42>
 
-ab3 = AnnotationBbox(im_s_2, (0.045, 0.975),
-                    xybox=(0.045, 0.975),
-                    xycoords='data',
-                    boxcoords="data",
-                    frameon = False)
+ax.add_artist(ab3)                                                              #<42>
 
-ax.add_artist(ab3)
+ab4 = AnnotationBbox(im_n, (0.045, 0.025),                                      #<43>
+                    xybox=(0.045, 0.025),                                       #<43>
+                    xycoords='data',                                            #<43>
+                    boxcoords="data",                                           #<43>
+                    frameon = False)                                            #<43>
 
-ab4 = AnnotationBbox(im_n_2, (0.045, 0.025),
-                    xybox=(0.045, 0.025),
-                    xycoords='data',
-                    boxcoords="data",
-                    frameon = False)
-
-ax.add_artist(ab4)
+ax.add_artist(ab4)                                                              #<43>
 
 ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
 ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
-scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],
+                          just_candy_props['dislikeness'][mask_choc],
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
+                          label = "Yes",
+                          alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
+                        just_candy_props['dislikeness'][mask_nc],
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        label = "No",
+                        alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
 ax.minorticks_on()
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
 ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 
@@ -160,5 +168,20 @@ ax.legend(title="Chocolate", loc = "center right")
 plt.show()
 plt.close()
 ```
+
+33. Importing the smiling face emoji image
+34. Importing the smiling with a tear face emoji image
+35. Importing the sad face emoji image
+36. Importing the neutral face emoji image
+37. Making the annotation box for the smiling emoji. Note that we're using the same data coordinates and box coordinates since the annotation is not labeling a single data point, but rather a quadrant
+38. We also specify that these are data locations rather than some other way to represent a location within the coordinate system such as a fraction
+39. We set the `frameon` to false otherwise it will outline the emoji with a black outline/frame
+40. Adding the smiling emoji annotation box to the plot
+41. Adding the smiling with a tear emoji to the plot
+42  Adding the sad emoji to the plot
+43. Adding the neutral emoji to the plot
+
+
+The [matplotlib AnnotationBbox demo](https://matplotlib.org/stable/gallery/text_labels_and_annotations/demo_annotation_box.html) was instrumental in building this code to add emoji images to the plot
 
 :::

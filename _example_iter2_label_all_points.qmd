@@ -62,12 +62,16 @@ plt.style.use('seaborn-v0_8-deep')
 fig2, ax2 = plt.subplots()
 ax2.scatter(just_candy_props['likeness'],
             just_candy_props['dislikeness'],
-            s = 10) #<3>
+            s = 10)                                                              #<3>
 ax2.set_xlim(0,1)
 ax2.set_ylim(0,1)
 ax2.minorticks_on()
-ax2.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax2.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax2.grid(which='major',
+         linestyle='-', linewidth='0.5',
+         color='grey', alpha=0.7)
+ax2.grid(which='minor',
+         linestyle=':', linewidth='0.3',
+         color='grey', alpha=0.5)
 ax2.set_xlabel('Fraction of respondents who reported JOY')
 ax2.set_ylabel('Fraction of respondents who reported DESPAIR')
 texts = [plt.text(just_candy_props['likeness'].iloc[i],                          #<4>

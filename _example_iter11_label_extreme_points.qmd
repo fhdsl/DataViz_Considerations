@@ -5,6 +5,12 @@
 ```{r iter11Plot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_92#slide=id.g3be338b6b90_0_92")
 ```
+For the eleventh iteration of the plot, we want to add back some candy labels. We'll focus on labeling
+
+  * the extremes
+    * most liked (quadrant I -- upper right)
+    * least liked (quadrant III -- lower left)
+  * some of the transition candies where chocolate and non-chocolate candies overlap a bit
 
 ##### R code
 
@@ -100,6 +106,8 @@ to_plot %>%
 37. set the aesthetic for labels to point to the new variable for display labels
 38. use `geom_text_repel` to display those labels and handle any overlaps
 
+Note that the code is labeling points after visual inspection to manually decide what should be labeled. A more robust approach could use the quadrant cutoff values to select which points should be labeled.
+
 ##### Python code
 
 ```{python}
@@ -133,11 +141,20 @@ plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
 ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
 ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
-scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],
+                          just_candy_props['dislikeness'][mask_choc],
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
+                          label = "Yes",
+                          alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
+                        just_candy_props['dislikeness'][mask_nc],
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        label = "No",
+                        alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
-fig.canvas.draw()
 ax_text(x = 0.88, y = 0.1,
         s='<High> Joy\n<Low> Despair',
         highlight_textprops=[{"color": '#CB2C2C'},
@@ -179,26 +196,37 @@ ax_text(x = 0.125, y = 0.1,
         textalign = 'center',
         ax = ax)
 ax.minorticks_on()
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
 ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 fig_text(x = 0.5, y = 0.9,
          s = '<Chocolate> is among the most liked candies in 2017',
-         highlight_textprops = [{"color": "#543210", "weight": "bold"}],
+         highlight_textprops = [{"color": "#543210"}],
          ha = 'center',
-         va = 'bottom')
+         va = 'bottom',
+         fontweight = 'bold')
 texts = [plt.text(just_candy_props['likeness'].iloc[i],
                   just_candy_props['dislikeness'].iloc[i],
-                  just_candy_props['label'].iloc[i],
-                  fontsize = 6)
+                  just_candy_props['label'].iloc[i],                             #<56>
+                  fontsize = 6,
+                  color = just_candy_props['colors'].iloc[i])                    #<56>
           for i in range(len(just_candy_props))]
-adjust_text(texts,
-  avoid_points = True)
+adjust_text(texts,                                                               #<56>
+  avoid_points = True,
+  arrowprops=dict(arrowstyle='-'))
 ax.legend(title="Chocolate", loc = "center right")
 plt.show()
 plt.close()
 
 ```
+
+56. Using adjust_text like in iteration 2 just with a different column of data for the display labels and adding a color for the labels
+
+Note that Python uses 0-based indexing, so the wrangling steps to set display labels use indices offset by one compared to the R code wrangling steps.
 
 :::

@@ -6,6 +6,19 @@
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_45#slide=id.g3be338b6b90_0_45")
 ```
 
+This fifth iteration is another polishing step. It includes changes controlling how the points appear:
+
+  * size
+  * transparency
+  * color.
+
+For the plot produced from R, we want to increase the point size. For the plot produced from Python, the point size is good already.
+
+For the plots from both R and Python, we want to increase the point transparency to better separate or show data points that are plotted in similar locations.
+
+We also want to set a specific color scheme rather than relying on default colors. Changing the color palette can be both an accessibility consideration and an aesthetic choice. Aesthetically, we're choosing a brown color to represent the chocolate group. The blue for non-chocolate candy appears to be distinguishable from the brown for those with color vision deficiency according to the palette checker, but it is still a good practice to keep both color and shape as a means to distinguish the two groups.
+
+
 ##### R code
 
 ```{r}
@@ -22,14 +35,14 @@ to_plot %>%
              shape = Chocolate
             )
          ) +
-  geom_point(size = 3,                             #<7>
-             alpha = 0.6                             #<8>
+  geom_point(size = 3,                                                           #<7>
+             alpha = 0.6                                                         #<8>
             ) +
   xlim(0, 1) +
   ylim(0, 1) +
   theme_bw() +
-  scale_color_manual(values = c("Yes" = "#543210",   #<9>
-                                "No" = "#00008B")) + #<9>
+  scale_color_manual(values = c("Yes" = "#543210",                               #<9>
+                                "No" = "#00008B")) +                             #<9>
   labs(x = "Fraction of respondents who reported JOY",
        y = "Fraction of respondents who reported DESPAIR") +
   theme(text = element_text(size = 14))
@@ -55,22 +68,27 @@ mpl.rcParams["font.size"] = 14
 
 plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc],
-                          c = just_candy_props['colors'][mask_choc],
-                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
-                          label = "Yes",
-                          alpha = 0.6)                                          #<21>
-scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
-                        just_candy_props['dislikeness'][mask_nc],
-                        c = just_candy_props['colors'][mask_nc],
-                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
-                        label = "No",
-                        alpha = 0.6)                                            #<21>
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],                                   #<21>
+                          just_candy_props['dislikeness'][mask_choc],                                #<21>
+                          c = just_candy_props['colors'][mask_choc],                                 #<21>
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),          #<21>
+                          label = "Yes",                                                             #<21>
+                          alpha = 0.6)                                                               #<21>
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],                                       #<21>
+                        just_candy_props['dislikeness'][mask_nc],                                    #<21>
+                        c = just_candy_props['colors'][mask_nc],                                     #<21>
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),              #<21>
+                        label = "No",                                                                #<21>
+                        alpha = 0.6)                                                                 #<21>
 ax.set_xlim(0,1)
 ax.set_ylim(0,1)
 ax.minorticks_on()
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
 ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 
@@ -81,7 +99,7 @@ plt.close()
 ```
 
 20. Changing the color column in the pandas dataframe to no longer be 1/0 integers but now be hex codes for specific colors. Chocolate rows will be #543210
-21. We can remove the vmin and vmax since we are setting a specific color for each scatter call
+21. We can remove the vmin and vmax since we are setting a specific color for each scatter call. We also add an alpha to increase the transparency of the points
 
 
 :::

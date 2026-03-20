@@ -6,9 +6,14 @@
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_125#slide=id.g3be338b6b90_0_125")
 ```
 
+For the ninth iteration of this plot, we will proceed with the text labels for the quadrants. We want to use color, a pre-attentive attribute, to highlight and synchronize "High" vs "Low".
+
+
 ```{r iter9colorPlot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_0#slide=id.g3bb275f27df_0_0")
 ```
+
+We'll use red-pink for high and a blue-gray for low. And if we look at all the colors together within the color palette, they still appear to be distinguishable for individuals with various color vision deficiencies.
 
 ##### R code
 
@@ -66,10 +71,10 @@ to_plot %>%
 
 ```
 
-26. Adding color so that "High" in the label is a dark red and "Low" is a light blue
-26. Adding color so that "High" in the label is a dark red
-27. Adding color so that "Low" in the label is a light blue and "High" is a dark red
-28. Adding color so that "Low" in the label is a light blue
+25. Adding color so that "High" in the label is a dark red and "Low" is a light blue in the upper right
+26. Adding color so that "High" in the label is a dark red in the lower right
+27. Adding color so that "Low" in the label is a light blue and "High" is a dark red in the lower left
+28. Adding color so that "Low" in the label is a light blue in the upper left
 
 ##### Python code
 
@@ -82,17 +87,49 @@ to_plot %>%
 
 from matplotlib import transforms
 
-def multicolor_text(ax, x, y, lines, fontsize=10, hpad=4, vpad=4):
+def multicolor_text(ax, x, y, lines, fontsize=10, hpad=4, vpad=4):               #<44>
     """
+    This function was developed collaboratively with Microsoft Copilot
+
+    It draws multi-colored, multi-line text on a Matplotlib axis by rendering each
+    word as its own text object. This allows fine-grained control over per-word
+    coloring, spacing, and alignment -- similar to richtext annotations in ggplot.
+
+    The function iterates through each line and each word, measuring their widths
+    in display coordinates to determine precise horizontal placement. Vertical
+    placement is also computed in display coordinates to ensure consistent spacing
+    regardless of axis scaling or inversion.
+
+    To mimic ggplot’s default behavior for richtext labels, each line is centered
+    relative to a common midpoint (the x data coordinate). This ensures that the
+    top line is visually centered over the bottom line, even when the lines have
+    different lengths.
+
+    Display coordinates are used internally because Matplotlib’s data coordinates
+    cannot guarantee consistent spacing across transforms, DPI settings, or
+    inverted axes. Only the final computed positions are converted back into data
+    coordinates for drawing.
+
+    Parameters
+    ------
+
+    ax: matplotlib.axes.Axes
+        The axis on which the annotation will be drawn.
+
+    x, y: float
+          Data coordinates where the annotation blocks should be anchored.
+
     lines: list of lines, where each line is a list of (word, color) tuples.
+            Example:
+              lines = [
+                [("High ", "#CB2C2C"), ("Joy", "black")],
+                [("Low ", "#409AA6"), ("Despair", "black")]
+              ]
 
-    hpad, vpad: padding in points
+    fontsize: int
+              Fontsize for all words
 
-    Example:
-    lines = [
-        [("High ", "#CB2C2C"), ("Joy", "black")],
-        [("Low ", "#409AA6"), ("Despair", "black")]
-    ]
+    hpad, vpad: horizontal and vertical padding between words and lines in display points
     """
     fig = ax.figure
     fig.canvas.draw()
@@ -145,17 +182,13 @@ def multicolor_text(ax, x, y, lines, fontsize=10, hpad=4, vpad=4):
             ex = text.get_window_extent(renderer=renderer)
             x_offset += ex.width + hpad
 
+smile_x = 0.88                                                                  #<45>
+smile_y = 0.05                                                                  #<45>
+smile_lines = [                                                                 #<45>
+    [("High ", "#CB2C2C"), ("Joy", "black")],                                   #<45>
+    [("Low ", "#409AA6"), ("Despair", "black")]                                 #<45>
+]                                                                               #<45>
 
-
-#ax.text(0.78, 0.1, "High Joy\nLow Despair", fontsize = 10)
-smile_x = 0.88
-smile_y = 0.05
-smile_lines = [
-    [("High ", "#CB2C2C"), ("Joy", "black")],
-    [("Low ", "#409AA6"), ("Despair", "black")]
-]
-
-#ax.text(0.78, 0.975, "High Joy\nHigh Despair", fontsize = 10)
 smiletear_x = 0.88
 smiletear_y = 0.875
 smiletear_lines = [
@@ -163,7 +196,6 @@ smiletear_lines = [
     [("High ", "#CB2C2C"), ("Despair", "black")]
 ]
 
-#ax.text(0.025, 0.975, "Low Joy\nHigh Despair", fontsize = 10)
 sad_x = 0.125
 sad_y = 0.875
 sad_lines = [
@@ -171,7 +203,6 @@ sad_lines = [
     [("High ", "#CB2C2C"), ("Despair", "black")]
 ]
 
-#ax.text(0.025, 0.1, "Low Joy\nLow Despair", fontsize = 10)
 neutral_x = 0.125
 neutral_y = 0.05
 neutral_lines = [
@@ -185,18 +216,32 @@ plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
 ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
 ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
-scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],
+                          just_candy_props['dislikeness'][mask_choc],
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
+                          label = "Yes",
+                          alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
+                        just_candy_props['dislikeness'][mask_nc],
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        label = "No",
+                        alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
 fig.canvas.draw()
-multicolor_text(ax, smile_x, smile_y, smile_lines, hpad = 0)
-multicolor_text(ax, smiletear_x, smiletear_y, smiletear_lines, hpad = 0)
-multicolor_text(ax, sad_x, sad_y, sad_lines, hpad = 0)
-multicolor_text(ax, neutral_x, neutral_y, neutral_lines, hpad = 0)
+multicolor_text(ax, smile_x, smile_y, smile_lines, hpad = 0)                    #<46>
+multicolor_text(ax, smiletear_x, smiletear_y, smiletear_lines, hpad = 0)        #<47>
+multicolor_text(ax, sad_x, sad_y, sad_lines, hpad = 0)                          #<48>
+multicolor_text(ax, neutral_x, neutral_y, neutral_lines, hpad = 0)              #<49>
 ax.minorticks_on()
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
 ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 
@@ -205,5 +250,12 @@ ax.legend(title="Chocolate", loc = "center right")
 plt.show()
 plt.close()
 ```
+
+44. Defining a function to create multi-color, multi-line annotations for a Matplotlib plot
+45. Defining the inputs for the function -- specifically for the upper right quadrant. Repeated for others below.
+46. Adding color so that "High" in the label is a dark red and "Low" is a light blue in the upper right
+47. Adding color so that "High" in the label is a dark red in the lower right
+48. Adding color so that "Low" in the label is a light blue and "High" is a dark red in the lower left
+49. Adding color so that "Low" in the label is a light blue in the upper left
 
 :::

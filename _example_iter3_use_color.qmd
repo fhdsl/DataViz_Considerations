@@ -73,16 +73,22 @@ plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
 scatter = ax.scatter(just_candy_props['likeness'],
                      just_candy_props['dislikeness'],
-                     c = just_candy_props['colors']) #<11>
+                     c = just_candy_props['colors'])                            #<11>
 ax.set_xlim(0,1)
 ax.set_ylim(0,1)
 ax.minorticks_on()
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
 ax.set_xlabel('Fraction of respondents who reported JOY')
 ax.set_ylabel('Fraction of respondents who reported DESPAIR')
 
-ax.legend(handles=list(scatter.legend_elements()[0]), labels=list(just_candy_props['Chocolate'].unique()), title = "Chocolate") #<12>
+ax.legend(handles=list(scatter.legend_elements()[0]),                           #<12>
+          labels=list(just_candy_props['Chocolate'].unique()),                  #<12>
+          title = "Chocolate")                                                  #<12>
 plt.show()
 plt.close()
 ```

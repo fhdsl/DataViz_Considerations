@@ -6,9 +6,22 @@
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_99#slide=id.g3be338b6b90_0_99")
 ```
 
-<!--
-Maybe don't have the legend inside. Outside might be better/preferred since we have labels/text inside. At least discuss the options like direct labeling/etc.
--->
+For the thirteenth and final iteration of this plot, we want to simplify text labels where we can and make text larger throughout. These are common and important final steps when polishing an expository visualization.
+
+We will simplify and clarify
+
+  * the axis labels
+    * reduce the number of words
+  * the legend
+    * doesn't need a title
+    * clearly say "Chocolate" vs "Not chocolate"
+
+Because there are quadrant labels/annotations and we've directly labeled some points with the candy it represents, we don't want to over clutter the plot. Therefore,
+
+  * We'll still use a legend rather than directly labeling plot areas with their grouping identity
+  * We'll move the legend to the outside edge of the figure
+
+Note that when we do this with R we need to be aware that both shape and color are manually set, so we need to adjust labels for both of these otherwise we'll have two legends with different labels
 
 ##### R code
 
@@ -106,11 +119,20 @@ plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
 ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
 ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
-scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "Not chocolate", alpha = 0.6)
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Chocolate", alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],                    #<58>
+                        just_candy_props['dislikeness'][mask_nc],
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        label = "Not chocolate",                                  #<59>
+                        alpha = 0.6)
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],                #<58>
+                          just_candy_props['dislikeness'][mask_choc],
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
+                          label = "Chocolate",                                    #<59>
+                          alpha = 0.6)
 ax.set_xlim(0,1)
 ax.set_ylim(1,0)
-fig.canvas.draw()
 ax_text(x = 0.88, y = 0.1,
         s='<High> Joy\n<Low> Despair',
         highlight_textprops=[{"color": '#CB2C2C'},
@@ -152,31 +174,47 @@ ax_text(x = 0.125, y = 0.1,
         textalign = 'center',
         ax = ax)
 ax.minorticks_on()
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
 ax.set_xlabel('Fraction Joy')
 ax.set_ylabel('Fraction Despair')
 fig_text(x = 0.5, y = 0.9,
         s = '<Chocolate> is among the most liked candies in 2017',
-        highlight_textprops = [{"color": "#543210", "weight": "bold"}],
+        highlight_textprops = [{"color": "#543210"}],
         textalign = 'center',
         ha = 'center',
         va = 'bottom',
-        fontsize = 15)
+        fontweight = 'bold',
+        fontsize = 15)                                                           #<60>
 texts = [plt.text(just_candy_props['likeness'].iloc[i],
                   just_candy_props['dislikeness'].iloc[i],
                   just_candy_props['label'].iloc[i],
-                  fontsize = 6)
+                  fontsize = 6,
+                  color = just_candy_props['colors'].iloc[i])
           for i in range(len(just_candy_props))]
 adjust_text(texts,
-  avoid_points = True)
-ax.legend(bbox_to_anchor = (1.05, 0.5), title="", loc = "center left")
+  avoid_points = True,
+  arrowprops=dict(arrowstyle='-'))
+ax.legend(bbox_to_anchor = (1.05, 0.5),                                          #<61>
+          loc = "center left",                                                   #<61>
+          title="")                                                              #<62>
 ax.set_aspect('equal')
-plt.tight_layout()
+plt.tight_layout()                                                               #<63>
 plt.show()
 plt.close()
 
 ```
+
+58. Switching to plot the Not Chocolate group first so it'll be listed first in the legend
+59. Switching the display label for the legend
+60. Increasing the fontsize of the title
+61. Moving the legend to outside of the plot area to the right in the center. "center left" has to do with alignment
+62. Turning off the title for the legend
+63. Adding a `tight_layout()` call because of the legend being outside of the plotting area
 
 :::
 
@@ -187,6 +225,8 @@ plt.close()
 ```{r iter13bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3c26f54f9da_0_8#slide=id.g3c26f54f9da_0_8")
 ```
+
+Here we adjust the labels for the shape legend too so they match the legend for color.
 
 ##### R code
 

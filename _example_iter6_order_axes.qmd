@@ -6,6 +6,12 @@
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_57#slide=id.g3be338b6b90_0_57")
 ```
 
+This sixth iteration focuses on improving the reading order and overall readability of the plot for the audience.
+
+It doesn't quite make sense to have the candy that is ranked the lowest appearing at the highest point in the plot (upper left) while the candy that is ranked the highest appears at the lowest point (lower right).
+
+When we reverse the axes such that joy is on the y-axis and despair is on the x-axis, the highest ranked candy now appears at the highest point (in the upper left) or at the top of the plot above the the lowest ranked candies. However, reading order is still not optimal here because looking lowest to highest means looking right to left instead of left to right.
+
 ##### R code
 
 ```{r}
@@ -51,14 +57,14 @@ mpl.rcParams["font.size"] = 14
 
 plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
-scatter_choc = ax.scatter(just_candy_props['dislikeness'][mask_choc],
-                          just_candy_props['likeness'][mask_choc],
+scatter_choc = ax.scatter(just_candy_props['dislikeness'][mask_choc],            #<22>
+                          just_candy_props['likeness'][mask_choc],               #<23>
                           c = just_candy_props['colors'][mask_choc],
                           marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
                           label = "Yes",
                           alpha = 0.6)
-scatter_nc = ax.scatter(just_candy_props['dislikeness'][mask_nc],
-                        just_candy_props['likeness'][mask_nc],
+scatter_nc = ax.scatter(just_candy_props['dislikeness'][mask_nc],                #<22>
+                        just_candy_props['likeness'][mask_nc],                   #<23>
                         c = just_candy_props['colors'][mask_nc],
                         marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
                         label = "No",
@@ -66,16 +72,23 @@ scatter_nc = ax.scatter(just_candy_props['dislikeness'][mask_nc],
 ax.set_xlim(0,1)
 ax.set_ylim(0,1)
 ax.minorticks_on()
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
-ax.set_ylabel('Fraction of respondents who reported JOY')
-ax.set_xlabel('Fraction of respondents who reported DESPAIR')
-
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
+ax.set_ylabel('Fraction of respondents who reported JOY')                        #<23>
+ax.set_xlabel('Fraction of respondents who reported DESPAIR')                    #<22>
 
 ax.legend(title="Chocolate")
 plt.show()
 plt.close()
 ```
+
+22. Disliking or despair is on the x-axis
+23. Liking or joy is on the y-axis
+
 
 :::
 
@@ -86,6 +99,9 @@ plt.close()
 ```{r iter6bPlot, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_63#slide=id.g3be338b6b90_0_63")
 ```
+
+To promote overall readability, we can keep joy on the x-axis and reverse the y-axis so that the highest levels of despair appear at the bottom of the plot. While this is counterintuitive (and our next iteration will try to clarify this for readers), overall the trend is much more natural for readers: the lowest ranked candies appear at the bottom left and the highest ranked candies appear at the top right.
+
 
 ##### R code
 
@@ -133,20 +149,38 @@ mpl.rcParams["font.size"] = 14
 
 plt.style.use('seaborn-v0_8-deep')
 fig, ax = plt.subplots()
-scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],just_candy_props['dislikeness'][mask_choc], c = just_candy_props['colors'][mask_choc], marker = "^", label = "Yes", alpha = 0.6)
-scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],just_candy_props['dislikeness'][mask_nc], c = just_candy_props['colors'][mask_nc], marker = "o", label = "No", alpha = 0.6)
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],                #<24>
+                          just_candy_props['dislikeness'][mask_choc],             #<25>
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
+                          label = "Yes",
+                          alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],                    #<24>
+                        just_candy_props['dislikeness'][mask_nc],                 #<25>
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        label = "No",
+                        alpha = 0.6)
 ax.set_xlim(0,1)
-ax.set_ylim(1,0)
+ax.set_ylim(1,0)                                                                  #<26>
 ax.minorticks_on()
-ax.grid(which='major', linestyle='-', linewidth='0.5', color='grey', alpha=0.7)
-ax.grid(which='minor', linestyle=':', linewidth='0.3', color='grey', alpha=0.5)
-ax.set_xlabel('Fraction of respondents who reported JOY')
-ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')                         #<24>
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')                     #<25>
 
 
 ax.legend(title="Chocolate", loc = 'lower right')
 plt.show()
 plt.close()
 ```
+
+24. Liking or joy is back on the x-axis
+25. Disliking or despair is back on the y-axis
+26. The y-axis has been reversed so it goes from 1 to 0 instead of 0 to 1
 
 :::
