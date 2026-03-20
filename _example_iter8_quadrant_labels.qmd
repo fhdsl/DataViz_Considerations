@@ -6,7 +6,7 @@
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_71#slide=id.g3be338b6b90_0_71")
 ```
 
-For the eighth iteration, we want to add some labels to the quadrants in this plot. Viewers need to a quick way to know the significance of where the data points are with respect to the dashed lines. In addition, by labeling the quadrants, we can communicate that low levels of despair are at the top within context of the associated level of joy.
+For the eighth iteration, we want to add some labels to the quadrants in this plot. Viewers need a quick way to know the significance of where the data points are with respect to the dashed lines. In addition, by labeling the quadrants, we can communicate that low levels of despair are at the top within context of the associated level of joy.
 
 ##### R code
 

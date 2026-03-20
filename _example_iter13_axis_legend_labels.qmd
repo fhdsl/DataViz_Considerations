@@ -198,8 +198,8 @@ texts = [plt.text(just_candy_props['likeness'].iloc[i],
           for i in range(len(just_candy_props))]
 adjust_text(texts,
   avoid_points = True,
-  arrowprops=dict(arrowstyle='-'))
-ax.legend(bbox_to_anchor = (1.05, 0.5),                                          #<61>
+  arrowprops=dict(arrowstyle='-', shrinkA=5.0))
+ax.legend(bbox_to_anchor = (1.025, 0.5),                                          #<61>
           loc = "center left",                                                   #<61>
           title="")                                                              #<62>
 ax.set_aspect('equal')

@@ -89,19 +89,19 @@ plt.style.use('seaborn-v0_8-deep')
 
 
 arr_img_smiling = plt.imread("resources/images/icons8-smiling.png")              #<33>
-im_sm = OffsetImage(arr_img_smiling, zoom=0.2)                                   #<33>
+im_sm = OffsetImage(arr_img_smiling, zoom=0.35)                                   #<33>
 
 
 arr_img_smiling_tear = plt.imread("resources/images/icons8-smiling-face-with-tear.png")  #<34>
-im_smt = OffsetImage(arr_img_smiling_tear, zoom=0.2)                                     #<34>
+im_smt = OffsetImage(arr_img_smiling_tear, zoom=0.5)                                     #<34>
 
 
 arr_img_sad = plt.imread("resources/images/icons8-unhappy.png")                   #<35>
-im_s = OffsetImage(arr_img_sad, zoom=0.2)                                         #<35>
+im_s = OffsetImage(arr_img_sad, zoom=0.35)                                         #<35>
 
 
 arr_img_neutral = plt.imread("resources/images/icons8-neutral.png")               #<36>
-im_n = OffsetImage(arr_img_neutral, zoom=0.2)                                     #<36>
+im_n = OffsetImage(arr_img_neutral, zoom=0.35)                                     #<36>
 
 fig, ax = plt.subplots()
 

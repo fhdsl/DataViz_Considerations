@@ -10,13 +10,13 @@ This fifth iteration is another polishing step. It includes changes controlling 
 
   * size
   * transparency
-  * color.
+  * color
 
 For the plot produced from R, we want to increase the point size. For the plot produced from Python, the point size is good already.
 
 For the plots from both R and Python, we want to increase the point transparency to better separate or show data points that are plotted in similar locations.
 
-We also want to set a specific color scheme rather than relying on default colors. Changing the color palette can be both an accessibility consideration and an aesthetic choice. Aesthetically, we're choosing a brown color to represent the chocolate group. The blue for non-chocolate candy appears to be distinguishable from the brown for those with color vision deficiency according to the palette checker, but it is still a good practice to keep both color and shape as a means to distinguish the two groups.
+We also want to set a specific color scheme rather than relying on default colors. Changing the color palette can be both an accessibility consideration and an aesthetic choice. Aesthetically, we're choosing a brown color to represent the chocolate group. The blue for non-chocolate candy appears to be distinguishable from the brown for those with color vision deficiency (according to the palette checker). However, it is still good practice to keep both color and shape as a means to distinguish the two groups.
 
 
 ##### R code

@@ -175,7 +175,7 @@ texts = [plt.text(just_candy_props['likeness'].iloc[i],
           for i in range(len(just_candy_props))]
 adjust_text(texts,
   avoid_points = True,
-  arrowprops=dict(arrowstyle='-'))
+  arrowprops=dict(arrowstyle='-', shrinkA = 5.0))
 ax.legend(title="Chocolate", loc = "center right")
 ax.set_aspect('equal')                                                          #<57>
 plt.show()
