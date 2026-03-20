@@ -1869,7 +1869,7 @@ to_plot %>%
 #| code-fold: show
 #| code-summary: "Python code for labeling the extreme points"
 
-from adjustText import adjust_text 
+from adjustText import adjust_text
 
 just_candy_props["label"] = ""
 
@@ -2118,7 +2118,13 @@ fig_text(x = 0.5, y = 0.9,
         highlight_textprops = [{"color": "#543210", "weight": "bold"}],
         ha = 'center',
         va = 'bottom')
-
+texts = [plt.text(just_candy_props['likeness'].iloc[i],
+                  just_candy_props['dislikeness'].iloc[i],
+                  just_candy_props['label'].iloc[i],
+                  fontsize = 6)
+          for i in range(len(just_candy_props))]
+adjust_text(texts,
+  avoid_points = True)
 ax.legend(title="Chocolate", loc = "center right")
 ax.set_aspect('equal')
 plt.show()
@@ -2301,7 +2307,13 @@ fig_text(x = 0.5, y = 0.9,
         ha = 'center',
         va = 'bottom',
         fontsize = 15)
-
+texts = [plt.text(just_candy_props['likeness'].iloc[i],
+                  just_candy_props['dislikeness'].iloc[i],
+                  just_candy_props['label'].iloc[i],
+                  fontsize = 6)
+          for i in range(len(just_candy_props))]
+adjust_text(texts,
+  avoid_points = True)
 ax.legend(bbox_to_anchor = (1.05, 0.5), title="", loc = "center left")
 ax.set_aspect('equal')
 plt.tight_layout()
