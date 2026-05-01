@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction – Considerations for Data Visualization</title>
+<title>5&nbsp; Ethical Data Visualization – Considerations for Data Visualization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_what_why_intro.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./06_field_standard.html" rel="next">
+<link href="./04_graph_info.html" rel="prev">
 <link href="./assets/ITN_favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -96,7 +96,7 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ethical Data Visualization</span></h1>
 </div>
 
 
@@ -113,48 +113,131 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </header>
 
 
-<p>This course is meant to discuss best practices when constructing data visualizations with a special focus on graphs within biology research.</p>
-<section id="motivation" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">1.1</span> Motivation</h2>
-<p>Data is now used more than ever to evaluate and understand questions across many fields including public health, bioinformatics, and clinical research. It is critical to produce effective visual summaries of our data. Data visualization is useful for exploration, validation, and presentation of research, aiding in the understanding of underlying biology in datasets, debugging errors in informatics workflows, and identifying/avoiding sources of bias. This course is designed to introduce key concepts of data visualization, in particular for visualizing complex data and accessibility. In addition we will point to additional resources.</p>
-</section>
-<section id="target-audience" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="target-audience"><span class="header-section-number">1.2</span> Target audience</h2>
-<p>The course is intended for anyone who has an interest in data visualization, but contains sections of specific interest for cancer researchers with experience using basic informatics tools.</p>
+<p>Creating a high quality data visualization requires more than picking the right plot for your data and your research question. Certainly following visual design principles and utilizing design tools is a part of creating high quality visualization. However, further best practices are needed to ethically present complex data with clarity in a way that is accessible to audiences. This chapter will discuss ways to enhance the clarity and accessibility of data visualizations as well as important ethical considerations.</p>
+<section id="learning-objectives" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">5.1</span> Learning Objectives</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="resources/images/resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3015fd53a67_4_147.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="for individuals who: work with data and want to create data visualizations as a way to share their results with others, are interested in making their visualizations more accessible, and want to explore ways to enhance the clarity of their visualizations"></p>
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3a4b3643292_0_41.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="This chapter will demonstrate how to apply visual design principles to minimize complexity and improve the clarity of a data visualization, identify steps to enhance the clarity, accessibility, and understandability of a data visualization, employ ethical practices in constructing and sharing data visualizations, and how to evaluate whether a data visualization can be improved to enhance its clarity, accessibility, or accuracy."></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="curriculum" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="curriculum"><span class="header-section-number">1.3</span> Curriculum</h2>
-<p>The course covers why data visualizations are important for communication within the biomedical and bioinformatics fields as well as best practices and design principles that researchers should consider when constructing data visualizations for their work.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3015fd53a67_4_164.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="the topics covered in this course include defining the types of data and visualizations, discussing axis limits and labels, tips to minimize complexity, tips for making ethical and accessible visualizations, enhancing clear communication, and field standard or typical data visualizations"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="clearly-presenting-complex-data" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="clearly-presenting-complex-data"><span class="header-section-number">5.2</span> Clearly Presenting Complex Data</h2>
+<p>An overly complex plot can be misleading for a number of reasons. These reasons include obscuring something because the plot focuses the viewer’s attention on another aspect, not separating high density areas or overlapping plot elements, including too much information, or not specifying specialized language such as acronyms or field specific/technical vocabulary.</p>
+<p>General tips to reduce complexity when you can:</p>
+<ul>
+<li>Use your visualization to answer <strong>only</strong> one question at a time</li>
+<li>Add annotations or labels (lines, names, colors, etc.)</li>
+<li>Minimize white space, but don’t over clutter</li>
+<li>Use clear and accurate labeling and axis names
+<ul>
+<li>Readable (large text)</li>
+<li>Understandable (e..g, avoid jargon and define uncommon acronyms)</li>
+</ul></li>
+<li>Separate plot elements or overlapping data
+<ul>
+<li>Use facets or subplots to separate different categories of data</li>
+<li>Increase opacity/transparency</li>
+<li>Decrease point size or change the shape</li>
+<li>Consider a log transformation</li>
+<li>Use a zoomed inset</li>
+</ul></li>
+<li>Consider typical reading order
+<ul>
+<li>top to bottom</li>
+<li>left to right</li>
+</ul></li>
+</ul>
+<p>Reducing complexity enhances clarity and accessibility by helping the viewer know where to focus and providing them with reference points or information they need to know (such as acronym meanings).</p>
 </section>
-<section id="objectives" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="objectives"><span class="header-section-number">1.4</span> Objectives</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3015fd53a67_4_171.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="This course will demonstrate how to explain the importance of data visualization, contrast exploratory and expository visualizations, choose appropriate graph types based on your dataset and question, list steps to simplify or improve a visualization to enhance clarity, identify ways to improve the accessibility of a visualization, and how to discuss ethical considerations when making data visualizations"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="best-practices-for-accessibility" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="best-practices-for-accessibility"><span class="header-section-number">5.3</span> Best Practices for Accessibility</h2>
+<p>Reducing complexity is a very important first step in designing accessible visualizations. Beyond reducing complexity, additional considerations are necessary to further enhance accessibility for visualization audiences. Audiences may have visual impairments such as low vision or blindness or color vision deficiency, motor impairments (relevant for interactive visualizations), or dyslexia. Additionally, audiences likely will be unfamiliar with your research and may be distracted when interacting with your research.</p>
+<p>This course will mostly focus on making visualizations accessible for those with visual impairments and those unfamiliar with your research.</p>
+<section id="color-palettes" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="color-palettes"><span class="header-section-number">5.3.1</span> Color Palettes</h3>
+</section>
+<section id="contrast" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="contrast"><span class="header-section-number">5.3.2</span> Contrast</h3>
+</section>
+<section id="text" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="text"><span class="header-section-number">5.3.3</span> Text</h3>
+<section id="axis-labels" class="level4" data-number="5.3.3.1">
+<h4 data-number="5.3.3.1" class="anchored" data-anchor-id="axis-labels"><span class="header-section-number">5.3.3.1</span> Axis Labels</h4>
+</section>
+<section id="annotations" class="level4" data-number="5.3.3.2">
+<h4 data-number="5.3.3.2" class="anchored" data-anchor-id="annotations"><span class="header-section-number">5.3.3.2</span> Annotations</h4>
+</section>
+<section id="titles" class="level4" data-number="5.3.3.3">
+<h4 data-number="5.3.3.3" class="anchored" data-anchor-id="titles"><span class="header-section-number">5.3.3.3</span> Titles</h4>
+</section>
+<section id="captions" class="level4" data-number="5.3.3.4">
+<h4 data-number="5.3.3.4" class="anchored" data-anchor-id="captions"><span class="header-section-number">5.3.3.4</span> Captions</h4>
+</section>
+</section>
+<section id="alternative-text-descriptions" class="level3" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="alternative-text-descriptions"><span class="header-section-number">5.3.4</span> Alternative Text Descriptions</h3>
+</section>
+</section>
+<section id="ethical-data-visualization" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="ethical-data-visualization"><span class="header-section-number">5.4</span> Ethical Data Visualization</h2>
+<p>Ethical visualizations improve viewers’ understanding rather than confuse or mislead. Misleading messages are not always intentional on the part of the researcher putting together a data visualization, and mistakes happen (e.g., bugs in software, errors in data entry, etc.). It’s the responsibility of the researcher to carefully evaluate all data visualizations before sharing them to make sure that the visualizations clearly and accurately present the data and communicate the overall goal.</p>
+<p>Several of the topics we’ll provide within this section about ethical considerations are related to tips to reduce complexity and enhance accessibility. This is not surprising given that clear communication is a necessity for both ethical and accessible visualizations.</p>
+<section id="data-inclusion-safety-transparency" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="data-inclusion-safety-transparency"><span class="header-section-number">5.4.1</span> Data Inclusion: Safety &amp; Transparency</h3>
+<p>The rules within this section are aimed to safeguard patient privacy and provide transparency.</p>
+<p><strong>Rule 1: Don’t include identifiable data</strong></p>
+<p>ADD thoughts here</p>
+<p><strong>Rule 2: Include all relevant data or subgroups</strong></p>
+<p>ADD thoughts here</p>
+<p><strong>Rule 3: Describe removed samples or dropouts</strong></p>
+<p>ADD thoughts here</p>
+</section>
+<section id="accuracy" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="accuracy"><span class="header-section-number">5.4.2</span> Accuracy</h3>
+<p>The rules within this section are aimed to encourage careful verification of visualizations.</p>
+<p><strong>Rule 1: Verify that visualizations accurately represent the data</strong></p>
+<p>ADD thoughts about data that may be missing, or sizes/area that don’t align with data. Repeat the idea of checking twice before sharing the visualization</p>
+<p><strong>Rule 2: Use clear and accurate axis labels</strong></p>
+<p>ADD thoughts especially related to axis labels. Often having simplified axis labels help audiences. Doing this ethically such that the simplified label is what is being plotted is really important. If the label doesn’t match the data, why not plot the data for the simplified label?</p>
+</section>
+<section id="avoiding-data-distortion" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="avoiding-data-distortion"><span class="header-section-number">5.4.3</span> Avoiding Data Distortion</h3>
+<p>The aims for rules within this section include to avoid misleading messages and to compare groups fairly.</p>
+<p><strong>Rule 1: Use fair axis limits rather than truncating axes</strong></p>
+<p>ADD about starting axis limits at 0 because otherwise differences will look starker than they are</p>
+<p>ADD about axis limits when you have facets and how audiences may expect those subplots to use the same axis limits</p>
+<p><strong>Rule 2: Order axes in a logical way that corresponds to the plot’s message</strong></p>
+<p>ADD info about the overall message. If a line is going up over time, but the message is related to decrease, why is the line going up? This can be misleading.</p>
+<p><strong>Rule 3: Separate plot elements</strong></p>
+<p>ADD info about how true info can be obscured if plot elements aren’t separated.</p>
+</section>
+<section id="plagiarism-inspiration" class="level3" data-number="5.4.4">
+<h3 data-number="5.4.4" class="anchored" data-anchor-id="plagiarism-inspiration"><span class="header-section-number">5.4.4</span> Plagiarism &amp; Inspiration</h3>
+<p>ADD info about plagiarism and what that means for data visualization</p>
+<p>ADD info about inspiration</p>
+<p><strong>Rule 1: If in doubt, attribute</strong></p>
+<p>ADD info about attribution if you’re concerned.</p>
+</section>
+<section id="empathy" class="level3" data-number="5.4.5">
+<h3 data-number="5.4.5" class="anchored" data-anchor-id="empathy"><span class="header-section-number">5.4.5</span> Empathy</h3>
+<p>Tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute. These are more tips and not rules because they are more subjective.</p>
+<p><em>Visualize each data point</em></p>
+<p><em>Avoid stereotypical colors</em></p>
+<p><em>Use person-first language when appropriate and avoid insensitive language</em></p>
+<p><em>Expand an “Other” category</em></p>
+</section>
+</section>
+<section id="improving-visualizations" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="improving-visualizations"><span class="header-section-number">5.5</span> Improving Visualizations</h2>
+</section>
+<section id="summary" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.6</span> Summary</h2>
 
 
 </section>
@@ -587,13 +670,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="About this Course">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About this Course</span>
+      <a href="./04_graph_info.html" class="pagination-link" aria-label="Choosing the Right Plot">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Choosing the Right Plot</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_what_why_intro.html" class="pagination-link" aria-label="Defining Data Visualization">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Defining Data Visualization</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06_field_standard.html" class="pagination-link" aria-label="Field Specific Visualizations">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Field Specific Visualizations</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -605,7 +688,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 <p>All illustrations <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;">CC-BY. </a> <br> All other materials <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;"> CC-BY </a> unless noted otherwise.</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/DataViz_Considerations/edit/main/01-intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/DataViz_Considerations/edit/main/05_how_to_improve_viz.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
