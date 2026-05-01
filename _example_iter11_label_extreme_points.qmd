@@ -1,0 +1,232 @@
+::: {.panel-tabset}
+
+##### Description
+
+```{r iter11Plot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_92#slide=id.g3be338b6b90_0_92")
+```
+For the eleventh iteration of the plot, we want to add back some candy labels. We'll focus on labeling
+
+  * the extremes
+    * most liked (quadrant I -- upper right)
+    * least liked (quadrant III -- lower left)
+  * some of the transition candies where chocolate and non-chocolate candies overlap a bit
+
+##### R code
+
+```{r}
+#| label: iter11R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for labeling the extreme points"
+
+to_plot <- to_plot %>%
+  mutate(label = "")
+
+to_plot[nrow(to_plot), "label"] <- "Any full-sized bar"                                         #<34>
+to_plot[which(str_detect(to_plot$column_name, "Peanut Butter")), "label"] <- "Reese's PB Cups"  #<34>
+to_plot[nrow(to_plot)-2, "label"] <- to_plot[nrow(to_plot)-2, "column_name"]                    #<34>
+to_plot[nrow(to_plot)-3, "label"] <- to_plot[nrow(to_plot)-3, "column_name"]                    #<34>
+to_plot[nrow(to_plot)-4, "label"] <- to_plot[nrow(to_plot)-4, "column_name"]                    #<34>
+to_plot[which(to_plot$column_name == "Nerds"), "label"] <- "Nerds"                    #<35>
+to_plot[which(to_plot$column_name == "Skittles"), "label"] <- "Skittles"              #<35>
+to_plot[which(to_plot$column_name == "Starburst"), "label"] <- "Starburst"            #<35>
+to_plot[which(to_plot$column_name == "Sweet Tarts"), "label"] <- "Sweet Tarts"        #<35>
+to_plot[1, "label"] <- "Candy that is the stuff given out for free at restaurants"          #<36>
+to_plot[2, "label"] <- "Gum from baseball cards"                                            #<36>
+to_plot[which(str_detect(to_plot$column_name, "marshmallow")), "label"] <- "Circus peanuts" #<36>
+
+to_plot %>%
+  ggplot(aes(x = JOY,
+             y = DESPAIR,
+             label = label,                                                           #<37>
+             color = Chocolate,
+             shape = Chocolate
+            )
+         ) +
+  geom_point(size = 3,
+             alpha = 0.6
+            ) +
+  xlim(0, 1) +
+  ylim(1, 0) +
+  theme_bw() +
+  geom_hline(aes(yintercept=0.5), linetype = 'dashed') +
+  geom_vline(aes(xintercept=0.5), linetype = 'dashed') +
+  annotate("richtext",
+           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>
+                    <span style='color: #409AA6;'>Low</span> Despair",
+           x = 0.955,
+           y = 0.025,
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
+          ) +
+  annotate("richtext",
+           label = "<span style='color: #CB2C2C;'>High</span> Joy<br>
+                    <span style='color: #CB2C2C;'>High</span> Despair",
+           x = 0.955,
+           y = 0.975,
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
+          ) +
+  annotate("richtext",
+           label = "<span style='color: #409AA6;'>Low</span> Joy<br>
+                    <span style='color: #CB2C2C;'>High</span> Despair",
+           x = 0.045,
+           y = 0.975,
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
+          ) +
+  annotate("richtext",
+           label = "<span style='color: #409AA6;'>Low</span> Joy<br>
+                    <span style='color: #409AA6;'>Low</span> Despair",
+           x = 0.045,
+           y = 0.025,
+           fill = NA,
+           label.color = NA,
+           label.padding = grid::unit(rep(0, 4), "pt")
+          ) +
+  scale_color_manual(values = c("Yes" = "#543210",
+                                "No" = "#00008B")) +
+  geom_text_repel(show.legend = FALSE, max.overlaps = 16) +                           #<38>
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR",
+       title = "<b><span style='color: #543210;'>Chocolate</span> is among the most liked candies in 2017</b>") +
+  theme(text = element_text(size = 14),
+        plot.title = element_markdown(hjust = 0.5))
+
+```
+
+34. set the display label in a variable for the candies liked the most
+35. set the display label for the candies on the border between the two groups of candies
+36. set the display label for the candies that are least liked
+37. set the aesthetic for labels to point to the new variable for display labels
+38. use `geom_text_repel` to display those labels and handle any overlaps
+
+Note that the code is labeling points after visual inspection to manually decide what should be labeled. A more robust approach could use the quadrant cutoff values to select which points should be labeled.
+
+##### Python code
+
+```{python}
+#| label: iter11Python
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Python code for labeling the extreme points"
+
+from adjustText import adjust_text
+
+just_candy_props["label"] = ""
+
+just_candy_props.loc[just_candy_props.index[-1], "label"] = "Any full-sized bar"
+just_candy_props.loc[just_candy_props.index.str.contains("Peanut Butter", regex=False), "label"] = "Reese's PB Cups"
+just_candy_props.loc[just_candy_props.index[-3], "label"] = just_candy_props.index[-3]
+just_candy_props.loc[just_candy_props.index[-4], "label"] = just_candy_props.index[-4]
+just_candy_props.loc[just_candy_props.index[-5], "label"] = just_candy_props.index[-5]
+
+for candy in ["Nerds", "Skittles", "Starburst", "Sweet Tarts"]:
+    just_candy_props.loc[just_candy_props.index == candy, "label"] = candy
+
+just_candy_props.loc[just_candy_props.index[0], "label"] = "Candy that is the stuff given out for free at restaurants"
+just_candy_props.loc[just_candy_props.index[1], "label"] = "Gum from baseball cards"
+
+just_candy_props.loc[just_candy_props.index.str.contains("marshmallow", regex=False), "label"] = "Circus peanuts"
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],
+                          just_candy_props['dislikeness'][mask_choc],
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
+                          label = "Yes",
+                          alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
+                        just_candy_props['dislikeness'][mask_nc],
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        label = "No",
+                        alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+ax_text(x = 0.88, y = 0.1,
+        s='<High> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+
+ax_text(x = 0.88, y = 0.875,
+        s = '<High> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#CB2C2C'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+ax_text(x = 0.125,  y = 0.875,
+        s = '<Low> Joy\n<High> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#CB2C2C'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+
+ax_text(x = 0.125, y = 0.1,
+        s = '<Low> Joy\n<Low> Despair',
+        highlight_textprops=[{"color": '#409AA6'},
+                             {"color": '#409AA6'}],
+        fontsize = 10,
+        ha = 'center',
+        va = 'center',
+        textalign = 'center',
+        ax = ax)
+ax.minorticks_on()
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+fig_text(x = 0.5, y = 0.9,
+         s = '<Chocolate> is among the most liked candies in 2017',
+         highlight_textprops = [{"color": "#543210"}],
+         ha = 'center',
+         va = 'bottom',
+         fontweight = 'bold')
+texts = [plt.text(just_candy_props['likeness'].iloc[i],
+                  just_candy_props['dislikeness'].iloc[i],
+                  just_candy_props['label'].iloc[i],                             #<56>
+                  fontsize = 6,
+                  color = just_candy_props['colors'].iloc[i])                    #<56>
+          for i in range(len(just_candy_props))]
+adjust_text(texts,                                                               #<56>
+  avoid_points = True,
+  arrowprops=dict(arrowstyle='-', shrinkA = 5.0))
+ax.legend(title="Chocolate", loc = "center right")
+plt.show()
+plt.close()
+
+```
+
+56. Using adjust_text like in iteration 2 just with a different column of data for the display labels and adding a color for the labels
+
+Note that Python uses 0-based indexing, so the wrangling steps to set display labels use indices offset by one compared to the R code wrangling steps.
+
+:::
