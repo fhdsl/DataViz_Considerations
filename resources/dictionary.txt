@@ -1,3 +1,4 @@
+adjustText
 AJS
 AnVIL
 Audiographer
@@ -7,15 +8,18 @@ Bioinformatic
 bioinformatics
 BIPOC
 Bloomberg
+bolding
 Bookdown
 chapt
 Charlson
 choropleths
 Circos
 confounders
+counterintuitive
 Coursera
 creativecommons
 css
+DataFrame
 Datatrail
 DataTrail
 Deyo
@@ -27,6 +31,7 @@ EDA
 embeddings
 enforceability
 eQTL
+Falses
 faq
 favicon
 FirstName
@@ -35,9 +40,13 @@ fyi
 GDSCN
 geospatial
 Generis
+ggplot
+ggrepel
 GH
 Github
 GitHub
+hexcode
+hjust
 https
 ies
 iframe
@@ -47,6 +56,8 @@ interpretability
 intra
 ITCR
 itcrtraining
+iter
+iteratively
 ITN
 jitter
 Kaplan
@@ -56,6 +67,8 @@ Licensor
 LICENSOR
 loadings
 Markua
+Matplotlib
+Matplotlib's
 mentorship
 MERCHANTABILITY
 micrograms
@@ -64,6 +77,7 @@ multimodality
 Muschelli
 NCI
 NHGRI
+numpy
 omics
 OTTR
 ottrpal
@@ -74,6 +88,7 @@ png
 Preattentive
 pre
 preprint
+qmd
 quartiles
 Quartiles
 Raincloud
@@ -94,13 +109,17 @@ subtypes
 synched
 tabset
 tada
+treaters
 Treemaps
 trendlines
 UE
 UE5
 underserved
+unintuitive
 Videographer
 Videography
+vmax
+vmin
 WIPO
 www
 XY

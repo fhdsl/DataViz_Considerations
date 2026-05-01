@@ -1,0 +1,25 @@
+
+<!--
+Possibly make this a cheatsheet
+-->
+
+### Style {.unnumbered}
+
+- [ ] Checklist Item 1
+- [ ] Checklist Item 2
+
+### Accessibility {.unnumbered}
+
+- [ ] Color palette is color vision deficiency friendly
+- [ ] Redundantly distinguishing groups/categories with shapes rather than color alone
+- [ ] Contrast Ratio is ...
+
+### Fairness {.unnumbered}
+
+- [ ] Axis limits ...
+- [ ] Aspect Ratio ...
+
+### Validity {.unnumbered}
+
+- [ ] Number of plotted data points matches expectations
+- [ ] Compared values between source data and displayed data

@@ -1,0 +1,97 @@
+::: {.panel-tabset}
+
+##### Description
+
+```{r iter7Plot, fig.align = "center", echo = FALSE, out.width="100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3be338b6b90_0_67#slide=id.g3be338b6b90_0_67")
+```
+This seventh iteration aims to further improve readability in a clear and ethical way, specifically with respect to the unintuitive ordering of the y-axis. By reversing the y-axis in the previous step, we have promoted a logical way to read the overall plot and improved the overall readability of the plot. However, it could be misleading or confusing that the y-axis independently isn't ordered in a natural way -- the highest amounts of despair appear at the bottom of the plot now. To promote clear and ethical communication, we will acknowledge the reversed y-axis within the plot using quadrants (and quadrant labels in the next iteration).
+
+Alternative ways that we could clearly communicate that we have reversed the order of the y-axis include adding an arrow pointing down or explicitly adjusting the y-axis label to mention it. However, both of these methods bring attention solely to the despair axis.
+
+Considering that a scatter plot conveys information about two variables, and in this case we expected and observe that these two variables are inversely related, we want to prioritize communicating information about both of the variables and how they work together rather than highlighting only one of them. Adding quadrant delineations (that we can label in a later step), will assist with this. Each quadrant will represent a category that is uniquely defined by the range of values that both variables can take on within that area.
+
+##### R code
+
+```{r}
+#| label: iter7R
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "R code for adding quadrant delineations"
+
+to_plot %>%
+  ggplot(aes(x = JOY,
+             y = DESPAIR,
+             color = Chocolate,
+             shape = Chocolate
+            )
+         ) +
+  geom_point(size = 3,
+             alpha = 0.6
+            ) +
+  xlim(0, 1) +
+  ylim(1, 0) +
+  theme_bw() +
+  geom_hline(aes(yintercept=0.5), linetype = 'dashed') +     #<15>
+  geom_vline(aes(xintercept=0.5), linetype = 'dashed') +     #<16>
+  scale_color_manual(values = c("Yes" = "#543210",
+                                "No" = "#00008B")) +
+  labs(x = "Fraction of respondents who reported JOY",
+       y = "Fraction of respondents who reported DESPAIR") +
+  theme(text = element_text(size = 14))
+
+```
+
+15. Adding a dashed horizontal line at y equals 0.5
+16. Adding a dashed vertical line at x equals 0.5
+
+##### Python code
+
+```{python}
+#| label: iter7Python
+#| warning: false
+#| message: false
+#| code-fold: show
+#| code-summary: "Python code for adding quadrant delineations"
+
+mpl.rcParams["font.size"] = 14
+
+plt.style.use('seaborn-v0_8-deep')
+fig, ax = plt.subplots()
+ax.axhline(y=0.5, linestyle = 'dashed', color = 'black')                          #<27>
+ax.axvline(x=0.5, linestyle = 'dashed', color = 'black')                          #<28>
+scatter_choc = ax.scatter(just_candy_props['likeness'][mask_choc],
+                          just_candy_props['dislikeness'][mask_choc],
+                          c = just_candy_props['colors'][mask_choc],
+                          marker = np.unique(just_candy_props['shapes'][mask_choc]).item(),
+                          label = "Yes",
+                          alpha = 0.6)
+scatter_nc = ax.scatter(just_candy_props['likeness'][mask_nc],
+                        just_candy_props['dislikeness'][mask_nc],
+                        c = just_candy_props['colors'][mask_nc],
+                        marker = np.unique(just_candy_props['shapes'][mask_nc]).item(),
+                        label = "No",
+                        alpha = 0.6)
+ax.set_xlim(0,1)
+ax.set_ylim(1,0)
+ax.minorticks_on()
+ax.grid(which='major',
+        linestyle='-', linewidth='0.5',
+        color='grey', alpha=0.7)
+ax.grid(which='minor',
+        linestyle=':', linewidth='0.3',
+        color='grey', alpha=0.5)
+ax.set_xlabel('Fraction of respondents who reported JOY')
+ax.set_ylabel('Fraction of respondents who reported DESPAIR')
+
+
+ax.legend(title="Chocolate", loc = "lower right")
+plt.show()
+plt.close()
+```
+
+27. Adding a dashed horizontal line at y equals 0.5
+28. Adding a dashed vertical line at x equals 0.5
+
+:::
