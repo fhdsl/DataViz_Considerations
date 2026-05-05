@@ -40,6 +40,20 @@ This course will mostly focus on making visualizations accessible for those with
 
 ### Color Palettes
 
+#### Redundantly distinguish groups
+
+
+An example of this technique can be found in [recent editions of Uno card decks](https://www.theverge.com/2024/6/25/24185625/mattel-board-card-games-colorblind-accessible-uno-blokus-phase-ten-skip-bo) that include geometric shapes on the card to communicate what group or color that card is. 
+
+* Red: Circle
+* Green: Triangle
+* Blue: Square
+* Yellow: Star
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Using color and shape together allows the audience to distinguish groups no matter what the color palette is. Uno cards use this method, including geometric shapes on cards to redundantly communicate groups. To those without color vision deficiencies, this appears redundant. However, for those with color vision deficiencies, anyone can distinguish the groups using the geometric shapes. Red has circles, green has triangles, blue has squares, and yellow has stars."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_100#slide=id.g3b3602af4d0_0_100")
+```
+
 ### Contrast
 
 ### Text
@@ -50,7 +64,7 @@ This course will mostly focus on making visualizations accessible for those with
 
 #### Titles
 
-#### Captions  
+#### Captions
 
 ### Alternative Text Descriptions
 
