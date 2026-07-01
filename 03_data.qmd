@@ -106,28 +106,51 @@ These building blocks are also referred to as "geometric marks" and they include
 * area
 * angle
 
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_20#slide=id.g3b3602af4d0_0_20")
+```
+
 ::: {.panel-tabset}
 
 #### Points
 
 An example of a conventional plot type that uses **points** is a scatter plot. Points typically are circles but can be other shapes (like triangles or squares), and typically represent one person or sample.
 
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_40#slide=id.g3f2e7f70982_0_40")
+```
+
 #### Lines
 
 An example of a conventional plot type that uses **lines** is a line plot. Lines connect different data points. Slope may be a value of interest when working with lines, but it's often difficult for audiences to compare slope values visually without labels. Lines may also be trendlines that aren't connecting explicit data points and rather are included in a plot to showcase a general relationship or trend. Lines are often used to indicate summary statistics such as averages as well as medians or quartiles (in boxplots).
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_89#slide=id.g3f2e7f70982_0_89")
+```
 
 #### Bars
 
 **Bars** use height (vertical bars) or length (horizontal bars) to communicate information about a set of samples. Within bar charts, width typically isn't used to communicate information about data, but for plot types like flow diagrams or histograms, bar width does convey a meaningful value.
 
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_142#slide=id.g3f2e7f70982_0_142")
+```
+
 #### Area
 
 **Area** is often proportional to the amount of data its representing rather than the raw data values itself. Larger areas correspond to larger data values. Area is commonly used in density plots.
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_181#slide=id.g3f2e7f70982_0_181")
+```
 
 #### Angles
 
 **Angles** are most commonly used to represent numerical values such as proportions but can also be used to represent direction rather than just magnitude/size (through use of arrows or slope). Angles are the primary geometric mark used in pie charts.
 
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_213#slide=id.g3f2e7f70982_0_213")
+```
 :::
 
 ### Visual Channels
@@ -141,6 +164,11 @@ These visual building blocks are also referred to as "visual channels" and they 
 * patterns
 * size
 * tilt
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide('https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_229#slide=id.g3f2e7f70982_0_229')
+```
+
 
 ::: {.panel-tabset}
 
