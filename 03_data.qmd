@@ -20,11 +20,23 @@ While "records" is a general term for rows in a structured dataset, certain fiel
 
 <details><summary>Wide vs Long datasets</summary>
 
-Some datasets may utilize a "long" approach to stack similar variables on top of each other with a new column helping to distinguish them and repeating record IDs across multiple rows; but this "long" approach is typically used as input to visualization software.
+Some datasets may utilize a "long" approach to stack similar variables on top of each other with a new column helping to distinguish them and repeating record IDs across multiple rows; but this "long" approach is typically used as input to visualization software, especially when using `ggplot` in R or some libraries like [`Seaborn` in Python](https://seaborn.pydata.org/tutorial/data_structure.html). 
 
 ```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.alt = ""}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3ee80dfc6e4_0_60#slide=id.g3ee80dfc6e4_0_60")
 ```
+
+`tidyverse` R functions that can "pivot" data from a wide format into a long format include:
+
+* [`pivot_longer`](https://tidyr.tidyverse.org/reference/pivot_longer.html): pivots wide data into a longer format by storing column names in a new column and the corresponding values from those columns into another new column
+* [`separate_longer_delim`](https://tidyr.tidyverse.org/reference/separate_longer_delim.html): splits a string using a specific delimiter such as a comma or a semicolon and splits the values into separate rows
+
+Python functions for `pandas` data frame data include:
+
+* [`melt`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.melt.html#pandas.DataFrame.melt)
+* [`wide_to_long`](https://pandas.pydata.org/docs/reference/api/pandas.wide_to_long.html)
+
+Functions that perform the inverse operation, transforming long form data into wide form also exist and are mentioned in the referenced documentation.
 
 </details>
 
