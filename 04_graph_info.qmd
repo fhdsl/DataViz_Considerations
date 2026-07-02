@@ -103,7 +103,7 @@ Of the conventional plots described above, bar plots and histograms both fit wit
 
 #### Example
 
-An example of the Violin plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c in this paper showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2.
+An example of the Violin plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c in this paper showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: [https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2](https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2).
 
 :::
 
@@ -150,9 +150,13 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 * Raincloud plot
 * Swarm plot
 
+<!--
+
 #### Example
 
 Include an example plot
+
+-->
 
 :::
 
@@ -190,9 +194,13 @@ Include an example plot
 * In some cases, a sorted [heatmap](https://www.data-to-viz.com/graph/heatmap.html)
 * A table may be better if you need to make quantitative comparisons
 
+<!--
+
 #### Example
 
 Include an example plot
+
+-->
 
 :::
 
@@ -228,9 +236,13 @@ Include an example plot
 * [Boxplot](https://www.data-to-viz.com/caveat/boxplot.html) (especially with jitter to show individual data points)
 * [Swarm plot](https://r-graph-gallery.com/beeswarm.html)
 
+<!--
+
 #### Example
 
 Include an example plot
+
+-->
 
 :::
 
@@ -289,9 +301,7 @@ Of the conventional plots described above, scatter plots and line charts both fi
 
 #### Example
 
-<details><summary>Example of the plot in the biomedical, bioinformatics, or cancer informatics literature</summary>
-
-https://www.mdpi.com/2079-9721/13/2/37
+An example of the plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 1 showing the relationship between age the receipt for surgery for patients with non-metastatic gastric and esophageal cancer -- specifically showing the trend of an increase in contraindication or refusal of surgery as age increases: [https://www.mdpi.com/2079-9721/13/2/37](https://www.mdpi.com/2079-9721/13/2/37)
 
 </details>
 
@@ -334,6 +344,8 @@ https://www.mdpi.com/2079-9721/13/2/37
 * [Bubble charts](https://www.data-to-viz.com/graph/bubble.html) if another dimension is needed
 * [Parallel plot](https://www.data-to-viz.com/graph/parallel.html)
 
+<!--
+
 #### Example
 
 <details><summary>Pairwise correlation: Full matrix vs lower triangle</summary>
@@ -341,6 +353,8 @@ https://www.mdpi.com/2079-9721/13/2/37
 When using a heatmap to display pairwise correlation, the heatmap is symmetrical and presents redundant information (each correlation is displayed twice) because the correlation of A to B is the same as the correlation of B to A. The diagonal will always have perfect correlation because it's comparing a sample or variable to itself. If looking at just the lower triangle, it presents the pairwise correlation only once and removes the redundant information.
 
 </details>
+
+-->
 
 :::
 
@@ -381,9 +395,13 @@ When using a heatmap to display pairwise correlation, the heatmap is symmetrical
 * Treemaps
 * Other graphical visualizations or some custom made visualization
 
+<!--
+
 #### Example
 
 Include an example of the plot
+
+-->
 
 :::
 
