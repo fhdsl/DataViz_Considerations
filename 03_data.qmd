@@ -268,7 +268,7 @@ These additional design tools may or may not encode data, but do separate out da
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_25#slide=id.g3b3602af4d0_0_25")
 ```
 
-Legends are a form of labels. In some cases, directly labeling groups on a plot is prefered over using a legend. This is especially true if the data groups are fairly well separated on the plot or you can visually associate the labels with whatever channel is beieng used to represent the groups (e.g., color).
+Legends are a form of labels. In some cases, directly labeling groups on a plot is preferred over using a legend. This is especially true if the data groups are fairly well separated on the plot or you can visually associate the labels with whatever channel is being used to represent the groups (e.g., color).
 
 ```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1217#slide=id.g3f2e7f70982_0_1217")
