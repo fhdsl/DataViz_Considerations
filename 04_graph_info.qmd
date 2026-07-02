@@ -103,7 +103,13 @@ Of the conventional plots described above, bar plots and histograms both fit wit
 
 #### Example
 
-An example of the Violin plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c in this paper showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: [https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2](https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2).
+An example of the Violin plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c from @Taylor_etal_2024 showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: [https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2](https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2).
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2/figures/5"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_50#slide=id.g3b3602af4d0_0_50")
+```
+
+Notice that this specific example of the violin plots have inlaid boxplots.
 
 :::
 
@@ -150,13 +156,13 @@ Inclusion of jitter typically uses randomness to space the points over the box s
 * Raincloud plot
 * Swarm plot
 
-<!--
-
 #### Example
 
-Include an example plot
+An example of the Boxplot in the biomedical, bioinformatics, or cancer informatics literature is Figure 1 from @Brown_etal_2014 showing the distribution in the number of mutations for each cancer patient based on cancer type. Notice that the boxplots utilize the visual channel of size through the width of the box to reflect how many patients are represented within each group.
 
--->
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://genome.cshlp.org/highwire/markup/item_fulltext/1041917"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_55#slide=id.g3b3602af4d0_0_55")
+```
 
 :::
 
@@ -301,9 +307,11 @@ Of the conventional plots described above, scatter plots and line charts both fi
 
 #### Example
 
-An example of the plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 1 showing the relationship between age the receipt for surgery for patients with non-metastatic gastric and esophageal cancer -- specifically showing the trend of an increase in contraindication or refusal of surgery as age increases: [https://www.mdpi.com/2079-9721/13/2/37](https://www.mdpi.com/2079-9721/13/2/37)
+An example of the stacked bar chart in the biomedical, bioinformatics, or cancer informatics literature is Figure 1 from @Boutros_etal_2025 showing the relationship between age the receipt for surgery for patients with non-metastatic gastric and esophageal cancer -- specifically showing the trend of an increase in contraindication or refusal of surgery as age increases.
 
-</details>
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.mdpi.com/2079-9721/13/2/37"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_70#slide=id.g3b3602af4d0_0_70")
+```
 
 :::
 
@@ -324,6 +332,8 @@ An example of the plot in the biomedical, bioinformatics, or cancer informatics 
 * May also exhibit pairwise correlation for many groups
 * Not recommended if you need to know or display actual values
 * Often used together with hierarchical clustering or reordering sample location to highlight trends or areas of similarity
+
+Note that a **confusion matrix** is a specific type of heatmap which is used evaluate the performance of a machine learning classification model.
 
 #### Strengths
 
