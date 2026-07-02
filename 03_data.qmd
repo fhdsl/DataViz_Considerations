@@ -309,7 +309,7 @@ Additional coordinate systems are appropriate for some specific visualizations s
   * A projected coordinate system is a two dimensional map.
 
 ```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1334#slide=id.g3f2e7f70982_0_1334"
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1334#slide=id.g3f2e7f70982_0_1334")
 ```
 
 </details>
