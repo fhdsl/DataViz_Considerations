@@ -273,6 +273,43 @@ Include an example plot and how to interpret
 
 :::
 
+## Confusion Matrix
+
+**Description**: Filler description
+
+::: {.panel-tabset}
+
+### When to Use
+
+**When to use PCA plots:**
+
+  * Type of data
+  * Number of variables
+  * Primary data encodings
+  * Used for ....
+
+### Strengths
+
+  * Strength 1
+  * Strength 2
+
+### Weaknesses
+
+  * Weakness 1
+  * Weakness 2
+  * Weakness 3
+
+### Alternatives
+
+  * Alternative (if applicable)
+  * Alternative 2 (if applicable)
+
+### Example & Interpretation
+
+Include an example plot and how to interpret
+
+:::
+
 ## Principal Components Analysis (PCA) Plot (probably)
 
 **Description**: Filler description
