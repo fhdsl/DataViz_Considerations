@@ -45,6 +45,11 @@ Conventional graph types include histograms, scatter plots, bar plots, and line 
 | Goal                        | looking at a distribution | showing a correlation | finding a ranking | displaying change over time |
 
 
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_45#slide=id.g3b3602af4d0_0_45")
+```
+
+
 <details><summary>Additional data and data encodings for conventional graph types</summary>
 
 A *histogram* may visualize more than one distribution within the same visualization. In that case, the dataset will have categorical data and more than one variable. Such a visualization would likely incorporate color or patterns and should increase opacity/transparency.
