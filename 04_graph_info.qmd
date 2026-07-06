@@ -200,13 +200,24 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 * In some cases, a sorted [heatmap](https://www.data-to-viz.com/graph/heatmap.html)
 * A table may be better if you need to make quantitative comparisons
 
-<!--
-
 #### Example
 
-Include an example plot
+An example of a Ridgeline plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 6H from @Xing_etal_2025 showing the distribution of various myeloid cell state scores (M1 macrophage, M2 macrophage, angiogenesis, and phagocytosis) following analysis of single cell RNA sequencing data for certain pre-defined gene sets. Specifically, each of these ridgeline plots is comparing the distributions of the cell state scores for Brain metastases (BrM) against those of primary tumors (PT).
 
--->
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://doi.org./10.1016/j.ccell.2025.03.025"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_60#slide=id.g3b3602af4d0_0_60")
+```
+
+This example highlights the utility of Ridgeline plots in making comparisons between a small number of groups (2 - BrM vs PT) for several categories (4 - the cell state scores), leading to a large number of overall comparisons even if there are not a lot of groups involved in each comparison. Within this example, some of the comparisons show high similarity between the groups (e.g., M1 score), while others depict larger differences (e.g., phagocytic score). Notice the use of faceting to split out ridgeline plots into different panels or subplots for the cell state score categories and the use of color to signify the BrM and PT groups.
+
+
+Another example of a Ridgeline plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 2B from @Lozada_etal_2025 showing the distribution of expression of various possible precision therapy targets within different tissues, specifically comparing observed expression of the targets for Neuroendocrine neoplasms (NEN) and adenocarcinomas (ADC) environments.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://aacrjournals.org/view-large/figure/16201627/CRC-24-0501_f2.tif"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1419#slide=id.g3f2e7f70982_0_1419")
+```
+
+This example again uses faceting to separate out some comparisons into subplots or separate (panels) -- in this case separating out different tissues. It still uses color to distinguish groups (NEN vs ADC), however those groups are plotted within the same strip, and separate strips are stacked for the different potential therapy targets, making comparisons across many different targets within each subplot. The targets are both ordered and spaced in such a way that there is a clear progression in distributions without the figure appearing too cluttered. The use of faceting aides in making this plot less complicated and cluttered than it otherwise might be.
 
 :::
 
@@ -242,13 +253,15 @@ Include an example plot
 * [Boxplot](https://www.data-to-viz.com/caveat/boxplot.html) (especially with jitter to show individual data points)
 * [Swarm plot](https://r-graph-gallery.com/beeswarm.html)
 
-<!--
-
 #### Example
 
-Include an example plot
+An example of a raincloud plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 4 from @Bouron_etal_2022 comparing the distributions of various primary tumor features as measured by different Positron emission tomography/computed tomography (PET/CT) systems for a retrospective cohort of patients (n=111) with nonmetastatic triple negative breast cancer (all of whom were examined at a specific comprehensive cancer center within a specific date range).
 
--->
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.mdpi.com/2072-6694/14/3/637"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_65#slide=id.g3b3602af4d0_0_65")
+```
+
+Note that color is used to distinguish the different PET/CT systems and faceting or subplots separate out the various primary tumor features. This specific example utilizing a raincloud plot is quite fitting because an unequal number of patients were examined across the three PET/CT systems (49, 17, 45) -- therefore showing the data within each feature for each of the systems is especially useful -- employing a strength of this plot type.
 
 :::
 
@@ -319,6 +332,10 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 **Description**: A visualization (typically two dimensional -- with rows and columns -- of a table or matrix) using color. Always uses colors to display numbers or categories; the two dimensional matrix while typical is not a requirement, because the two dimensions could be a map projection or tissue sample.
 
+Heatmaps are frequently used to show gene expression across samples or cell types for a selection of genes. They may also be used to display the pairwise correlation of many samples, genes, cell types, or features compared amongst themselves (e.g., sample to the other samples, gene to the other genes, cell type to the other cell types, or feature to the other features).
+
+Note that a **confusion matrix** is a specific type of heatmap which is used evaluate the performance of a machine learning classification model.
+
 ::: {.panel-tabset}
 
 #### When to use
@@ -332,8 +349,6 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 * May also exhibit pairwise correlation for many groups
 * Not recommended if you need to know or display actual values
 * Often used together with hierarchical clustering or reordering sample location to highlight trends or areas of similarity
-
-Note that a **confusion matrix** is a specific type of heatmap which is used evaluate the performance of a machine learning classification model.
 
 #### Strengths
 
@@ -354,17 +369,38 @@ Note that a **confusion matrix** is a specific type of heatmap which is used eva
 * [Bubble charts](https://www.data-to-viz.com/graph/bubble.html) if another dimension is needed
 * [Parallel plot](https://www.data-to-viz.com/graph/parallel.html)
 
-<!--
-
 #### Example
 
-<details><summary>Pairwise correlation: Full matrix vs lower triangle</summary>
+An example of a **heatmap** in the biomedical, bioinformatics, or cancer informatics literature is Figure 3k from @Janesick_etal_2023 showing the relative expression of Xenium panel genes across different cell types within the spatial transcriptomics / Xenium dataset. Rows within the heatmap represent different cell types and columns represent the genes from the panel. Color is used to represent z-scores for the relative expression with dark purple signifying higher z-scores and yellow signifying lower z-scores.
 
-When using a heatmap to display pairwise correlation, the heatmap is symmetrical and presents redundant information (each correlation is displayed twice) because the correlation of A to B is the same as the correlation of B to A. The diagonal will always have perfect correlation because it's comparing a sample or variable to itself. If looking at just the lower triangle, it presents the pairwise correlation only once and removes the redundant information.
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.nature.com/articles/s41467-023-43458-x/figures/3"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_75#slide=id.g3b3602af4d0_0_75")
+```
+
+If another dimension of data were needed, a **bubble chart** could be utilized like this example in Supplemental Figure S5C from @Ford_etal_2024 which uses color to represent the average expression of certain cell type marker genes across cell types. However, it also represents the number of single cells which expressed that marker gene utilizing the size of points. Notice a large red circle represents a gene that is highly expressed in that cell type for many single cells within the sample. Whereas a large tan circle represents a gene that was lowly expressed in that cell type for many single cells within the sample. Finally, a small circle will represent a gene whose expression level (whatever it is) was not observed in many single cells within that sample.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.cell.com/iscience/fulltext/S2589-0042(24)01977-1"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1446#slide=id.g3f2e7f70982_0_1446")
+```
+
+In this example, the marker genes are represented within the rows and the different cell types are represented within the columns (inverting the order from the previous example.
+
+An example of a **pairwise correlation heatmap** in the biomedical, bioinformatics, or cancer informatics literature is Figure 1 from @Nelson_etal_2024 showing the pairwise Spearman correlation values between immune cell subtypes. Perfect correlation is observed on the diagonal as would be expected. Moderate to high correlation is observed between every subtype excluding the CD68 positive ligand negative subtyp where low to no correlation is observed with other subtypes.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.jci.org/articles/view/179501/figure/1"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1458#slide=id.g3f2e7f70982_0_1458")
+```
+
+
+<details><summary>Pairwise correlation: Full matrix vs lower triangle for pairwise correlation</summary>
+
+If using a heatmap to display pairwise correlation between different groups (e.g., samples), the heatmap will be symmetrical and present redundant information (each correlation would be displayed twice) because the correlation of A to B is the same as the correlation of B to A. The diagonal will always have perfect correlation because it would be comparing a sample or variable to itself. If looking at just the lower triangle, it presents the pairwise correlation only once and removes the redundant information.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1468#slide=id.g3f2e7f70982_0_1468")
+```
 
 </details>
-
--->
 
 :::
 
