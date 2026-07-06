@@ -189,7 +189,7 @@ Another example of the Boxplot in the biomedical, bioinformatics, or cancer info
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f7b63c28e4_72_9#slide=id.g3f7b63c28e4_72_9")
 ```
 
-These boxplots show that synchronous metastases seeding times occured earlier than metachronous metastases. Note how the authors use a label along the y-axis to translate the seeding time estimates into a categories of early and late to increase the clarity of the figure for the audience.
+These boxplots show that synchronous metastases seeding times occurred earlier than metachronous metastases. Note how the authors use a label along the y-axis to translate the seeding time estimates into a categories of early and late to increase the clarity of the figure for the audience.
 
 :::
 
@@ -418,7 +418,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 In this example, the marker genes are represented within the rows and the different cell types are represented within the columns (inverting the order from the previous example.
 
-An example of a **pairwise correlation heatmap** in the biomedical, bioinformatics, or cancer informatics literature is Figure 1 from @Nelson_etal_2024 showing the pairwise Spearman correlation values between immune cell subtypes. Perfect correlation is observed on the diagonal as would be expected. Moderate to high correlation is observed between every subtype excluding the CD68 positive ligand negative subtyp where low to no correlation is observed with other subtypes.
+An example of a **pairwise correlation heatmap** in the biomedical, bioinformatics, or cancer informatics literature is Figure 1 from @Nelson_etal_2024 showing the pairwise Spearman correlation values between immune cell subtypes. Perfect correlation is observed on the diagonal as would be expected. Moderate to high correlation is observed between every subtype excluding the CD68 positive ligand negative subtype where low to no correlation is observed with other subtypes.
 
 ```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.jci.org/articles/view/179501/figure/1"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1458#slide=id.g3f2e7f70982_0_1458")
@@ -482,7 +482,7 @@ An example of a Sankey diagram for **patient cohort stratifications** in the bio
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_80#slide=id.g3b3602af4d0_0_80")
 ```
 
-An example of a Sankey diagram for **symptom trajectories** in the biomedical, bioinformatics, or cancer informatics literature is Figure 2Aii from @Otto_etal_2022. This example has a strong time dependence, showing how the frequency of a specific symptom changes over time for a set of patients. Importantly, every patient is represented within this diagram from start (Baseline) to finish (6 months) because of the "Discontinued" category. This is not saying the symptoms had discontinued because we see that some who had reported frequent occurrence of the symptom at 3 months report never for a frequency at 6 months; rather this "Discontinued" is reflecting patients whose symptom frequency is no longer tracked becasue they discontinued their participation in the study.
+An example of a Sankey diagram for **symptom trajectories** in the biomedical, bioinformatics, or cancer informatics literature is Figure 2Aii from @Otto_etal_2022. This example has a strong time dependence, showing how the frequency of a specific symptom changes over time for a set of patients. Importantly, every patient is represented within this diagram from start (Baseline) to finish (6 months) because of the "Discontinued" category. This is not saying the symptoms had discontinued because we see that some who had reported frequent occurrence of the symptom at 3 months report never for a frequency at 6 months; rather this "Discontinued" is reflecting patients whose symptom frequency is no longer tracked because they discontinued their participation in the study.
 
 ```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link="https://doi.org/10.1016/j.jgo.2021.12.017"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1477#slide=id.g3f2e7f70982_0_1477")
