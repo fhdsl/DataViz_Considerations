@@ -103,7 +103,7 @@ Of the conventional plots described above, bar plots and histograms both fit wit
 
 #### Example
 
-An example of the Violin plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c from @Taylor_etal_2024 showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: [https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2](https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2).
+An example of the Violin plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c from @Taylor_etal_2024 showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP.
 
 ```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2/figures/5"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_50#slide=id.g3b3602af4d0_0_50")
@@ -120,6 +120,20 @@ Notice that this specific example of the violin plots have inlaid boxplots.
 <details><summary>Jitter and Randomness</summary>
 
 Inclusion of jitter typically uses randomness to space the points over the box so you may need to set a random seed in your analysis to ensure the visualization appears exactly one way consistently. However, it's not a major problem if the jitter points move on a plot as they'll have the same numerical axis location, only moving within the categorical axis.
+
+:::{.panel-tabset}
+
+##### R
+
+`set.seed()` is a base R function that is used to set a random seed within R: [`set.seed()` documentation](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Random.html)
+
+##### Python
+
+`random.seed()` from the `random` module in Python is used to set a random seed within Python: [`random.seed()` documentation](https://docs.python.org/3/library/random.html)
+
+If using the `numpy` package, the `numpy.random.default_rng()` function can be used to instantiate a random number generator, though the seed should be passed a parameter: [`numpy.random.default_rng()` documentation](https://numpy.org/doc/2.2/reference/random/generator.html#numpy.random.default_rng)
+
+:::
 
 </details>
 
@@ -163,6 +177,14 @@ An example of the Boxplot in the biomedical, bioinformatics, or cancer informati
 ```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://genome.cshlp.org/highwire/markup/item_fulltext/1041917"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_55#slide=id.g3b3602af4d0_0_55")
 ```
+
+Another example of the Boxplot in the biomedical, bioinformatics, or cancer informatics literature where **jitter** is used to display the actual data points in addition to the box summary statistics is Figure 4d from @Hu_Li_Ma_Curtis_2020. These boxplots show the estimated seeding time relative to the diagnosis of the primary tumor for two types of metasteses -- synchronous and metachronous. Synchronous metasteses are discovered around the same time as the primary tumor while metachronous metastases are discovered after the primary tumor has been diagnosed, treated, and perhaps surgically removed. The seeding time refers to when primary tumors shed cells that would establish metasteses.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.nature.com/articles/s41588-020-0628-z/figures/4"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f7b63c28e4_72_9#slide=id.g3f7b63c28e4_72_9")
+```
+
+These boxplots show that synchronous metastases seeding times occured earlier than metachronous metastases. Note how the authors use a label along the y-axis to translate the seeding time estimates into a categories of early and late to increase the clarity of the figure for the audience.
 
 :::
 
@@ -217,7 +239,7 @@ Another example of a Ridgeline plot in the biomedical, bioinformatics, or cancer
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1419#slide=id.g3f2e7f70982_0_1419")
 ```
 
-This example again uses faceting to separate out some comparisons into subplots or separate (panels) -- in this case separating out different tissues. It still uses color to distinguish groups (NEN vs ADC), however those groups are plotted within the same strip, and separate strips are stacked for the different potential therapy targets, making comparisons across many different targets within each subplot. The targets are both ordered and spaced in such a way that there is a clear progression in distributions without the figure appearing too cluttered. The use of faceting aides in making this plot less complicated and cluttered than it otherwise might be.
+This example again uses faceting to separate out some comparisons into subplots or separate panels -- in this case separating out different tissues. It still uses color to distinguish groups (NEN vs ADC), however those groups are plotted within the same strip, and separate strips are stacked for the different potential therapy targets, making comparisons across many different targets within each subplot. The targets are both ordered and spaced in such a way that there is a clear progression in distributions without the figure appearing too cluttered. The use of faceting aides in making this plot less complicated and cluttered than it otherwise might be.
 
 :::
 
@@ -255,13 +277,13 @@ This example again uses faceting to separate out some comparisons into subplots 
 
 #### Example
 
-An example of a raincloud plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 4 from @Bouron_etal_2022 comparing the distributions of various primary tumor features as measured by different Positron emission tomography/computed tomography (PET/CT) systems for a retrospective cohort of patients (n=111) with nonmetastatic triple negative breast cancer (all of whom were examined at a specific comprehensive cancer center within a specific date range).
+An example of a raincloud plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 4 from @Bouron_etal_2022 comparing the distributions of various primary tumor features (e.g., SUVPeak, TLG, Entropy, LRE) as measured by different Positron emission tomography/computed tomography (PET/CT) systems (D690, DIQ5, & DST) for a retrospective cohort of patients (n=111) with nonmetastatic triple negative breast cancer (all of whom were examined at a specific comprehensive cancer center within a specific date range).
 
 ```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.mdpi.com/2072-6694/14/3/637"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_65#slide=id.g3b3602af4d0_0_65")
 ```
 
-Note that color is used to distinguish the different PET/CT systems and faceting or subplots separate out the various primary tumor features. This specific example utilizing a raincloud plot is quite fitting because an unequal number of patients were examined across the three PET/CT systems (49, 17, 45) -- therefore showing the data within each feature for each of the systems is especially useful -- employing a strength of this plot type.
+Note that color is used to distinguish the different PET/CT systems and faceting or subplots separate out the various primary tumor features. This specific example utilizing a raincloud plot is quite fitting because an unequal number of patients were examined across the three PET/CT systems (49, 17, 45) -- therefore showing the data within each feature for each of the systems is especially useful.
 
 :::
 
@@ -324,6 +346,12 @@ An example of the stacked bar chart in the biomedical, bioinformatics, or cancer
 
 ```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.mdpi.com/2079-9721/13/2/37"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_70#slide=id.g3b3602af4d0_0_70")
+```
+
+Another example of the stacked bar chart in the biomedical, bioinformatics, or cancer informatics literature is Figure 4b from @Janesick_etal_2023 showing cell type composition within three regions of interest identified in a histopathology specimen. Two of the regions are ductal carcinoma in situ (DCIS) while the third represents tumor invasion in ductal carcinoma (invasive). In this example, the authors were able to identify differences in cell composition for the regions of interest (including some cell types seemingly being restricted to DCIS regions but not invasive regions). However, examples like these may be difficult to interpret when subgroups (e.g., the red for invasive) are not aligned across groups / bars or if it is unclear to what extent small proportions differ between groups / bars.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.nature.com/articles/s41467-023-43458-x/figures/4"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f7b63c28e4_72_2#slide=id.g3f7b63c28e4_72_2")
 ```
 
 :::
@@ -416,7 +444,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 * Categorical data and sometimes numerical data/counts
 * Requires several variables
-* Primary data encodings are lines, area, and color
+* Primary data encodings are lines, area, and color. The width of the lines relate to the size of the categories.
 * Used to show change over time
 * Best with datasets with some sort of longitudinal data or time points with categories at each time point
 * Example uses include tracking patient response or symptom trajectories as well as patient cohort stratification
@@ -441,13 +469,26 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 * Treemaps
 * Other graphical visualizations or some custom made visualization
 
-<!--
-
 #### Example
 
-Include an example of the plot
+An example of a Sankey diagram for **patient cohort stratifications** in the biomedical, bioinformatics, or cancer informatics literature is Extended Data Figure 1 from @Hu_Li_Ma_Curtis_2020. This example does not have a strong time dependence, instead showing different patient cohorts represented in the data specifically related to the primary tumor site, the metastasis site, and the treatment status for the metastatic tumor. Even without a strong time dependence this figure works well, showing what combinations of characteristics within those categories are represented within the dataset.
 
--->
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link="https://www.nature.com/articles/s41588-020-0628-z/figures/6"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_80#slide=id.g3b3602af4d0_0_80")
+```
+
+An example of a Sankey diagram for **symptom trajectories** in the biomedical, bioinformatics, or cancer informatics literature is Figure 2Aii from @Otto_etal_2022. This example has a strong time dependence, showing how the frequency of a specific symptom changes over time for a set of patients. Importantly, every patient is represented within this diagram from start (Baseline) to finish (6 months) because of the "Discontinued" category. This is not saying the symptoms had discontinued because we see that some who had reported frequent occurrence of the symptom at 3 months report never for a frequency at 6 months; rather this "Discontinued" is reflecting patients whose symptom frequency is no longer tracked becasue they discontinued their participation in the study.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link="https://doi.org/10.1016/j.jgo.2021.12.017"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1477#slide=id.g3f2e7f70982_0_1477")
+```
+
+An example of a Sankey diagram for **treatment trajectories** in the biomedical, bioinformatics, or cancer informatics literature is Figure 3 from @Beckmann_2021. This figure again has a dependence on time, in this case time relating to a sequence of treatments. Note however that not every patient is represented within this diagram throughout the whole sequence. There is no clear category marking living individuals who discontinue or no longer need treatment.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "", fig.link="https://www.mdpi.com/2072-6694/13/4/875"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1481#slide=id.g3f2e7f70982_0_1481")
+```
+
 
 :::
 
