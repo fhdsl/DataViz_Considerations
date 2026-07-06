@@ -31,6 +31,7 @@ DCIS
 Deyo
 DISCOVERABLE
 DIQ5
+DIQ
 Dockerfile
 Dockerhub
 dropdown
@@ -100,7 +101,7 @@ OTTR
 ottrpal
 ottrproject
 Pandoc
-phagoytic
+phagocytic
 phagocytosis
 PHQ
 png
