@@ -17,6 +17,51 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 To summarize all of the considerations and best practices discussed in the chapters before this, the first section of this final chapter will walk through an example, step-by-step, of iteratively building up an expository data visualization. Each step or iteration showcases a different view of the same data as we refine how to effectively communicate the message we want to convey for the audience.
 
+Throughout this example exercise, you will see several types of specially-colored boxes. In particular, there are four to which you should pay special attention.
+
+One box highlights potential ethical issues and best practices to avoid those issues.
+
+<div class = "ethics">
+
+In this box, you'll find reminders of the ethical considerations you should be particularly aware of while building data visualizations as well as steps you can take to ensure best practices.
+
+</div>
+
+Another box highlights potential accessibility issues and best practices to avoid those issues.
+
+<div class = "accessibility">
+
+In this box, you'll find reminders of the accessibility considerations you should be particularly aware of while building data visualizations. These include considerations for specific audience groups as well as considerations for increasing clarity for the audience in general. These boxes will include steps you can take to ensure best practices.
+
+</div>
+
+One box highlights specific thought questions or prompts for you to consider as you work through this example.
+
+::: {.emphasis_block}
+
+<div class = "reflection">
+
+In this box, you'll find a specific prompt which poses a thought question about the material for you to consider.
+
+</div>
+
+<details><summary>Example answer in click to expand section</summary>
+
+In this click to expand section, you'll find a possible answer to the thought question.
+
+</details>
+
+:::
+
+The final box often follows the thought question box, but not always. It highlights where within the course various topics were covered.
+
+<div class = "notice">
+
+In this box, you'll find information connecting topics to where they were covered in the course in case you want to review those topics.
+
+</div>
+
+
 {{< include _example_data_description.qmd >}}
 
 :::{.emphasis_block}
@@ -160,7 +205,7 @@ It looks even more convincing that chocolate candy is among the most liked candy
 
 <div class = "accessibility">
 
-When using color to distinguish groups, an important accessibility step is to use shape as a redundant way to distinguish groups. This redundancy increases accessibility for those with color vision deficiency.
+When using color to distinguish groups, an important accessibility step is to use shape as a redundant way to distinguish groups, especially if the color palette being used isn't necessarily color vision deficiency friendly. This redundancy increases accessibility for those with color vision deficiency.
 
 </div>
 
@@ -168,6 +213,12 @@ When using color to distinguish groups, an important accessibility step is to us
 #### Adjusting point size, transparency, and color
 
 {{< include _example_iter5_adjust_points.qmd >}}
+
+<div class = "accessibility">
+
+When using color to distinguish groups, to increase accessibility, use tools to check your color palette to see if the colors can be distinguished by those with color vision deficiency.
+
+</div>
 
 #### Ordering of axes to promote readability
 
@@ -257,7 +308,7 @@ Perhaps you'd like to try to plot this with a completely different plot type! Wh
 
 With your data within your research projects, keep practicing thorough exploration prior to intentional and careful data visualization, making design choices to increase the clarity and accesibility of your visualizations for a wide audience.
 
-In adddition, more open ended practice with open source datasets can be found by browsing data visualization communities and challenges such as 
+In adddition, more open ended practice with open source datasets can be found by browsing data visualization communities and challenges such as
 
 1. [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday)
 
@@ -265,18 +316,18 @@ In adddition, more open ended practice with open source datasets can be found by
 
 3. [bioviz challenges](http://biovis.net/2026/). Note that these bioviz challenges are more advanced, often describing working with complex multi-omic data and sometimes suggesting that participants should sketch possible visualizations rather than perfectly polishing expository visualization.
 
-As mentioned within the Field Specific Visualizations chapter, data visualization is commonly used within bioinformatics research to validate models. Researchers may wonder how well their model performs. To answer that question, they may run either experimental or simulated data with known "truth" through the model and compare the model's predictions with the known "truth". Researchers may then wonder why the model is messing up in spot where the prediction doesn't line up with the observed truth. To answer this, researchers explore specific examples where the known truth and predictions differ and look for patterns. 
+As mentioned within the Field Specific Visualizations chapter, data visualization is commonly used within bioinformatics research to validate models. Researchers may wonder how well their model performs. To answer that question, they may run either experimental or simulated data with known "truth" through the model and compare the model's predictions with the known "truth". Researchers may then wonder why the model is messing up in spot where the prediction doesn't line up with the observed truth. To answer this, researchers explore specific examples where the known truth and predictions differ and look for patterns.
 
 Two examples of using data visualization to validate models within the bioinformatic literature include:
 
 1. A model (`Xpresso`) which predicts gene expression from gene sequence [@Agarwal_Shendure_2020]. The authors ran the model using sequences of genes with experimentally known expression values and compared the model predictions with the known / observed expression. Figure 3A is an example of this comparison / validation. Other subpanels within the figure explore where the predictions diverge from the observed expression. The authors [provide the data related to this figure](https://www.cell.com/cms/10.1016/j.celrep.2020.107663/attachment/8f2732a1-4b4d-4c39-aae6-5742b2b946af/mmc2.xlsx). Consider recreating Figure 3A or rethink an entirely  different or partially different approach for comparing the predictions and the observed expression values.
 
-2. A model (`rhapsodi`) was designed to impute the missing genotypes within sparse single gamete DNA sequencing data [@Carioscia_etal_2022]. As a result of imputing the missing genotypes, the donor haplotypes are phased and recombination break points are discovered. Benchmarking of the model's performance was done using simulated data. Specifically the authors simulated fully known genotype sequences for many gametes from donor haplotypes (keeping track of recombination locations). Then sparsity was introduced through futher simulation into these genotype sequences. The model was provided the simulated sparse inputs and the model outputs could be compared with the fully known simulated data. Figure 2 illustrates much of this benchmarking with Figure 2—figure supplement 5 focusing on looking for patterns where truth and predictions differed, specifically for the recombination break points. The [data used to produce that figure is available on the associated GitHub](https://github.com/mccoy-lab/transmission-distortion/blob/main/plotting/supp_recomb/fn_fp_tall_df.Rdata). Consider exploring the dataset to look for patterns much like the supplemental figure did. 
+2. A model (`rhapsodi`) was designed to impute the missing genotypes within sparse single gamete DNA sequencing data [@Carioscia_etal_2022]. As a result of imputing the missing genotypes, the donor haplotypes are phased and recombination break points are discovered. Benchmarking of the model's performance was done using simulated data. Specifically the authors simulated fully known genotype sequences for many gametes from donor haplotypes (keeping track of recombination locations). Then sparsity was introduced through futher simulation into these genotype sequences. The model was provided the simulated sparse inputs and the model outputs could be compared with the fully known simulated data. Figure 2 illustrates much of this benchmarking with Figure 2—figure supplement 5 focusing on looking for patterns where truth and predictions differed, specifically for the recombination break points. The [data used to produce that figure is available on the associated GitHub](https://github.com/mccoy-lab/transmission-distortion/blob/main/plotting/supp_recomb/fn_fp_tall_df.Rdata). Consider exploring the dataset to look for patterns much like the supplemental figure did.
 
 ## In Summary
 
-* Aim for understanding and readability for a broad audience over complexity. 
-* When you are working with your data and selecting your plot, think about what message you want to communicate. 
+* Aim for understanding and readability for a broad audience over complexity.
+* When you are working with your data and selecting your plot, think about what message you want to communicate.
 * Iterate and ask for feedback.
 * Carefully check visualizations against data and expectations to ensure accuracy.
 * Be careful to avoid common data distortions or unintentional takeaways.
