@@ -227,17 +227,21 @@ But we're not done yet....
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_20#slide=id.g3bb275f27df_0_20")
 ```
 
+:::{.emphasis_block}
+
 <div class = "reflection">
 
-What might be a good caption for this expository data visualization? Try writing one!
+What might be a good caption for this expository data visualization? Try writing one! Focus on providing a detailed description of what the plot shows that will help the plot to tell its story and stand alone.
+
+</div>
 
 <details><summary>A possible caption</summary>
 
-A survey of potential trick or treaters in 2017 by the University of British Columbia asked how survey respondents felt when they received certain candies. Here each candy is plotted based on the fraction of respondents which viewed that candy with Joy vs the fraction of respondents which viewed that candy with Despair. The upper right corner of the plot represents the most liked candies (lots of joy, little despair), while the bottom left corner represents the least liked candies (more despair, less joy). Candy color and shape is used to separate chocolate candy (brown triangles) from non-chocolate candy (blue circles). Chocolate candy seems to be among the most liked candy with any full-sized candy bar having the most joy and least despair reported.
+**Chocolate is among the most liked candy in 2017.** A survey of potential trick or treaters in 2017 by the University of British Columbia asked how survey respondents felt when they received certain candies. Here each candy is plotted based on the fraction of respondents which viewed that candy with Joy vs the fraction of respondents which viewed that candy with Despair. The upper right corner of the plot represents the most liked candies (lots of joy, little despair), while the bottom left corner represents the least liked candies (more despair, less joy). Candy color and shape is used to separate chocolate candy (brown triangles) from non-chocolate candy (blue circles). Chocolate candy seems to be among the most liked candy with any full-sized candy bar having the most joy and least despair reported.
 
 </details>
 
-</div>
+:::
 
 #### Going further
 
