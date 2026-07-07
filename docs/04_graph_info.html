@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -309,6 +329,15 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
 </tr>
 </tbody>
 </table>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3b3602af4d0_0_45.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 <details>
 <summary>
 Additional data and data encodings for conventional graph types
@@ -362,7 +391,17 @@ Additional data and data encodings for conventional graph types
 </ul>
 </div>
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
-<p>An example of the Violin plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c in this paper showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP: https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2.</p>
+<p>An example of the Violin plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 5c from <span class="citation" data-cites="Taylor_etal_2024">Taylor et al. (<a href="#ref-Taylor_etal_2024" role="doc-biblioref">2024</a>)</span> showing the expression of a tumor suppressor gene based on the genotype of an eQTL associated SNP.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www-nature-com.fhcrc.idm.oclc.org/articles/s41586-024-07708-2/figures/5"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3b3602af4d0_0_50.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Notice that this specific example of the violin plots have inlaid boxplots.</p>
 </div>
 </div>
 </div>
@@ -375,11 +414,23 @@ Additional data and data encodings for conventional graph types
 Jitter and Randomness
 </summary>
 <p>Inclusion of jitter typically uses randomness to space the points over the box so you may need to set a random seed in your analysis to ensure the visualization appears exactly one way consistently. However, it’s not a major problem if the jitter points move on a plot as they’ll have the same numerical axis location, only moving within the categorical axis.</p>
-</details>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">When to use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Example</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Python</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p><code>set.seed()</code> is a base R function that is used to set a random seed within R: <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Random.html"><code>set.seed()</code> documentation</a></p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p><code>random.seed()</code> from the <code>random</code> module in Python is used to set a random seed within Python: <a href="https://docs.python.org/3/library/random.html"><code>random.seed()</code> documentation</a></p>
+<p>If using the <code>numpy</code> package, the <code>numpy.random.default_rng()</code> function can be used to instantiate a random number generator, though the seed should be passed a parameter: <a href="https://numpy.org/doc/2.2/reference/random/generator.html#numpy.random.default_rng"><code>numpy.random.default_rng()</code> documentation</a></p>
+</div>
+</div>
+</div>
+</details>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">When to use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-5" role="tab" aria-controls="tabset-3-5" aria-selected="false">Example</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p><strong>When to use Boxplots:</strong></p>
 <ul>
 <li>Numerical data (may have categorical data if looking at multiple distributions)</li>
@@ -389,21 +440,21 @@ Jitter and Randomness
 <li>Used to show distributions and rank groups</li>
 </ul>
 </div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <ul>
 <li>Shows the data as well as helpful summary statistics and overall variation</li>
 <li>Can quickly spot outliers</li>
 <li>Can compare groups efficiently</li>
 </ul>
 </div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <ul>
 <li>Doesn’t show multiple modes as well as violin plots</li>
 <li>Quartiles may not be familiar concepts for general audiences</li>
 <li>Outliers need further investigation</li>
 </ul>
 </div>
-<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
 <ul>
 <li>Violin plot</li>
 <li>Histogram</li>
@@ -413,8 +464,28 @@ Jitter and Randomness
 <li>Swarm plot</li>
 </ul>
 </div>
-<div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
-<p>Include an example plot</p>
+<div id="tabset-3-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-5-tab">
+<p>An example of the Boxplot in the biomedical, bioinformatics, or cancer informatics literature is Figure 1 from <span class="citation" data-cites="Brown_etal_2014">Brown et al. (<a href="#ref-Brown_etal_2014" role="doc-biblioref">2014</a>)</span> showing the distribution in the number of mutations for each cancer patient based on cancer type. Notice that the boxplots utilize the visual channel of size through the width of the box to reflect how many patients are represented within each group.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://genome.cshlp.org/highwire/markup/item_fulltext/1041917"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3b3602af4d0_0_55.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Another example of the Boxplot in the biomedical, bioinformatics, or cancer informatics literature where <strong>jitter</strong> is used to display the actual data points in addition to the box summary statistics is Figure 4d from <span class="citation" data-cites="Hu_Li_Ma_Curtis_2020">Hu et al. (<a href="#ref-Hu_Li_Ma_Curtis_2020" role="doc-biblioref">2020</a>)</span>. These boxplots show the estimated seeding time relative to the diagnosis of the primary tumor for two types of metasteses – synchronous and metachronous. Synchronous metasteses are discovered around the same time as the primary tumor while metachronous metastases are discovered after the primary tumor has been diagnosed, treated, and perhaps surgically removed. The seeding time refers to when primary tumors shed cells that would establish metasteses.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.nature.com/articles/s41588-020-0628-z/figures/4"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f7b63c28e4_72_9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>These boxplots show that synchronous metastases seeding times occurred earlier than metachronous metastases. Note how the authors use a label along the y-axis to translate the seeding time estimates into a categories of early and late to increase the clarity of the figure for the audience.</p>
 </div>
 </div>
 </div>
@@ -423,9 +494,9 @@ Jitter and Randomness
 <h3 data-number="4.4.3" class="anchored" data-anchor-id="ridgeline-plots"><span class="header-section-number">4.4.3</span> Ridgeline Plots</h3>
 <p><strong>Description</strong>: Shows the distribution of multiple categories of numerical data, using densities (half a violin). Looks like stacked, but slightly offset mountain ridges.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">When to use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-5" role="tab" aria-controls="tabset-3-5" aria-selected="false">Example</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">When to use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-5" role="tab" aria-controls="tabset-4-5" aria-selected="false">Example</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <p><strong>When to use Ridgeline plots:</strong></p>
 <ul>
 <li>Numerical data (with categorical data for groups)</li>
@@ -435,20 +506,20 @@ Jitter and Randomness
 <li>Used to show distributions and rank groups</li>
 </ul>
 </div>
-<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <ul>
 <li>Efficiently displays distributions for many groups or categories</li>
 <li>Shows distribution shape (e.g., skew and modes)</li>
 </ul>
 </div>
-<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <ul>
 <li>Can be cluttered if there is too much overlap between groups or not a clear ordering of the categories</li>
 <li>Good for general comparison among groups, but not for finding precise quantitative differences</li>
 <li>The method for creating the density visualizations is a bit arbitrary</li>
 </ul>
 </div>
-<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
 <ul>
 <li><a href="https://www.data-to-viz.com/caveat/boxplot.html">Boxplot</a> (especially with jitter to show individual data points)</li>
 <li><a href="https://datavizproject.com/data-type/strip-plot/">Strip plot</a></li>
@@ -456,8 +527,29 @@ Jitter and Randomness
 <li>A table may be better if you need to make quantitative comparisons</li>
 </ul>
 </div>
-<div id="tabset-3-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-5-tab">
-<p>Include an example plot</p>
+<div id="tabset-4-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-5-tab">
+<p>An example of a Ridgeline plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 6H from <span class="citation" data-cites="Xing_etal_2025">Xing et al. (<a href="#ref-Xing_etal_2025" role="doc-biblioref">2025</a>)</span> showing the distribution of various myeloid cell state scores (M1 macrophage, M2 macrophage, angiogenesis, and phagocytosis) following analysis of single cell RNA sequencing data for certain pre-defined gene sets. Specifically, each of these ridgeline plots is comparing the distributions of the cell state scores for Brain metastases (BrM) against those of primary tumors (PT).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://doi.org./10.1016/j.ccell.2025.03.025"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3b3602af4d0_0_60.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This example highlights the utility of Ridgeline plots in making comparisons between a small number of groups (2 - BrM vs PT) for several categories (4 - the cell state scores), leading to a large number of overall comparisons even if there are only a few groups involved in each comparison. Within this example, some of the comparisons show high similarity between the groups (e.g., M1 score), while others depict larger differences (e.g., phagocytic score). Notice the use of faceting to split out ridgeline plots into different panels or subplots for the cell state score categories and the use of color to signify the BrM and PT groups.</p>
+<p>Another example of a Ridgeline plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 2B from <span class="citation" data-cites="Lozada_etal_2025">Lozada et al. (<a href="#ref-Lozada_etal_2025" role="doc-biblioref">2025</a>)</span> showing the distribution of expression of various possible precision therapy targets within different tissues, specifically comparing observed expression of the targets for Neuroendocrine neoplasms (NEN) and adenocarcinomas (ADC) environments.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://aacrjournals.org/view-large/figure/16201627/CRC-24-0501_f2.tif"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f2e7f70982_0_1419.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This example again uses faceting to separate out some comparisons into subplots or separate panels – in this case separating out different tissues. It still uses color to distinguish groups (NEN vs ADC), however those groups are plotted within the same strip, and separate strips are stacked for the different potential therapy targets, making comparisons across many different targets within each subplot. The targets are both ordered and spaced in such a way that there is a clear progression in distributions without the figure appearing too cluttered. The use of faceting aides in making this plot less complicated and cluttered than it otherwise might be.</p>
 </div>
 </div>
 </div>
@@ -466,9 +558,9 @@ Jitter and Randomness
 <h3 data-number="4.4.4" class="anchored" data-anchor-id="raincloud-plots"><span class="header-section-number">4.4.4</span> Raincloud Plots</h3>
 <p><strong>Description</strong>: Combines 3 plots: density, boxplot, individual data points. Generally looks like a raining cloud.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">When to use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-5" role="tab" aria-controls="tabset-4-5" aria-selected="false">Example</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">When to use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-4" role="tab" aria-controls="tabset-5-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-5" role="tab" aria-controls="tabset-5-5" aria-selected="false">Example</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <p><strong>When to use Raincloud plots:</strong></p>
 <ul>
 <li>Numerical data (with categorical data for groups)</li>
@@ -478,27 +570,37 @@ Jitter and Randomness
 <li>Used to show distributions and rank groups</li>
 </ul>
 </div>
-<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <ul>
 <li>Show density/distribution shape as well as individual data points and common summary statistics – so much information</li>
 <li>Works well with small datasets</li>
 </ul>
 </div>
-<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
 <ul>
 <li>A lot is going on</li>
 <li>Harder to interpret and cluttered or squished if there are more than a few groups</li>
 </ul>
 </div>
-<div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
+<div id="tabset-5-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-4-tab">
 <ul>
 <li><a href="https://www.data-to-viz.com/graph/violin.html">Violin plot</a></li>
 <li><a href="https://www.data-to-viz.com/caveat/boxplot.html">Boxplot</a> (especially with jitter to show individual data points)</li>
 <li><a href="https://r-graph-gallery.com/beeswarm.html">Swarm plot</a></li>
 </ul>
 </div>
-<div id="tabset-4-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-5-tab">
-<p>Include an example plot</p>
+<div id="tabset-5-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-5-tab">
+<p>An example of a raincloud plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 4 from <span class="citation" data-cites="Bouron_etal_2022">Bouron et al. (<a href="#ref-Bouron_etal_2022" role="doc-biblioref">2022</a>)</span> comparing the distributions of various primary tumor features (e.g., SUVPeak, TLG, Entropy, LRE) as measured by different Positron emission tomography/computed tomography (PET/CT) systems (D690, DIQ5, &amp; DST) for a retrospective cohort of patients (n=111) with nonmetastatic triple negative breast cancer (all of whom were examined at a specific comprehensive cancer center within a specific date range).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.mdpi.com/2072-6694/14/3/637"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3b3602af4d0_0_65.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that color is used to distinguish the different PET/CT systems and faceting or subplots separate out the various primary tumor features. This specific example utilizing a raincloud plot is quite fitting because an unequal number of patients were examined across the three PET/CT systems (49, 17, 45) – therefore showing the data within each feature for each of the systems is especially useful.</p>
 </div>
 </div>
 </div>
@@ -519,9 +621,9 @@ Jitter and Randomness
 <h3 data-number="4.5.1" class="anchored" data-anchor-id="stacked-bar-charts"><span class="header-section-number">4.5.1</span> Stacked Bar Charts</h3>
 <p><strong>Description</strong>: Displays multiple categories within a single bar, stacked on top (vertical) or next to (horizontal) each other. Each overall bar represents a group. Within bars, each stack is a sub-category or subgroup.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">When to Use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-4" role="tab" aria-controls="tabset-5-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-5" role="tab" aria-controls="tabset-5-5" aria-selected="false">Example</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">When to Use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-4" role="tab" aria-controls="tabset-6-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-5" role="tab" aria-controls="tabset-6-5" aria-selected="false">Example</a></li></ul>
 <div class="tab-content">
-<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <p><strong>When to use Stacked Bar charts:</strong></p>
 <ul>
 <li>Numerical data with categorical data for groups</li>
@@ -533,20 +635,20 @@ Jitter and Randomness
 <li>If using more than a couple of categories, consider using proportions (that sum to 100%) on the numerical axis</li>
 </ul>
 </div>
-<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <ul>
 <li>Summarizes complex group composition in a compact way</li>
 <li>Can compare composition over time or across groups</li>
 </ul>
 </div>
-<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
+<div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
 <ul>
 <li>Difficulty comparing subgroups that aren’t aligned or in the middle of the overall bar</li>
 <li>If one subgroup contributes too much, it can dwarf other subgroups; similarly, if the groups have uneven sizes, it can dwarf other groups</li>
 <li>If the numerical axis uses proportions, raw numbers aren’t visualized</li>
 </ul>
 </div>
-<div id="tabset-5-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-4-tab">
+<div id="tabset-6-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-4-tab">
 <ul>
 <li>Grouped bar chart</li>
 <li>Lollipop plot</li>
@@ -555,13 +657,27 @@ Jitter and Randomness
 <li>A waterfall plot for the most important sub-category</li>
 </ul>
 </div>
-<div id="tabset-5-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-5-tab">
-<details>
-<summary>
-Example of the plot in the biomedical, bioinformatics, or cancer informatics literature
-</summary>
-<p>https://www.mdpi.com/2079-9721/13/2/37</p>
-</details>
+<div id="tabset-6-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-5-tab">
+<p>An example of the stacked bar chart in the biomedical, bioinformatics, or cancer informatics literature is Figure 1 from <span class="citation" data-cites="Boutros_etal_2025">Boutros et al. (<a href="#ref-Boutros_etal_2025" role="doc-biblioref">2025</a>)</span> showing the relationship between age the receipt for surgery for patients with non-metastatic gastric and esophageal cancer – specifically showing the trend of an increase in contraindication or refusal of surgery as age increases.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.mdpi.com/2079-9721/13/2/37"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3b3602af4d0_0_70.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Another example of the stacked bar chart in the biomedical, bioinformatics, or cancer informatics literature is Figure 4b from <span class="citation" data-cites="Janesick_etal_2023">Janesick et al. (<a href="#ref-Janesick_etal_2023" role="doc-biblioref">2023</a>)</span> showing cell type composition within three regions of interest identified in a histopathology specimen. Two of the regions are ductal carcinoma in situ (DCIS) while the third represents tumor invasion in ductal carcinoma (invasive). In this example, the authors were able to identify differences in cell composition for the regions of interest (including some cell types seemingly being restricted to DCIS regions but not invasive regions). However, examples like these may be difficult to interpret when subgroups (e.g., the red for invasive) are not aligned across groups / bars or if it is unclear to what extent small proportions differ between groups / bars.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.nature.com/articles/s41467-023-43458-x/figures/4"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f7b63c28e4_72_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -569,10 +685,12 @@ Example of the plot in the biomedical, bioinformatics, or cancer informatics lit
 <section id="heatmaps" class="level3" data-number="4.5.2">
 <h3 data-number="4.5.2" class="anchored" data-anchor-id="heatmaps"><span class="header-section-number">4.5.2</span> Heatmaps</h3>
 <p><strong>Description</strong>: A visualization (typically two dimensional – with rows and columns – of a table or matrix) using color. Always uses colors to display numbers or categories; the two dimensional matrix while typical is not a requirement, because the two dimensions could be a map projection or tissue sample.</p>
+<p>Heatmaps are frequently used to show gene expression across samples or cell types for a selection of genes. They may also be used to display the pairwise correlation of many samples, genes, cell types, or features compared amongst themselves (e.g., sample to the other samples, gene to the other genes, cell type to the other cell types, or feature to the other features).</p>
+<p>Note that a <strong>confusion matrix</strong> is a specific type of heatmap which is used evaluate the performance of a machine learning classification model.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">When to use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-4" role="tab" aria-controls="tabset-6-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-5" role="tab" aria-controls="tabset-6-5" aria-selected="false">Example</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">When to use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-4" role="tab" aria-controls="tabset-7-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-5" role="tab" aria-controls="tabset-7-5" aria-selected="false">Example</a></li></ul>
 <div class="tab-content">
-<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
+<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
 <p><strong>When to use Heatmaps:</strong></p>
 <ul>
 <li>Categorical or numerical data or a mixture</li>
@@ -584,20 +702,20 @@ Example of the plot in the biomedical, bioinformatics, or cancer informatics lit
 <li>Often used together with hierarchical clustering or reordering sample location to highlight trends or areas of similarity</li>
 </ul>
 </div>
-<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
 <ul>
 <li>Provides a broad overview to identify trends, areas of density, sparsity, or outliers</li>
 <li>Efficiently and compactly simplifies complex data into one visualization</li>
 </ul>
 </div>
-<div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
+<div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
 <ul>
 <li>The “matrix” aspect can be difficult for viewers to grasp</li>
 <li>Rearranging data can be helpful but also misleading if not described</li>
 <li>Actual values and summary stats are rare/difficult to display if there are many rows and columns</li>
 </ul>
 </div>
-<div id="tabset-6-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-4-tab">
+<div id="tabset-7-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-4-tab">
 <ul>
 <li>A <a href="https://r-graph-gallery.com/table.html">table</a></li>
 <li><a href="https://www.data-to-viz.com/graph/scatter.html">Scatter</a> plot</li>
@@ -606,12 +724,52 @@ Example of the plot in the biomedical, bioinformatics, or cancer informatics lit
 <li><a href="https://www.data-to-viz.com/graph/parallel.html">Parallel plot</a></li>
 </ul>
 </div>
-<div id="tabset-6-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-5-tab">
+<div id="tabset-7-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-5-tab">
+<p>An example of a <strong>heatmap</strong> in the biomedical, bioinformatics, or cancer informatics literature is Figure 3k from <span class="citation" data-cites="Janesick_etal_2023">Janesick et al. (<a href="#ref-Janesick_etal_2023" role="doc-biblioref">2023</a>)</span> showing the relative expression of Xenium panel genes across different cell types within the spatial transcriptomics / Xenium dataset. Rows within the heatmap represent different cell types and columns represent the genes from the panel. Color is used to represent z-scores for the relative expression with dark purple signifying higher z-scores and yellow signifying lower z-scores.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.nature.com/articles/s41467-023-43458-x/figures/3"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3b3602af4d0_0_75.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If another dimension of data were needed, a <strong>bubble chart</strong> could be utilized like this example in Supplemental Figure S5C from <span class="citation" data-cites="Ford_etal_2024">Ford et al. (<a href="#ref-Ford_etal_2024" role="doc-biblioref">2024</a>)</span> which uses color to represent the average expression of certain cell type marker genes across cell types. However, it also represents the number of single cells which expressed that marker gene utilizing the size of points. Notice a large red circle represents a gene that is highly expressed in that cell type for many single cells within the sample. Whereas a large tan circle represents a gene that was lowly expressed in that cell type for many single cells within the sample. Finally, a small circle will represent a gene whose expression level (whatever it is) was not observed in many single cells within that sample.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.cell.com/iscience/fulltext/S2589-0042(24)01977-1"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f2e7f70982_0_1446.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In this example, the marker genes are represented within the rows and the different cell types are represented within the columns (inverting the order from the previous example).</p>
+<p>An example of a <strong>pairwise correlation heatmap</strong> in the biomedical, bioinformatics, or cancer informatics literature is Figure 1 from <span class="citation" data-cites="Nelson_etal_2024">Nelson et al. (<a href="#ref-Nelson_etal_2024" role="doc-biblioref">2024</a>)</span> showing the pairwise Spearman correlation values between immune cell subtypes. Perfect correlation is observed on the diagonal as would be expected. Moderate to high correlation is observed between every subtype excluding the CD68 positive ligand negative subtype where low to no correlation is observed with other subtypes.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.jci.org/articles/view/179501/figure/1"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f2e7f70982_0_1458.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
 <details>
 <summary>
-Pairwise correlation: Full matrix vs lower triangle
+Pairwise correlation: Full matrix vs lower triangle for pairwise correlation
 </summary>
-<p>When using a heatmap to display pairwise correlation, the heatmap is symmetrical and presents redundant information (each correlation is displayed twice) because the correlation of A to B is the same as the correlation of B to A. The diagonal will always have perfect correlation because it’s comparing a sample or variable to itself. If looking at just the lower triangle, it presents the pairwise correlation only once and removes the redundant information.</p>
+<p>If using a heatmap to display pairwise correlation between different groups (e.g., samples), the heatmap will be symmetrical and present redundant information (each correlation would be displayed twice) because the correlation of A to B is the same as the correlation of B to A. The diagonal will always have perfect correlation because it would be comparing a sample or variable to itself. If looking at just the lower triangle, it presents the pairwise correlation only once and removes the redundant information.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f2e7f70982_0_1468.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 </details>
 </div>
 </div>
@@ -621,26 +779,26 @@ Pairwise correlation: Full matrix vs lower triangle
 <h3 data-number="4.5.3" class="anchored" data-anchor-id="sankey-diagrams"><span class="header-section-number">4.5.3</span> Sankey Diagrams</h3>
 <p><strong>Description</strong>: Represents the “flow” or movement of quantities (e.g., patients or samples) among different categories through different steps (e.g., demographics or steps of an analysis or trial)</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">When to use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-4" role="tab" aria-controls="tabset-7-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-5" role="tab" aria-controls="tabset-7-5" aria-selected="false">Example</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">When to use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Strengths</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false">Weaknesses</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-4" role="tab" aria-controls="tabset-8-4" aria-selected="false">Alternatives</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-5" role="tab" aria-controls="tabset-8-5" aria-selected="false">Example</a></li></ul>
 <div class="tab-content">
-<div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
+<div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
 <p><strong>When to use Sankey diagrams:</strong></p>
 <ul>
 <li>Categorical data and sometimes numerical data/counts</li>
 <li>Requires several variables</li>
-<li>Primary data encodings are lines, area, and color</li>
+<li>Primary data encodings are lines, area, and color. The width of the lines relate to the size of the categories.</li>
 <li>Used to show change over time</li>
 <li>Best with datasets with some sort of longitudinal data or time points with categories at each time point</li>
 <li>Example uses include tracking patient response or symptom trajectories as well as patient cohort stratification</li>
 </ul>
 </div>
-<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
 <ul>
 <li>Provides a lot of information about the study population and shows all possible paths</li>
 <li>Provides a visual or graphical representation of data that would otherwise be in a table or just described in text</li>
 </ul>
 </div>
-<div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
+<div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
 <ul>
 <li>Difficult or complex to interpret</li>
 <li>Flows that cross or overlap or flows with similar widths can be difficult to compare though interactivity can alleviate this</li>
@@ -648,7 +806,7 @@ Pairwise correlation: Full matrix vs lower triangle
 <li>Often require specialized tools to create visualization</li>
 </ul>
 </div>
-<div id="tabset-7-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-4-tab">
+<div id="tabset-8-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-4-tab">
 <ul>
 <li>A table</li>
 <li>Stacked bar charts, but these lose the connection/possible path aspect</li>
@@ -657,8 +815,37 @@ Pairwise correlation: Full matrix vs lower triangle
 <li>Other graphical visualizations or some custom made visualization</li>
 </ul>
 </div>
-<div id="tabset-7-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-5-tab">
-<p>Include an example of the plot</p>
+<div id="tabset-8-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-5-tab">
+<p>An example of a Sankey diagram for <strong>patient cohort stratifications</strong> in the biomedical, bioinformatics, or cancer informatics literature is Extended Data Figure 1 from <span class="citation" data-cites="Hu_Li_Ma_Curtis_2020">Hu et al. (<a href="#ref-Hu_Li_Ma_Curtis_2020" role="doc-biblioref">2020</a>)</span>. This example does not have a strong time dependence, instead showing different patient cohorts represented in the data specifically related to the primary tumor site, the metastasis site, and the treatment status for the metastatic tumor. Even without a strong time dependence this figure works well, showing what combinations of characteristics within those categories are represented within the dataset.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.nature.com/articles/s41588-020-0628-z/figures/6"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3b3602af4d0_0_80.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>An example of a Sankey diagram for <strong>symptom trajectories</strong> in the biomedical, bioinformatics, or cancer informatics literature is Figure 2Aii from <span class="citation" data-cites="Otto_etal_2022">Otto et al. (<a href="#ref-Otto_etal_2022" role="doc-biblioref">2022</a>)</span>. This example has a strong time dependence, showing how the frequency of a specific symptom changes over time for a set of patients. Importantly, every patient is represented within this diagram from start (Baseline) to finish (6 months) because of the “Discontinued” category. This is not saying the symptoms had discontinued because we see that some who had reported frequent occurrence of the symptom at 3 months report never for a frequency at 6 months; rather this “Discontinued” is reflecting patients whose symptom frequency is no longer tracked because they discontinued their participation in the study.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://doi.org/10.1016/j.jgo.2021.12.017"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f2e7f70982_0_1477.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>An example of a Sankey diagram for <strong>treatment trajectories</strong> in the biomedical, bioinformatics, or cancer informatics literature is Figure 3 from <span class="citation" data-cites="Beckmann_2021">Beckmann et al. (<a href="#ref-Beckmann_2021" role="doc-biblioref">2021</a>)</span>. This figure again has a dependence on time, in this case time relating to a sequence of treatments. Note however that not every patient is represented within this diagram throughout the whole sequence. There is no clear category marking living individuals who discontinue or no longer need treatment.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.mdpi.com/2072-6694/13/4/875"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f2e7f70982_0_1481.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -699,6 +886,44 @@ Pairwise correlation: Full matrix vs lower triangle
 <p>Choosing which plot to use may be field, context, and data dependent. Use the simplest or most mainstream plot you can! Make sure that the plot works with your data type(s), number of variables, number of observations (e.g., patients or samples), and the overall goal or research question. Use design tools to develop your visualization before switching to a more complex plot. These design tools include utilizing facets or subplots, dashed lines and text labels, and varying colors, textures, or shapes. Finally, consider browsing a visualization gallery for inspiration!</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Beckmann_2021" class="csl-entry" role="listitem">
+Beckmann, Kerri, Hans Garmo, Ingela Franck Lissbrant, and Pär Stattin. 2021. <span>“The Value of Real-World Data in Understanding Prostate Cancer Risk and Improving Clinical Care: Examples from Swedish Registries.”</span> <em>Cancers</em> 13 (4): 875. <a href="https://doi.org/10.3390/cancers13040875">https://doi.org/10.3390/cancers13040875</a>.
+</div>
+<div id="ref-Bouron_etal_2022" class="csl-entry" role="listitem">
+Bouron, Clément, Clara Mathie, Valérie Seegers, Olivier Morel, Pascal Jézéquel, Hamza Lasla, Camille Guillerminet, et al. 2022. <span>“Prognostic Value of Metabolic, Volumetric and Textural Parameters of Baseline [18F]FDG PET/CT in Early Triple-Negative Breast Cancer.”</span> <em>Cancers</em> 14 (3): 637. <a href="https://doi.org/10.3390/cancers14030637">https://doi.org/10.3390/cancers14030637</a>.
+</div>
+<div id="ref-Boutros_etal_2025" class="csl-entry" role="listitem">
+Boutros, Christina S., Lauren M. Drapalik, Christine E. Alvarado, Aria Bassiri, Jillian Sinopoli, Leonidas Tapias Vargas, Philip A. Linden, and Christopher W. Towe. 2025. <span>“Is There Bias in the Assessment of Contraindications for Resection? Disparities in the Surgical Management of Early-Stage Esophageal Cancer.”</span> <em>Diseases</em> 13 (2): 37. <a href="https://doi.org/10.3390/diseases13020037">https://doi.org/10.3390/diseases13020037</a>.
+</div>
+<div id="ref-Brown_etal_2014" class="csl-entry" role="listitem">
+Brown, Scott D., Rene L. Warren, Ewan A. Gibb, Spencer D. Martin, John J. Spinelli, Brad H. Nelson, and Robert A. Holt. 2014. <span>“Neo-Antigens Predicted by Tumor Genome Meta-Analysis Correlate with Increased Patient Survival.”</span> <em>Genome Research</em> 24 (5): 743–50. <a href="https://doi.org/10.1101/gr.165985.113">https://doi.org/10.1101/gr.165985.113</a>.
+</div>
+<div id="ref-Ford_etal_2024" class="csl-entry" role="listitem">
+Ford, Kaitlyn, Elena Zuin, Dario Righelli, Elizabeth Medina, Hannah Schoch, Kristan Singletary, Christine Muheim, et al. 2024. <span>“A Global Transcriptional Atlas of the Effect of Acute Sleep Deprivation in the Mouse Frontal Cortex.”</span> <em>iScience</em> 27 (9). <a href="https://doi.org/10.1016/j.isci.2024.110752">https://doi.org/10.1016/j.isci.2024.110752</a>.
+</div>
+<div id="ref-Hu_Li_Ma_Curtis_2020" class="csl-entry" role="listitem">
+Hu, Zheng, Zan Li, Zhicheng Ma, and Christina Curtis. 2020. <span>“Multi-Cancer Analysis of Clonality and the Timing of Systemic Spread in Paired Primary Tumors and Metastases.”</span> <em>Nature Genetics</em> 52 (7): 701–8. <a href="https://doi.org/10.1038/s41588-020-0628-z">https://doi.org/10.1038/s41588-020-0628-z</a>.
+</div>
+<div id="ref-Janesick_etal_2023" class="csl-entry" role="listitem">
+Janesick, Amanda, Robert Shelansky, Andrew D. Gottscho, Florian Wagner, Stephen R. Williams, Morgane Rouault, Ghezal Beliakoff, et al. 2023. <span>“High Resolution Mapping of the Tumor Microenvironment Using Integrated Single-Cell, Spatial and in Situ Analysis.”</span> <em>Nature Communications</em> 14 (1): 8353. <a href="https://doi.org/10.1038/s41467-023-43458-x">https://doi.org/10.1038/s41467-023-43458-x</a>.
+</div>
+<div id="ref-Lozada_etal_2025" class="csl-entry" role="listitem">
+Lozada, John R., Andrew Elliott, Mark G. Evans, James Wacker, Kathleen M. Storey, Emily A. Egusa, Nicholas A. Zorko, et al. 2025. <span>“Expression Patterns of DLL3 Across Neuroendocrine and Non-Neuroendocrine Neoplasms Reveal Broad Opportunities for Therapeutic Targeting.”</span> <em>Cancer Research Communications</em> 5 (2): 318–26. <a href="https://doi.org/10.1158/2767-9764.CRC-24-0501">https://doi.org/10.1158/2767-9764.CRC-24-0501</a>.
+</div>
+<div id="ref-Nelson_etal_2024" class="csl-entry" role="listitem">
+Nelson, Brad H., Phineas Hamilton, Minh Tung Phung, Katy Milne, Bronwyn Harris, Shelby Thornton, Donald Stevens, et al. 2024. <span>“Immunological and Molecular Features of the Tumor Microenvironment of Long-Term Survivors of Ovarian Cancer.”</span> <em>The Journal of Clinical Investigation</em> 134 (24). <a href="https://doi.org/10.1172/JCI179501">https://doi.org/10.1172/JCI179501</a>.
+</div>
+<div id="ref-Otto_etal_2022" class="csl-entry" role="listitem">
+Otto, Ethan, Eva Culakova, Sixu Meng, Zhihong Zhang, Huiwen Xu, Supriya Mohile, and Marie A. Flannery. 2022. <span>“Overview of Sankey Flow Diagrams: Focusing on Symptom Trajectories in Older Adults with Advanced Cancer.”</span> <em>Journal of Geriatric Oncology</em> 13 (5): 742–46. <a href="https://doi.org/10.1016/j.jgo.2021.12.017">https://doi.org/10.1016/j.jgo.2021.12.017</a>.
+</div>
+<div id="ref-Taylor_etal_2024" class="csl-entry" role="listitem">
+Taylor, Dylan J., Surya B. Chhetri, Michael G. Tassia, Arjun Biddanda, Stephanie M. Yan, Genevieve L. Wojcik, Alexis Battle, and Rajiv C. McCoy. 2024. <span>“Sources of Gene Expression Variation in a Globally Diverse Human Cohort.”</span> <em>Nature</em> 632 (8023): 122–30. <a href="https://doi.org/10.1038/s41586-024-07708-2">https://doi.org/10.1038/s41586-024-07708-2</a>.
+</div>
+<div id="ref-Xing_etal_2025" class="csl-entry" role="listitem">
+Xing, Xudong, Jian Zhong, Jana Biermann, Hao Duan, Xinyu Zhang, Yu Shi, Yixin Gao, et al. 2025. <span>“Pan-Cancer Human Brain Metastases Atlas at Single-Cell Resolution.”</span> <em>Cancer Cell</em> 43 (7): 1242–1260.e9. <a href="https://doi.org/10.1016/j.ccell.2025.03.025">https://doi.org/10.1016/j.ccell.2025.03.025</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
