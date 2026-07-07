@@ -4,8 +4,12 @@ AnVIL
 Audiographer
 Audiography
 automagic
+benchmarking
+Benchmarking
+bioinformatic
 Bioinformatic
 bioinformatics
+bioviz
 BIPOC
 Bloomberg
 bolding
@@ -78,12 +82,14 @@ Muschelli
 NCI
 NHGRI
 numpy
+omic
 omics
 OTTR
 ottrpal
 ottrproject
 Pandoc
 PHQ
+Plotnine
 png
 Preattentive
 pre
