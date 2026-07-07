@@ -176,29 +176,63 @@ ottrpal::include_slide('https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 **Position** often reflects numerical value with marks that are near each other having more similar values than marks that are further away. Position may also be used to separate different categories where the general order or position may reflect similar categories, the same parent category, or a numerical variable that is being compared across variables.
 
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_326#slide=id.g3f2e7f70982_0_326")
+```
+
 #### Color
 
-**Color** may reflect categorization or group membership. Color may control the appearance of any of the geometric marks.
+**Color** may reflect categorization or group membership. Color may control the appearance of any of the geometric marks. 
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_427#slide=id.g3f2e7f70982_0_427")
+```
+
+Color maps or scales may also be used to reflect ranges or the relative progression of numerical values, especially for certain graph types. 
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_513#slide=id.g3f2e7f70982_0_513")
+```
 
 #### Shape
 
 **Shape** may reflect categorization or group membership and controls the way that points appear. Shape is sometimes used in place of or as a supplement to color.
 
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_564#slide=id.g3f2e7f70982_0_564")
+```
+
 #### Line Type
 
 **Line types** can be used much like shape to communicate categorization or group membership. Line type controls the appearance of lines.
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_605#slide=id.g3f2e7f70982_0_605")
+```
 
 #### Pattern
 
 **Pattern** is sometimes used in place of or as a supplement to color to reflect categorization or group membership. For the recurring pattern to be recognized, it often needs to be used with geometric marks that have enough area for the pattern to be distinguishable (such as bars).
 
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_653#slide=id.g3f2e7f70982_0_653")
+```
+
 #### Size
 
 **Size** is used to encode quantitative data by altering physical attributes of the geometric marks: thickness of a line, radius of a point, etc. Changes in size are often proportional to the quantitative data with larger sizes corresponding to larger values.
 
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_939#slide=id.g3f2e7f70982_0_939")
+```
+
 #### Tilt
 
 **Tilt** is another word for angles and can be used as a visual channel, not just a geometric mark. Tilt is used to represent proportions or trends (such as slope). While helpful for comparisons, audiences often find it difficult to compare tilt precisely and designers should not rely on tilt to communicate main messages.
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1098#slide=id.g3f2e7f70982_0_1098")
+```
 
 :::
 
@@ -210,6 +244,11 @@ Several of the visual channels are considered "Preattentive attributes" which me
   * Mostly one dominant color, but a few data points are a different, more vibrant or contrasting color
   * Only one data point is outlined
   * One line is wider than the rest
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1150#slide=id.g3f2e7f70982_0_1150")
+```
+
 
 ### Additional Design Tools
 
@@ -225,19 +264,41 @@ These additional design tools may or may not encode data, but do separate out da
 
 **Labels** include axis labels, titles, and direct annotations within the plot perhaps specifying a specific summary statistic/number or pointing out the name/value of a specific data point or line. They may be combined with dashed lines, colors, or other visual channels to provide further clarity.
 
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_25#slide=id.g3b3602af4d0_0_25")
+```
+
+Legends are a form of labels. In some cases, directly labeling groups on a plot is preferred over using a legend. This is especially true if the data groups are fairly well separated on the plot or you can visually associate the labels with whatever channel is being used to represent the groups (e.g., color).
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1217#slide=id.g3f2e7f70982_0_1217")
+```
+
 #### Subplots
 
-**Subplots**, also known as faceting, subplots separates out the data into different panels based on group membership. The same plot type will be utilized in each panel. Panels may or may not use the same scaling and axis limits.
+**Subplots**, also known as faceting, subplots separate out the data into different panels based on group membership. The same plot type will be utilized in each panel. Panels may or may not use the same scaling and axis limits. This is especially useful when the data would overlap within the same plot / panel or there are a lot of groups with a lot of data within each group. Faceting may be horizontal or vertical -- panels should be arranged depending on which comparison between groups is most appropriate. 
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_30#slide=id.g3b3602af4d0_0_30")
+```
 
 #### Transparency
 
 **Transparency** controls the opacity of the geometric marks. If an area appears less transparent, there is a greater density of data there than areas that appear more transparent. This visual channel is especially helpful to distinguish groups that overlap.
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_35#slide=id.g3b3602af4d0_0_35")
+```
 
 :::
 
 ## Coordinate System
 
 Most data visualizations will utilize a two dimensional XY coordinate system (or Cartesian plane) with a horizontal (x-) axis and a vertical (y-) axis that are perpendicular and intersect where x = 0 and y = 0. Each variable will be assigned to one of the axes. If working with regression or where you have a dependent variable (outcome or event being measured or observed) and an independent variable (the variable being controlled or changed/purposefully manipulated), the independent variable is assigned to the x-axis and the dependent variable is assigned to the y-axis. When working with numerical data, this XY coordinate system allows for the positioning of the numerical data along these axes. When working with a categorical data, the categories can still be positioned along of the numerical axes, however the corresponding numerical positions will not have the same meaning they would otherwise have. The two axes can utilize different units (e..g, micrograms per milliliter, percentage, grams, log fold change, etc.) and scales, however, if the same units are used for the two axes, then the scaling should be equal for both axes to avoid distortion.
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_40#slide=id.g3b3602af4d0_0_40")
+```
 
 <details><summary>Additional coordinate systems</summary>
 
@@ -246,6 +307,10 @@ Additional coordinate systems are appropriate for some specific visualizations s
   * The XYZ coordinate system utilizes a third axis (z-) that intersects the XY-plane perpendicularly at x = 0, y = 0, and z = 0.
   * The polar coordinate system uses angles to position groups and radii length to represent magnitude or group size.
   * A projected coordinate system is a two dimensional map.
+
+```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1334#slide=id.g3f2e7f70982_0_1334")
+```
 
 </details>
 
