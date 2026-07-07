@@ -276,7 +276,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 #### Subplots
 
-**Subplots**, also known as faceting, subplots separates out the data into different panels based on group membership. The same plot type will be utilized in each panel. Panels may or may not use the same scaling and axis limits. This is especially useful when the data would overlap within the same plot / panel or there are a lot of groups with a lot of data within each group. Faceting may be horizontal or vertical -- panels should be arranged depending on which comparison between groups is most appropriate. 
+**Subplots**, also known as faceting, subplots separate out the data into different panels based on group membership. The same plot type will be utilized in each panel. Panels may or may not use the same scaling and axis limits. This is especially useful when the data would overlap within the same plot / panel or there are a lot of groups with a lot of data within each group. Faceting may be horizontal or vertical -- panels should be arranged depending on which comparison between groups is most appropriate. 
 
 ```{r, fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = ""}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_30#slide=id.g3b3602af4d0_0_30")

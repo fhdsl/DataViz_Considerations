@@ -235,7 +235,7 @@ An example of a Ridgeline plot in the biomedical, bioinformatics, or cancer info
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_60#slide=id.g3b3602af4d0_0_60")
 ```
 
-This example highlights the utility of Ridgeline plots in making comparisons between a small number of groups (2 - BrM vs PT) for several categories (4 - the cell state scores), leading to a large number of overall comparisons even if there are not a lot of groups involved in each comparison. Within this example, some of the comparisons show high similarity between the groups (e.g., M1 score), while others depict larger differences (e.g., phagocytic score). Notice the use of faceting to split out ridgeline plots into different panels or subplots for the cell state score categories and the use of color to signify the BrM and PT groups.
+This example highlights the utility of Ridgeline plots in making comparisons between a small number of groups (2 - BrM vs PT) for several categories (4 - the cell state scores), leading to a large number of overall comparisons even if there are only a few groups involved in each comparison. Within this example, some of the comparisons show high similarity between the groups (e.g., M1 score), while others depict larger differences (e.g., phagocytic score). Notice the use of faceting to split out ridgeline plots into different panels or subplots for the cell state score categories and the use of color to signify the BrM and PT groups.
 
 
 Another example of a Ridgeline plot in the biomedical, bioinformatics, or cancer informatics literature is Figure 2B from @Lozada_etal_2025 showing the distribution of expression of various possible precision therapy targets within different tissues, specifically comparing observed expression of the targets for Neuroendocrine neoplasms (NEN) and adenocarcinomas (ADC) environments.
@@ -416,7 +416,7 @@ If another dimension of data were needed, a **bubble chart** could be utilized l
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f2e7f70982_0_1446#slide=id.g3f2e7f70982_0_1446")
 ```
 
-In this example, the marker genes are represented within the rows and the different cell types are represented within the columns (inverting the order from the previous example.
+In this example, the marker genes are represented within the rows and the different cell types are represented within the columns (inverting the order from the previous example).
 
 An example of a **pairwise correlation heatmap** in the biomedical, bioinformatics, or cancer informatics literature is Figure 1 from @Nelson_etal_2024 showing the pairwise Spearman correlation values between immune cell subtypes. Perfect correlation is observed on the diagonal as would be expected. Moderate to high correlation is observed between every subtype excluding the CD68 positive ligand negative subtype where low to no correlation is observed with other subtypes.
 
