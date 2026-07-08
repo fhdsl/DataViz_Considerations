@@ -111,13 +111,13 @@ Include an example plot and how to interpret
 
 An example of the Waterfall plot from the biomedical, bioinformatics, or cancer informatics literature is Figure 2A from @Kwak_etal_2010 which shows the percent change in tumor burden for 79 patients, comparing tumor burden after treatment to a baseline measurement prior to the intervention. Each patient is represented by a bar and the bars are colored to represent a descriptive category related to the patient's disease state. A dashed line at -30% may represent the average change in tumor burden but this is unclear.
 
-```{r fig.align = 'center', fig.width = '100%', echo = FALSE, fig.alt = "", fig.link = "https://www.nejm.org/doi/full/10.1056/NEJMoa1006448"}
+```{r mainWaterfallExample fig.align = 'center', fig.width = '100%', echo = FALSE, fig.alt = "", fig.link = "https://www.nejm.org/doi/full/10.1056/NEJMoa1006448"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f32cadd7be_0_23#slide=id.g3f32cadd7be_0_23")
 ```
 
 This plot is comparing the percent change in tumor burden for a set of patients. Tumor burden for each patient is being defined at two specific points in time: 1) their original baseline and 2) their "current" tumor burden at the time of data collection after treatment. Each patient has their own baseline and current values -- they are likely not sharing a baseline value. Because the date is being translated into percent change, values across patients can be compared more easily: specifically evaluating if tumor burden increased or decreased. The numerical data (percent change) that is being represented on the y-axis is defined as `(tumor burden following treatment - tumor burden baseline) / tumor burden baseline * 100% ` for each patient.
 
-```{r fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = "Diagram showing the expectation for data to build a waterfall plot. Specifically, for each patient, you will have a tumor burden that was measured at a baseline timepoint and you will have a tumor burden that was measured after treatment or some other intervention. The percent change from baseline is computed from these values for each patient."}
+```{r waterfallDataExpectation fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = "Diagram showing the expectation for the data necessary to build a waterfall plot. For each patient you will have a value such as tumor burden that was measured at a baseline timepoint and you will have a corresponding value that was measured after treatment or some other intervention. The percent change from baseline is computed from these values for each patient."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f32cadd7be_0_53#slide=id.g3f32cadd7be_0_53")
 ```
 
@@ -127,7 +127,7 @@ Connecting these percent change values to the underlying biological data, there 
 2. Tumor burden increased after the intervention. Then the percent change will be positive and be represented by a bar above the x-axis in the plot.
 3. Tumor burden remained unchanged after the intervention. Then then the percent change is 0% and the bar will be largely invisible -- neither above nor below the x-axis of the plot.
 
-```{r fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = "Diagram showing the three cases for tumor burden data for a waterfall plot. Specifically that tumor burden can decrease leading to negative percent change values, tumor burden can increase leading to positive percent change values, and tumor burden can remain unchanged, leading to a zero percent change."}
+```{r waterfallInterpretation fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = "Diagram showing the three cases for tumor burden data for a waterfall plot. Specifically that tumor burden can decrease leading to negative percent change values, tumor burden can increase leading to positive percent change values, and tumor burden can remain unchanged, leading to a zero percent change."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f32cadd7be_0_109#slide=id.g3f32cadd7be_0_109")
 ```
 
@@ -143,13 +143,13 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 In relation to the idea that Waterfall plots typically compare two timepoints only, not a range of time, consider the example from @Nishino_etal_2010. In Figure 2 each patient is represented by 2 side-by-side (or grouped) bars. The use of the grouped bar chart here is comparing what the percent change would be depending upon which version of guidelines the investigators used to evaluate the tumor (RECIST 1.0 vs 1.1). However, researchers could potentially use a grouped bar chart approach to show multiple timepoints if it was important for the point.
 
-```{r fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.ajronline.org/doi/10.2214/AJR.09.3928"}
+```{r waterfallGroupedBar fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://www.ajronline.org/doi/10.2214/AJR.09.3928"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f32cadd7be_0_164#slide=id.g3f32cadd7be_0_164")
 ```
 
 An example from the biomedical, bioinformatics, or cancer informatics literature that uses the waterfall plot for use other than displaying tumor response can be seen in Figure 3B from @Lim_etal_2024. In this case, the authors use a waterfall plot for model validation, having built a model to relate the volume of open aortic repair procedures at hospitals with associated patient mortality rates.
 
-```{r, fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://doi.org/10.1016/j.avsg.2024.03.012"}
+```{r waterfallModelVal fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = "", fig.link = "https://doi.org/10.1016/j.avsg.2024.03.012"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f32cadd7be_0_211#slide=id.g3f32cadd7be_0_211")
 ```
 
@@ -157,13 +157,13 @@ Finally, this example using data from the Palmer Penguins dataset [@Horst2020], 
 
 The Palmer Penguins dataset provides body mass measurements (in grams) as well as the sex for over 300 penguins. There's a small percentage of missing data for the sex variable (e.g., penguins with unknown sex). We can find the overall average body mass and then build a waterfall plot that represents the difference between the average body mass and the actual body mass of each penguin. Then we can color each bar by the sex of the penguin. In this first example, the y-axis is plotting the difference of the actual from the average (`average - actual`). This provides a potentially misleading graphic where the female penguins are primarily above the x-axis baseline (average) which may give readers the initial impressions that female penguins have the highest body masses within this sample. However, that is not the case.
 
-```{r fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = ""}
+```{r waterfallPenguinMisleading fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = ""}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f32cadd7be_0_222#slide=id.g3f32cadd7be_0_222")
 ```
 
 Therefore, if we switch the y-axis to represent the difference of the average from the actual (`actual - average`), this now shows the male penguins primarily above the x-axis baseline (average) -- which gives the proper impression that the male penguins tend to have higher body masses than the female penguins.
 
-```{r fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = ""}
+```{r waterfallPenguinClear fig.align = 'center', fig.width = "100%", echo = FALSE, fig.alt = ""}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f32cadd7be_0_231#slide=id.g3f32cadd7be_0_231")
 ```
 
