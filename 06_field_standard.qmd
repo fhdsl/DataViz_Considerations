@@ -91,7 +91,7 @@ Include an example plot and how to interpret
 
 **Weaknesses**
 
-  * The snapshot compares two time points but not a range of time. Though
+  * The snapshot compares two time points but not a range of time.
   * For tumor response, there's an accepted notion of what above or below the baseline means but this might not be true for other applications
   * Each patient requires two analogous timepoints (e.g., baseline and evaluation following intervention) to be included in this visualization. A corresponding caption or text within a report would need to specify if any patients don't have corresponding data for both timepoints and aren't represented within the visualization.
 
