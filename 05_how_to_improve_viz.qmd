@@ -8,13 +8,37 @@ Creating a high quality data visualization requires more than picking the right 
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_41#slide=id.g3a4b3643292_0_41")
 ```
 
+## What do accessibility and ethics have to do with data visualization?
+
+Both accessible and ethical data visualization improve viewers' understanding rather than confuse or mislead. When sharing a visualization widely, there are several audience types you may encounter.
+
+1. Audiences unfamiliar with your research.
+2. Audiences with visual impairments.
+  * Low vision or blindness
+  * Color vision deficiency
+3. Audiences with dyslexia or who are prone to distraction.
+4. Audiences with motor impairments.
+
+The majority of the resource will focus on making visualizations more accessible for audiences who are unfamiliar with your research or who have visual impairments. Accessibility considerations for audiences with motor impairments mostly impact how to prepare interactive visualizations.
+
+::: {.notice}
+Resources for ensuring interactive visualizations meet accessibility standards include the WCAG Understanding Documents that provide guides for understanding and implementing the World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) Web Content Accessibility Guidelines (WCAG). [@]. An example of a relevant guideline is the Keyboard Accessible Guideline (Guidelines 2.1) [@].
+
+The University of Washington provides a guide related to ensuring keyboard accessibility that references the relevant WCAG Guidelines as well. [@]
+
+Harvard University also offers guidance for producing accessible interactive visualizations. [@]
+:::
+
+
 ## Clearly Presenting Complex Data
 
-An overly complex plot can be misleading for a number of reasons. These reasons include obscuring something because the plot focuses the viewer's attention on another aspect, not separating high density areas or overlapping plot elements, including too much information, or not specifying specialized language such as acronyms or field specific/technical vocabulary.
+An overly complex plot can be misleading for a number of reasons. A takeaway could be obscured because the plot focuses the viewer's attention on another aspect
+
+These reasons include obscuring something because the plot focuses the viewer's attention on another aspect, not separating high density areas or overlapping plot elements, including too much information, or not specifying specialized language such as acronyms or field specific/technical vocabulary.
 
 General tips to reduce complexity when you can:
 
-* Use your visualization to answer **only** one question at a time
+* f
 * Add annotations or labels (lines, names, colors, etc.)
 * Minimize white space, but don't over clutter
 * Use clear and accurate labeling and axis names
@@ -50,7 +74,7 @@ This course will mostly focus on making visualizations accessible for those with
 
 #### Titles
 
-#### Captions  
+#### Captions
 
 ### Alternative Text Descriptions
 
