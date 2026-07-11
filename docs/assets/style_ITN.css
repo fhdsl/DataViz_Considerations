@@ -313,7 +313,39 @@ div.warning{
   background-image: url("../assets/box_images/warning.png");
 }
 
+div.accessibility{
+  border: 4px #e0461b;
+  border-style: solid;
+  padding: 1em;
+  margin: 1em 0;
+  padding-left: 100px;
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  min-height: 120px;
+  background-color: #e8ebee;
+}
 
+div.accessibility{
+  background-image: url("../assets/box_images/eye.png");
+}
+
+div.ethics{
+  border: 4px #e0461b;
+  border-style: solid;
+  padding: 1em;
+  margin: 1em 0;
+  padding-left: 100px;
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  min-height: 120px;
+  background-color: #e8ebee;
+}
+
+div.ethics{
+  background-image: url("../assets/box_images/justice.png");
+}
 
 div.github{
   border: 4px #000000;

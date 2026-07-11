@@ -76,7 +76,7 @@ MS stands for
 SD stands for
   * Standard deviation [@Swords_etal_2023]
   * Segregation Distorter [@Gingell_McLean_2020]
-  * Sleep Deprivation
+  * Sleep Deprivation [@Ford_etal_2024]
 
 RA has at least 8 different clinical meanings [@Pakhomov_Pedersen_Chute_2005]
 
