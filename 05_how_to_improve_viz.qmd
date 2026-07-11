@@ -8,7 +8,9 @@ Creating a high quality data visualization requires more than picking the right 
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3a4b3643292_0_41#slide=id.g3a4b3643292_0_41")
 ```
 
-## What do accessibility and ethics have to do with data visualization?
+## Best Practices for Accessibility
+
+### What does accessibility have to do with data visualization?
 
 Both accessible and ethical data visualization improve viewers' understanding rather than confuse or mislead. When sharing a visualization widely, there are several audience types you may encounter.
 
@@ -19,15 +21,72 @@ Both accessible and ethical data visualization improve viewers' understanding ra
 3. Audiences with dyslexia or who are prone to distraction.
 4. Audiences with motor impairments.
 
-The majority of the resource will focus on making visualizations more accessible for audiences who are unfamiliar with your research or who have visual impairments. Accessibility considerations for audiences with motor impairments mostly impact how to prepare interactive visualizations.
+The majority of this resource will focus on making visualizations more accessible for audiences who are unfamiliar with your research or who have visual impairments. Accessibility considerations for audiences with motor impairments mostly impact how to prepare interactive visualizations.
 
 ::: {.notice}
-Resources for ensuring interactive visualizations meet accessibility standards include the WCAG Understanding Documents that provide guides for understanding and implementing the World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) Web Content Accessibility Guidelines (WCAG). [@]. An example of a relevant guideline is the Keyboard Accessible Guideline (Guidelines 2.1) [@].
+Resources for ensuring interactive visualizations meet accessibility standards include the WCAG Understanding Documents that provide guides for understanding and implementing the World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) Web Content Accessibility Guidelines (WCAG) [@ wcag22]. An example of a relevant guideline is the Keyboard Accessible Guideline (Guidelines 2.1) [@wcag_keyboard].
 
-The University of Washington provides a guide related to ensuring keyboard accessibility that references the relevant WCAG Guidelines as well. [@]
+The University of Washington, as part of their Digital Accessibility Guide, provides a guide related to ensuring keyboard accessibility that references the relevant WCAG Guidelines as well. [@Keyboardaccessibility2021]
 
-Harvard University also offers guidance for producing accessible interactive visualizations. [@]
+Harvard University also offers guidance for producing accessible interactive visualizations [@harvard_interactive​].
 :::
+
+### Rules for increasing accessibility for audiences unfamiliar with your research
+
+**Rule 1**: Provide descriptive, understandable, and visible text.
+
+**Rule 2**: Reduce the complexity of visualizations and be intentional in how you share them.
+
+**Rule 3**: Don't over clutter plots.
+
+**Rule 4**: Make comparisons easier.
+
+**Rule 5**: Use a layout that follows typical reading order and aligns with expectations.
+
+### Providing descriptive, understandable, and visible text
+
+* Use a large, visible text size
+* Consider bolding specific words for emphasis
+* Avoid specialized language such as jargon, acronyms, and abbreviations. If you must use them, define acronyms and abbreviations in your caption.
+* Use a declarative and descriptive title that communicates the main takeaway.
+* Include a detailed caption that answers the following questions:
+  * What is the data?
+  * Where did the data come from?
+  * What special wrangling, transforming, filtering, etc. was done to the data?
+  * What's being shown?
+  * What do the colors or shapes stand for?
+  * What is the overall trend or pattern?
+* Include axis labels that are accurate but not too detailed.
+  * Especially avoid jargon and undefined acronyms in axis labels.
+
+### Clearly presenting complex data
+
+An overly complex plot can be misleading for a number of reasons.
+
+In the same way that undefined specialized language may not be understandable, it can be misleading. Acronyms and abbreviations can be polysemantic and ambiguous with specific abbreviations having more than one possible meaning [@Barnett_Doubleday_2020]. Given the context or larger paper, the intended meaning will likely be conveyed, but data visualizations should be able to stand alone. And as such, using undefined specialized language can be misleading to a viewer.
+
+<details><summary>Examples of acronyms with multiple meanings</summary>
+
+MS stands for
+  * Multiple Sclerosis [@ms_multiple_sclerosis]
+  * Mass Spectrometry [@Son_etal_2024]
+  * Morphine Sulfate [@Rajan_etal_1998]
+  * Mitral Stenosis [@Napoli_etal_2024]
+
+SD stands for
+  * Standard deviation [@Swords_etal_2023]
+  * Segregation Distorter [@Gingell_McLean_2020]
+  * Sleep Deprivation
+
+RA has at least 8 different clinical meanings [@Pakhomov_Pedersen_Chute_2005]
+
+</details>
+
+### Reducing clutter in plots
+
+### Making comparisons easier
+
+### Arranging data to tell a story
 
 
 ## Clearly Presenting Complex Data
