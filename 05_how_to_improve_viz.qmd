@@ -67,7 +67,7 @@ An overly complex plot can be misleading for a number of reasons. The main takea
 
 Accessibility can be increased by decreasing the complexity of a plot, especially decreasing the complexity of the message. If a multi-line title is needed to explain every possible conclusion, there are too many takeaways in the plot.
 
-Sometimes visualizations are showing enough data that multiple conclusions or hypotheses for further explanation can be made. This happens especially when the visualization is showing connections or relationships among multiple aspects of the data. Frequently survey data may be visualized within context, showing how certain populations or demographics answered questions differently. In these cases, several additional conclusions may be possible from close inspection of a visualization. Another example of this is a Circos plot used in cancer research to display genome wide variation [@Krzywinski_etal_2009; Chia_etal_2016]. Each ring within the circle displays a different piece of information (such as copy number variation or intra- and inter-chromosomal rearrangements/structural variants) for aligned regions of the genome. This is an especially useful plot following catastrophic genomic breaking and error prone reassembly due to chromosome instability in cancer (e.g., Chromothripsis)[@SimovicLorenz_Ernst_2025].
+Sometimes visualizations are showing enough data that multiple conclusions or hypotheses for further explanation can be made. This happens especially when the visualization is showing connections or relationships among multiple aspects of the data. Frequently survey data may be visualized within context, showing how certain populations or demographics answered questions differently. In these cases, several additional conclusions may be possible from close inspection of a visualization. Another example of this is a Circos plot used in cancer research to display genome wide variation [@Krzywinski_etal_2009; @Chia_etal_2016]. Each ring within the circle displays a different piece of information (such as copy number variation or intra- and inter-chromosomal rearrangements/structural variants) for aligned regions of the genome. This is an especially useful plot following catastrophic genomic breaking and error prone reassembly due to chromosome instability in cancer (e.g., Chromothripsis)[@SimovicLorenz_Ernst_2025].
 
 In these cases where a visualization could suggest multiple conclusions, be intentional in how the complex plot is shared.
 
@@ -89,18 +89,20 @@ In the same way that undefined specialized language may not be understandable, i
 
 <details><summary>Examples of acronyms with multiple meanings</summary>
 
-MS stands for
+`MS` stands for
+
   * Multiple Sclerosis [@ms_multiple_sclerosis]
   * Mass Spectrometry [@Son_etal_2024]
   * Morphine Sulfate [@Rajan_etal_1998]
   * Mitral Stenosis [@Napoli_etal_2024]
 
-SD stands for
+`SD` stands for
+
   * Standard deviation [@Swords_etal_2023]
   * Segregation Distorter [@Gingell_McLean_2020]
   * Sleep Deprivation [@Ford_etal_2024]
 
-RA has at least 8 different clinical meanings [@Pakhomov_Pedersen_Chute_2005].
+`RA` has at least 8 different clinical meanings [@Pakhomov_Pedersen_Chute_2005].
 
 </details>
 
@@ -149,7 +151,7 @@ The most well known example of a color vision deficiency friendly color palette 
 
 #### Checking accessibility for color palettes
 
-[`colorblindr` is an R package](https://github.com/clauswilke/colorblindr) that simulates color vision deficiency directly on a plot in R, returning what it might look like for different types of color vision deficiency. You can directly examine your visualization to make sure that plot elements and groups are distinguishable and make changes to reassess as needed. 
+[`colorblindr` is an R package](https://github.com/clauswilke/colorblindr) that simulates color vision deficiency directly on a plot in R, returning what it might look like for different types of color vision deficiency. You can directly examine your visualization to make sure that plot elements and groups are distinguishable and make changes to reassess as needed.
 
 #### Using shape, patterns, or labels in addition to color.
 
@@ -164,7 +166,9 @@ An example of this technique can be found in [recent editions of Uno card decks]
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_100#slide=id.g3b3602af4d0_0_100")
 ```
 
-```{r fig.align = 'center', out.width = "100%", fig.alt = "The shapes are still distinguishable without color, ensuring accessibility and a way to tell the categories apart."}
+By redundantly providing a shape as well as the color, groups can still be distinguished because of the shapes.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "The shapes are still distinguishable without color, ensuring accessibility and a way to tell the categories apart."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f7cfa1b21e_0_13#slide=id.g3f7cfa1b21e_0_13")
 ```
 
