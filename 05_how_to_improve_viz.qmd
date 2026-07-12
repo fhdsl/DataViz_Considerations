@@ -180,13 +180,23 @@ Common sans-serif fonts include Verdana, Arial, and Calibri.
 
 #### Descriptive Alternative Text
 
-### Ethical Data Visualization
+## Best Practices for Ethics
+
+### What does ethics have to do with data visualization?
 
 Ethical visualizations improve viewers' understanding rather than confuse or mislead. Misleading messages are not always intentional on the part of the researcher putting together a data visualization, and mistakes happen (e.g., bugs in software, errors in data entry, etc.). It's the responsibility of the researcher to carefully evaluate all data visualizations before sharing them to make sure that the visualizations clearly and accurately present the data and communicate the overall goal.
 
 Several of the topics we'll provide within this section about ethical considerations are related to tips to reduce complexity and enhance accessibility. This is not surprising given that clear communication is a necessity for both ethical and accessible visualizations.
 
-### Data Inclusion: Safety & Transparency
+There are 5 main categories for practicing ethical data visualization.
+
+1. Championing Safety & Transparency
+2. Ensuring Accuracy
+3. Preventing Data Distortion
+4. Maintaining Originality
+5. Practicing Empathy
+
+### Ethical Data Inclusion: Safety & Transparency
 
 The rules within this section are aimed to safeguard patient privacy and provide transparency.
 
@@ -196,25 +206,27 @@ ADD thoughts here
 
 **Rule 2: Include all relevant data or subgroups**
 
-ADD thoughts here
+Pie charts may incorrectly portray or give the impression that all data is included in the visualization.
 
 **Rule 3: Describe removed samples or dropouts**
 
-ADD thoughts here
+Captions are the primary place for this. Perhaps a title could very explicitly describe which groups are being visualized. The accompanying narrative should also include this information. However, because data visualizations should be able to stand alone, be sure to include this information with the visualization as well.
 
-### Accuracy
+Some plot types, especially diagrams showing a process may provide a way to show which categories of samples are removed or how many patients dropped out (e.g., Sankey Diagrams).
+
+### Ensuring Accuracy
 
 The rules within this section are aimed to encourage careful verification of visualizations.
 
 **Rule 1: Verify that visualizations accurately represent the data**
 
-ADD thoughts about data that may be missing, or sizes/area that don't align with data. Repeat the idea of checking twice before sharing the visualization
+ADD thoughts about data that may be missing, or sizes/area that don't align with data. Do visualizations show a consistent message if you check visualizations against each other? Repeat the idea of checking twice before sharing the visualization
 
 **Rule 2: Use clear and accurate axis labels**
 
 ADD thoughts especially related to axis labels. Often having simplified axis labels help audiences. Doing this ethically such that the simplified label is what is being plotted is really important. If the label doesn't match the data, why not plot the data for the simplified label?
 
-### Avoiding Data Distortion
+### Preventing Data Distortion
 
 The aims for rules within this section include to avoid misleading messages and to compare groups fairly.
 
@@ -228,31 +240,37 @@ ADD about axis limits when you have facets and how audiences may expect those su
 
 ADD info about the overall message. If a line is going up over time, but the message is related to decrease, why is the line going up? This can be misleading.
 
-**Rule 3: Separate plot elements**
+**Rule 3: Separate overlapping plot elements**
 
 ADD info about how true info can be obscured if plot elements aren't separated.
 
-### Plagiarism & Inspiration
+### Maintaining Originality
 
 ADD info about plagiarism and what that means for data visualization
 
 ADD info about inspiration
 
-**Rule 1: If in doubt, attribute**
+**Rule 1: Don't take someone's visualization (with their data) without attribution.**
+
+**Rule 2**: Use your own data in making a similar visualization, modifying where you can.
+
+**Rule 3**: If using a type of plot and are in doubt, attribute.
 
 ADD info about attribution if you're concerned.
 
-### Empathy
+### Practicing Empathy
 
 Tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute. These are more tips and not rules because they are more subjective.
 
-*Visualize each data point*
+*Tip 1: Visualize each data point*
 
-*Avoid stereotypical colors*
+Point to jitter
 
-*Use person-first language when appropriate and avoid insensitive language*
+*Tip 2: Avoid stereotypical colors*
 
-*Expand an "Other" category*
+*Tip 3: Use person-first language when appropriate and avoid insensitive language*
+
+*Tip 4: Expand an "Other" category*
 
 ## Improving Visualizations
 
