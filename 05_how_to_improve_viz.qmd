@@ -24,14 +24,16 @@ Both accessible and ethical data visualization improve viewers' understanding ra
 The majority of this resource will focus on making visualizations more accessible for audiences who are unfamiliar with your research or who have visual impairments. Accessibility considerations for audiences with motor impairments mostly impact how to prepare interactive visualizations.
 
 ::: {.notice}
-Resources for ensuring interactive visualizations meet accessibility standards include the WCAG Understanding Documents that provide guides for understanding and implementing the World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) Web Content Accessibility Guidelines (WCAG) [@ wcag22]. An example of a relevant guideline is the Keyboard Accessible Guideline (Guidelines 2.1) [@wcag_keyboard].
+Resources for ensuring interactive visualizations meet accessibility standards include the WCAG Understanding Documents that provide guides for understanding and implementing the World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) Web Content Accessibility Guidelines (WCAG) [@wcag22]. An example of a relevant guideline is the Keyboard Accessible Guideline (Guidelines 2.1) [@wcag_keyboard].
 
 The University of Washington, as part of their Digital Accessibility Guide, provides a guide related to ensuring keyboard accessibility that references the relevant WCAG Guidelines as well. [@Keyboardaccessibility2021]
 
 Harvard University also offers guidance for producing accessible interactive visualizations [@harvard_interactive​].
 :::
 
-### Rules for increasing accessibility for audiences unfamiliar with your research
+### Audiences unfamiliar with your research
+
+The rules for increasing the accessibility of your visualizations for audiences unfamiliar with your research are united by the principle that you know your research better than your audience will know it. Therefore, you need to guide the audience through the visualization, making sure that the stand alone plot can communicate whatever you would show or tell if you were presenting it to them.
 
 **Rule 1**: Provide descriptive, understandable, and visible text.
 
@@ -43,7 +45,7 @@ Harvard University also offers guidance for producing accessible interactive vis
 
 **Rule 5**: Use a layout that follows typical reading order and aligns with expectations.
 
-### Providing descriptive, understandable, and visible text
+#### Providing descriptive, understandable, and visible text
 
 * Use a large, visible text size
 * Consider bolding specific words for emphasis
@@ -59,9 +61,29 @@ Harvard University also offers guidance for producing accessible interactive vis
 * Include axis labels that are accurate but not too detailed.
   * Especially avoid jargon and undefined acronyms in axis labels.
 
-### Clearly presenting complex data
+#### Clearly presenting complex data
 
-An overly complex plot can be misleading for a number of reasons.
+An overly complex plot can be misleading for a number of reasons. The main takeaway could be obscured because too much data is present and therefore the main takeaway is non-obvious, hidden, or confused with another pattern that is there. In addition, unnecessary or overly distracting visual design elements could unintentionally be drawing away attention from the main point to another area of the plot. The solution to this issue is to use your visualization to answer **only** one question at a time.
+
+Accessibility can be increased by decreasing the complexity of a plot, especially decreasing the complexity of the message. If a multi-line title is needed to explain every possible conclusion, there are too many takeaways in the plot.
+
+Sometimes visualizations are showing enough data that multiple conclusions or hypotheses for further explanation can be made. This happens especially when the visualization is showing connections or relationships among multiple aspects of the data. Frequently survey data may be visualized within context, showing how certain populations or demographics answered questions differently. In these cases, several additional conclusions may be possible from close inspection of a visualization. Another example of this is a Circos plot used in cancer research to display genome wide variation [@Krzywinski_etal_2009; Chia_etal_2016]. Each ring within the circle displays a different piece of information (such as copy number variation or intra- and inter-chromosomal rearrangements/structural variants) for aligned regions of the genome. This is an especially useful plot following catastrophic genomic breaking and error prone reassembly due to chromosome instability in cancer (e.g., Chromothripsis)[@SimovicLorenz_Ernst_2025].
+
+In these cases where a visualization could suggest multiple conclusions, be intentional in how the complex plot is shared.
+
+* Use the title to focus the takeaway message.
+* Use the caption and any accompanying narrative to describe exactly where the audience should be looking.
+* Label different aspects such as facet labels, the rings of a Circos plot, axis labels, a few specific data points.
+
+Strongly consider using a less complex plot or a series of less complex plots. Make one or a set of a few and show them to team members and ask which is more accessible while still conveying the point.
+
+If you are sharing a complex visualization **in a talk** be sure to set aside enough time to walk people through the figure. If there are elements in the visualization that you do not feel need to be mentioned, perhaps they can be removed. Consider having at least one slide beforehand that orients people to what the figure will look like. Using toy data (e.g., simulated, skewed, unrealistic, etc.) explain what different patterns would look like and mean -- specifically what conclusions could be made. Once displaying the visualization with your real data, considering using animation to gradually display parts of the visualization. This can be done in a variety of ways such as by utilizing cropping; manually adding shapes that are filled with the background color to cover data and removing them as you proceed through describing the visualization; manually adding helpful annotations on slides; potentially building different aspects of the plot separately and combining them together to form the whole visualization; or building different variations of a visualization depending on what specifically needs focused on or annotated.
+
+If you are sharing a complex visualization **in a report or paper** be sure to use descriptive titles and captions that describe the main message and what pattern of interest to look for. Consider using multiple panels to showcase more focused aspects individually, supplementing the more complex figure. Reference and describe the plot in the accompanying narrative.
+
+If you are sharing a complex visualization **on a poster** be sure to make the plot **large** so that your audience can read it, seeing details and distinguishing key elements. Also be sure to include the narrative or "elevator pitch" you would use to walk people through the visualization visible in case they are viewing the poster without you. In general it's good practice to streamline the text on a poster, however including descriptions and explanations for complex plots that you can't simplify is a good idea.
+
+Finally, use visual design elements to reduce complexity. It may seem like adding these elements is adding complexity because it's adding clutter or ink. However, certain elements are worth the addition because they can increase clarity. Use annotations or labels such as y- or x- intercept lines. Use facets or subplots. Though sometimes splitting a plot into multiple separate plots will be more useful than increasing the number of facets in a single plot. Notice that annotations, labels, and facets may be some of the elements that you gradually reveal or "animate in" during a talk. Finally, ensure clear labelling and names to reduce the complexity of a plot. Make sure the text is readable (large) and understandable.
 
 In the same way that undefined specialized language may not be understandable, it can be misleading. Acronyms and abbreviations can be polysemantic and ambiguous with specific abbreviations having more than one possible meaning [@Barnett_Doubleday_2020]. Given the context or larger paper, the intended meaning will likely be conveyed, but data visualizations should be able to stand alone. And as such, using undefined specialized language can be misleading to a viewer.
 
@@ -78,66 +100,83 @@ SD stands for
   * Segregation Distorter [@Gingell_McLean_2020]
   * Sleep Deprivation [@Ford_etal_2024]
 
-RA has at least 8 different clinical meanings [@Pakhomov_Pedersen_Chute_2005]
+RA has at least 8 different clinical meanings [@Pakhomov_Pedersen_Chute_2005].
 
 </details>
 
-### Reducing clutter in plots
+#### Reducing clutter in plots
 
-### Making comparisons easier
+To reduce the clutter in plots consider the following things:
 
-### Arranging data to tell a story
+* Use facets or subplots
+* Increase the transparency for overlapping data
+* Make several related plots
 
+While it is necessary to not over clutter plots, it is also necessary to minimize unused space. It's important to strike a balance between these two considerations. Some iterative polishing and team review may be necessary to find a proper balance. This is a case where data visualization is a bit more of a subjective art form.
 
-## Clearly Presenting Complex Data
+#### Making comparisons easier
 
-An overly complex plot can be misleading for a number of reasons. A takeaway could be obscured because the plot focuses the viewer's attention on another aspect
+To make comparisons easier for the audience consider the following steps:
 
-These reasons include obscuring something because the plot focuses the viewer's attention on another aspect, not separating high density areas or overlapping plot elements, including too much information, or not specifying specialized language such as acronyms or field specific/technical vocabulary.
+* Reduce unnecessary or unused space. For example, a bar plot with too much space in between the bars makes it more difficult to compare the bars.
+* Outline bordering geometric marks to add a visual distinction between pieces.
+* Order categories based on frequency. For bar parts especially, or any plot where you want to show a ranking, show the categories ordered according to the ranking or frequency.
+* Label with the amount of represented data or include an accompanying table with this information.
 
-General tips to reduce complexity when you can:
+#### Arranging data to tell a story
 
-* f
-* Add annotations or labels (lines, names, colors, etc.)
-* Minimize white space, but don't over clutter
-* Use clear and accurate labeling and axis names
-  * Readable (large text)
-  * Understandable (e..g, avoid jargon and define uncommon acronyms)
-* Separate plot elements or overlapping data
-  * Use facets or subplots to separate different categories of data
-  * Increase opacity/transparency
-  * Decrease point size or change the shape
-  * Consider a log transformation
-  * Use a zoomed inset
-* Consider typical reading order
-  * top to bottom
-  * left to right
+Use a layout that follows typical reading order. Progress through the story of a plot or diagram from left to right and top to botttom. If your visualization is supposed to be showing an increase it should visually look like an increase. If your visualization is supposed to show a decrease, it should look like a decrease. The "highest" point shouldn't be at the bottom of the plot. If showing a ranking, the highest rank should appear one of the edges with the lowest rank at the other edge.
 
-Reducing complexity enhances clarity and accessibility by helping the viewer know where to focus and providing them with reference points or information they need to know (such as acronym meanings).
+### Rules for increasing accessibility for audience members who have visual impairments
 
-## Best Practices for Accessibility
+The rules for increasing accessibility for audience members who have visual impairments are all united by the principle that plot elements should be **distinguishable**.
 
-Reducing complexity is a very important first step in designing accessible visualizations. Beyond reducing complexity, additional considerations are necessary to further enhance accessibility for visualization audiences. Audiences may have visual impairments such as low vision or blindness or color vision deficiency, motor impairments (relevant for interactive visualizations), or dyslexia. Additionally, audiences likely will be unfamiliar with your research and may be distracted when interacting with your research.
+**Rule 1**: Use color vision deficiency friendly color palettes.
 
-This course will mostly focus on making visualizations accessible for those with visual impairments and those unfamiliar with your research.
+**Rule 2**: If using your own color palette, use a package or a simulator to check the accessibility of the color palette.
 
-### Color Palettes
+**Rule 3**: Don't use color alone to represent groups.
 
-### Contrast
+**Rule 4**: Use a proper contrast ratio.
 
-### Text
+**Rule 5**: Don't over clutter plots (also Rule 3 for audiences unfamiliar with your research)
 
-#### Axis Labels
+**Rule 6**: Use a sans-serif font.
 
-#### Annotations
+#### Using accessible color palettes
 
-#### Titles
+The most well known example of a color vision deficiency friendly color palette is `viridis`.
 
-#### Captions
+#### Checking accessibility for color palettes
 
-### Alternative Text Descriptions
+[`colorblindr` is an R package](https://github.com/clauswilke/colorblindr) that simulates color vision deficiency directly on a plot in R, returning what it might look like for different types of color vision deficiency. You can directly examine your visualization to make sure that plot elements and groups are distinguishable and make changes to reassess as needed. 
 
-## Ethical Data Visualization
+#### Using shape, patterns, or labels in addition to color.
+
+An example of this technique can be found in [recent editions of Uno card decks]() that include geometric shapes on the cards to communicate what group or color that card is.
+
+* Red: Circle
+* Green: Triangle
+* Blue: Square
+* Yellow: Star
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Using color and shape together allows the audience to distinguish groups no matter what the color palette is. Uno cards use this method, including geometric shapes on cards to redundantly communicate groups. To those without color vision deficiencies, this appears redundant. However, for those with color vision deficiencies, anyone can distinguish the groups using the geometric shapes. Red has circles, green has triangles, blue has squares, and yellow has stars."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3b3602af4d0_0_100#slide=id.g3b3602af4d0_0_100")
+```
+
+```{r fig.align = 'center', out.width = "100%", fig.alt = "The shapes are still distinguishable without color, ensuring accessibility and a way to tell the categories apart."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f7cfa1b21e_0_13#slide=id.g3f7cfa1b21e_0_13")
+```
+
+#### Checking accessibility for contrast
+
+#### Using sans-serif fonts
+
+Common sans-serif fonts include Verdana, Arial, and Calibri.
+
+#### Descriptive Alternative Text
+
+### Ethical Data Visualization
 
 Ethical visualizations improve viewers' understanding rather than confuse or mislead. Misleading messages are not always intentional on the part of the researcher putting together a data visualization, and mistakes happen (e.g., bugs in software, errors in data entry, etc.). It's the responsibility of the researcher to carefully evaluate all data visualizations before sharing them to make sure that the visualizations clearly and accurately present the data and communicate the overall goal.
 
