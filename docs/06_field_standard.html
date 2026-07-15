@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -171,6 +191,18 @@ gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true});
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Wrapping up</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_itcr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Appendix: ITCR Tools and Data Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Appendix: List of Plots</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -288,14 +320,14 @@ Strengths and Weaknesses
 </section>
 <section id="waterfall-plot" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="waterfall-plot"><span class="header-section-number">6.3</span> Waterfall Plot</h2>
-<p><strong>Description</strong>: Bar charts which show treatment effect. The numerical axis is compared to a baseline. The bars are arranged or ordered according to magnitude and each bar typically corresponds to a different patient or sample.</p>
+<p><strong>Description</strong>: Bar charts which show treatment effect. The numerical axis is compared to a baseline. The bars are arranged or ordered according to magnitude and each bar typically corresponds to a different patient or sample <span class="citation" data-cites="Gillespie_2012">(<a href="#ref-Gillespie_2012" role="doc-biblioref">Gillespie 2012</a>)</span>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">When to Use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Example &amp; Interpretation</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">When to Use</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Examples &amp; Interpretation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">How to make</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p><strong>When to use Waterfall plots:</strong></p>
 <ul>
-<li>Numerical data (may have categorical data for color)</li>
+<li>Numerical data (may have categorical data such as summarized treatment response or demographics for color)</li>
 <li>Minimum of 1 variable if the difference between patient/sample and baseline is already computed, but a minimum of 2 variables otherwise</li>
 <li>Primary data encodings are bars and position</li>
 <li>Typically used to show patient response to a treatment but the design can be used for other use cases around this theme</li>
@@ -310,8 +342,9 @@ Strengths, Weaknesses, and Alternatives
 </ul>
 <p><strong>Weaknesses</strong></p>
 <ul>
-<li>The snapshot compares two time points but not a range of time</li>
+<li>The snapshot compares two time points but not a range of time.</li>
 <li>For tumor response, there’s an accepted notion of what above or below the baseline means but this might not be true for other applications</li>
+<li>Each patient requires two analogous timepoints (e.g., baseline and evaluation following intervention) to be included in this visualization. A corresponding caption or text within a report would need to specify if any patients don’t have corresponding data for both timepoints and aren’t represented within the visualization.</li>
 </ul>
 <p><strong>Alternatives</strong></p>
 <ul>
@@ -324,7 +357,127 @@ Strengths, Weaknesses, and Alternatives
 </details>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Include an example plot and how to interpret</p>
+<p><strong>Main Example</strong>:</p>
+<p>An example of the Waterfall plot from the biomedical, bioinformatics, or cancer informatics literature is Figure 2A from <span class="citation" data-cites="Kwak_etal_2010">Kwak et al. (<a href="#ref-Kwak_etal_2010" role="doc-biblioref">2010</a>)</span> which shows the percent change in tumor burden for 79 patients, comparing tumor burden after treatment to a baseline measurement prior to the intervention. Each patient is represented by a bar and the bars are colored to represent a descriptive category related to the patient’s disease state. A dashed line at -30% may represent the average change in tumor burden but this is unclear.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1006448"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f32cadd7be_0_43.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot is comparing the percent change in tumor burden for a set of patients. Tumor burden for each patient is being defined at two specific points in time: 1) their original baseline and 2) their “current” tumor burden at the time of data collection after treatment. Each patient has their own baseline and current values – they are likely not sharing a baseline value. Because the date is being translated into percent change, values across patients can be compared more easily: specifically evaluating if tumor burden increased or decreased. The numerical data (percent change) that is being represented on the y-axis is defined as <code>(tumor burden following treatment - tumor burden baseline) / tumor burden baseline * 100%</code> for each patient.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f32cadd7be_0_53.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Diagram showing the expectation for the data necessary to build a waterfall plot. For each patient you will have a value such as tumor burden that was measured at a baseline timepoint and you will have a corresponding value that was measured after treatment or some other intervention. The percent change from baseline is computed from these values for each patient."></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Connecting these percent change values to the underlying biological data, there are 3 possibilities:</p>
+<ol type="1">
+<li>Tumor burden decreased after the intervention. Then the percent change will be negative and be represented by a bar below the x-axis in the plot.</li>
+<li>Tumor burden increased after the intervention. Then the percent change will be positive and be represented by a bar above the x-axis in the plot.</li>
+<li>Tumor burden remained unchanged after the intervention. Then then the percent change is 0% and the bar will be largely invisible – neither above nor below the x-axis of the plot.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f32cadd7be_0_109.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Diagram showing the three cases for tumor burden data for a waterfall plot. Specifically that tumor burden can decrease leading to negative percent change values, tumor burden can increase leading to positive percent change values, and tumor burden can remain unchanged, leading to a zero percent change."></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Interpretation</strong>: Connecting back to the <span class="citation" data-cites="Kwak_etal_2010">Kwak et al. (<a href="#ref-Kwak_etal_2010" role="doc-biblioref">2010</a>)</span> example of a waterfall plot from the biomedical, bioinformatics, or cancer informatics literature:</p>
+<ul>
+<li>Most patients had an observed reduction in tumor burden with only 4 showing in increase in tumor burden.</li>
+<li>Most patients exhibited a response to treatment with regards to disease state, though this number is fewer than the number that had an observed reduction in tumor burden.</li>
+<li>5 patients showed a 100% change meaning that there was a total disappearance of tumor burden after the intervention.</li>
+<li>However, of those 5 only one exhibited a complete response to treatment with regards to disease state.</li>
+<li>Notice that we have to count the number of bars that exhibit a certain characteristic (above/below the x-axis or specific color/category). Generally with this plot type, the audience will have an easier time interpreting trends and using abstractions to describe it. The plot allows audiences to observe the overall heterogeneity and range of the data quickly, but not precise group numbers. It is best to provide specific counts for specific characteristics either in a caption or the text of a report.</li>
+</ul>
+<p><strong>Other examples</strong>:</p>
+<p>In relation to the idea that Waterfall plots typically compare two timepoints only, not a range of time, consider the example from <span class="citation" data-cites="Nishino_etal_2010">Nishino et al. (<a href="#ref-Nishino_etal_2010" role="doc-biblioref">2010</a>)</span>. In Figure 2 each patient is represented by 2 side-by-side (or grouped) bars. The use of the grouped bar chart here is comparing what the percent change would be depending upon which version of guidelines the investigators used to evaluate the tumor (RECIST 1.0 vs 1.1). However, researchers could potentially use a grouped bar chart approach to show multiple timepoints if it was important for the point.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.ajronline.org/doi/10.2214/AJR.09.3928"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f32cadd7be_0_164.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>An example from the biomedical, bioinformatics, or cancer informatics literature that uses the waterfall plot for use other than displaying tumor response can be seen in Figure 3B from <span class="citation" data-cites="Lim_etal_2024">Lim et al. (<a href="#ref-Lim_etal_2024" role="doc-biblioref">2024</a>)</span>. In this case, the authors use a waterfall plot for model validation, having built a model to relate the volume of open aortic repair procedures at hospitals with associated patient mortality rates.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://doi.org/10.1016/j.avsg.2024.03.012"><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f32cadd7be_0_211.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finally, this example using data from the Palmer Penguins dataset <span class="citation" data-cites="Horst2020">(<a href="#ref-Horst2020" role="doc-biblioref">Horst, Hill, and Gorman 2020</a>)</span>, shows the care that must be taken when using a waterfall plot for an atypical application where there is no standard notion of what above or below the x-axis means.</p>
+<p>The Palmer Penguins dataset provides body mass measurements (in grams) as well as the sex for over 300 penguins. There’s a small percentage of missing data for the sex variable (e.g., penguins with unknown sex). We can find the overall average body mass and then build a waterfall plot that represents the difference between the average body mass and the actual body mass of each penguin. Then we can color each bar by the sex of the penguin. In this first example, the y-axis is plotting the difference of the actual from the average (<code>average - actual</code>). This provides a potentially misleading graphic where the female penguins are primarily above the x-axis baseline (average) which may give readers the initial impressions that female penguins have the highest body masses within this sample. However, that is not the case.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f32cadd7be_0_222.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Therefore, if we switch the y-axis to represent the difference of the average from the actual (<code>actual - average</code>), this now shows the male penguins primarily above the x-axis baseline (average) – which gives the proper impression that the male penguins tend to have higher body masses than the female penguins.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f32cadd7be_0_231.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<p>Standard plotting libraries can be used to make waterfall plots since they are a specialized form of bar plots. Just ensure that your data is sorted and/or has a variable that assigns the x-position based on the sorting to ensure the bars appear in the proper order.</p>
+<p>The process to make a waterfall plot is as follows:</p>
+<ol type="1">
+<li>Sort percent change values from largest (highest positive) to smallest (lowest negative). There may be ties.</li>
+<li>Position will be used place the percent change values along the x-axis.</li>
+</ol>
+<ul>
+<li>The patient with the largest percent change will be represented by the furthest left bar.</li>
+<li>The patient with the smallest percent change will be represented by the furthest right bar.</li>
+</ul>
+<ol start="3" type="1">
+<li>Use a bar to represent each patient and their percent change values.</li>
+</ol>
+<ul>
+<li>All bars start at 0% (the x-axis).</li>
+<li>No bars should cross the x-axis.</li>
+<li>Bars above the x-axis reflect an increase in tumor burden.</li>
+<li>Bars below the y-axis reflect a decrease in tumor burden.</li>
+<li>Some bars may not be visible because they represent patients with 0% change.</li>
+</ul>
+<ol start="4" type="1">
+<li>Consider coloring the bars to reflect some categorical data grouping for the patients.</li>
+<li>You may want to add a dashed line and label reflecting the average percent change for the cohort of patients or some other summary statistic.</li>
+</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f32cadd7be_0_75.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -514,6 +667,23 @@ Include an example plot and how to interpret
 -->
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Gillespie_2012" class="csl-entry" role="listitem">
+Gillespie, Theresa W. 2012. <span>“Understanding Waterfall Plots.”</span> <em>Journal of the Advanced Practitioner in Oncology</em> 3 (2): 106–11. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4093310/">https://pmc.ncbi.nlm.nih.gov/articles/PMC4093310/</a>.
+</div>
+<div id="ref-Horst2020" class="csl-entry" role="listitem">
+Horst, Allison Marie, Alison Presmanes Hill, and Kristen B Gorman. 2020. <em>Palmerpenguins: Palmer Archipelago (Antarctica) Penguin Data</em>. <a href="https://doi.org/10.5281/zenodo.3960218">https://doi.org/10.5281/zenodo.3960218</a>.
+</div>
+<div id="ref-Kwak_etal_2010" class="csl-entry" role="listitem">
+Kwak, Eunice L., Yung-Jue Bang, D. Ross Camidge, Alice T. Shaw, Benjamin Solomon, Robert G. Maki, Sai-Hong I. Ou, et al. 2010. <span>“Anaplastic Lymphoma Kinase Inhibition in Non–Small-Cell Lung Cancer.”</span> <em>New England Journal of Medicine</em> 363 (18): 1693–703. <a href="https://doi.org/10.1056/NEJMoa1006448">https://doi.org/10.1056/NEJMoa1006448</a>.
+</div>
+<div id="ref-Lim_etal_2024" class="csl-entry" role="listitem">
+Lim, Sungho, Omkar Pawar, Alexandre d’Audiffret, Anuja Sarode, Benjamin D. Colvard, and Jae S. Cho. 2024. <span>“Endovascular Aneurysm Repair-First Strategy for Ruptured Abdominal Aortic Aneurysm Might Not Be Applicable to All Cases.”</span> <em>Annals of Vascular Surgery</em> 106: 386–93. <a href="https://doi.org/10.1016/j.avsg.2024.03.012">https://doi.org/10.1016/j.avsg.2024.03.012</a>.
+</div>
+<div id="ref-Nishino_etal_2010" class="csl-entry" role="listitem">
+Nishino, Mizuki, David M. Jackman, Hiroto Hatabu, Beow Y. Yeap, Leigh-Anne Cioffredi, Jeffrey T. Yap, Pasi A. Jänne, Bruce E. Johnson, and Annick D. Van den Abbeele. 2010. <span>“New Response Evaluation Criteria in Solid Tumors (RECIST) Guidelines for Advanced Non–Small Cell Lung Cancer: Comparison with Original RECIST and Impact on Assessment of Tumor Response to Targeted Therapy.”</span> <em>American Journal of Roentgenology</em> 195 (3): W221–28. <a href="https://doi.org/10.2214/AJR.09.3928">https://doi.org/10.2214/AJR.09.3928</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
