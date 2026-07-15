@@ -127,7 +127,7 @@ To make comparisons easier for the audience consider the following steps:
 
 #### Arranging data to tell a story
 
-Use a layout that follows typical reading order. Progress through the story of a plot or diagram from left to right and top to botttom. If your visualization is supposed to be showing an increase it should visually look like an increase. If your visualization is supposed to show a decrease, it should look like a decrease. The "highest" point shouldn't be at the bottom of the plot. If showing a ranking, the highest rank should appear one of the edges with the lowest rank at the other edge.
+Use a layout that follows typical reading order. Progress through the story of a plot or diagram from left to right and top to bottom. If your visualization is supposed to be showing an increase it should visually look like an increase. If your visualization is supposed to show a decrease, it should look like a decrease. The "highest" point shouldn't be at the bottom of the plot. If showing a ranking, the highest rank should appear one of the edges with the lowest rank at the other edge.
 
 ### Rules for increasing accessibility for audience members who have visual impairments
 
