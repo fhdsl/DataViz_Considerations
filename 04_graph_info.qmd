@@ -516,6 +516,7 @@ There are several common plots that are "field standard" or customarily used wit
 Galleries can be useful to browse standard plots and learn information about them.
 
 * **from Data to Viz Gallery**: An example of a gallery that provides visual examples and explanations for necessary data types is the [from Data to Viz gallery](https://www.data-to-viz.com/#explore)
+* **Data Viz Project**: An example of a gallery that describes use cases and provides visual examples from many sources for various plot types is the [Data Viz Project](https://datavizproject.com/)
 * **R Graph Gallery**: The [R Graph Gallery](https://r-graph-gallery.com/) provides visual examples and templates for creating standard plots with the R programming language.
 * **Python Graph Gallery**: The [Python Graph Gallery](https://python-graph-gallery.com/) provides visual examples and templates for creating standard plots with the Python programming language.
 * **SMART App Gallery**: For more specialized galleries related to biomedical applications, consider the [Substitutable Medical Apps, Reusable Technology (SMART) App Gallery](https://apps.smarthealthit.org/apps/category/data-visualization?sort=name-asc) which provides free and open source apps for healthcare providers and researchers to work with and visualize health data. The integrated apps describe specific data types and goals and can provide dashboards and visualizations specifically for those data types/goals.
