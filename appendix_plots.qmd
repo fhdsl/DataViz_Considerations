@@ -1,0 +1,99 @@
+# Appendix: List of Plots
+
+This appendix contains a non-exhaustive list of some standard and field specific plots, linking to relevant resources.
+
+## Standard
+
+* **Scatter plot**
+  * General info: [https://www.data-to-viz.com/graph/scatter.html](https://www.data-to-viz.com/graph/scatter.html)
+  * General info and gallery: [https://datavizproject.com/data-type/scatter-plot/](https://datavizproject.com/data-type/scatter-plot/)
+  * In R with `ggplot2`: [https://ggplot2.tidyverse.org/reference/geom_point.html](https://ggplot2.tidyverse.org/reference/geom_point.html)
+  * R Graph Gallery: [https://r-graph-gallery.com/scatterplot.html](https://r-graph-gallery.com/scatterplot.html)
+  * In Python with `matplotlib`: [https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html)
+  * Python Graph Gallery: [https://python-graph-gallery.com/scatter-plot/](https://python-graph-gallery.com/scatter-plot/)
+* **Line plot**
+  * General info: [https://www.data-to-viz.com/graph/line.html](https://www.data-to-viz.com/graph/line.html)
+  * General info and gallery: [https://datavizproject.com/data-type/line-chart/](https://datavizproject.com/data-type/line-chart/)
+  * In R with `ggplot2`: [https://ggplot2.tidyverse.org/reference/geom_path.html](https://ggplot2.tidyverse.org/reference/geom_path.html)
+  * R Graph Gallery: [https://r-graph-gallery.com/line-plot.html](https://r-graph-gallery.com/line-plot.html)
+* **Histogram**
+  * General info: [https://www.data-to-viz.com/graph/histogram.html](https://www.data-to-viz.com/graph/histogram.html)
+  * General info and gallery: [https://datavizproject.com/data-type/histogram/](https://datavizproject.com/data-type/histogram/)
+* **Bar plot**
+  * General info: [https://www.data-to-viz.com/graph/barplot.html](https://www.data-to-viz.com/graph/barplot.html)
+  * General info and gallery: [https://datavizproject.com/data-type/bar-chart/](https://datavizproject.com/data-type/bar-chart/) and [https://datavizproject.com/data-type/bar-chart-horizontal/#](https://datavizproject.com/data-type/bar-chart-horizontal/#)
+* **Violin plot**
+  * General info and gallery: [https://datavizproject.com/data-type/violin-plot/](https://datavizproject.com/data-type/violin-plot/)
+* **Boxplot**
+  * General info: [https://www.data-to-viz.com/caveat/boxplot.html](https://www.data-to-viz.com/caveat/boxplot.html)
+  * General info and gallery: [https://datavizproject.com/data-type/box-plot/](https://datavizproject.com/data-type/box-plot/)
+* Ridgeline plot
+  * General info: [https://www.data-to-viz.com/graph/ridgeline.html](https://www.data-to-viz.com/graph/ridgeline.html)
+* Raincloud plot
+* Stacked bar chart
+  * General info and gallery: [https://datavizproject.com/data-type/stacked-bar-chart/](https://datavizproject.com/data-type/stacked-bar-chart/)
+* Grouped bar chart
+  * General info and gallery: [https://datavizproject.com/data-type/grouped-bar-chart/](https://datavizproject.com/data-type/grouped-bar-chart/)
+* Lollipop chart
+  * General info: [https://www.data-to-viz.com/graph/lollipop.html](https://www.data-to-viz.com/graph/lollipop.html)
+  * General info and gallery: [https://datavizproject.com/data-type/lollipop-chart/](https://datavizproject.com/data-type/lollipop-chart/)
+* Dumbbell plot
+  * General info and gallery: [https://datavizproject.com/data-type/dumbbell-plot/](https://datavizproject.com/data-type/dumbbell-plot/)
+* Strip plot
+  * General info and gallery: [https://datavizproject.com/data-type/strip-plot/](https://datavizproject.com/data-type/strip-plot/)
+* Swarm plot
+  * General info and gallery: [https://datavizproject.com/data-type/beeswarm-blot/](https://datavizproject.com/data-type/beeswarm-blot/)
+* Heatmap
+  * General info: [https://www.data-to-viz.com/graph/heatmap.html](https://www.data-to-viz.com/graph/heatmap.html)
+  * General info and gallery: [https://datavizproject.com/data-type/heat-map/](https://datavizproject.com/data-type/heat-map/)
+* Parallel plot
+  * General info: [https://www.data-to-viz.com/graph/parallel.html](https://www.data-to-viz.com/graph/parallel.html)
+  * General info and gallery: [https://datavizproject.com/data-type/parallel-coordinates/](https://datavizproject.com/data-type/parallel-coordinates/)
+* Bubble plot
+  * General info: [https://www.data-to-viz.com/graph/bubble.html](https://www.data-to-viz.com/graph/bubble.html)
+  * General info and gallery: [https://datavizproject.com/data-type/bubble-chart/](https://datavizproject.com/data-type/bubble-chart/)
+  * General info and gallery for Bubble-based Heat Map variant: [https://datavizproject.com/data-type/bubble-based-heat-map/](https://datavizproject.com/data-type/bubble-based-heat-map/)
+* Venn diagram
+  * General info: [https://www.data-to-viz.com/graph/venn.html](https://www.data-to-viz.com/graph/venn.html)
+  * General info and gallery: [https://datavizproject.com/data-type/venn-diagram/](https://datavizproject.com/data-type/venn-diagram/)
+* Upset plot
+* Sankey diagram
+  * General info: [https://www.data-to-viz.com/graph/sankey.html](https://www.data-to-viz.com/graph/sankey.html)
+  * General info and gallery: [https://datavizproject.com/data-type/sankey-diagram/](https://datavizproject.com/data-type/sankey-diagram/) and [https://datavizproject.com/data-type/alluvial-diagram/](https://datavizproject.com/data-type/alluvial-diagram/)
+* Treemap
+  * General info: [https://www.data-to-viz.com/graph/treemap.html](https://www.data-to-viz.com/graph/treemap.html)
+  * General info and gallery: [https://datavizproject.com/data-type/treemap/](https://datavizproject.com/data-type/treemap/)
+
+## Field Specific Plots
+
+* Quilt plot
+* Confusion matrix
+* ROC curve
+* Precision - Recall curve
+* Waterfall plot
+* Forest plot
+* Caterpillar plot
+* Kaplan-Meier curve
+* Cumulative incidence curve
+* Volcano plot
+* Manhattan plot
+* Rainfall plot
+* Dot plot
+* Repeated Measures plot
+* QQ plot
+* Spider plot
+* Swimmer plot
+* Enrichment plot
+* MA diagram
+* Dimensionality Reduction plots (e.g., PCA, t-SNE, UMAP)
+* Circos plot
+  * Utilizes a chord diagram: [https://datavizproject.com/data-type/chord-diagram/](https://datavizproject.com/data-type/chord-diagram/) or [https://datavizproject.com/data-type/non-ribbon-chord-diagram/](https://datavizproject.com/data-type/non-ribbon-chord-diagram/)
+  * General info on chord diagrams: [https://www.data-to-viz.com/graph/chord.html](https://www.data-to-viz.com/graph/chord.html)
+* Biomedical Knowledge graph
+  * A type of network graph: [https://datavizproject.com/data-type/network-visualisation/](https://datavizproject.com/data-type/network-visualisation/) and [https://www.data-to-viz.com/graph/network.html](https://www.data-to-viz.com/graph/network.html)
+* Sequence Logo plot
+* Footprint plot
+* Tornado diagram
+  * General info and gallery: [https://datavizproject.com/data-type/butterfly-chart/](https://datavizproject.com/data-type/butterfly-chart/)
+* Tree diagram and Dendrogram
+  * Dendrogram general info and gallery: [https://datavizproject.com/data-type/dendrogram/](https://datavizproject.com/data-type/dendrogram/) and [https://www.data-to-viz.com/graph/dendrogram.html](https://www.data-to-viz.com/graph/dendrogram.html)

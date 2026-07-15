@@ -23,6 +23,8 @@ book:
     - 05_how_to_improve_viz.qmd
     - 06_field_standard.qmd
     - 07_wrapping_up.qmd
+    - appendix_itcr.qmd
+    - appendix_plots.qmd
 
   sidebar:
     logo: "assets/ITN_logo.png"

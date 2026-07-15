@@ -1,0 +1,15 @@
+# Appendix: ITCR Tools and Data Visualization
+
+## UCSC Xena Browser
+
+The UCSC Xena Browser enables researchers to explore, analyze, and visualize cancer genomics datasets -- both private datasets and data from large public data resources (e.g., TCGA (The Cancer Genome Atlas) and the GDC (Genomic Data Commons)).
+
+The [Xena Browser](https://xenabrowser.net) supports analyses such as statistical tests and visualizations such as
+
+* Kaplan-Meier Curves / survival analyses
+* Scatter plots
+* Bar graphs
+* Visual Spreadsheet view (like a heatmap) -- see Figure 2 from @Goldman_etal_2020
+  * A visual representation of a grid of data (like what would be stored in a spreadsheet)
+  * Each column represents genomic or phenotypic data (e.g., gene expression, mutation calls, methylation probes, subtype classifications or age)
+  * Each row represents a single biological/experimental entity (e.g., a bulk tumor sample, a cell line, or a single cell)
