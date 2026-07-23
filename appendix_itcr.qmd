@@ -2,14 +2,22 @@
 
 ## UCSC Xena Browser
 
-The UCSC Xena Browser enables researchers to explore, analyze, and visualize cancer genomics datasets -- both private datasets and data from large public data resources (e.g., TCGA (The Cancer Genome Atlas) and the GDC (Genomic Data Commons)).
+The UCSC Xena Browser is a cancer functional genomics visualization and analysis tool. The UCSC Xena Browser enables researchers to work with large cohorts of samples -- exploring, analyzing, and visualizing cancer genomics datasets. Researchers can use both private datasets (through use of private hubs) and data from large public data resources (e.g., TCGA (The Cancer Genome Atlas) and the GDC (Genomic Data Commons)).
 
-The [Xena Browser](https://xenabrowser.net) supports analyses such as statistical tests and visualizations such as
+The [UCSC Xena Browser](https://xenabrowser.net) supports analyses such as statistical tests and visualizations such as
 
 * Kaplan-Meier Curves / survival analyses
 * Scatter plots
 * Bar graphs
+* Distribution plots such as boxplots
 * Visual Spreadsheet view (like a heatmap) -- see Figure 2 from @Goldman_etal_2020
   * A visual representation of a grid of data (like what would be stored in a spreadsheet)
   * Each column represents genomic or phenotypic data (e.g., gene expression, mutation calls, methylation probes, subtype classifications or age)
   * Each row represents a single biological/experimental entity (e.g., a bulk tumor sample, a cell line, or a single cell)
+
+Specific uses that [the documentation](https://xena.ucsc.edu/) mentions include:
+
+* Comparing tumor vs normal within or across tissue types
+* Discovering relationships among genomic and clinical data such as differences in expression
+* Creating subgroups based on any genomic data to explore if functional genomic characteristics are correlated with expression patterns
+* Sharing live views with colleagues and the data used to construct visualizations
