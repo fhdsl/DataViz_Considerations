@@ -23,4 +23,6 @@ Specific uses that [the documentation](https://ucsc-xena.gitbook.io/project/tuto
 * Creating subgroups based on any genomic or clinical data to explore if functional genomic characteristics are correlated with differential survival or expression patterns
 * Sharing live views with colleagues and the data used to construct visualizations
 
+The UCSC Xena Browser is a useful tool for exploring complex data and creating exploratory data visualizations, offering some control over the aesthetics of plots, mostly changes related to the naming of text labels. Because UCSC Xena Browser allows you to share/export the data used to construct visualizations as well as high quality PDFs, external tools, such as Adobe Illustrator, can be used to create an expository data visualization with alternate color palettes.
+
 For an [introduction to the UCSC Xena Browser Platform as well as building visualizations within the platform, view this talk from 2021](https://cbiit.webex.com/recordingservice/sites/cbiit/recording/16b2e77da08b1039a7f70050568c0a08/playback).
