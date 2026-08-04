@@ -2,14 +2,27 @@
 
 ## UCSC Xena Browser
 
-The UCSC Xena Browser enables researchers to explore, analyze, and visualize cancer genomics datasets -- both private datasets and data from large public data resources (e.g., TCGA (The Cancer Genome Atlas) and the GDC (Genomic Data Commons)).
+The [UCSC Xena Browser](https://xenabrowser.net/) is a web-based cancer functional genomics visualization and analysis tool. The UCSC Xena Browser enables researchers to work with large cohorts of samples -- exploring, analyzing, and visualizing cancer genomics datasets. Researchers can use both private datasets (through use of private hubs) and data from large public data resources (e.g., TCGA (The Cancer Genome Atlas) and the GDC (Genomic Data Commons)).
 
-The [Xena Browser](https://xenabrowser.net) supports analyses such as statistical tests and visualizations such as
+The UCSC Xena Browser supports analyses such as statistical tests and visualizations such as
 
+* Differential Gene Expression Analysis
+* Gene Set Enrichment Analysis
 * Kaplan-Meier Curves / survival analyses
-* Scatter plots
-* Bar graphs
+* Distribution plots such as dot plots and boxplots, with statistical tests
+* Scatter plots and bar graphs, also with statistical tests
 * Visual Spreadsheet view (like a heatmap) -- see Figure 2 from @Goldman_etal_2020
   * A visual representation of a grid of data (like what would be stored in a spreadsheet)
-  * Each column represents genomic or phenotypic data (e.g., gene expression, mutation calls, methylation probes, subtype classifications or age)
+  * Each column represents genomic or phenotypic data (e.g., gene expression, mutation calls, methylation probes, subtype classifications or clinical/phenotype data such age)
   * Each row represents a single biological/experimental entity (e.g., a bulk tumor sample, a cell line, or a single cell)
+
+Specific uses that [the documentation](https://ucsc-xena.gitbook.io/project/tutorials) mentions include:
+
+* Comparing tumor vs normal within or across tissue types
+* Discovering relationships between a variety of genomic and clinical data
+* Creating subgroups based on any genomic or clinical data to explore if functional genomic characteristics are correlated with differential survival or expression patterns
+* Sharing live views with colleagues and the data used to construct visualizations
+
+The UCSC Xena Browser is a useful tool for exploring complex data and creating exploratory data visualizations, offering some control over the aesthetics of plots, mostly changes related to the naming of text labels. Because UCSC Xena Browser allows you to share/export the data used to construct visualizations as well as high quality PDFs, external tools, such as Adobe Illustrator, can be used to create an expository data visualization with alternate color palettes.
+
+For an [introduction to the UCSC Xena Browser Platform as well as building visualizations within the platform, view this talk from 2021](https://cbiit.webex.com/recordingservice/sites/cbiit/recording/16b2e77da08b1039a7f70050568c0a08/playback).
