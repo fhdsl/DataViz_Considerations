@@ -313,7 +313,7 @@ div.warning{
   background-image: url("../assets/box_images/warning.png");
 }
 
-div.accessibilitya{
+div.accessibility{
   border: 4px #e0461b;
   border-style: solid;
   padding: 1em;
@@ -326,41 +326,7 @@ div.accessibilitya{
   background-color: #e8ebee;
 }
 
-div.accessibilitya{
-  background-image: url("../assets/box_images/icons8-accessibility-100.png")
-}
-
-div.accessibilityb{
-  border: 4px #e0461b;
-  border-style: solid;
-  padding: 1em;
-  margin: 1em 0;
-  padding-left: 100px;
-  background-size: 70px;
-  background-repeat: no-repeat;
-  background-position: 15px center;
-  min-height: 120px;
-  background-color: #e8ebee;
-}
-
-div.accessibilityb{
-  background-image: url("../assets/box_images/icons8-eye-80.png");
-}
-
-div.accessibilityc{
-  border: 4px #e0461b;
-  border-style: solid;
-  padding: 1em;
-  margin: 1em 0;
-  padding-left: 100px;
-  background-size: 70px;
-  background-repeat: no-repeat;
-  background-position: 15px center;
-  min-height: 120px;
-  background-color: #e8ebee;
-}
-
-div.accessibilityc{
+div.accessibility{
   background-image: url("../assets/box_images/eye.png");
 }
 

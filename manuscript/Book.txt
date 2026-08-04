@@ -5,3 +5,5 @@ Choosing-the-Right-Plot.md
 Ethical-Data-Visualization.md
 Field-Specific-Visualizations.md
 Wrapping-up.md
+Appendix:-ITCR-Tools-and-Data-Visualization.md
+Appendix:-List-of-Plots.md
