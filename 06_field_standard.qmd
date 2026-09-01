@@ -64,11 +64,13 @@ Include an example plot and how to interpret
 
 </details>
 
-<!--
-### Example & Interpretation
 
-Include an example plot and how to interpret
-<---
+
+<!--### Example & Interpretation --->
+
+<!--Include an example plot and how to interpret -->
+
+
 :::
 
 ## Waterfall Plot
