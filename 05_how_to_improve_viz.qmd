@@ -296,22 +296,30 @@ Several of the topics we'll provide within this section about ethical considerat
 
 There are 5 main categories for **practicing ethical data visualization**. Each category has a set of sub-rules or tips.
 
-I. Championing Safety & Transparency {.ol-type="I"}
-  1. Don't include identifiable data. {.ol-type="1"}
+I. Championing Safety & Transparency
+
+  1. Don't include identifiable data.
   2. Include all relevant data or subgroups.
   3. Describe removed samples or dropouts.
+
 II. Ensuring Accuracy
+
   1. Verify that visualization accurately represent the data.
   2. Use clear and accurate axis labels.
+
 III. Preventing Data Distortion
+
   1. Use fair axis limits rather than truncating axes.
   2. Order axes in a logical way that corresponds to the plot's message.
   3. Separate overlapping plot elements.
   4. Use a veridical aspect ratio that doesn't stretch or shrink data.
+
 IV. Maintaining Originality
+
   1. Don't take someone's visualization (with their data) without attribution.
   2. Use your own data in making a similar visualization, modifying where you can.
   3. If using a type of plot and are in doubt, attribute.
+
 V. Practicing Empathy
   1. Visualize each data point.
   2. Avoid stereotypical colors.
@@ -404,7 +412,7 @@ To separate plot elements consider the following tools or adjustments:
 
 :::{.dictionary}
 
-Veridical: Truthful or genuine; showing what is true or real
+**Veridical**: Truthful or genuine; showing what is true or real
 
 :::
 
