@@ -256,7 +256,7 @@ ADD info about inspiration-->
 
 **Rule 1: Don't take someone's visualization (with their data) without attribution.**
 
-**Rule 2**: Use your own data in making a similar visualization, modifying where you can.
+**Rule 2: Use your own data in making a similar visualization, modifying where you can.**
 
 **Rule 3**: If using a type of plot and are in doubt, attribute.
 
