@@ -25,6 +25,7 @@ book:
     - 07_wrapping_up.qmd
     - appendix_itcr.qmd
     - appendix_plots.qmd
+    - About.qmd
 
   sidebar:
     logo: "assets/ITN_logo.png"
