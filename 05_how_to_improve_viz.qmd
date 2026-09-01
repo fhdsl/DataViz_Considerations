@@ -37,15 +37,15 @@ Harvard University also offers guidance for producing accessible interactive vis
 
 The rules for **increasing the accessibility of your visualizations for audiences unfamiliar with your research** are united by the principle that you know your research better than your audience will know it. Therefore, you need to guide the audience through the visualization, making sure that the stand alone plot can communicate whatever you would show or tell if you were presenting it to them.
 
-**Rule 1**: Provide descriptive, understandable, and visible text.
+**Rule 1: Provide descriptive, understandable, and visible text.**
 
-**Rule 2**: Reduce the complexity of visualizations and be intentional in how you share them.
+**Rule 2: Reduce the complexity of visualizations and be intentional in how you share them.**
 
-**Rule 3**: Don't over clutter plots.
+**Rule 3: Don't over clutter plots.**
 
-**Rule 4**: Make comparisons easier.
+**Rule 4: Make comparisons easier.**
 
-**Rule 5**: Use a layout that follows typical reading order and aligns with expectations.
+**Rule 5: Use a layout that follows typical reading order and aligns with expectations.**
 
 :::
 
@@ -141,7 +141,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 * Order nominal categories based on frequency. For bar plots especially, or any plot where you want to show a ranking, show the categories ordered according to the ranking or frequency. Ordinal categories should instead be ordered based on their inherent accepted order.
 
 ```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Make comparisons easier by ordering nominal categories based on frequency."}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f4f785d2ad_0_24#slide=id.g3f4f785d2ad_0_24)
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f4f785d2ad_0_24#slide=id.g3f4f785d2ad_0_24")
 ```
 
 * Label geometric marks with the amount of represented data or include an accompanying table with this information.
@@ -166,19 +166,19 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 The rules for **increasing accessibility for audience members who have visual impairments** are all united by the principle that plot elements should be **distinguishable**.
 
-**Rule 1**: Use color vision deficiency friendly color palettes.
+**Rule 1: Use color vision deficiency friendly color palettes.**
 
-**Rule 2**: If using your own color palette, use a package or a simulator to check the accessibility of the color palette.
+**Rule 2: If using your own color palette, use a package or a simulator to check the accessibility of the color palette.**
 
-**Rule 3**: Don't use color alone to represent groups.
+**Rule 3: Don't use color alone to represent groups.**
 
-**Rule 4**: Use a proper contrast ratio.
+**Rule 4: Use a proper contrast ratio.**
 
-**Rule 5**: Don't over clutter plots (see Rule 3 for audiences unfamiliar with your research).
+**Rule 5: Don't over clutter plots (see Rule 3 for audiences unfamiliar with your research).**
 
-**Rule 6**: Use a sans-serif font.
+**Rule 6: Use a sans-serif font.**
 
-**Rule 7**: Provide descriptive alternative text (alt text).
+**Rule 7: Provide descriptive alternative text (alt text).**
 
 :::
 
@@ -250,11 +250,15 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 #### Rule 4: Checking accessibility for contrast ratios
 
-Contrast ratios are computed for two specific color combinations by comparing the foreground color the background color. In many cases the background color is whatever is adjacent to the foreground color. Different ratios are preferred for different graphical elements and the size of text as well as the transparency or graphical element impact the ratio [@Elavsky_contrast].
+
+
+Appropriate contrast between plot elements is also essential to make your plots accessible. Contrast ratios are computed for two specific color combinations by comparing the foreground color the background color. In many cases the background color is whatever is adjacent to the foreground color. Different ratios are preferred for different graphical elements and the size of text as well as the transparency or graphical element impact the ratio [@Elavsky_contrast].
 
 An acceptable contrast ratio for graphics is at least 3 to 1. 
 
 For text, an acceptable contrast ratio is at least 4.5 to 1 but for larger text sizes (18pt or above) a ratio of least 3 to 1 suffices. 
+
+See [this tutorial about contrast](https://r-statistics.co/Accessible-Data-Visualization-in-R.html).
 
 While having white text on a black background does meet acceptable contrast ratios, for some viewers the bright text appears to bleed or blur against the dark background (a visual fuzzing effect termed "halation"). This is a common occurrence for those with astigmatism [@ColorContrast].  
 
@@ -262,9 +266,11 @@ The [`coloratio` R package](https://matt-dray.github.io/coloratio/) and this [We
 
 #### Rule 6: Using sans-serif fonts
 
-Common sans-serif fonts include Verdana, Arial, and Calibri. Serif fonts have ornamental marks or elongations of the letters that can be distracting or difficult to those with vision impairments to read. In general, it's better to have simpler plots (removing redundant or unnecessary marks). This is especially true for fonts. Use a sans-serif font instead of a serif font.
+Common more vision-friendly sans-serif fonts include Verdana, Arial, and Calibri. Serif fonts have ornamental marks or elongations of the letters that can be distracting or difficult to those with vision impairments to read. In general, it's better to have simpler plots (removing redundant or unnecessary marks). This is especially true for fonts. Use a sans-serif font instead of a serif font.
 
 #### Rule 7: Provide Descriptive Alternative Text [@Schwabish_Popkin_Feng_2022; @WriteAltText]
+
+Providing alternative text describing what your plot shows can make your plots accessible to those with vision impairment.
 
 Alternative text should answer the following questions:
 
@@ -288,7 +294,7 @@ Several of the topics we'll provide within this section about ethical considerat
 
 ::: {.emphasis_block}
 
-There are 5 main categories for **practicing ethical data visualization**.
+There are 5 main categories for **practicing ethical data visualization**. Each category has a set of sub-rules or tips.
 
 A. Championing Safety & Transparency
   1. Don't include identifiable data.
@@ -408,7 +414,7 @@ For charts where both axes have numerical data or certain charts that are using 
 
 ### Practicing Empathy
 
-Tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute [@Schwabish_Feng_2021; Schwabish_Popkin_Feng_2022]. These are more tips and not rules because they are more subjective.
+The following are tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute [@Schwabish_Feng_2021; Schwabish_Popkin_Feng_2022]. These are more tips and not rules because they are more subjective.
 
 *Tip 1: Visualize each data point.*
 
@@ -438,6 +444,6 @@ This tip is related to Safety & Transparency in Data Inclusion Rule 2 (from Cate
 
 ::: {.emphasis_block}
 
-In summary, expository visualizations should be double checked to ensure that they were developed ethically and are accessible to broad audiences, especially those who are unfamiliar with your work and those who may have a color vision impairments. Ethical and accessible data visualizations provide clarity, improving viewers' understanding rather than confusing or (even unintentionally) misleading the audience. Careful consideration is paramount to ensuring the development of accurate and understandable data visualizations. The time that is required for these considerations is well worth the benefit to the scientific community.
+In summary, expository visualizations should be double checked to ensure that they were developed ethically and are accessible to broad audiences, especially those who are unfamiliar with your work and those who may have a color vision impairments. If a plot is not made with consideration of audiences different vision conditions, than it may mislead certain audiences or may not be visible to them. Furthermore, plots can be more challenging to be interpreted by broader audiences if they are overly complex or difficult for those with mobility challenges (in cases like interactive plots that require movements of the viewer). Plots can also obscure or distort patterns in data by dropping samples inappropriately or using truncated axes. Keeping plots simple, by focusing on one main message, and providing descriptions explaining what the plots are intended to show can make them much more interpretable and clear to a wider audience. Ethical and accessible data visualizations provide clarity, improving viewers' understanding rather than confusing or (even unintentionally) misleading the audience. Careful consideration is paramount to ensuring the development of accurate and understandable data visualizations. The time that is required for these considerations is well worth the benefit to the scientific community.
 
 :::
