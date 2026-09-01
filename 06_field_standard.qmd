@@ -394,6 +394,6 @@ Include an example plot and how to interpret
 
 ## Summary
 
-In summary, catapillar plots can be useful for comparing data to a reference line (e.g., baseline or null effect). It efficiently displays intra- and inter-study variation. Waterfall plots are another plot for comparing to a reference or baseline, that are commonly used to evaluate the effectiveness of a treatment. Each bar typically represents a patient. 
+In summary, caterpillar plots can be useful for comparing data to a reference line (e.g., baseline or null effect). It efficiently displays intra- and inter-study variation. Waterfall plots are another plot for comparing to a reference or baseline, that are commonly used to evaluate the effectiveness of a treatment. Each bar typically represents a patient. 
 
 
