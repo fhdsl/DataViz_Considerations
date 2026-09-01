@@ -2,6 +2,10 @@
 
 This appendix contains a non-exhaustive list of some standard and field specific plots, linking to relevant resources.
 
+:::{.notice}
+Links are still being added throughout this section.
+:::
+
 ## Standard
 
 * **Scatter plot**
