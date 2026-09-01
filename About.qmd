@@ -5,37 +5,33 @@ These credits are based on our [course contributors table guidelines](https://ww
 
 &nbsp;
 &nbsp;
+***In [memory](https://galaxyproject.org/jxtx/) of [James Taylor](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02016-0), who was instrumental in initiating this project.***
+
+&nbsp;
+&nbsp;
 
 |Credits|Names|
 |-------|-----|
 |**Pedagogy**||
-|Lead Content Instructor(s)|[FirstName LastName]|
-|Lecturer(s) (include chapter name/link in parentheses if only for specific chapters) - make new line if more than one chapter involved| Delivered the course in some way - video or audio|
-|Content Author(s) (include chapter name/link in parentheses if only for specific chapters) - make new line if more than one chapter involved | If any other authors besides lead instructor|
-|Content Contributor(s) (include section name/link in parentheses) - make new line if more than one section involved|  Wrote less than a chapter|
-|Content Editor(s)/Reviewer(s) | Checked your content|
-|Content Director(s) | Helped guide the content direction|
-|Content Consultants (include chapter name/link in parentheses or word "General") - make new line if more than one chapter involved | Gave high level advice on content|
-|Acknowledgments| Gave small assistance to content but not to the level of consulting |
+|Lead Content Instructor(s)|[Kate Isaac]|
+|Content Editor(s)/Reviewer(s) | [Carrie Wright]|
+|Content Director(s) | [Carrie Wright]|
+|Acknowledgments| David Miller gave valuable suggestions about content to include |
 |**Production**||
-|Content Publisher(s)| Helped with publishing platform|
-|Content Publishing Reviewer(s)| Reviewed overall content and aesthetics on publishing platform|
+|Content Publisher(s)|[Kate Isaac], [Carrie Wright]|
+|Content Publishing Reviewer(s)|[Carrie Wright]|
 |**Technical**||
 |Course Publishing Engineer(s)| Helped with the code for the technical aspects related to the specific course generation|
 |Template Publishing Engineers|[Candace Savonen], [Carrie Wright], [Ava Hoffman]|
 |Publishing Maintenance Engineer|[Candace Savonen]|
 |Technical Publishing Stylists|[Carrie Wright], [Ava Hoffman], [Candace Savonen]|
-|Package Developers ([ottrpal]) [Candace Savonen], [John Muschelli], [Carrie Wright]|
+|Package Developers ([ottrpal]) [Candace Savonen], [John Muschelli], [Carrie Wright], [Ava Hoffman], [Kate Isaac], [Adam Coffman]|
 |**Art and Design**||
-|Illustrator(s)| Created graphics for the course|
-|Figure Artist(s)| Created figures/plots for course|
-|Videographer(s)| Filmed videos|
-|Videography Editor(s)| Edited film|
-|Audiographer(s)| Recorded audio|
-|Audiography Editor(s)| Edited audio recordings|
+|Illustrator(s)| [Kate Isaac], [Carrie Wright]|
 |**Funding**||
-|Funder(s)| Institution/individual who funded course including grant number|
-|Funding Staff| Staff members who help with funding|
+|Funder|[National Cancer Institute (NCI)](https://www.cancer.gov/) UE5 CA254170|
+|Funding Staff| [Allison Peters](https://www.linkedin.com/in/allisonrpeters/), [Maleah O'Connor](https://www.linkedin.com/in/maleah-o-connor/)|
+
 
 &nbsp;
 
@@ -50,16 +46,14 @@ devtools::session_info()
 [Candace Savonen]: https://www.cansavvy.com/
 [Carrie Wright]: https://carriewright11.github.io/
 [Ava Hoffman]: https://www.avahoffman.com/
+[Howard Baek]: https://www.linkedin.com/in/howard-baik/
+[Kate Isaac]: https://kweav.github.io/
+[Katherine Cox]: https://katherinecox.github.io/
+[Adam Coffman]:https://www.linkedin.com/in/adamcoffman
+[David Miller]: https://www.cancer.gov/about-nci/organization/dcb/about/contact/david-miller
 
 <!-- Links -->
 
 [ottrpal]: https://github.com/jhudsl/ottrpal
 
-<!-- Fill out this table using these instructions: https://github.com/jhudsl/OTTR_Template/wiki/How-to-give-credits
 
-For JHU courses, You will need to add Ira as a credit:
-
-|Content Publisher|[Ira Gooding]|
-...
-[Ira Gooding]: https://publichealth.jhu.edu/faculty/4130/ira-gooding
--->
