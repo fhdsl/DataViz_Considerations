@@ -146,7 +146,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 * Label geometric marks with the amount of represented data or include an accompanying table with this information.
 
-```{r fig.align = 'center', out.width = "100%, echo = FALSE, fig.alt = "Make comparisons easier by labeling geometric marks with the amount of data that is represented, especially for bar charts."}
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Make comparisons easier by labeling geometric marks with the amount of data that is represented, especially for bar charts."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f4f785d2ad_0_57#slide=id.g3f4f785d2ad_0_57")
 ```
 
