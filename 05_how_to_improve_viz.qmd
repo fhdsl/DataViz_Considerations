@@ -21,7 +21,7 @@ Both accessible and ethical data visualization improve viewers' understanding ra
 3. Audiences with dyslexia or who are prone to distraction.
 4. Audiences with motor impairments.
 
-The majority of this resource will focus on making visualizations more accessible for audiences who are unfamiliar with your research or who have visual impairments. Accessibility considerations for audiences with motor rimpairments mostly impact how to prepare interactive visualizations.
+The majority of this resource will focus on making visualizations more accessible for audiences who are unfamiliar with your research or who have visual impairments. Accessibility considerations for audiences with motor impairments mostly impact how to prepare interactive visualizations.
 
 ::: {.notice}
 Resources for ensuring interactive visualizations meet accessibility standards include the WCAG Understanding Documents that provide guides for understanding and implementing the World Wide Web Consortium (W3C) Web Accessibility Initiative (WAI) Web Content Accessibility Guidelines (WCAG) [@wcag22]. An example of a relevant guideline is the Keyboard Accessible Guideline (Guidelines 2.1) [@wcag_keyboard].
