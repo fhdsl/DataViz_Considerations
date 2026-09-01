@@ -14,7 +14,7 @@ These credits are based on our [course contributors table guidelines](https://ww
 |-------|-----|
 |**Pedagogy**||
 |Lead Content Instructor(s)|[Kate Isaac]|
-|Content Contributor ([Appendix section about Xena Browser ](https://hutchdatascience.org/DataViz_Considerations/appendix_itcr.html#ucsc-xena-browser) | [Mary Goldman](https://www.linkedin.com/in/mary-goldman-0a6983122/)|
+|Content Contributor ([Appendix section about Xena Browser ](https://hutchdatascience.org/DataViz_Considerations/appendix_itcr.html#ucsc-xena-browser)) | [Mary Goldman](https://www.linkedin.com/in/mary-goldman-0a6983122/)|
 |Content Director(s) | [Carrie Wright]|
 |Content Consultant | [Ted Laderas] - [Elements of Data Visualization](https://hutchdatascience.org/DataViz_Considerations/03_data.html) |
 |Acknowledgments| David Miller gave valuable suggestions about content to include |
