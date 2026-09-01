@@ -220,6 +220,10 @@ When using color to distinguish groups, to increase accessibility, use tools to 
 
 </div>
 
+<div class="notice">
+To review pre-exising color palettes that were designed for color vision deficiency or different tools that can be used to review your own color palette for accessibility, visit [Chapter 5](https://hutchdatascience.org/DataViz_Considerations/05_how_to_improve_viz.html#rules-for-increasing-accessibility-for-audience-members-who-have-visual-impairments)
+</div>
+
 #### Ordering of axes to promote readability
 
 {{< include _example_iter6_order_axes.qmd >}}
@@ -332,8 +336,12 @@ Two examples of using data visualization to validate models within the bioinform
 * Carefully check visualizations against data and expectations to ensure accuracy.
 * Be careful to avoid common data distortions or unintentional takeaways.
 
+<!--
+
 ## Checklist
 
 This checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize complexity, enhance clarity, and improve accessibility, as well as assess accuracy.
 
 {{< include _summary_checklist.qmd >}}
+
+-->
