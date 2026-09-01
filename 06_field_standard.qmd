@@ -195,7 +195,6 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 :::
 
--->
 <!--
 ## Kaplan-Meier (KM) Curve (definitely)
 
