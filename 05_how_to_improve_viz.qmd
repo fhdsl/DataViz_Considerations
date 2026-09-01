@@ -274,7 +274,7 @@ Consider using a jitter on your plot.
 
 **Tip 3: Use person-first language when appropriate and avoid insensitive language**
 
-*Tip 4: Expand an "Other" category*
+**Tip 4: Expand an "Other" category**
 
 <!-- ## Improving Visualizations -->
 
