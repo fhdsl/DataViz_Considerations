@@ -3,7 +3,12 @@
 ottrpal::set_knitr_image_path()
 ```
 
-# Introduction
+# Introduction 
+
+```{r, fig.align='center', echo = FALSE, fig.alt= "Considerations for Data Visualization, Written  by: Kate Isaac, Contributors/Reviewers: Carrie Wright", out.width= "100%"}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3015fd53a67_2_144#slide=id.g3015fd53a67_2_144")
+```
+
 
 This course is meant to discuss best practices when constructing data visualizations with a special focus on graphs within biology research.
 
