@@ -138,7 +138,7 @@ To make comparisons easier for the audience consider the following steps:
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f4f785d2ad_0_36#slide=id.g3f4f785d2ad_0_36")
 ```
 
-* Order nominal categories based on frequency. For bar plots especially, or any plot where you want to show a ranking, show the categories ordered according to the ranking or frequency. Ordinal categories should instead be ordered based on their inherent accepted order.
+* Order nominal categories based on frequency. For bar plots especially, or any plot where you want to show a ranking, show the categories ordered according to the ranking or frequency. Ordinal categories should typically be ordered based on their inherent accepted order, although there are cases where we may want to see which category has the highest value for another variable.
 
 ```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Make comparisons easier by ordering nominal categories based on frequency."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f4f785d2ad_0_24#slide=id.g3f4f785d2ad_0_24")
@@ -150,7 +150,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f4f785d2ad_0_57#slide=id.g3f4f785d2ad_0_57")
 ```
 
-* Avoid redundancy (exceptions: using alternate means to distinguish groups in addition to color as described in Rule 3 below & using simpler, but more redundant legend labels as described in Rule 1 above)
+* Avoid redundancy (exceptions: using alternate means to distinguish groups in addition to color as described in Accessibility Rule 3 below & using simpler, but more redundant legend labels as described in Rule 1 above)
 
 #### Rule 5: Display or arrange data to tell a story
 
@@ -401,6 +401,12 @@ To separate plot elements consider the following tools or adjustments:
 * Use facets or subplots to separate different categories of data.
 
 **Rule 4: Use a veridical aspect ratio that doesn't stretch or shrink data**
+
+:::{.dictionary}
+
+Veridical: Truthful or genuine; showing what is true or real
+
+:::
 
 For charts where both axes have numerical data or certain charts that are using angles to represent data, it is important to make sure that the aspect ratio of plot is fair and truthful: a 1 to 1 data ratio. If both axes have the same limits or the same amount of data (e.g., length), the plot should appear square. This ensures visual fidelity or an authentic and faithful representation of the data and the relationships between variables. Otherwise, there could be stretching or shrinking that distorts the location of data and the displayed trends.
 
