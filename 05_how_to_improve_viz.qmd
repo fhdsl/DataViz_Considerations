@@ -174,7 +174,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 #### Checking accessibility for contrast
 
-Appropraite contrast bewteen plot elements is also essential to make your plots accessible. See [this tutorial about contrast](https://r-statistics.co/Accessible-Data-Visualization-in-R.html) and check out this [website for checking contrast between to color choices](https://webaim.org/resources/contrastchecker/). 
+Appropraite contrast between plot elements is also essential to make your plots accessible. See [this tutorial about contrast](https://r-statistics.co/Accessible-Data-Visualization-in-R.html) and check out this [website for checking contrast between to color choices](https://webaim.org/resources/contrastchecker/). 
 
 #### Using sans-serif fonts
 
