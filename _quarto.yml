@@ -9,7 +9,7 @@ book:
 
   page-navigation: true
   search: true
-  repo-url: https://github.com/fhdsl/DataViz_Considerations/
+  repo-url: https://github.com/fhdsl/DataViz_Considerations
   repo-actions: [edit]
   issue-url: https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform
   google-analytics: "G-VFSW8EHHDR"
@@ -35,7 +35,7 @@ book:
   page-footer:
     left: |
       This book was built with <a href="https://quarto.org/" style="color: #0000FF;">Quarto</a> using
-      <a href="https://github.com/fhdsl/OTTR_Quarto" style="color: #0000FF;">OTTR</a>.
+      <a href="https://github.com/ottrproject/OTTR_Quarto" style="color: #0000FF;">OTTR</a>.
     center: |
       All illustrations <a href="https://creativecommons.org/licenses/by/4.0/" style="color: #0000FF;">CC-BY. </a>
       <br>
