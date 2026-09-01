@@ -266,7 +266,7 @@ ADD info about inspiration-->
 
 The following are tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute. These are more tips and not rules because they are more subjective.
 
-*Tip 1: Visualize each data point*
+**Tip 1: Visualize each data point**
 
 Consider using a jitter on your plot. 
 
