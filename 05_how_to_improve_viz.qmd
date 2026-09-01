@@ -178,7 +178,7 @@ Appropraite contrast between plot elements is also essential to make your plots 
 
 #### Using sans-serif fonts
 
-Common more frienldy sans-serif fonts include Verdana, Arial, and Calibri.
+Common more vision-friendly sans-serif fonts include Verdana, Arial, and Calibri.
 
 #### Descriptive Alternative Text
 
