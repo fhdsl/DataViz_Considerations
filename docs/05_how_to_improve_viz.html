@@ -229,8 +229,7 @@ gtag('config', 'G-VFSW8EHHDR', { 'anonymize_ip': true});
   <li><a href="#maintaining-originality" id="toc-maintaining-originality" class="nav-link" data-scroll-target="#maintaining-originality"><span class="header-section-number">5.3.5</span> Maintaining Originality</a></li>
   <li><a href="#practicing-empathy" id="toc-practicing-empathy" class="nav-link" data-scroll-target="#practicing-empathy"><span class="header-section-number">5.3.6</span> Practicing Empathy</a></li>
   </ul></li>
-  <li><a href="#improving-visualizations" id="toc-improving-visualizations" class="nav-link" data-scroll-target="#improving-visualizations"><span class="header-section-number">5.4</span> Improving Visualizations</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">5.5</span> Summary</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">5.4</span> Summary</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/fhdsl/DataViz_Considerations/edit/main/05_how_to_improve_viz.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeYwgP9ZKGRCCkLV2vnMZy9ZLSqXZTUKTFKDVYEy95aXzw2Bg/viewform" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -273,18 +272,18 @@ gtag('config', 'G-VFSW8EHHDR', { 'anonymize_ip': true});
 <h2 data-number="5.2" class="anchored" data-anchor-id="best-practices-for-accessibility"><span class="header-section-number">5.2</span> Best Practices for Accessibility</h2>
 <section id="what-does-accessibility-have-to-do-with-data-visualization" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="what-does-accessibility-have-to-do-with-data-visualization"><span class="header-section-number">5.2.1</span> What does accessibility have to do with data visualization?</h3>
-<p>Both accessible and ethical data visualization improve viewers’ understanding rather than confuse or mislead. When sharing a visualization widely, there are several audience types you may encounter.</p>
+<p>Both accessible and ethical data visualization improve viewers’ understanding rather than confuse or mislead. When sharing a visualization widely, there are several audience types you may encounter:</p>
 <ol type="1">
-<li>Audiences unfamiliar with your research.</li>
-<li>Audiences with visual impairments.</li>
+<li>Audiences unfamiliar with your research</li>
+<li>Audiences with visual impairments</li>
 </ol>
 <ul>
 <li>Low vision or blindness</li>
 <li>Color vision deficiency</li>
 </ul>
 <ol start="3" type="1">
-<li>Audiences with dyslexia or who are prone to distraction.</li>
-<li>Audiences with motor impairments.</li>
+<li>Audiences with dyslexia or who are prone to distraction</li>
+<li>Audiences with motor impairments</li>
 </ol>
 <p>The majority of this resource will focus on making visualizations more accessible for audiences who are unfamiliar with your research or who have visual impairments. Accessibility considerations for audiences with motor impairments mostly impact how to prepare interactive visualizations.</p>
 <div class="notice">
@@ -295,14 +294,16 @@ gtag('config', 'G-VFSW8EHHDR', { 'anonymize_ip': true});
 </section>
 <section id="audiences-unfamiliar-with-your-research" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="audiences-unfamiliar-with-your-research"><span class="header-section-number">5.2.2</span> Audiences unfamiliar with your research</h3>
-<p>The rules for increasing the accessibility of your visualizations for audiences unfamiliar with your research are united by the principle that you know your research better than your audience will know it. Therefore, you need to guide the audience through the visualization, making sure that the stand alone plot can communicate whatever you would show or tell if you were presenting it to them.</p>
-<p><strong>Rule 1</strong>: Provide descriptive, understandable, and visible text.</p>
-<p><strong>Rule 2</strong>: Reduce the complexity of visualizations and be intentional in how you share them.</p>
-<p><strong>Rule 3</strong>: Don’t over clutter plots.</p>
-<p><strong>Rule 4</strong>: Make comparisons easier.</p>
-<p><strong>Rule 5</strong>: Use a layout that follows typical reading order and aligns with expectations.</p>
-<section id="providing-descriptive-understandable-and-visible-text" class="level4" data-number="5.2.2.1">
-<h4 data-number="5.2.2.1" class="anchored" data-anchor-id="providing-descriptive-understandable-and-visible-text"><span class="header-section-number">5.2.2.1</span> Providing descriptive, understandable, and visible text</h4>
+<div class="emphasis_block">
+<p>The rules for <strong>increasing the accessibility of your visualizations for audiences unfamiliar with your research</strong> are united by the principle that you know your research better than your audience will know it. Therefore, you need to guide the audience through the visualization, making sure that the stand alone plot can communicate whatever you would show or tell if you were presenting it to them.</p>
+<p><strong>Rule 1: Provide descriptive, understandable, and visible text.</strong></p>
+<p><strong>Rule 2: Reduce the complexity of visualizations and be intentional in how you share them.</strong></p>
+<p><strong>Rule 3: Don’t over clutter plots.</strong></p>
+<p><strong>Rule 4: Make comparisons easier.</strong></p>
+<p><strong>Rule 5: Use a layout that follows typical reading order and aligns with expectations.</strong></p>
+</div>
+<section id="rule-1-providing-descriptive-understandable-and-visible-text" class="level4" data-number="5.2.2.1">
+<h4 data-number="5.2.2.1" class="anchored" data-anchor-id="rule-1-providing-descriptive-understandable-and-visible-text"><span class="header-section-number">5.2.2.1</span> Rule 1: Providing descriptive, understandable, and visible text</h4>
 <ul>
 <li>Use a large, visible text size</li>
 <li>Consider bolding specific words for emphasis</li>
@@ -322,10 +323,21 @@ gtag('config', 'G-VFSW8EHHDR', { 'anonymize_ip': true});
 <li>Especially avoid jargon and undefined acronyms in axis labels.</li>
 </ul></li>
 </ul>
+<p>Legends can often be simplified to improve clarity, especially if showing binary categorical data. Instead of having a legend title and then labeled groups of True/False or Yes/No, remove the legend title and provide more descriptive group labels (e.g, Filtered / Not Filtered, Significant / Not significant, etc.). Even though these labels are somewhat redundant, they are clearer and require less work from an unfamiliar audience to understand and distinguish the groups.</p>
 </section>
-<section id="clearly-presenting-complex-data" class="level4" data-number="5.2.2.2">
-<h4 data-number="5.2.2.2" class="anchored" data-anchor-id="clearly-presenting-complex-data"><span class="header-section-number">5.2.2.2</span> Clearly presenting complex data</h4>
-<p>An overly complex plot can be misleading for a number of reasons. The main takeaway could be obscured because too much data is present and therefore the main takeaway is non-obvious, hidden, or confused with another pattern that is there. In addition, unnecessary or overly distracting visual design elements could unintentionally be drawing away attention from the main point to another area of the plot. The solution to this issue is to use your visualization to answer <strong>only</strong> one question at a time.</p>
+<section id="rule-2-reduce-complexity-and-clearlyintentionally-present-complex-data" class="level4" data-number="5.2.2.2">
+<h4 data-number="5.2.2.2" class="anchored" data-anchor-id="rule-2-reduce-complexity-and-clearlyintentionally-present-complex-data"><span class="header-section-number">5.2.2.2</span> Rule 2: Reduce complexity and clearly/intentionally present complex data</h4>
+<p>Unnecessary or overly distracting visual design elements are one way in a plot can be complex and perhaps even misleading – by drawing away attention from the main point of the plot to another area. You can reduce complexity of a plot by utilizing a more minimal theme and avoiding plot elements or aesthetics that don’t add to the message of the plot.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f4f785d2ad_0_47.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Reduce complexity by use a more minimal theme and avoiding plot elements (like a pink background) that don't add to the message of the plot."></p>
+</figure>
+</div>
+</div>
+</div>
+<p>An overly complex plot can be misleading for a number of reasons. The main takeaway could be obscured because too much data is present and therefore the main takeaway is non-obvious, hidden, or confused with another pattern that is there. The solution to this issue is to use your visualization to answer <strong>only</strong> one question at a time.</p>
 <p>Accessibility can be increased by decreasing the complexity of a plot, especially decreasing the complexity of the message. If a multi-line title is needed to explain every possible conclusion, there are too many takeaways in the plot.</p>
 <p>Sometimes visualizations are showing enough data that multiple conclusions or hypotheses for further explanation can be made. This happens especially when the visualization is showing connections or relationships among multiple aspects of the data. Frequently survey data may be visualized within context, showing how certain populations or demographics answered questions differently. In these cases, several additional conclusions may be possible from close inspection of a visualization. Another example of this is a Circos plot used in cancer research to display genome wide variation <span class="citation" data-cites="Krzywinski_etal_2009 Chia_etal_2016">(<a href="#ref-Krzywinski_etal_2009" role="doc-biblioref">Krzywinski et al. 2009</a>; <a href="#ref-Chia_etal_2016" role="doc-biblioref">Chia et al. 2016</a>)</span>. Each ring within the circle displays a different piece of information (such as copy number variation or intra- and inter-chromosomal rearrangements/structural variants) for aligned regions of the genome. This is an especially useful plot following catastrophic genomic breaking and error prone reassembly due to chromosome instability in cancer (e.g., Chromothripsis)<span class="citation" data-cites="SimovicLorenz_Ernst_2025">(<a href="#ref-SimovicLorenz_Ernst_2025" role="doc-biblioref">Simovic-Lorenz and Ernst 2025</a>)</span>.</p>
 <p>In these cases where a visualization could suggest multiple conclusions, be intentional in how the complex plot is shared.</p>
@@ -360,8 +372,8 @@ Examples of acronyms with multiple meanings
 <p><code>RA</code> has at least 8 different clinical meanings <span class="citation" data-cites="Pakhomov_Pedersen_Chute_2005">(<a href="#ref-Pakhomov_Pedersen_Chute_2005" role="doc-biblioref">Pakhomov, Pedersen, and Chute 2005</a>)</span>.</p>
 </details>
 </section>
-<section id="reducing-clutter-in-plots" class="level4" data-number="5.2.2.3">
-<h4 data-number="5.2.2.3" class="anchored" data-anchor-id="reducing-clutter-in-plots"><span class="header-section-number">5.2.2.3</span> Reducing clutter in plots</h4>
+<section id="rule-3-reducing-clutter-in-plots" class="level4" data-number="5.2.2.3">
+<h4 data-number="5.2.2.3" class="anchored" data-anchor-id="rule-3-reducing-clutter-in-plots"><span class="header-section-number">5.2.2.3</span> Rule 3: Reducing clutter in plots</h4>
 <p>To reduce the clutter in plots consider the following things:</p>
 <ul>
 <li>Use facets or subplots</li>
@@ -370,41 +382,127 @@ Examples of acronyms with multiple meanings
 </ul>
 <p>While it is necessary to not over clutter plots, it is also necessary to minimize unused space. It’s important to strike a balance between these two considerations. Some iterative polishing and team review may be necessary to find a proper balance. This is a case where data visualization is a bit more of a subjective art form.</p>
 </section>
-<section id="making-comparisons-easier" class="level4" data-number="5.2.2.4">
-<h4 data-number="5.2.2.4" class="anchored" data-anchor-id="making-comparisons-easier"><span class="header-section-number">5.2.2.4</span> Making comparisons easier</h4>
+<section id="rule-4-making-comparisons-easier" class="level4" data-number="5.2.2.4">
+<h4 data-number="5.2.2.4" class="anchored" data-anchor-id="rule-4-making-comparisons-easier"><span class="header-section-number">5.2.2.4</span> Rule 4: Making comparisons easier</h4>
 <p>To make comparisons easier for the audience consider the following steps:</p>
 <ul>
 <li>Reduce unnecessary or unused space. For example, a bar plot with too much space in between the bars makes it more difficult to compare the bars.</li>
 <li>Outline bordering geometric marks to add a visual distinction between pieces.</li>
-<li>Order categories based on frequency. For bar parts especially, or any plot where you want to show a ranking, show the categories ordered according to the ranking or frequency.</li>
-<li>Label with the amount of represented data or include an accompanying table with this information.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f4f785d2ad_0_36.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Make comparisons easier by outlining bordering geometric marks to add a visual distinction between them."></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Order nominal categories based on frequency. For bar plots especially, or any plot where you want to show a ranking, show the categories ordered according to the ranking or frequency. Ordinal categories should typically be ordered based on their inherent accepted order, although there are cases where we may want to see which category has the highest value for another variable.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f4f785d2ad_0_24.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Make comparisons easier by ordering nominal categories based on frequency."></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Label geometric marks with the amount of represented data or include an accompanying table with this information.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3f4f785d2ad_0_57.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Make comparisons easier by labeling geometric marks with the amount of data that is represented, especially for bar charts."></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Avoid redundancy (exceptions: using alternate means to distinguish groups in addition to color as described in Accessibility Rule 3 below &amp; using simpler, but more redundant legend labels as described in Rule 1 above)</li>
 </ul>
 </section>
-<section id="arranging-data-to-tell-a-story" class="level4" data-number="5.2.2.5">
-<h4 data-number="5.2.2.5" class="anchored" data-anchor-id="arranging-data-to-tell-a-story"><span class="header-section-number">5.2.2.5</span> Arranging data to tell a story</h4>
+<section id="rule-5-display-or-arrange-data-to-tell-a-story" class="level4" data-number="5.2.2.5">
+<h4 data-number="5.2.2.5" class="anchored" data-anchor-id="rule-5-display-or-arrange-data-to-tell-a-story"><span class="header-section-number">5.2.2.5</span> Rule 5: Display or arrange data to tell a story</h4>
 <p>Use a layout that follows typical reading order. Progress through the story of a plot or diagram from left to right and top to bottom. If your visualization is supposed to be showing an increase it should visually look like an increase. If your visualization is supposed to show a decrease, it should look like a decrease. The “highest” point shouldn’t be at the bottom of the plot. If showing a ranking, the highest rank should appear one of the edges with the lowest rank at the other edge.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3faff5303e6_0_246.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="summary of the rules for increasing accessibility for audience members who are unfamiliar with your research."></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="rules-for-increasing-accessibility-for-audience-members-who-have-visual-impairments" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="rules-for-increasing-accessibility-for-audience-members-who-have-visual-impairments"><span class="header-section-number">5.2.3</span> Rules for increasing accessibility for audience members who have visual impairments</h3>
-<p>The rules for increasing accessibility for audience members who have visual impairments are all united by the principle that plot elements should be <strong>distinguishable</strong>.</p>
-<p><strong>Rule 1</strong>: Use color vision deficiency friendly color palettes.</p>
-<p><strong>Rule 2</strong>: If using your own color palette, use a package or a simulator to check the accessibility of the color palette.</p>
-<p><strong>Rule 3</strong>: Don’t use color alone to represent groups.</p>
-<p><strong>Rule 4</strong>: Use a proper contrast ratio.</p>
-<p><strong>Rule 5</strong>: Don’t over clutter plots (also Rule 3 for audiences unfamiliar with your research)</p>
-<p><strong>Rule 6</strong>: Use a sans-serif font.</p>
-<section id="using-accessible-color-palettes" class="level4" data-number="5.2.3.1">
-<h4 data-number="5.2.3.1" class="anchored" data-anchor-id="using-accessible-color-palettes"><span class="header-section-number">5.2.3.1</span> Using accessible color palettes</h4>
-<p>The most well known example of a color vision deficiency friendly color palette is <code>viridis</code>.</p>
+<div class="emphasis_block">
+<p>The rules for <strong>increasing accessibility for audience members who have visual impairments</strong> are all united by the principle that plot elements should be <strong>distinguishable</strong>.</p>
+<p><strong>Rule 1: Use color vision deficiency friendly color palettes.</strong></p>
+<p><strong>Rule 2: If using your own color palette, use a package or a simulator to check the accessibility of the color palette.</strong></p>
+<p><strong>Rule 3: Don’t use color alone to represent groups.</strong></p>
+<p><strong>Rule 4: Use a proper contrast ratio.</strong></p>
+<p><strong>Rule 5: Don’t over clutter plots (see Rule 3 for audiences unfamiliar with your research).</strong></p>
+<p><strong>Rule 6: Use a sans-serif font.</strong></p>
+<p><strong>Rule 7: Provide descriptive alternative text (alt text).</strong></p>
+</div>
+<section id="rule-1-using-accessible-color-palettes" class="level4" data-number="5.2.3.1">
+<h4 data-number="5.2.3.1" class="anchored" data-anchor-id="rule-1-using-accessible-color-palettes"><span class="header-section-number">5.2.3.1</span> Rule 1: Using accessible color palettes</h4>
+<p>Different people can see the same set of colors differently. Cone cells in retina are photoreceptor cells – those responsible for the detection of light wavelengths and distinguishing of colors <span class="citation" data-cites="Cones_2018">(<a href="#ref-Cones_2018" role="doc-biblioref">2018</a>)</span>. Humans have 3 types of cone cells: red-sensing cones, green-sensing cones, and blue-sensing cones. Each of the various color blindness or color vision deficiencies results from an absence of or change in sensitivity / function of one of the cone types.</p>
+<!--
+
+|                               | Impacted Cone type | Reduced sensitivity or absence | Effect | 
+|:------------------------------|:---------:|:---------------------:| :-----------: |
+| Protanomaly                   | Red       | Reduced sensitivity   | Red-green color vision deficiency (some reds look more green and less bright) |
+| Protanopia                    | Red       | Absence               | |
+| Deuteranomaly                 | Green     | Reduced sensitivity   | |
+| Deutranopia                   | Green     | Absence               | |
+| Tritanomaly                   | Blue      | Reduced sensitivity   | |
+
+
+-->
+<p>The most well known example of a color vision deficiency friendly color palette is <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html"><code>viridis</code></a>. Many modern programming languages and visualization software make using the <code>viridis</code> palette fairly straightforward (in some cases it is the default).</p>
+<p>There are other options in addition to <code>viridis</code> such as:</p>
+<ul>
+<li>the sequential palette <a href="https://cmap-docs.readthedocs.io/en/latest/catalog/sequential/colorbrewer:pubugn_9/"><code>PuBuGn</code> from ColorBrewer</a></li>
+<li><a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html"><code>plasma</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html"><code>inferno</code></a></li>
+<li>palettes from the <a href="https://web.archive.org/web/20180503023309/https://www.ibm.com/design/language/resources/color-library">IBM Design Library</a></li>
+<li><a href="https://jfly.uni-koeln.de/color/">Okabe &amp; Ito</a></li>
+<li>palettes from <a href="https://sronpersonalpages.nl/~pault/">Paul Tol</a></li>
+</ul>
 </section>
-<section id="checking-accessibility-for-color-palettes" class="level4" data-number="5.2.3.2">
-<h4 data-number="5.2.3.2" class="anchored" data-anchor-id="checking-accessibility-for-color-palettes"><span class="header-section-number">5.2.3.2</span> Checking accessibility for color palettes</h4>
+<section id="rule-2-checking-accessibility-for-color-palettes" class="level4" data-number="5.2.3.2">
+<h4 data-number="5.2.3.2" class="anchored" data-anchor-id="rule-2-checking-accessibility-for-color-palettes"><span class="header-section-number">5.2.3.2</span> Rule 2: Checking accessibility for color palettes</h4>
+<p>Instead of using an established color vision deficiency friendly color palette, you may want to use one of your own color palettes (perhaps with colors matching an institutional logo).</p>
 <p><a href="https://github.com/clauswilke/colorblindr"><code>colorblindr</code> is an R package</a> that simulates color vision deficiency directly on a plot in R, returning what it might look like for different types of color vision deficiency. You can directly examine your visualization to make sure that plot elements and groups are distinguishable and make changes to reassess as needed.</p>
+<!--
+<details><summary>Example using the `colorblindr` package</summary>
+
+
+
+
+::: {.cell}
+
+:::
+
+
+
+
+</details>
+
+-->
+<p>Another option is a <a href="https://davidmathlogic.com/colorblind/">color simulator such as “Coloring from Colorblindness” from David Nichols</a> <span class="citation" data-cites="Nichols">(<a href="#ref-Nichols" role="doc-biblioref">Nichols, n.d.</a>)</span> that allows for you to enter hex codes or RGB values for a collection of colors and view how those colors compare to one another in various color vision impairment contexts. Very useful when building a color palette or deciding on colors, but doesn’t allow you to simulate how your already made plot would appear in such a scenario. For that, the <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/">“Coblis” simulator</a> may be more helpful. <a href="https://colororacle.org/"><code>Color Oracle</code></a> is a free color blindness simulator for multiple operating systems and provides a full screen filter (independent of whatever software was used to make the graphic) in order to simulate what color vision deficient individuals would see.</p>
 </section>
-<section id="using-shape-patterns-or-labels-in-addition-to-color." class="level4" data-number="5.2.3.3">
-<h4 data-number="5.2.3.3" class="anchored" data-anchor-id="using-shape-patterns-or-labels-in-addition-to-color."><span class="header-section-number">5.2.3.3</span> Using shape, patterns, or labels in addition to color.</h4>
-<p>An example of this technique can be found in <a href="">recent editions of Uno card decks</a> that include geometric shapes on the cards to communicate what group or color that card is.</p>
+<section id="rule-3-using-shape-patterns-or-labels-in-addition-to-color." class="level4" data-number="5.2.3.3">
+<h4 data-number="5.2.3.3" class="anchored" data-anchor-id="rule-3-using-shape-patterns-or-labels-in-addition-to-color."><span class="header-section-number">5.2.3.3</span> Rule 3: Using shape, patterns, or labels in addition to color.</h4>
+<p>An example of this technique can be found in recent editions of Uno card decks that include geometric shapes on the cards to communicate what group or color that card is.</p>
 <ul>
 <li>Red: Circle</li>
 <li>Green: Triangle</li>
@@ -431,15 +529,33 @@ Examples of acronyms with multiple meanings
 </div>
 </div>
 </section>
-<section id="checking-accessibility-for-contrast" class="level4" data-number="5.2.3.4">
-<h4 data-number="5.2.3.4" class="anchored" data-anchor-id="checking-accessibility-for-contrast"><span class="header-section-number">5.2.3.4</span> Checking accessibility for contrast</h4>
+<section id="rule-4-checking-accessibility-for-contrast-ratios" class="level4" data-number="5.2.3.4">
+<h4 data-number="5.2.3.4" class="anchored" data-anchor-id="rule-4-checking-accessibility-for-contrast-ratios"><span class="header-section-number">5.2.3.4</span> Rule 4: Checking accessibility for contrast ratios</h4>
+<p>Appropriate contrast between plot elements is also essential to make your plots accessible. Contrast ratios are computed for two specific color combinations by comparing the foreground color the background color. In many cases the background color is whatever is adjacent to the foreground color. Different ratios are preferred for different graphical elements and the size of text as well as the transparency or graphical element impact the ratio <span class="citation" data-cites="Elavsky_contrast">(<a href="#ref-Elavsky_contrast" role="doc-biblioref">Elavsky, n.d.</a>)</span>.</p>
+<p>An acceptable contrast ratio for graphics is at least 3 to 1.</p>
+<p>For text, an acceptable contrast ratio is at least 4.5 to 1 but for larger text sizes (18pt or above) a ratio of least 3 to 1 suffices.</p>
+<p>See <a href="https://r-statistics.co/Accessible-Data-Visualization-in-R.html">this tutorial about contrast</a>.</p>
+<p>While having white text on a black background does meet acceptable contrast ratios, for some viewers the bright text appears to bleed or blur against the dark background (a visual fuzzing effect termed “halation”). This is a common occurrence for those with astigmatism <span class="citation" data-cites="ColorContrast">(<a href="#ref-ColorContrast" role="doc-biblioref">Base, n.d.</a>)</span>.</p>
+<p>The <a href="https://matt-dray.github.io/coloratio/"><code>coloratio</code> R package</a> and this <a href="https://webaim.org/resources/contrastchecker/">WebAIM online contrast checker</a> are useful tools to compare the colors in your color palettes for contrast ratios. Unlike color vision deficiency tools, you cannot provide a graph and have it assessed, you instead can only provide different combinations of colors (as well as any associated transparency levels / alpha).</p>
 </section>
-<section id="using-sans-serif-fonts" class="level4" data-number="5.2.3.5">
-<h4 data-number="5.2.3.5" class="anchored" data-anchor-id="using-sans-serif-fonts"><span class="header-section-number">5.2.3.5</span> Using sans-serif fonts</h4>
-<p>Common sans-serif fonts include Verdana, Arial, and Calibri.</p>
+<section id="rule-6-using-sans-serif-fonts" class="level4" data-number="5.2.3.5">
+<h4 data-number="5.2.3.5" class="anchored" data-anchor-id="rule-6-using-sans-serif-fonts"><span class="header-section-number">5.2.3.5</span> Rule 6: Using sans-serif fonts</h4>
+<p>Common more vision-friendly sans-serif fonts include Verdana, Arial, and Calibri. Serif fonts have ornamental marks or elongations of the letters that can be distracting or difficult to those with vision impairments to read. In general, it’s better to have simpler plots (removing redundant or unnecessary marks). This is especially true for fonts. Use a sans-serif font instead of a serif font.</p>
 </section>
-<section id="descriptive-alternative-text" class="level4" data-number="5.2.3.6">
-<h4 data-number="5.2.3.6" class="anchored" data-anchor-id="descriptive-alternative-text"><span class="header-section-number">5.2.3.6</span> Descriptive Alternative Text</h4>
+<section id="rule-7-provide-descriptive-alternative-text-schwabish_popkin_feng_2022-writealttext" class="level4" data-number="5.2.3.6">
+<h4 data-number="5.2.3.6" class="anchored" data-anchor-id="rule-7-provide-descriptive-alternative-text-schwabish_popkin_feng_2022-writealttext"><span class="header-section-number">5.2.3.6</span> Rule 7: Provide Descriptive Alternative Text <span class="citation" data-cites="Schwabish_Popkin_Feng_2022 WriteAltText">(<a href="#ref-Schwabish_Popkin_Feng_2022" role="doc-biblioref">Schwabish, Popkin, and Feng 2022</a>; <a href="#ref-WriteAltText" role="doc-biblioref">Services, n.d.</a>)</span></h4>
+<p>Providing alternative text describing what your plot shows can make your plots accessible to those with vision impairment.</p>
+<p>Alternative text should answer the following questions:</p>
+<ul>
+<li>What kind of graph or chart is being used? Is it a logo, illustration, cartoon, or diagram instead?</li>
+<li>What variable is represented on each axis?</li>
+<li>What are the observed/displayed ranges of the variables?</li>
+<li>Are there any key visual design elements such as regression or dashed annotation lines?</li>
+<li>What does the visual show regarding the relationship between the variables?</li>
+<li>Are any specific data points highlighted?</li>
+<li>What is the main point or takeaway?</li>
+</ul>
+<p>Alternative text doesn’t need to be more than a few sentences. It is best used to describe key elements rather than every single detail. Use proper punctuation and capitalization, focusing primarily on including periods (<code>.</code>), commas (<code>,</code>), and dashes (<code>-</code>). Write out phrases (ex: “multiplied by”) instead of using symbols (ex: “X”) in place of the phrases. If including an acronym (that you’ve already defined somewhere), you can use a fully capitalized acronym without spaces in alternative text.</p>
 </section>
 </section>
 </section>
@@ -449,22 +565,64 @@ Examples of acronyms with multiple meanings
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="what-does-ethics-have-to-do-with-data-visualization"><span class="header-section-number">5.3.1</span> What does ethics have to do with data visualization?</h3>
 <p>Ethical visualizations improve viewers’ understanding rather than confuse or mislead. Misleading messages are not always intentional on the part of the researcher putting together a data visualization, and mistakes happen (e.g., bugs in software, errors in data entry, etc.). It’s the responsibility of the researcher to carefully evaluate all data visualizations before sharing them to make sure that the visualizations clearly and accurately present the data and communicate the overall goal.</p>
 <p>Several of the topics we’ll provide within this section about ethical considerations are related to tips to reduce complexity and enhance accessibility. This is not surprising given that clear communication is a necessity for both ethical and accessible visualizations.</p>
-<p>There are 5 main categories for practicing ethical data visualization.</p>
+<div class="emphasis_block">
+<p>There are 5 main categories for <strong>practicing ethical data visualization</strong>. Each category has a set of sub-rules or tips.</p>
+<p>I. Championing Safety &amp; Transparency</p>
 <ol type="1">
-<li>Championing Safety &amp; Transparency</li>
-<li>Ensuring Accuracy</li>
-<li>Preventing Data Distortion</li>
-<li>Maintaining Originality</li>
-<li>Practicing Empathy</li>
+<li>Don’t include identifiable data.</li>
+<li>Include all relevant data or subgroups.</li>
+<li>Describe removed samples or dropouts.</li>
 </ol>
+<ol start="2" type="I">
+<li>Ensuring Accuracy</li>
+</ol>
+<ol type="1">
+<li>Verify that visualization accurately represent the data.</li>
+<li>Use clear and accurate axis labels.</li>
+</ol>
+<ol start="3" type="I">
+<li>Preventing Data Distortion</li>
+</ol>
+<ol type="1">
+<li>Use fair axis limits rather than truncating axes.</li>
+<li>Order axes in a logical way that corresponds to the plot’s message.</li>
+<li>Separate overlapping plot elements.</li>
+<li>Use a veridical aspect ratio that doesn’t stretch or shrink data.</li>
+</ol>
+<ol start="4" type="I">
+<li>Maintaining Originality</li>
+</ol>
+<ol type="1">
+<li>Don’t take someone’s visualization (with their data) without attribution.</li>
+<li>Use your own data in making a similar visualization, modifying where you can.</li>
+<li>If using a type of plot and are in doubt, attribute.</li>
+</ol>
+<p>V. Practicing Empathy</p>
+<ol type="1">
+<li>Visualize each data point.</li>
+<li>Avoid stereotypical colors.</li>
+<li>Use person-first language when appropriate and avoid insensitive language.</li>
+<li>Expand an “Other” category.</li>
+</ol>
+</div>
 </section>
 <section id="ethical-data-inclusion-safety-transparency" class="level3" data-number="5.3.2">
 <h3 data-number="5.3.2" class="anchored" data-anchor-id="ethical-data-inclusion-safety-transparency"><span class="header-section-number">5.3.2</span> Ethical Data Inclusion: Safety &amp; Transparency</h3>
 <p>The rules within this section are aimed to safeguard patient privacy and provide transparency.</p>
 <p><strong>Rule 1: Don’t include identifiable data</strong></p>
-<p>ADD thoughts here</p>
+<p>Identifiable data includes but are not limited to the following <span class="citation" data-cites="hipaa_identifiers">(<a href="#ref-hipaa_identifiers" role="doc-biblioref"><span>“The 18 HIPAA Identifiers,”</span> n.d.</a>)</span>:</p>
+<ul>
+<li>Names</li>
+<li>Addresses (subdivisions smaller than state such as zip code)</li>
+<li>Dates relating to individuals such as birth dates, admission dates, discharge dates, etc.</li>
+<li>Contact information (e.g., telephone or fax numbers, email addresses)</li>
+<li>Medical record numbers</li>
+<li>Account numbers</li>
+</ul>
+<p>Some data in that list may not seem like it is identifiable, but it can be, and therefore caution should be exercised and those variables should not be plotted in way that individual data points could be linked to a person or patient.</p>
+<p>Exercise caution in defining or showing patient IDs or geographical locations to be sure that you are not plotting potentially identifiable data.</p>
 <p><strong>Rule 2: Include all relevant data or subgroups</strong></p>
-<p>Pie charts may incorrectly portray or give the impression that all data is included in the visualization.</p>
+<p>Pie charts may incorrectly portray or give the impression that all data or relevant subgroups are included in the visualization when they are not.</p>
 <p><strong>Rule 3: Describe removed samples or dropouts</strong></p>
 <p>Captions are the primary place for this. Perhaps a title could very explicitly describe which groups are being visualized. The accompanying narrative should also include this information. However, because data visualizations should be able to stand alone, be sure to include this information with the visualization as well.</p>
 <p>Some plot types, especially diagrams showing a process may provide a way to show which categories of samples are removed or how many patients dropped out (e.g., Sankey Diagrams).</p>
@@ -473,53 +631,98 @@ Examples of acronyms with multiple meanings
 <h3 data-number="5.3.3" class="anchored" data-anchor-id="ensuring-accuracy"><span class="header-section-number">5.3.3</span> Ensuring Accuracy</h3>
 <p>The rules within this section are aimed to encourage careful verification of visualizations.</p>
 <p><strong>Rule 1: Verify that visualizations accurately represent the data</strong></p>
-<p>ADD thoughts about data that may be missing, or sizes/area that don’t align with data. Do visualizations show a consistent message if you check visualizations against each other? Repeat the idea of checking twice before sharing the visualization</p>
+<p>To verify that visualizations accurately represent the data, ask the following questions:</p>
+<ul>
+<li>How much data (e.g., how many data points, sum of the bars, number of categories) should be in the visualization and how much is there?</li>
+<li>Do the displayed sizes or areas match my expectations and summary stats of the data?</li>
+<li>Do the displayed sizes or areas match the labels within the plot?</li>
+<li>Do visualizations show a consistent message if comparing multiple related visualizations to each other?</li>
+<li>Does a visualization where the development process has been edited still appear consistent with earlier versions?</li>
+</ul>
+<p>As described earlier in this course, always double check your expository visualizations for accuracy before you share them widely.</p>
 <p><strong>Rule 2: Use clear and accurate axis labels</strong></p>
-<p>ADD thoughts especially related to axis labels. Often having simplified axis labels help audiences. Doing this ethically such that the simplified label is what is being plotted is really important. If the label doesn’t match the data, why not plot the data for the simplified label?</p>
+<p>Researchers may simplify axis labels to help the audience find a plot more approachable. However, simplifying axis labels may be misleading, especially if the simplified label doesn’t adequately match what is being plotted. In such cases, why not plot the data for a simplified label – does such a plot maintain the pattern or message of interest? It’s best to give an accurate description of what is plotted even if more thorough descriptions may be necessary in captions or accompanying narratives to clearly communicate jargon or concepts.</p>
 </section>
 <section id="preventing-data-distortion" class="level3" data-number="5.3.4">
 <h3 data-number="5.3.4" class="anchored" data-anchor-id="preventing-data-distortion"><span class="header-section-number">5.3.4</span> Preventing Data Distortion</h3>
 <p>The aims for rules within this section include to avoid misleading messages and to compare groups fairly.</p>
 <p><strong>Rule 1: Use fair axis limits rather than truncating axes</strong></p>
-<p>ADD about starting axis limits at 0 because otherwise differences will look starker than they are</p>
-<p>ADD about axis limits when you have facets and how audiences may expect those subplots to use the same axis limits</p>
+<p>Starting y-axes at 0 often provides for a fairer comparison between groups than if y-axes are truncated. In those cases, differences are exaggerated, looking larger than they actually are.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/figure//1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4_g3faff5303e6_0_485.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="start y-axes at 0 for fairer comparisons among groups."></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note however, that the example on the right (above) goes too far in the opposite direction by expanding the y-axis an unreasonable length beyond the data limits. This has the opposite effect of making differences look smaller than they are the groups more similar. If there were a fourth group cropped out of the graph that did reach the 1600 value on the y-axis that y-axis upper limit would be more reasonable. A good rule of thumb is to use axis limits that reflect the range of the data or at least the possible ranges that the data could take on.</p>
+<p>If using facets or subplots in your data visualizations, clearly communicate whether the facets share the same axis limits or not. If audience members are comparing the facets to each other, they may expect them to share the same axis limits.</p>
 <p><strong>Rule 2: Order axes in a logical way that corresponds to the plot’s message</strong></p>
-<p>ADD info about the overall message. If a line is going up over time, but the message is related to decrease, why is the line going up? This can be misleading.</p>
+<p>This is related to accessibility Rule 5 for audiences unfamiliar with your research. If a line is going up over time, but the message is related to decrease, why is the line going up? This can be misleading and the plot should be reworked to have a consistent message. Audience members may only be looking at your plot briefly as they skim through abstracts or attend seminars, therefore, the message should match whatever quick impression the plot provides.</p>
 <p><strong>Rule 3: Separate overlapping plot elements</strong></p>
-<p>ADD info about how true info can be obscured if plot elements aren’t separated.</p>
+<p>If overlapping plot elements aren’t separated, signal can be obscured or missed.</p>
+<p>To separate plot elements consider the following tools or adjustments:</p>
+<ul>
+<li>Adjust the shape, size, or transparency of geometric marks.</li>
+<li>Use a log scale or other transformation to separate dense data.</li>
+<li>Use a zoomed inset to focus on a dense area of data.</li>
+<li>Use facets or subplots to separate different categories of data.</li>
+</ul>
+<p><strong>Rule 4: Use a veridical aspect ratio that doesn’t stretch or shrink data</strong></p>
+<div class="dictionary">
+<p><strong>Veridical</strong>: Truthful or genuine; showing what is true or real</p>
+</div>
+<p>For charts where both axes have numerical data or certain charts that are using angles to represent data, it is important to make sure that the aspect ratio of plot is fair and truthful: a 1 to 1 data ratio. If both axes have the same limits or the same amount of data (e.g., length), the plot should appear square. This ensures visual fidelity or an authentic and faithful representation of the data and the relationships between variables. Otherwise, there could be stretching or shrinking that distorts the location of data and the displayed trends.</p>
 </section>
 <section id="maintaining-originality" class="level3" data-number="5.3.5">
 <h3 data-number="5.3.5" class="anchored" data-anchor-id="maintaining-originality"><span class="header-section-number">5.3.5</span> Maintaining Originality</h3>
-<p>ADD info about plagiarism and what that means for data visualization</p>
-<p>ADD info about inspiration</p>
 <p><strong>Rule 1: Don’t take someone’s visualization (with their data) without attribution.</strong></p>
-<p><strong>Rule 2</strong>: Use your own data in making a similar visualization, modifying where you can.</p>
-<p><strong>Rule 3</strong>: If using a type of plot and are in doubt, attribute.</p>
-<p>ADD info about attribution if you’re concerned.</p>
+<p><strong>Rule 2: Use your own data in making a similar visualization, modifying where you can.</strong></p>
+<p><strong>Rule 3: If using a type of plot and are in doubt, attribute.</strong></p>
 </section>
 <section id="practicing-empathy" class="level3" data-number="5.3.6">
 <h3 data-number="5.3.6" class="anchored" data-anchor-id="practicing-empathy"><span class="header-section-number">5.3.6</span> Practicing Empathy</h3>
-<p>Tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute. These are more tips and not rules because they are more subjective.</p>
-<p><em>Tip 1: Visualize each data point</em></p>
-<p>Point to jitter</p>
+<p>The following are tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute <span class="citation" data-cites="Schwabish_Feng_2021 Schwabish_Popkin_Feng_2022">(<a href="#ref-Schwabish_Feng_2021" role="doc-biblioref">Schwabish and Feng 2021</a>; <a href="#ref-Schwabish_Popkin_Feng_2022" role="doc-biblioref">Schwabish, Popkin, and Feng 2022</a>)</span>. These are more tips and not rules because they are more subjective.</p>
+<p><em>Tip 1: Visualize each data point.</em></p>
+<p>In the scientific and biomedical fields, often each data point represents a patient. Showing each data point rather than just a summary or geometric mark that collapses the data points into a single bar / etc, recognizes that the data comes from patients.</p>
+<p>In addition, showing each data point can be useful in showing how much data there is and how it is distributed. <code>jitter</code> can be a useful tool in plotting individual data points on top of bar plots, box plots, violin plots, etc. providing a small bit of random separation for data points.</p>
 <p><em>Tip 2: Avoid stereotypical colors</em></p>
+<p>Red and Green are often stereotypical colors for stop and go, exclude and include, etc. However, certain mixtures of colors (such as red and green) are not accessible to all audiences. Therefore, avoid use of stereotypical colors to represent certain groups.</p>
 <p><em>Tip 3: Use person-first language when appropriate and avoid insensitive language</em></p>
+<p>When writing titles, captions, and axis labels, use person-first language (e.g., “Patients with cancer”) (when appropriate) and avoid insensitive language. Many patient groups do not want to be defined by their illness and therefore prefer person-first language. Some populations do not prefer person-first language (for example the Deaf Community). For your research area, review what language is preferred and keep that in mind when developing expository visualizations.</p>
 <p><em>Tip 4: Expand an “Other” category</em></p>
+<p>This tip is related to Safety &amp; Transparency in Data Inclusion Rule 2 (from Category 1 above). It’s best practices to include all relevant data, and if there are many subgroups represented, often groups with less signal or that aren’t the main focus of the takeaway may be combined into an “Other” category. In those cases, consider if you have the space to separate out each of those subgroups or list all of the subgroups that are part of an “Other” category within a caption (and accompanying narrative or supplemental information).</p>
+<!--
+
+## Improving Visualizations
+
+-->
 </section>
 </section>
-<section id="improving-visualizations" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="improving-visualizations"><span class="header-section-number">5.4</span> Improving Visualizations</h2>
-</section>
-<section id="summary" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.5</span> Summary</h2>
+<section id="summary" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.4</span> Summary</h2>
+<div class="emphasis_block">
+<p>In summary, expository visualizations should be double checked to ensure that they were developed ethically and are accessible to broad audiences, especially those who are unfamiliar with your work and those who may have a color vision impairments. If a plot is not made with consideration of audiences different vision conditions, than it may mislead certain audiences or may not be visible to them. Furthermore, plots can be more challenging to be interpreted by broader audiences if they are overly complex or difficult for those with mobility challenges (in cases like interactive plots that require movements of the viewer). Plots can also obscure or distort patterns in data by dropping samples inappropriately or using truncated axes. Keeping plots simple, by focusing on one main message, and providing descriptions explaining what the plots are intended to show can make them much more interpretable and clear to a wider audience. Ethical and accessible data visualizations provide clarity, improving viewers’ understanding rather than confusing or (even unintentionally) misleading the audience. Careful consideration is paramount to ensuring the development of accurate and understandable data visualizations. The time that is required for these considerations is well worth the benefit to the scientific community.</p>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Cones_2018" class="csl-entry" role="listitem">
+2018. <em>American Academy of Ophthalmology</em>. <a href="https://www.aao.org/eye-health/anatomy/cones">https://www.aao.org/eye-health/anatomy/cones</a>.
+</div>
 <div id="ref-Barnett_Doubleday_2020" class="csl-entry" role="listitem">
 Barnett, Adrian, and Zoe Doubleday. 2020. <span>“The Growth of Acronyms in the Scientific Literature.”</span> Edited by Peter Rodgers. <em>eLife</em> 9: e60080. <a href="https://doi.org/10.7554/eLife.60080">https://doi.org/10.7554/eLife.60080</a>.
 </div>
+<div id="ref-ColorContrast" class="csl-entry" role="listitem">
+Base, North Dakota State University Information Technology Knowledge. n.d. <span>“Color Contrast.”</span> <a href="https://kb.ndsu.edu/it/147732">https://kb.ndsu.edu/it/147732</a>.
+</div>
 <div id="ref-Chia_etal_2016" class="csl-entry" role="listitem">
 Chia, Puey Ling, Craig Gedye, Paul C. Boutros, Paul Wheatley-Price, and Thomas John. 2016. <span>“Current and Evolving Methods to Visualize Biological Data in Cancer Research.”</span> <em>JNCI: Journal of the National Cancer Institute</em> 108 (8): djw031. <a href="https://doi.org/10.1093/jnci/djw031">https://doi.org/10.1093/jnci/djw031</a>.
+</div>
+<div id="ref-Elavsky_contrast" class="csl-entry" role="listitem">
+Elavsky, Frank. n.d. <span>“What Is High Contrast for Data Visualization?”</span> <em>Observable</em>. <a href="https://observablehq.com/@frankelavsky/high-contrast-for-data-visualization-with-examples">https://observablehq.com/@frankelavsky/high-contrast-for-data-visualization-with-examples</a>.
 </div>
 <div id="ref-Ford_etal_2024" class="csl-entry" role="listitem">
 Ford, Kaitlyn, Elena Zuin, Dario Righelli, Elizabeth Medina, Hannah Schoch, Kristan Singletary, Christine Muheim, et al. 2024. <span>“A Global Transcriptional Atlas of the Effect of Acute Sleep Deprivation in the Mouse Frontal Cortex.”</span> <em>iScience</em> 27 (9). <a href="https://doi.org/10.1016/j.isci.2024.110752">https://doi.org/10.1016/j.isci.2024.110752</a>.
@@ -536,6 +739,9 @@ Napoli, Francesca, Ciro Vella, Luca Ferri, Marco B. Ancona, Barbara Bellini, Fil
 <div id="ref-ms_multiple_sclerosis" class="csl-entry" role="listitem">
 Neurological Disorders, National Institute of, and Stroke. n.d. <span>“Multiple Sclerosis (MS).”</span> <a href="https://www.ninds.nih.gov/health-information/disorders/multiple-sclerosis-ms">https://www.ninds.nih.gov/health-information/disorders/multiple-sclerosis-ms</a>.
 </div>
+<div id="ref-Nichols" class="csl-entry" role="listitem">
+Nichols, David. n.d. <span>“Coloring for Colorblindness.”</span> <a href="http://www.davidmathlogic.com/colorblind/">http://www.davidmathlogic.com/colorblind/</a>.
+</div>
 <div id="ref-Pakhomov_Pedersen_Chute_2005" class="csl-entry" role="listitem">
 Pakhomov, Serguei, Ted Pedersen, and Christopher G. Chute. 2005. <span>“Abbreviation and Acronym Disambiguation in Clinical Discourse.”</span> <em>AMIA Annual Symposium Proceedings</em> 2005: 589593. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1560669/">https://pmc.ncbi.nlm.nih.gov/articles/PMC1560669/</a>.
 </div>
@@ -548,6 +754,15 @@ Participants, Accessibility Guidelines Working Group. n.d.a. <span>“Understand
 <div id="ref-Rajan_etal_1998" class="csl-entry" role="listitem">
 Rajan, V., K. Beharry, H. D. Modanlou, J. Parker, Y. Akmal, and J. V. Aranda. 1998. <span>“Effect of Morphine Sulfate (MS) on Endothelin Production and Receptor Responses in Newborn Piglet Brain Endothelial Cells 349.”</span> <em>Pediatric Research</em> 43 (4): 6262. <a href="https://doi.org/10.1203/00006450-199804001-00370">https://doi.org/10.1203/00006450-199804001-00370</a>.
 </div>
+<div id="ref-Schwabish_Feng_2021" class="csl-entry" role="listitem">
+Schwabish, Jonathan, and Alice Feng. 2021. <em>Do No Harm Guide: Applying Equity Awareness in Data Visualization</em>. Urban Institute. <a href="https://www.urban.org/research/publication/do-no-harm-guide-applying-equity-awareness-data-visualization">https://www.urban.org/research/publication/do-no-harm-guide-applying-equity-awareness-data-visualization</a>.
+</div>
+<div id="ref-Schwabish_Popkin_Feng_2022" class="csl-entry" role="listitem">
+Schwabish, Jonathan, Susan J. Popkin, and Alice Feng. 2022. <em>Do No Harm Guide: Centering Accessibility in Data Visualization</em>. Urban Institute. <a href="https://www.urban.org/research/publication/do-no-harm-guide-centering-accessibility-data-visualization">https://www.urban.org/research/publication/do-no-harm-guide-centering-accessibility-data-visualization</a>.
+</div>
+<div id="ref-WriteAltText" class="csl-entry" role="listitem">
+Services, Harvard University Digital Accessibility​. n.d. <span>“Write Helpful Alt Text to Describe Images.”</span> <a href="https://accessibility.huit.harvard.edu/describe-content-images">https://accessibility.huit.harvard.edu/describe-content-images</a>.
+</div>
 <div id="ref-SimovicLorenz_Ernst_2025" class="csl-entry" role="listitem">
 Simovic-Lorenz, Milena, and Aurlie Ernst. 2025. <span>“Chromothripsis in Cancer.”</span> <em>Nature Reviews Cancer</em> 25 (2): 7992. <a href="https://doi.org/10.1038/s41568-024-00769-5">https://doi.org/10.1038/s41568-024-00769-5</a>.
 </div>
@@ -559,6 +774,9 @@ Swords, Christina M., Jerlym S. Porter, Amy J. Hawkins, Edwin Li, Melissa Rowlan
 </div>
 <div id="ref-harvard_interactive" class="csl-entry" role="listitem">
 Technology, Digital Accessibility Services Harvard University Information. n.d. <span>“Data Visualizations, Charts, and Graphs.”</span> <a href="https://accessibility.huit.harvard.edu/data-viz-charts-graphs">https://accessibility.huit.harvard.edu/data-viz-charts-graphs</a>.
+</div>
+<div id="ref-hipaa_identifiers" class="csl-entry" role="listitem">
+<span>“The 18 HIPAA Identifiers.”</span> n.d. <em>Loyola University Chicago - Information Technology Services (ITS)</em>. <a href="https://www.luc.edu/its/aboutus/itspoliciesguidelines/hipaainformation/the18hipaaidentifiers/">https://www.luc.edu/its/aboutus/itspoliciesguidelines/hipaainformation/the18hipaaidentifiers/</a>.
 </div>
 <div id="ref-Keyboardaccessibility2021" class="csl-entry" role="listitem">
 Washington, University of. 2021. <span>“Keyboard Accessibility.”</span> <em>Accessible Technology</em>. <a href="https://www.washington.edu/accesstech/guide/keyboard/">https://www.washington.edu/accesstech/guide/keyboard/</a>.
