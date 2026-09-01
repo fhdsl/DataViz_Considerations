@@ -126,7 +126,7 @@ A bar plot or even a stacked bar plot could work if we computed a single score (
 
   * Similar to a bar plot is a [lollipop plot](https://r-graph-gallery.com/lollipop-plot.html) (seems fitting for a candy dataset), and several analyses of this dataset (previously available on social media) utilized lollipop plots to display log ratios rather than a difference for each candy. The values were sorted based on magnitude, so viewers could focus on the extremes.
 
-  * Also similar, but without the "stem" of the lollipop is the ["Cleveland Dot Plot"](https://datavizcatalogue.com/blog/chart-snapshot-cleveland-dot-plots/) which uses dots along a single axis for various categories to compare values. In these cases, the data visualizers again sorted log ratios based on magnitude to highlight the extremes of the ranking [https://x.com/Ng_Dave/status/1052635635389874176](https://x.com/Ng_Dave/status/1052635635389874176) and [https://x.com/Shannon_E_Ellis/status/1049277707064946688](https://x.com/Shannon_E_Ellis/status/1049277707064946688)
+  * Also similar, but without the "stem" of the lollipop is the ["Cleveland Dot Plot"](https://datavizcatalogue.com/blog/chart-snapshot-cleveland-dot-plots/) which uses dots along a single axis for various categories to compare values. In these cases, the data visualizers again sorted log ratios based on magnitude to highlight the extremes of the ranking [https://x.com/Ng_Dave/status/1052635635389874176](https://x.com/Ng_Dave/status/1052635635389874176) and [https://x.com/Shannon_E_Ellis/status/1049277707064946688](https://x.com/Shannon_E_Ellis/status/1049277707064946688).
 
 **A more unconventional approach**:
 
