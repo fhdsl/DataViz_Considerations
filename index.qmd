@@ -2,7 +2,7 @@
 
 This course is part of a series of courses for the [Informatics Technology for Cancer Research (ITCR)](https://www.cancer.gov/about-nci/organization/cssi/research/itcr). This material was created by the ITCR Training Network (ITN)  which is a collaborative effort of researchers around the United States to support cancer informatics and data science training through resources, technology, and events. This initiative is funded by the following grant:  [National Cancer Institute (NCI)](https://www.cancer.gov/)  UE5 CA254170. Our courses feature tools developed by ITCR Investigators and make it easier for principal investigators, scientists, and analysts to integrate cancer informatics into their workflows. Please see our website at [www.itcrtraining.org](https://www.itcrtraining.org/) for more information. Except where otherwise indicated, the contents of this course are available for use under the Creative Commons Attribution 4.0 license. You are free to adapt and share the work, but you must give appropriate credit, provide a link to the license, and indicate if changes were made. Sample attribution: Considerations for Data Vizualization by Fred Hutchinson Data Science Lab (CC-BY 4.0). You can download the illustrations by clicking on this [link for our slides](https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?usp=sharing).
 
-Considerations for Bioinformatic Data Visualization focuses on considerations for best practices in data visualization discussing topics such as:
+Considerations for Data Visualization focuses on considerations for best practices in data visualization discussing topics such as:
 
  - defining what data visualization is
  - utilizing exploratory data analysis
