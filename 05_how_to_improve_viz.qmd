@@ -12,14 +12,14 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 ### What does accessibility have to do with data visualization?
 
-Both accessible and ethical data visualization improve viewers' understanding rather than confuse or mislead. When sharing a visualization widely, there are several audience types you may encounter.
+Both accessible and ethical data visualization improve viewers' understanding rather than confuse or mislead. When sharing a visualization widely, there are several audience types you may encounter:
 
-1. Audiences unfamiliar with your research.
-2. Audiences with visual impairments.
+1. Audiences unfamiliar with your research
+2. Audiences with visual impairments
   * Low vision or blindness
   * Color vision deficiency
-3. Audiences with dyslexia or who are prone to distraction.
-4. Audiences with motor impairments.
+3. Audiences with dyslexia or who are prone to distraction
+4. Audiences with motor impairments
 
 The majority of this resource will focus on making visualizations more accessible for audiences who are unfamiliar with your research or who have visual impairments. Accessibility considerations for audiences with motor impairments mostly impact how to prepare interactive visualizations.
 
@@ -33,19 +33,23 @@ Harvard University also offers guidance for producing accessible interactive vis
 
 ### Audiences unfamiliar with your research
 
-The rules for increasing the accessibility of your visualizations for audiences unfamiliar with your research are united by the principle that you know your research better than your audience will know it. Therefore, you need to guide the audience through the visualization, making sure that the stand alone plot can communicate whatever you would show or tell if you were presenting it to them.
+::: {.emphasis_block}
 
-**Rule 1**: Provide descriptive, understandable, and visible text.
+The rules for **increasing the accessibility of your visualizations for audiences unfamiliar with your research** are united by the principle that you know your research better than your audience will know it. Therefore, you need to guide the audience through the visualization, making sure that the stand alone plot can communicate whatever you would show or tell if you were presenting it to them.
 
-**Rule 2**: Reduce the complexity of visualizations and be intentional in how you share them.
+**Rule 1: Provide descriptive, understandable, and visible text.**
 
-**Rule 3**: Don't over clutter plots.
+**Rule 2: Reduce the complexity of visualizations and be intentional in how you share them.**
 
-**Rule 4**: Make comparisons easier.
+**Rule 3: Don't over clutter plots.**
 
-**Rule 5**: Use a layout that follows typical reading order and aligns with expectations.
+**Rule 4: Make comparisons easier.**
 
-#### Providing descriptive, understandable, and visible text
+**Rule 5: Use a layout that follows typical reading order and aligns with expectations.**
+
+:::
+
+#### Rule 1: Providing descriptive, understandable, and visible text
 
 * Use a large, visible text size
 * Consider bolding specific words for emphasis
@@ -61,9 +65,16 @@ The rules for increasing the accessibility of your visualizations for audiences 
 * Include axis labels that are accurate but not too detailed.
   * Especially avoid jargon and undefined acronyms in axis labels.
 
-#### Clearly presenting complex data
+Legends can often be simplified to improve clarity, especially if showing binary categorical data. Instead of having a legend title and then labeled groups of True/False or Yes/No, remove the legend title and provide more descriptive group labels (e.g, Filtered / Not Filtered, Significant / Not significant, etc.). Even though these labels are somewhat redundant, they are clearer and require less work from an unfamiliar audience to understand and distinguish the groups.
 
-An overly complex plot can be misleading for a number of reasons. The main takeaway could be obscured because too much data is present and therefore the main takeaway is non-obvious, hidden, or confused with another pattern that is there. In addition, unnecessary or overly distracting visual design elements could unintentionally be drawing away attention from the main point to another area of the plot. The solution to this issue is to use your visualization to answer **only** one question at a time.
+#### Rule 2: Reduce complexity and clearly/intentionally present complex data
+
+Unnecessary or overly distracting visual design elements are one way in a plot can be complex and perhaps even misleading -- by drawing away attention from the main point of the plot to another area. You can reduce complexity of a plot by utilizing a more minimal theme and avoiding plot elements or aesthetics that don't add to the message of the plot.  
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Reduce complexity by use a more minimal theme and avoiding plot elements (like a pink background) that don't add to the message of the plot."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f4f785d2ad_0_47#slide=id.g3f4f785d2ad_0_47")
+```
+An overly complex plot can be misleading for a number of reasons. The main takeaway could be obscured because too much data is present and therefore the main takeaway is non-obvious, hidden, or confused with another pattern that is there. The solution to this issue is to use your visualization to answer **only** one question at a time.
 
 Accessibility can be increased by decreasing the complexity of a plot, especially decreasing the complexity of the message. If a multi-line title is needed to explain every possible conclusion, there are too many takeaways in the plot.
 
@@ -106,7 +117,7 @@ In the same way that undefined specialized language may not be understandable, i
 
 </details>
 
-#### Reducing clutter in plots
+#### Rule 3: Reducing clutter in plots
 
 To reduce the clutter in plots consider the following things:
 
@@ -116,46 +127,111 @@ To reduce the clutter in plots consider the following things:
 
 While it is necessary to not over clutter plots, it is also necessary to minimize unused space. It's important to strike a balance between these two considerations. Some iterative polishing and team review may be necessary to find a proper balance. This is a case where data visualization is a bit more of a subjective art form.
 
-#### Making comparisons easier
+#### Rule 4: Making comparisons easier
 
 To make comparisons easier for the audience consider the following steps:
 
 * Reduce unnecessary or unused space. For example, a bar plot with too much space in between the bars makes it more difficult to compare the bars.
 * Outline bordering geometric marks to add a visual distinction between pieces.
-* Order categories based on frequency. For bar parts especially, or any plot where you want to show a ranking, show the categories ordered according to the ranking or frequency.
-* Label with the amount of represented data or include an accompanying table with this information.
 
-#### Arranging data to tell a story
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Make comparisons easier by outlining bordering geometric marks to add a visual distinction between them."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f4f785d2ad_0_36#slide=id.g3f4f785d2ad_0_36")
+```
+
+* Order nominal categories based on frequency. For bar plots especially, or any plot where you want to show a ranking, show the categories ordered according to the ranking or frequency. Ordinal categories should typically be ordered based on their inherent accepted order, although there are cases where we may want to see which category has the highest value for another variable.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Make comparisons easier by ordering nominal categories based on frequency."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f4f785d2ad_0_24#slide=id.g3f4f785d2ad_0_24")
+```
+
+* Label geometric marks with the amount of represented data or include an accompanying table with this information.
+
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "Make comparisons easier by labeling geometric marks with the amount of data that is represented, especially for bar charts."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f4f785d2ad_0_57#slide=id.g3f4f785d2ad_0_57")
+```
+
+* Avoid redundancy (exceptions: using alternate means to distinguish groups in addition to color as described in Accessibility Rule 3 below & using simpler, but more redundant legend labels as described in Rule 1 above)
+
+#### Rule 5: Display or arrange data to tell a story
 
 Use a layout that follows typical reading order. Progress through the story of a plot or diagram from left to right and top to bottom. If your visualization is supposed to be showing an increase it should visually look like an increase. If your visualization is supposed to show a decrease, it should look like a decrease. The "highest" point shouldn't be at the bottom of the plot. If showing a ranking, the highest rank should appear one of the edges with the lowest rank at the other edge.
 
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "summary of the rules for increasing accessibility for audience members who are unfamiliar with your research."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3faff5303e6_0_246#slide=id.g3faff5303e6_0_246")
+```
+
 ### Rules for increasing accessibility for audience members who have visual impairments
 
-The rules for increasing accessibility for audience members who have visual impairments are all united by the principle that plot elements should be **distinguishable**.
+::: {.emphasis_block}
 
-**Rule 1**: Use color vision deficiency friendly color palettes.
+The rules for **increasing accessibility for audience members who have visual impairments** are all united by the principle that plot elements should be **distinguishable**.
 
-**Rule 2**: If using your own color palette, use a package or a simulator to check the accessibility of the color palette.
+**Rule 1: Use color vision deficiency friendly color palettes.**
 
-**Rule 3**: Don't use color alone to represent groups.
+**Rule 2: If using your own color palette, use a package or a simulator to check the accessibility of the color palette.**
 
-**Rule 4**: Use a proper contrast ratio.
+**Rule 3: Don't use color alone to represent groups.**
 
-**Rule 5**: Don't over clutter plots (also Rule 3 for audiences unfamiliar with your research)
+**Rule 4: Use a proper contrast ratio.**
 
-**Rule 6**: Use a sans-serif font.
+**Rule 5: Don't over clutter plots (see Rule 3 for audiences unfamiliar with your research).**
 
-#### Using accessible color palettes
+**Rule 6: Use a sans-serif font.**
 
-The most well known example of a color vision deficiency friendly color palette is `viridis`.
+**Rule 7: Provide descriptive alternative text (alt text).**
 
-#### Checking accessibility for color palettes
+:::
+
+#### Rule 1: Using accessible color palettes
+
+Different people can see the same set of colors differently. Cone cells in retina are photoreceptor cells -- those responsible for the detection of light wavelengths and distinguishing of colors [@Cones_2018]. Humans have 3 types of cone cells: red-sensing cones, green-sensing cones, and blue-sensing cones. Each of the various color blindness or color vision deficiencies results from an absence of or change in sensitivity / function of one of the cone types. 
+
+<!--
+
+|                               | Impacted Cone type | Reduced sensitivity or absence | Effect | 
+|:------------------------------|:---------:|:---------------------:| :-----------: |
+| Protanomaly                   | Red       | Reduced sensitivity   | Red-green color vision deficiency (some reds look more green and less bright) |
+| Protanopia                    | Red       | Absence               | |
+| Deuteranomaly                 | Green     | Reduced sensitivity   | |
+| Deutranopia                   | Green     | Absence               | |
+| Tritanomaly                   | Blue      | Reduced sensitivity   | |
+
+
+-->
+
+The most well known example of a color vision deficiency friendly color palette is [`viridis`](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html). Many modern programming languages and visualization software make using the `viridis` palette fairly straightforward (in some cases it is the default).  
+
+There are other options in addition to `viridis` such as:
+
+* the sequential palette [`PuBuGn` from ColorBrewer](https://cmap-docs.readthedocs.io/en/latest/catalog/sequential/colorbrewer:pubugn_9/)
+* [`plasma`](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
+* [`inferno`](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
+* palettes from the [IBM Design Library](https://web.archive.org/web/20180503023309/https://www.ibm.com/design/language/resources/color-library)
+* [Okabe & Ito](https://jfly.uni-koeln.de/color/)
+* palettes from [Paul Tol](https://sronpersonalpages.nl/~pault/)
+
+#### Rule 2: Checking accessibility for color palettes
+
+Instead of using an established color vision deficiency friendly color palette, you may want to use one of your own color palettes (perhaps with colors matching an institutional logo). 
 
 [`colorblindr` is an R package](https://github.com/clauswilke/colorblindr) that simulates color vision deficiency directly on a plot in R, returning what it might look like for different types of color vision deficiency. You can directly examine your visualization to make sure that plot elements and groups are distinguishable and make changes to reassess as needed.
 
-#### Using shape, patterns, or labels in addition to color.
+<!--
+<details><summary>Example using the `colorblindr` package</summary>
 
-An example of this technique can be found in [recent editions of Uno card decks]() that include geometric shapes on the cards to communicate what group or color that card is.
+```{r, eval = FALSE}
+
+```
+
+</details>
+
+-->
+
+Another option is a [color simulator such as "Coloring from Colorblindness" from David Nichols](https://davidmathlogic.com/colorblind/) [@Nichols] that allows for you to enter hex codes or RGB values for a collection of colors and view how those colors compare to one another in various color vision impairment contexts. Very useful when building a color palette or deciding on colors, but doesn't allow you to simulate how your already made plot would appear in such a scenario. For that, the ["Coblis" simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/) may be more helpful. [`Color Oracle`](https://colororacle.org/) is a free color blindness simulator for multiple operating systems and provides a full screen filter (independent of whatever software was used to make the graphic) in order to simulate what color vision deficient individuals would see. 
+
+#### Rule 3: Using shape, patterns, or labels in addition to color.
+
+An example of this technique can be found in recent editions of Uno card decks that include geometric shapes on the cards to communicate what group or color that card is.
 
 * Red: Circle
 * Green: Triangle
@@ -172,13 +248,41 @@ By redundantly providing a shape as well as the color, groups can still be disti
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3f7cfa1b21e_0_13#slide=id.g3f7cfa1b21e_0_13")
 ```
 
-#### Checking accessibility for contrast
+#### Rule 4: Checking accessibility for contrast ratios
 
-#### Using sans-serif fonts
 
-Common sans-serif fonts include Verdana, Arial, and Calibri.
 
-#### Descriptive Alternative Text
+Appropriate contrast between plot elements is also essential to make your plots accessible. Contrast ratios are computed for two specific color combinations by comparing the foreground color the background color. In many cases the background color is whatever is adjacent to the foreground color. Different ratios are preferred for different graphical elements and the size of text as well as the transparency or graphical element impact the ratio [@Elavsky_contrast].
+
+An acceptable contrast ratio for graphics is at least 3 to 1. 
+
+For text, an acceptable contrast ratio is at least 4.5 to 1 but for larger text sizes (18pt or above) a ratio of least 3 to 1 suffices. 
+
+See [this tutorial about contrast](https://r-statistics.co/Accessible-Data-Visualization-in-R.html).
+
+While having white text on a black background does meet acceptable contrast ratios, for some viewers the bright text appears to bleed or blur against the dark background (a visual fuzzing effect termed "halation"). This is a common occurrence for those with astigmatism [@ColorContrast].  
+
+The [`coloratio` R package](https://matt-dray.github.io/coloratio/) and this [WebAIM online contrast checker](https://webaim.org/resources/contrastchecker/) are useful tools to compare the colors in your color palettes for contrast ratios. Unlike color vision deficiency tools, you cannot provide a graph and have it assessed, you instead can only provide different combinations of colors (as well as any associated transparency levels / alpha). 
+
+#### Rule 6: Using sans-serif fonts
+
+Common more vision-friendly sans-serif fonts include Verdana, Arial, and Calibri. Serif fonts have ornamental marks or elongations of the letters that can be distracting or difficult to those with vision impairments to read. In general, it's better to have simpler plots (removing redundant or unnecessary marks). This is especially true for fonts. Use a sans-serif font instead of a serif font.
+
+#### Rule 7: Provide Descriptive Alternative Text [@Schwabish_Popkin_Feng_2022; @WriteAltText]
+
+Providing alternative text describing what your plot shows can make your plots accessible to those with vision impairment.
+
+Alternative text should answer the following questions:
+
+* What kind of graph or chart is being used? Is it a logo, illustration, cartoon, or diagram instead?
+* What variable is represented on each axis?
+* What are the observed/displayed ranges of the variables?
+* Are there any key visual design elements such as regression or dashed annotation lines?
+* What does the visual show regarding the relationship between the variables?
+* Are any specific data points highlighted?
+* What is the main point or takeaway?
+
+Alternative text doesn't need to be more than a few sentences. It is best used to describe key elements rather than every single detail. Use proper punctuation and capitalization, focusing primarily on including periods (`.`), commas (`,`), and dashes (`-`). Write out phrases (ex: "multiplied by") instead of using symbols (ex: "X") in place of the phrases. If including an acronym (that you've already defined somewhere), you can use a fully capitalized acronym without spaces in alternative text. 
 
 ## Best Practices for Ethics
 
@@ -188,13 +292,42 @@ Ethical visualizations improve viewers' understanding rather than confuse or mis
 
 Several of the topics we'll provide within this section about ethical considerations are related to tips to reduce complexity and enhance accessibility. This is not surprising given that clear communication is a necessity for both ethical and accessible visualizations.
 
-There are 5 main categories for practicing ethical data visualization.
+::: {.emphasis_block}
 
-1. Championing Safety & Transparency
-2. Ensuring Accuracy
-3. Preventing Data Distortion
-4. Maintaining Originality
-5. Practicing Empathy
+There are 5 main categories for **practicing ethical data visualization**. Each category has a set of sub-rules or tips.
+
+I. Championing Safety & Transparency
+
+  1. Don't include identifiable data.
+  2. Include all relevant data or subgroups.
+  3. Describe removed samples or dropouts.
+
+II. Ensuring Accuracy
+
+  1. Verify that visualization accurately represent the data.
+  2. Use clear and accurate axis labels.
+
+III. Preventing Data Distortion
+
+  1. Use fair axis limits rather than truncating axes.
+  2. Order axes in a logical way that corresponds to the plot's message.
+  3. Separate overlapping plot elements.
+  4. Use a veridical aspect ratio that doesn't stretch or shrink data.
+
+IV. Maintaining Originality
+
+  1. Don't take someone's visualization (with their data) without attribution.
+  2. Use your own data in making a similar visualization, modifying where you can.
+  3. If using a type of plot and are in doubt, attribute.
+
+V. Practicing Empathy
+
+  1. Visualize each data point.
+  2. Avoid stereotypical colors.
+  3. Use person-first language when appropriate and avoid insensitive language.
+  4. Expand an "Other" category.
+
+:::
 
 ### Ethical Data Inclusion: Safety & Transparency
 
@@ -202,11 +335,22 @@ The rules within this section are aimed to safeguard patient privacy and provide
 
 **Rule 1: Don't include identifiable data**
 
-ADD thoughts here
+Identifiable data includes but are not limited to the following [@hipaa_identifiers]:
+
+* Names
+* Addresses (subdivisions smaller than state such as zip code)
+* Dates relating to individuals such as birth dates, admission dates, discharge dates, etc.
+* Contact information (e.g., telephone or fax numbers, email addresses)
+* Medical record numbers
+* Account numbers
+
+Some data in that list may not seem like it is identifiable, but it can be, and therefore caution should be exercised and those variables should not be plotted in way that individual data points could be linked to a person or patient.
+
+Exercise caution in defining or showing patient IDs or geographical locations to be sure that you are not plotting potentially identifiable data.
 
 **Rule 2: Include all relevant data or subgroups**
 
-Pie charts may incorrectly portray or give the impression that all data is included in the visualization.
+Pie charts may incorrectly portray or give the impression that all data or relevant subgroups are included in the visualization when they are not.
 
 **Rule 3: Describe removed samples or dropouts**
 
@@ -220,11 +364,19 @@ The rules within this section are aimed to encourage careful verification of vis
 
 **Rule 1: Verify that visualizations accurately represent the data**
 
-ADD thoughts about data that may be missing, or sizes/area that don't align with data. Do visualizations show a consistent message if you check visualizations against each other? Repeat the idea of checking twice before sharing the visualization
+To verify that visualizations accurately represent the data, ask the following questions:
+
+* How much data (e.g., how many data points, sum of the bars, number of categories) should be in the visualization and how much is there?
+* Do the displayed sizes or areas match my expectations and summary stats of the data?
+* Do the displayed sizes or areas match the labels within the plot? 
+* Do visualizations show a consistent message if comparing multiple related visualizations to each other?
+* Does a visualization where the development process has been edited still appear consistent with earlier versions?
+
+As described earlier in this course, always double check your expository visualizations for accuracy before you share them widely.
 
 **Rule 2: Use clear and accurate axis labels**
 
-ADD thoughts especially related to axis labels. Often having simplified axis labels help audiences. Doing this ethically such that the simplified label is what is being plotted is really important. If the label doesn't match the data, why not plot the data for the simplified label?
+Researchers may simplify axis labels to help the audience find a plot more approachable. However, simplifying axis labels may be misleading, especially if the simplified label doesn't adequately match what is being plotted. In such cases, why not plot the data for a simplified label -- does such a plot maintain the pattern or message of interest? It's best to give an accurate description of what is plotted even if more thorough descriptions may be necessary in captions or accompanying narratives to clearly communicate jargon or concepts.
 
 ### Preventing Data Distortion
 
@@ -232,46 +384,81 @@ The aims for rules within this section include to avoid misleading messages and 
 
 **Rule 1: Use fair axis limits rather than truncating axes**
 
-ADD about starting axis limits at 0 because otherwise differences will look starker than they are
+Starting y-axes at 0 often provides for a fairer comparison between groups than if y-axes are truncated. In those cases, differences are exaggerated, looking larger than they actually are.
 
-ADD about axis limits when you have facets and how audiences may expect those subplots to use the same axis limits
+```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "start y-axes at 0 for fairer comparisons among groups."}
+ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3faff5303e6_0_485#slide=id.g3faff5303e6_0_485")
+```
+
+Note however, that the example on the right (above) goes too far in the opposite direction by expanding the y-axis an unreasonable length beyond the data limits. This has the opposite effect of making differences look smaller than they are the groups more similar. If there were a fourth group cropped out of the graph that did reach the 1600 value on the y-axis that y-axis upper limit would be more reasonable. A good rule of thumb is to use axis limits that reflect the range of the data or at least the possible ranges that the data could take on.
+
+If using facets or subplots in your data visualizations, clearly communicate whether the facets share the same axis limits or not. If audience members are comparing the facets to each other, they may expect them to share the same axis limits.
 
 **Rule 2: Order axes in a logical way that corresponds to the plot's message**
 
-ADD info about the overall message. If a line is going up over time, but the message is related to decrease, why is the line going up? This can be misleading.
+This is related to accessibility Rule 5 for audiences unfamiliar with your research. If a line is going up over time, but the message is related to decrease, why is the line going up? This can be misleading and the plot should be reworked to have a consistent message. Audience members may only be looking at your plot briefly as they skim through abstracts or attend seminars, therefore, the message should match whatever quick impression the plot provides.
 
 **Rule 3: Separate overlapping plot elements**
 
-ADD info about how true info can be obscured if plot elements aren't separated.
+If overlapping plot elements aren't separated, signal can be obscured or missed.
+
+To separate plot elements consider the following tools or adjustments: 
+
+* Adjust the shape, size, or transparency of geometric marks.
+* Use a log scale or other transformation to separate dense data.
+* Use a zoomed inset to focus on a dense area of data.
+* Use facets or subplots to separate different categories of data.
+
+**Rule 4: Use a veridical aspect ratio that doesn't stretch or shrink data**
+
+:::{.dictionary}
+
+**Veridical**: Truthful or genuine; showing what is true or real
+
+:::
+
+For charts where both axes have numerical data or certain charts that are using angles to represent data, it is important to make sure that the aspect ratio of plot is fair and truthful: a 1 to 1 data ratio. If both axes have the same limits or the same amount of data (e.g., length), the plot should appear square. This ensures visual fidelity or an authentic and faithful representation of the data and the relationships between variables. Otherwise, there could be stretching or shrinking that distorts the location of data and the displayed trends.
 
 ### Maintaining Originality
 
-ADD info about plagiarism and what that means for data visualization
-
-ADD info about inspiration
-
 **Rule 1: Don't take someone's visualization (with their data) without attribution.**
 
-**Rule 2**: Use your own data in making a similar visualization, modifying where you can.
+**Rule 2: Use your own data in making a similar visualization, modifying where you can.**
 
-**Rule 3**: If using a type of plot and are in doubt, attribute.
-
-ADD info about attribution if you're concerned.
+**Rule 3: If using a type of plot and are in doubt, attribute.**
 
 ### Practicing Empathy
 
-Tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute. These are more tips and not rules because they are more subjective.
+The following are tips for showing empathy while constructing data visualizations based on suggestions from the Urban Institute [@Schwabish_Feng_2021; @Schwabish_Popkin_Feng_2022]. These are more tips and not rules because they are more subjective.
 
-*Tip 1: Visualize each data point*
+*Tip 1: Visualize each data point.*
 
-Point to jitter
+In the scientific and biomedical fields, often each data point represents a patient. Showing each data point rather than just a summary or geometric mark that collapses the data points into a single bar / etc, recognizes that the data comes from patients.
+
+In addition, showing each data point can be useful in showing how much data there is and how it is distributed. `jitter` can be a useful tool in plotting individual data points on top of bar plots, box plots, violin plots, etc. providing a small bit of random separation for data points.
 
 *Tip 2: Avoid stereotypical colors*
 
+Red and Green are often stereotypical colors for stop and go, exclude and include, etc. However, certain mixtures of colors (such as red and green) are not accessible to all audiences. Therefore, avoid use of stereotypical colors to represent certain groups.
+
 *Tip 3: Use person-first language when appropriate and avoid insensitive language*
+
+When writing titles, captions, and axis labels, use person-first language (e.g., "Patients with cancer") (when appropriate) and avoid insensitive language. Many patient groups do not want to be defined by their illness and therefore prefer person-first language. Some populations do not prefer person-first language (for example the Deaf Community). For your research area, review what language is preferred and keep that in mind when developing expository visualizations.
 
 *Tip 4: Expand an "Other" category*
 
+This tip is related to Safety & Transparency in Data Inclusion Rule 2 (from Category 1 above). It's best practices to include all relevant data, and if there are many subgroups represented, often groups with less signal or that aren't the main focus of the takeaway may be combined into an "Other" category. In those cases, consider if you have the space to separate out each of those subgroups or list all of the subgroups that are part of an "Other" category within a caption (and accompanying narrative or supplemental information).
+
+<!--
+
 ## Improving Visualizations
 
+-->
+
 ## Summary
+
+::: {.emphasis_block}
+
+In summary, expository visualizations should be double checked to ensure that they were developed ethically and are accessible to broad audiences, especially those who are unfamiliar with your work and those who may have a color vision impairments. If a plot is not made with consideration of audiences different vision conditions, than it may mislead certain audiences or may not be visible to them. Furthermore, plots can be more challenging to be interpreted by broader audiences if they are overly complex or difficult for those with mobility challenges (in cases like interactive plots that require movements of the viewer). Plots can also obscure or distort patterns in data by dropping samples inappropriately or using truncated axes. Keeping plots simple, by focusing on one main message, and providing descriptions explaining what the plots are intended to show can make them much more interpretable and clear to a wider audience. Ethical and accessible data visualizations provide clarity, improving viewers' understanding rather than confusing or (even unintentionally) misleading the audience. Careful consideration is paramount to ensuring the development of accurate and understandable data visualizations. The time that is required for these considerations is well worth the benefit to the scientific community.
+
+:::

@@ -1,5 +1,9 @@
 # Appendix: ITCR Tools and Data Visualization
 
+:::{.notice}
+Additional ITCR tools are being added to this appendix.
+:::
+
 ## UCSC Xena Browser
 
 The [UCSC Xena Browser](https://xenabrowser.net/) is a web-based cancer functional genomics visualization and analysis tool. The UCSC Xena Browser enables researchers to work with large cohorts of samples -- exploring, analyzing, and visualizing cancer genomics datasets. Researchers can use both private datasets (through use of private hubs) and data from large public data resources (e.g., TCGA (The Cancer Genome Atlas) and the GDC (Genomic Data Commons)).

@@ -222,6 +222,10 @@ When using color to distinguish groups, to increase accessibility, use tools to 
 
 </div>
 
+<div class="notice">
+To review pre-exising color palettes that were designed for color vision deficiency or different tools that can be used to review your own color palette for accessibility, visit [Chapter 5](https://hutchdatascience.org/DataViz_Considerations/05_how_to_improve_viz.html#rules-for-increasing-accessibility-for-audience-members-who-have-visual-impairments)
+</div>
+
 #### Ordering of axes to promote readability
 
 {{< include _example_iter6_order_axes.qmd >}}
@@ -274,7 +278,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 
 But we're not done yet....
 
-#### The caption!
+#### The caption and alt text!
 
 ```{r plotCaption, fig.align = "center", echo = FALSE, out.width="100%"}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3bb275f27df_0_20#slide=id.g3bb275f27df_0_20")
@@ -290,7 +294,19 @@ What might be a good caption for this expository data visualization? Try writing
 
 <details><summary>A possible caption</summary>
 
-**Chocolate is among the most liked candy in 2017.** A survey of potential trick or treaters in 2017 by the University of British Columbia asked how survey respondents felt when they received certain candies. Here each candy is plotted based on the fraction of respondents which viewed that candy with Joy vs the fraction of respondents which viewed that candy with Despair. The upper right corner of the plot represents the most liked candies (lots of joy, little despair), while the bottom left corner represents the least liked candies (more despair, less joy). Candy color and shape is used to separate chocolate candy (brown triangles) from non-chocolate candy (blue circles). Chocolate candy seems to be among the most liked candy with any full-sized candy bar having the most joy and least despair reported.
+**Chocolate is among the most liked candy in 2017.** A survey of potential trick or treaters in 2017 by the University of British Columbia asked how survey respondents felt when they received certain candies. Here each candy is plotted based on the fraction of respondents which viewed that candy with Joy vs the fraction of respondents which viewed that candy with Despair. The upper right corner of the plot represents the most liked candies (lots of joy, little despair), while the bottom left corner represents the least liked candies (more despair, less joy). Candy color and shape is used to separate chocolate candy (brown triangles) from non-chocolate candy (blue circles). Chocolate candy seems to be among the most liked candy with any full-sized candy bar having the most joy and least despair reported. Note that the survey asked about items that were not candy. Those have been removed from this analysis. In addition to responding with Joy or Despair, respondents could reply with Apathy  (or skip replying for any candy). 
+
+</details>
+
+<div class = "reflection">
+
+What might be good alt text for this expository data visualization? Try writing some! Focus on providing a detailed description of the elements of the plot and what the plot shows.
+
+</div>
+
+<details><summary>Some possible alt text</summary>
+
+This scatter plots show different candies as individual points. Here each candy is plotted based on the fraction of respondents which viewed that candy with Joy on the x-axis vs the fraction of respondents which viewed that candy with Despair on the y-axis. Both axes are bounded between 0 and 1. However the y-axis goes from 1 to 0 such that the upper right corner of the plot represents the most liked candies (lots of joy, little despair), while the bottom left corner representing the least liked candies (more despair, less joy). Candy color and shape is used to separate chocolate candy (brown triangles) from non-chocolate candy (blue circles). Chocolate candy seems to be among the most liked candy with any full-sized candy bar having the most joy and least despair reported.
 
 </details>
 
@@ -334,8 +350,12 @@ Two examples of using data visualization to validate models within the bioinform
 * Carefully check visualizations against data and expectations to ensure accuracy.
 * Be careful to avoid common data distortions or unintentional takeaways.
 
+<!--
+
 ## Checklist
 
 This checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize complexity, enhance clarity, and improve accessibility, as well as assess accuracy.
+ 
+-->
 
-{{< include _summary_checklist.qmd >}}
+<!-- {{< include _summary_checklist.qmd >}} -->
