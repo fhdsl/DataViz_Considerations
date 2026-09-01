@@ -292,7 +292,7 @@ What might be a good caption for this expository data visualization? Try writing
 
 <details><summary>A possible caption</summary>
 
-**Chocolate is among the most liked candy in 2017.** A survey of potential trick or treaters in 2017 by the University of British Columbia asked how survey respondents felt when they received certain candies. Here each candy is plotted based on the fraction of respondents which viewed that candy with Joy vs the fraction of respondents which viewed that candy with Despair. The upper right corner of the plot represents the most liked candies (lots of joy, little despair), while the bottom left corner represents the least liked candies (more despair, less joy). Candy color and shape is used to separate chocolate candy (brown triangles) from non-chocolate candy (blue circles). Chocolate candy seems to be among the most liked candy with any full-sized candy bar having the most joy and least despair reported. Note that the survey asked about itens that were not candy. Those have been removed from this analysis. In addition to responding with Joy or Despair, respondents could reply with Apathy  (or skip replying for any candy). 
+**Chocolate is among the most liked candy in 2017.** A survey of potential trick or treaters in 2017 by the University of British Columbia asked how survey respondents felt when they received certain candies. Here each candy is plotted based on the fraction of respondents which viewed that candy with Joy vs the fraction of respondents which viewed that candy with Despair. The upper right corner of the plot represents the most liked candies (lots of joy, little despair), while the bottom left corner represents the least liked candies (more despair, less joy). Candy color and shape is used to separate chocolate candy (brown triangles) from non-chocolate candy (blue circles). Chocolate candy seems to be among the most liked candy with any full-sized candy bar having the most joy and least despair reported. Note that the survey asked about items that were not candy. Those have been removed from this analysis. In addition to responding with Joy or Despair, respondents could reply with Apathy  (or skip replying for any candy). 
 
 </details>
 
@@ -353,7 +353,7 @@ Two examples of using data visualization to validate models within the bioinform
 ## Checklist
 
 This checklist contains reminders of considerations and steps you should take while building your expository data visualization in order to minimize complexity, enhance clarity, and improve accessibility, as well as assess accuracy.
-
-{{< include _summary_checklist.qmd >}}
-
+ 
 -->
+
+<!-- {{< include _summary_checklist.qmd >}} -->

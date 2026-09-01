@@ -321,6 +321,7 @@ IV. Maintaining Originality
   3. If using a type of plot and are in doubt, attribute.
 
 V. Practicing Empathy
+
   1. Visualize each data point.
   2. Avoid stereotypical colors.
   3. Use person-first language when appropriate and avoid insensitive language.
