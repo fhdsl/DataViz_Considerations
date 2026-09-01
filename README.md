@@ -1,5 +1,7 @@
 # Considerations for Data Visualization
 
+[![Render Bookdown, Leanpub, and Coursera](https://github.com/fhdsl/DataViz_Considerations/actions/workflows/render-all.yml/badge.svg)](https://github.com/fhdsl/DataViz_Considerations/actions/workflows/render-all.yml)
+
 This course was created from [this GitHub template](https://github.com/jhudsl/OTTR_Template).
 
 You can see the rendered course material here: https://hutchdatascience.org/DataViz_Considerations/
