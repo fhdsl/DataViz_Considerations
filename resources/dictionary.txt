@@ -25,6 +25,8 @@ chapt
 Charlson
 choropleths
 Circos
+Coblis
+ColorBrewer
 confounders
 counterintuitive
 Coursera
@@ -49,6 +51,7 @@ eQTL
 Falses
 faq
 favicon
+Feng
 FirstName
 Funder
 fyi
@@ -61,6 +64,7 @@ ggrepel
 GH
 Github
 GitHub
+halation
 hexcode
 hjust
 https
@@ -104,6 +108,7 @@ Neuroendocrine
 NHGRI
 nonmetastatic
 numpy
+Okabe
 omic
 omics
 OTTR
@@ -112,10 +117,12 @@ ottrproject
 Pandoc
 phagocytic
 phagocytosis
+photoreceptor
 PHQ
 Plotnine
 png
 polysemantic
+Popkin
 Preattentive
 pre
 preprint
@@ -134,6 +141,7 @@ rmarkdown
 RMarkdown
 Sankey
 Savonen
+Schwabish
 SNE
 Simpon
 situ
@@ -151,6 +159,7 @@ tabset
 tada
 TCGA
 TLG
+Tol
 transcriptomics
 treaters
 Treemap
@@ -164,12 +173,14 @@ underserved
 unintuitive
 Uno
 Verdana
+veridical
 Videographer
 Videography
 vmax
 vmin
 WAI
 WCAG
+WebAIM
 WIPO
 www
 Xena

@@ -184,7 +184,7 @@ The rules for **increasing accessibility for audience members who have visual im
 
 #### Rule 1: Using accessible color palettes
 
-Different people can see the same set of colors differently. Cone cells in retina are photoreceptor cells -- those responsible for the detection of light wavelengths and distinguishing of colors [@Cones_2018]. Humans have 3 types of cone cells: red-sensing cones, green-sensing cones, and blue-sensing cones. Each of the various color blindness or color vision deficiencies results from an absence of or change in sensitivty / function of one of the cone types. 
+Different people can see the same set of colors differently. Cone cells in retina are photoreceptor cells -- those responsible for the detection of light wavelengths and distinguishing of colors [@Cones_2018]. Humans have 3 types of cone cells: red-sensing cones, green-sensing cones, and blue-sensing cones. Each of the various color blindness or color vision deficiencies results from an absence of or change in sensitivity / function of one of the cone types. 
 
 <!--
 
@@ -269,7 +269,7 @@ Common sans-serif fonts include Verdana, Arial, and Calibri. Serif fonts have or
 Alternative text should answer the following questions:
 
 * What kind of graph or chart is being used? Is it a logo, illustration, cartoon, or diagram instead?
-* What varaible is represented on each axis?
+* What variable is represented on each axis?
 * What are the observed/displayed ranges of the variables?
 * Are there any key visual design elements such as regression or dashed annotation lines?
 * What does the visual show regarding the relationship between the variables?
@@ -324,7 +324,7 @@ Identifiable data includes but are not limited to the following [@hipaa_identifi
 
 * Names
 * Addresses (subdivisions smaller than state such as zip code)
-* Dates relating to indivudals such as birthdates, admission dates, discharge dates, etc.
+* Dates relating to individuals such as birth dates, admission dates, discharge dates, etc.
 * Contact information (e.g., telephone or fax numbers, email addresses)
 * Medical record numbers
 * Account numbers
@@ -353,7 +353,7 @@ To verify that visualizations accurately represent the data, ask the following q
 
 * How much data (e.g., how many data points, sum of the bars, number of categories) should be in the visualization and how much is there?
 * Do the displayed sizes or areas match my expectations and summary stats of the data?
-* Do the displayes sizes or areas match the labels within the plot? 
+* Do the displayed sizes or areas match the labels within the plot? 
 * Do visualizations show a consistent message if comparing multiple related visualizations to each other?
 * Does a visualization where the development process has been edited still appear consistent with earlier versions?
 
@@ -369,7 +369,7 @@ The aims for rules within this section include to avoid misleading messages and 
 
 **Rule 1: Use fair axis limits rather than truncating axes**
 
-Starting y-axes at 0 often provides for a fairer comparison between groups than if y-axes are truncated. In those cases, differenes are exagerated, looking larger than they actually are.
+Starting y-axes at 0 often provides for a fairer comparison between groups than if y-axes are truncated. In those cases, differences are exaggerated, looking larger than they actually are.
 
 ```{r fig.align = 'center', out.width = "100%", echo = FALSE, fig.alt = "start y-axes at 0 for fairer comparisons among groups."}
 ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o9zdpurFbVvl1bOh8cfQ3vu0szk4/edit?slide=id.g3faff5303e6_0_485#slide=id.g3faff5303e6_0_485")
