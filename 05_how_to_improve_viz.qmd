@@ -258,7 +258,7 @@ ADD info about inspiration-->
 
 **Rule 2: Use your own data in making a similar visualization, modifying where you can.**
 
-**Rule 3**: If using a type of plot and are in doubt, attribute.
+**Rule 3: If using a type of plot and are in doubt, attribute.**
 
 <!-- ADD info about attribution if you're concerned. -->
 
