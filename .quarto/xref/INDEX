@@ -1,0 +1,35 @@
+{
+  "index.qmd": {
+    "index.html": "7b53ae6c"
+  },
+  "01-intro.qmd": {
+    "01-intro.html": "64595e5a"
+  },
+  "02_what_why_intro.qmd": {
+    "02_what_why_intro.html": "a8de84d1"
+  },
+  "03_data.qmd": {
+    "03_data.html": "632c053e"
+  },
+  "04_graph_info.qmd": {
+    "04_graph_info.html": "0bf16269"
+  },
+  "05_how_to_improve_viz.qmd": {
+    "05_how_to_improve_viz.html": "c48d1a7a"
+  },
+  "06_field_standard.qmd": {
+    "06_field_standard.html": "e54b0ab1"
+  },
+  "07_wrapping_up.qmd": {
+    "07_wrapping_up.html": "7f93cd91"
+  },
+  "appendix_itcr.qmd": {
+    "appendix_itcr.html": "8dd8f40c"
+  },
+  "appendix_plots.qmd": {
+    "appendix_plots.html": "f1ffb5b9"
+  },
+  "About.qmd": {
+    "About.html": "9e55a095"
+  }
+}
