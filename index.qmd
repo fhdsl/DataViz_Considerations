@@ -11,7 +11,7 @@ Considerations for Data Visualization focuses on considerations for best practic
  - making visualizations accessible
  - avoiding data distortions
 
-This course could be especially useful for scientists who face figure limits when publishing and want to build a companion website like https://www.someurl.html in order to post supplemental figures.
+This course could be especially useful for scientists who face figure limits when publishing and want to build a companion website like [https://www.someurl.html](https://www.someurl.html) in order to post supplemental figures.
 
 ## Available Course Formats
 
