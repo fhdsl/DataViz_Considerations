@@ -10,7 +10,7 @@ ottrpal::include_slide("https://docs.google.com/presentation/d/1fu-KfdN2ldOXB49o
 ```
 
 
-This course is meant to discuss best practices when constructing data visualizations with a special focus on graphs within biology research.
+This course is meant to discuss best practices when constructing data visualizations with a special focus on graphs within biology research. This course may be especially helpful in cases where you want to share some extra supplemental visualizations on a website such as (https://www.someurl.html) when you publish a paper. 
 
 ## Motivation
 
