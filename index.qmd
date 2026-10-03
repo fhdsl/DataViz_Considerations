@@ -11,6 +11,8 @@ Considerations for Data Visualization focuses on considerations for best practic
  - making visualizations accessible
  - avoiding data distortions
 
+This course could be especially useful for scientists who face figure limits when publishing and want to build a companion website like https://www.someurl.html in order to post supplemental figures.
+
 ## Available Course Formats
 
  - The material for this course can be viewed without login requirement on this [Bookdown website](https://hutchdatascience.org/DataViz_Considerations/). This format might be most appropriate for you if you rely on screen-reader technology.
